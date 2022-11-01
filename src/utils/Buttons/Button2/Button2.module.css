@@ -1,0 +1,19 @@
+.btn {
+  width: max-content;
+  margin: 0.3rem;
+  padding: 0.4rem;
+  cursor: pointer;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.txt {
+  margin: 0 0.3rem;
+}
+
+.btnImg {
+  width: 80%;
+  height: 90%;
+}

@@ -1,18 +1,23 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import css from "./Button1.module.css";
+import css from "./Button2.module.css";
 
-const Button1 = ({
-  txt = "Button1",
-  img = "",
-  bck = "white",
-  color = "#1c1d1f",
-  hovBck = "rgba(0, 0, 0, 0.04)",
-  extraCss = {},
-  link = false,
-}) => {
-  let [style, setStyle] = useState({ backgroundColor: bck, color: color });
+const Button1 = (props) => {
+  let {
+    txt = "Button1",
+    img = "",
+    bck = "white",
+    color = "#1c1d1f",
+    hovBck = "rgba(0, 0, 0, 0.04)",
+    link = false,
+    extraCss = {},
+  } = props;
+  let [style, setStyle] = useState({
+    backgroundColor: bck,
+    color: color,
+  });
+  console.log(extraCss, "extraCss");
 
   let mouseOverHandler = () => {
     return setStyle({ backgroundColor: hovBck, color: color });

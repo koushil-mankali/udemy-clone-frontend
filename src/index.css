@@ -10,6 +10,7 @@
 :root {
   --black: #000;
   --white: #fff;
+  --lighish-white: #f7f9fa;
 
   --gray: #1c1d1f;
   --light-gray: #6a6f73;
@@ -49,6 +50,8 @@
   --glodish2: #e59819;
 
   --crimson: crimson;
+
+  --transparent: transparent;
 }
 
 .hide {

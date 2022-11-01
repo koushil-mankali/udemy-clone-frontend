@@ -1,0 +1,55 @@
+.navbar {
+  width: 100%;
+  height: 4.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+  font-size: 1rem;
+}
+
+.logoBox {
+  width: 90px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+}
+
+.catDropdown {
+  cursor: pointer;
+  color: var(--gray);
+}
+
+.searchBox {
+  width: 50%;
+  background-color: grey;
+}
+
+.hovBox {
+  text-decoration: none;
+  color: var(--gray);
+}
+
+.hovBox:hover,
+.catDropdown:hover {
+  color: var(--purple-dark);
+}
+
+.cartBox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.cartIcon {
+  width: 100%;
+  height: 100%;
+}
+
+.btns {
+  display: flex;
+}

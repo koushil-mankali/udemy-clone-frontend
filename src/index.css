@@ -1,55 +1,54 @@
 * {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
   font-family: "SF Pro Text", "BlinkMacSystemFont", "Roboto", "Segoe UI",
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
 }
 
-:root{
-    --black: #000;
-    --white: #fff;
+:root {
+  --black: #000;
+  --white: #fff;
 
-    --gray: #1C1D1F;
-    --light-gray: #6A6F73;
-    --gray86: #D1D7DC;
-    --gray100: #F0F2F4;
-    --gray-wild-sand: #F3F3F3;
-    --gray-alto: #D9D9D9;
-    --gray-silver: #B7B7B7;
-    --gray-silver-chalice: #999999;
-    --gray-mine-shaft: #434343;
+  --gray: #1c1d1f;
+  --light-gray: #6a6f73;
+  --gray86: #d1d7dc;
+  --gray100: #f0f2f4;
+  --gray-wild-sand: #f3f3f3;
+  --gray-alto: #d9d9d9;
+  --gray-silver: #b7b7b7;
+  --gray-silver-chalice: #999999;
+  --gray-mine-shaft: #434343;
 
-    --purple: #A435F0;
-    --purple-dark: #8710d8;
+  --purple: #a435f0;
+  --purple-dark: #8710d8;
 
-    --teal: #72D8BA;
-    --dark-teal: #199FA3;
-    --dark-teal2: #1e6055;
-    --teal-green-light: #6AC1D0;
-    --teal-green-lighter: #C3E6EC;
+  --teal: #72d8ba;
+  --dark-teal: #199fa3;
+  --dark-teal2: #1e6055;
+  --teal-green-light: #6ac1d0;
+  --teal-green-lighter: #c3e6ec;
 
-    --yellow: #E9E729;
-    --blue: #5022C3;
+  --yellow: #e9e729;
+  --blue: #5022c3;
 
-    --red: #F4522D;
-    --red1: #b32d0f;
+  --red: #f4522d;
+  --red1: #b32d0f;
 
-    --indigo: #5624D0;
-    --indigo200: #B7A9E5;
-    --indigolight: #cec0fc;
+  --indigo: #5624d0;
+  --indigo200: #b7a9e5;
+  --indigolight: #cec0fc;
 
-    --blackish2: rgb(51, 51, 51);
+  --blackish2: rgb(51, 51, 51);
 
-    --yellowish-green: #eceb98;
-    --yellowish-green-dark: #3d3c0a;
+  --yellowish-green: #eceb98;
+  --yellowish-green-dark: #3d3c0a;
 
-    --glodish1: #b4690e;
-    --glodish2: #e59819;
+  --glodish1: #b4690e;
+  --glodish2: #e59819;
 
-    --crimson: crimson;
-
+  --crimson: crimson;
 }
 
 .hide {

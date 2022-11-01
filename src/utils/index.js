@@ -1,1 +1,1 @@
-console.log("Util")
+console.log("Util");

@@ -45,11 +45,10 @@ const Button1 = ({
         style={{ ...style, ...extraCss }}
         className={css.btn}
       >
-        {img !== "" ? (
-          <img src={img} className={css.btnImg} />
-        ) : (
+        <span className={css.txtBox}>
+          {img ? <img src={img} className={css.btnImg} /> : ""}
           <span className={css.txt}>{txt}</span>
-        )}
+        </span>
       </Link>
     );
   }

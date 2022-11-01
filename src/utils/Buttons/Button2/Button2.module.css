@@ -9,6 +9,10 @@
   align-items: center;
 }
 
+.txtBox {
+  display: flex;
+}
+
 .txt {
   margin: 0 0.3rem;
 }

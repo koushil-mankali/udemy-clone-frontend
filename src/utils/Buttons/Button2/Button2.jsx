@@ -33,11 +33,10 @@ const Button1 = (props) => {
       style={{ ...style, ...extraCss }}
       className={css.btn}
     >
-      {img !== "" ? (
-        <img src={img} className={css.btnImg} />
-      ) : (
+      <span className={css.txtBox}>
+        {img ? <img src={img} className={css.btnImg} /> : ""}
         <span className={css.txt}>{txt}</span>
-      )}
+      </span>
     </div>
   );
 
@@ -50,11 +49,10 @@ const Button1 = (props) => {
         style={{ ...style, ...extraCss }}
         className={css.btn}
       >
-        {img !== "" ? (
-          <img src={img} className={css.btnImg} />
-        ) : (
+        <span className={css.txtBox}>
+          {img ? <img src={img} className={css.btnImg} /> : ""}
           <span className={css.txt}>{txt}</span>
-        )}
+        </span>
       </Link>
     );
   }

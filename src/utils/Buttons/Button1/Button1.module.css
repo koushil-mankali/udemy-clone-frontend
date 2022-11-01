@@ -11,6 +11,10 @@
   text-decoration: none;
 }
 
+.txtBox {
+  display: flex;
+}
+
 .txt {
   margin: 0 0.3rem;
 }

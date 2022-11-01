@@ -73,6 +73,15 @@
   justify-content: space-evenly;
 }
 
+.sidebarMenu {
+  width: 50%;
+  height: calc(100vh - 3.5rem);
+  overflow: auto;
+  position: absolute;
+  background-color: var(--white);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+}
+
 @media screen and (max-width: 1024px) {
   .navbar {
     height: 3.5rem;
@@ -108,4 +117,48 @@
   .right {
     display: none;
   }
+}
+
+@media screen and (max-width: 430px) {
+  .sidebarMenu {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .sidebarMenu {
+    width: 90%;
+  }
+}
+
+/* MOBILE SCREEN CSS  */
+
+.catDropdownM {
+  cursor: pointer;
+  color: var(--gray);
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.searchBoxM {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.hovBoxM {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+
+.btnsM {
+  width: 100%;
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }

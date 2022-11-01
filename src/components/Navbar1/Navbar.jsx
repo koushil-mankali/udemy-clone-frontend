@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 import css from "./Navbar.module.css";
 
+import MobileNavbar from "./MobileNavbar";
 import SearchBar from "../../utils/SearchBar/SearchBar";
 import Button1 from "../../utils/Buttons/Button1/Button1";
 
 import globeIcon from "/icons/globe.png";
-import cartIcon from "/icons/shopping-cart.png";
 import hamburgerIcon from "/icons/hamburger.png";
 
 const Navbar = () => {
@@ -55,30 +55,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      {menuState ? (
-        <div className={css.sidebarMenu}>
-          <div className={css.searchBoxM}>
-            <SearchBar />
-          </div>
-          <div className={css.catDropdownM}>Categories</div>
-          <a className={css.hovBoxM} href="#" target="_blank">
-            Teach on Udemy
-          </a>
-          <div className={css.btnsM}>
-            <Button1 txt="Cart" img={cartIcon} link="/cart" />
-            <Button1 txt="Login" link="/login" />
-            <Button1
-              txt="Sign up"
-              bck="#1c1d1f"
-              link="/signup"
-              color="#fff"
-              hovBck="#000"
-            />
-          </div>
-        </div>
-      ) : (
-        ""
-      )}
+      {menuState ? <MobileNavbar /> : ""}
     </>
   );
 };

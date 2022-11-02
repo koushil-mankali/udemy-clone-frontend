@@ -12,6 +12,7 @@ const Button1 = (props) => {
     hovBck = "rgba(0, 0, 0, 0.04)",
     link = false,
     onClick = () => {},
+    imageCss = {},
     extraCss = {},
   } = props;
   let [style, setStyle] = useState({
@@ -35,7 +36,7 @@ const Button1 = (props) => {
       onClick={onClick}
     >
       <span className={css.txtBox}>
-        {img ? <img src={img} className={css.btnImg} /> : ""}
+        {img ? <img src={img} className={css.btnImg} style={imageCss} /> : ""}
         <span className={css.txt}>{txt}</span>
       </span>
     </div>
@@ -52,7 +53,7 @@ const Button1 = (props) => {
         onClick={onClick}
       >
         <span className={css.txtBox}>
-          {img ? <img src={img} className={css.btnImg} /> : ""}
+          {img ? <img src={img} className={css.btnImg} style={imageCss} /> : ""}
           <span className={css.txt}>{txt}</span>
         </span>
       </Link>

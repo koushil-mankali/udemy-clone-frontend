@@ -1,0 +1,33 @@
+.outerDiv {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray);
+  color: var(--white);
+}
+
+.innerDiv {
+  width: 90%;
+  height: 100%;
+}
+
+.creds {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cred1 {
+  width: 100px;
+  height: 50px;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+.cred2 {
+}

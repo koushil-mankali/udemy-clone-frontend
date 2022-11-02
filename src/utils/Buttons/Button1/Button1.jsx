@@ -10,6 +10,7 @@ const Button1 = ({
   color = "#1c1d1f",
   hovBck = "rgba(0, 0, 0, 0.04)",
   onClick = () => {},
+  imageCss = {},
   extraCss = {},
   link = false,
 }) => {
@@ -30,11 +31,10 @@ const Button1 = ({
       className={css.btn}
       onClick={onClick}
     >
-      {img !== "" ? (
-        <img src={img} className={css.btnImg} />
-      ) : (
+      <span className={css.txtBox}>
+        {img ? <img src={img} className={css.btnImg} style={imageCss} /> : ""}
         <span className={css.txt}>{txt}</span>
-      )}
+      </span>
     </div>
   );
 
@@ -49,7 +49,7 @@ const Button1 = ({
         onClick={onClick}
       >
         <span className={css.txtBox}>
-          {img ? <img src={img} className={css.btnImg} /> : ""}
+          {img ? <img src={img} className={css.btnImg} style={imageCss} /> : ""}
           <span className={css.txt}>{txt}</span>
         </span>
       </Link>

@@ -11,6 +11,7 @@ const Button1 = (props) => {
     color = "#1c1d1f",
     hovBck = "rgba(0, 0, 0, 0.04)",
     link = false,
+    onClick = () => {},
     extraCss = {},
   } = props;
   let [style, setStyle] = useState({
@@ -32,6 +33,7 @@ const Button1 = (props) => {
       onMouseLeave={mouseLeaveHandler}
       style={{ ...style, ...extraCss }}
       className={css.btn}
+      onClick={onClick}
     >
       <span className={css.txtBox}>
         {img ? <img src={img} className={css.btnImg} /> : ""}
@@ -48,6 +50,7 @@ const Button1 = (props) => {
         onMouseLeave={mouseLeaveHandler}
         style={{ ...style, ...extraCss }}
         className={css.btn}
+        onClick={onClick}
       >
         <span className={css.txtBox}>
           {img ? <img src={img} className={css.btnImg} /> : ""}

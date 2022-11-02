@@ -1,8 +1,11 @@
 import React from "react";
 
 import TAG1 from "../../../utils/Tags/TAG1/TAG1";
+import Button1 from "../../../utils/Buttons/Button1/Button1";
 
 import css from "./CourseCard.module.css";
+
+import heartIcon from "/icons/heart.png";
 
 const CourseCard = (props) => {
   const {
@@ -38,6 +41,13 @@ const CourseCard = (props) => {
     hours?.toString().padStart(2, "0") +
     "." +
     minutes?.toString().padStart(1, "0");
+
+  let addToCartHandler = () => {
+    alert("Added to cart");
+  };
+  let addToWishListHandler = () => {
+    alert("Added to wish list");
+  };
 
   return (
     <div className={css.outerDiv}>
@@ -86,6 +96,38 @@ const CourseCard = (props) => {
             <div className={css.crseDetInerE}>Subtitles</div>
           </div>
           <div className={css.crsSubtxt}>{crsSubtxt}</div>
+          <ul className={css.list}>
+            <li className={css.listItem}>
+              <span className={css.tick}></span>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+              dolore reiciendis ea maiores eos eligendi architecto illo.
+              Cupiditate iure, vero, laboriosam laudantium perferendis odio
+              expedita quisquam culpa quae earum provident.
+            </li>
+            <li className={css.listItem}>
+              <span className={css.tick}></span>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora
+              ullam autem impedit porro veniam, laboriosam debitis eveniet
+              reprehenderit numquam atque inventore recusandae hic veritatis
+              similique officia? Rerum, nesciunt! Repudiandae, sint.
+            </li>
+          </ul>
+          <div className={css.btns}>
+            <Button1
+              onClick={addToCartHandler}
+              txt="Add to cart"
+              color="#fff"
+              bck="#a435f0"
+              hovBck="#8710d8"
+              extraCss={{ width: "100%", border: "none" }}
+            />
+            <Button1
+              onClick={addToWishListHandler}
+              txt=""
+              img={heartIcon}
+              extraCss={{ width: "30%", height: "80%", borderRadius: "80%" }}
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -9,6 +9,7 @@ const Button1 = ({
   bck = "white",
   color = "#1c1d1f",
   hovBck = "rgba(0, 0, 0, 0.04)",
+  onClick = () => {},
   extraCss = {},
   link = false,
 }) => {
@@ -27,6 +28,7 @@ const Button1 = ({
       onMouseLeave={mouseLeaveHandler}
       style={{ ...style, ...extraCss }}
       className={css.btn}
+      onClick={onClick}
     >
       {img !== "" ? (
         <img src={img} className={css.btnImg} />
@@ -44,6 +46,7 @@ const Button1 = ({
         onMouseLeave={mouseLeaveHandler}
         style={{ ...style, ...extraCss }}
         className={css.btn}
+        onClick={onClick}
       >
         <span className={css.txtBox}>
           {img ? <img src={img} className={css.btnImg} /> : ""}

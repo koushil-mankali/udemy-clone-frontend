@@ -1,0 +1,75 @@
+.outerDiv {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray100);
+  color: var(--gray);
+}
+
+.innerDiv {
+  width: 80%;
+  height: 100%;
+  margin: 3rem 0;
+}
+
+.ttl {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.bdy {
+  margin: 1rem 0;
+  display: flex;
+}
+
+.topic {
+  flex: 1;
+  min-width: 200px;
+}
+
+.catName {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
+
+.topicBdy {
+}
+
+.topicList {
+  margin: 1rem 0;
+}
+
+.topicName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration-thickness: 1px;
+}
+
+.topicStds {
+  margin: 0.5rem 0;
+  color: var(--light-gray);
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 768px) {
+  .bdy {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .ttl {
+    font-size: 1.5rem;
+  }
+
+  .catName {
+    font-size: 1.1rem;
+  }
+
+  .topicName {
+    font-size: 0.9rem;
+  }
+}

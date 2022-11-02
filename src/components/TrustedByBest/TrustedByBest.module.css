@@ -1,0 +1,51 @@
+.outerDiv {
+  width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray100);
+  color: var(--gray);
+}
+
+.innerDiv {
+  width: 80%;
+  height: 100%;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ttl {
+  font-size: 2rem;
+}
+
+.tagLine {
+  margin: 0.5rem 0;
+}
+
+.brands {
+  width: 100%;
+  margin: 1rem 0 0 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .img {
+    margin: 1rem;
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .innerDiv {
+    width: 90%;
+  }
+  .img {
+    margin: 0.5rem;
+  }
+}

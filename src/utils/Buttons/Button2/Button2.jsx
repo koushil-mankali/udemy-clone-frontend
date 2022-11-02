@@ -18,7 +18,6 @@ const Button1 = (props) => {
     backgroundColor: bck,
     color: color,
   });
-  console.log(extraCss, "extraCss");
 
   let mouseOverHandler = () => {
     return setStyle({ backgroundColor: hovBck, color: color });

@@ -2,6 +2,13 @@
   width: 250px;
   height: 300px;
   margin: 0.5rem;
+  position: relative;
+}
+
+.innerDiv {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 
 .imgBox {
@@ -69,4 +76,34 @@
   font-size: 1rem;
   text-decoration: line-through;
   color: var(--light-gray);
+}
+
+.hovCard {
+  display: none;
+}
+
+.outerDiv:hover .hovCard {
+  width: 330px;
+  min-height: 330px;
+  height: max-content;
+  padding: 1rem;
+  z-index: 1;
+  display: flex;
+  position: absolute;
+  top: -10%;
+  right: -130%;
+  background-color: transparent;
+}
+
+.innerBox {
+  padding: 1rem;
+  background-color: var(--white);
+  border: 1px solid var(--gray86);
+  box-shadow: 0 0 0 1px #d1d7dc, 0 2px 4px rgb(0 0 0 / 8%),
+    0 4px 12px rgb(0 0 0 / 8%);
+  cursor: pointer;
+}
+
+.shrtDet {
+  display: flex;
 }

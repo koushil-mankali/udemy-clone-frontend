@@ -1,0 +1,12 @@
+.tag {
+  width: max-content;
+  height: 25px;
+  color: var(--yellowish-green-dark);
+  background-color: var(--yellowish-green);
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import TAG1 from "../../../utils/Tags/TAG1/TAG1";
 import Button1 from "../../../utils/Buttons/Button1/Button1";
@@ -9,6 +10,7 @@ import heartIcon from "/icons/heart.png";
 
 const CourseCard = (props) => {
   const {
+    path = "/",
     img = "",
     ttl = "",
     authDet = "",
@@ -51,7 +53,7 @@ const CourseCard = (props) => {
 
   return (
     <div className={css.outerDiv}>
-      <div className={css.innerDiv}>
+      <Link className={css.innerDiv} to={path}>
         <div className={css.imgBox}>
           <img src={img} alt="course thumbnail" className={css.courseImg} />
         </div>
@@ -77,8 +79,11 @@ const CourseCard = (props) => {
               }).format(oldprc)}
             </span>
           </div>
+          <div className={css.tags}>
+            <TAG1 />
+          </div>
         </div>
-      </div>
+      </Link>
       <div className={css.hovCard}>
         <div className={css.innerBox}>
           <div className={css.ttl}>{ttl}</div>

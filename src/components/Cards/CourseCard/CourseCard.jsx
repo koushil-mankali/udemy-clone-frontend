@@ -16,6 +16,9 @@ const CourseCard = (props) => {
     updatedDate = new Intl.DateTimeFormat("en-IN", {
       dateStyle: "long",
     }).format(new Date()),
+    courseDuration = 1000000,
+    level = "Beginner Level",
+    crsSubtxt = "Python For Beginners : This course is meant for absolute beginners in programming or in python.",
   } = props;
 
   let totalRating = (
@@ -26,6 +29,15 @@ const CourseCard = (props) => {
     stars?.d +
     stars?.e
   ).toFixed(2);
+
+  let duration = new Date(courseDuration * 1000);
+  let hours = duration.getUTCHours();
+  let minutes = duration.getUTCMinutes();
+
+  let durationInHrs =
+    hours?.toString().padStart(2, "0") +
+    "." +
+    minutes?.toString().padStart(1, "0");
 
   return (
     <div className={css.outerDiv}>
@@ -61,9 +73,19 @@ const CourseCard = (props) => {
         <div className={css.innerBox}>
           <div className={css.ttl}>{ttl}</div>
           <div className={css.shrtDet}>
-            <TAG1 />
-            <div className={css.lstUpdt}>Updated {updatedDate}</div>
+            <div className={css.tags}>
+              <TAG1 />
+            </div>
+            <div className={css.lstUpdt}>
+              Updated <b>{updatedDate}</b>
+            </div>
           </div>
+          <div className={css.crseDet}>
+            <div className={css.crseDetInerS}>{durationInHrs} total hours</div>
+            <div className={css.crseDetInerM}>{level}</div>
+            <div className={css.crseDetInerE}>Subtitles</div>
+          </div>
+          <div className={css.crsSubtxt}>{crsSubtxt}</div>
         </div>
       </div>
     </div>

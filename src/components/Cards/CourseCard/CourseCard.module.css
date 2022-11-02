@@ -83,7 +83,7 @@
 }
 
 .outerDiv:hover .hovCard {
-  width: 330px;
+  width: 350px;
   min-height: 330px;
   height: max-content;
   padding: 1rem;
@@ -106,4 +106,43 @@
 
 .shrtDet {
   display: flex;
+}
+
+.tags {
+  margin: 0.5rem 0;
+}
+
+.lstUpdt {
+  color: var(--dark-teal2);
+  margin: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.crseDet {
+  letter-spacing: -0.01rem;
+  font-size: 0.8rem;
+  color: var(--light-gray);
+  display: flex;
+}
+
+.crseDetInerM {
+  margin: 0 0.5rem;
+}
+
+.crseDetInerM::after,
+.crseDetInerM::before {
+  content: " · ";
+}
+
+.crsSubtxt {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: var(--light-gray);
+  width: 100%;
+  line-height: 1.5em;
+  height: 3em;
+  font-size: 1rem;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

@@ -1,0 +1,72 @@
+.outerDiv {
+  width: 250px;
+  height: 300px;
+  margin: 0.5rem;
+}
+
+.imgBox {
+  width: 100%;
+  height: 50%;
+  border: 1px solid var(--gray86);
+}
+
+.courseImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardBdy {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.ttl {
+  width: 100%;
+  line-height: 1.5em;
+  height: 3em;
+  font-size: 1rem;
+  font-weight: bold;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--gray);
+}
+
+.authDet,
+.noOfRats {
+  font-size: 0.8rem;
+  color: var(--light-gray);
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+}
+
+.rat1 {
+  color: var(--glodish1);
+  font-weight: bold;
+}
+
+.rat2 {
+  margin: 0 0.5rem;
+  color: var(--glodish2);
+}
+
+.prc {
+  width: 100%;
+}
+
+.newPrc {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  color: var(--gray);
+}
+
+.oldPrc {
+  font-size: 1rem;
+  text-decoration: line-through;
+  color: var(--light-gray);
+}

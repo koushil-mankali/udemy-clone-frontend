@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import logo from "/images/logo-udemy-inverted.svg";
 import globeIcon from "/icons/globe.png";
@@ -12,10 +13,64 @@ const Footer = () => {
     <div className={css.outerDiv}>
       <div className={css.innerDiv}>
         <div className={css.clmns}>
-          <div className={css.clmn}></div>
-          <div className={css.clmn}></div>
-          <div className={css.clmn}></div>
-          <div className={[css.clmn, css.mr]}>
+          <div className={css.clmn}>
+            <ul className={css.cul}>
+              <li className={css.cli}>
+                <Link to="/">Udemy Bussiness</Link>
+              </li>
+              <li className={css.cli}>
+                <Link to="/">Teach on Udemy</Link>
+              </li>
+              <li className={css.cli}>
+                <Link to="/">Get the app</Link>
+              </li>
+              <li className={css.cli}>
+                <Link to="/">About us</Link>
+              </li>
+              <li className={css.cli}>
+                <Link to="/">Contact us</Link>
+              </li>
+            </ul>
+          </div>
+          <div className={css.clmn}>
+            <ul className={css.cul}>
+              <li className={css.cli}>
+                <Link to="/">Carrers</Link>
+              </li>
+              <li className={css.cli}>
+                <Link to="/">Blog</Link>
+              </li>
+              <li className={css.cli}>
+                <Link to="/">Help and Support</Link>
+              </li>
+              <li className={css.cli}>
+                <Link to="/">Affiliate</Link>
+              </li>
+              <li className={css.cli}>
+                <Link to="/">Investors</Link>
+              </li>
+            </ul>
+          </div>
+          <div className={css.clmn}>
+            <ul className={css.cul}>
+              <li className={css.cli}>
+                <Link to="/">Terms</Link>
+              </li>
+              <li className={css.cli}>
+                <Link to="/">Privacy policy</Link>
+              </li>
+              <li className={css.cli}>
+                <Link to="/">Cookie settings</Link>
+              </li>
+              <li className={css.cli}>
+                <Link to="/">Sitemap</Link>
+              </li>
+              <li className={css.cli}>
+                <Link to="/">Accessibility statement</Link>
+              </li>
+            </ul>
+          </div>
+          <div className={[css.lastChild, css.clmn].join(" ")}>
             <Button1
               img={globeIcon}
               txt="English"

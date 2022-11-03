@@ -13,6 +13,37 @@
   height: 100%;
 }
 
+.clmns {
+  width: 100%;
+  display: flex;
+  margin: 3rem 0;
+}
+
+.clmn {
+  flex: 1;
+  max-width: 300px;
+}
+
+.lastChild {
+  width: auto;
+  max-width: none;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.cli {
+  font-size: 0.9rem;
+  list-style: none;
+  margin: 0.5rem 0;
+}
+
+.cli > a {
+  text-decoration: none;
+  color: var(--white);
+}
+
 .creds {
   margin: 1rem 0;
   display: flex;
@@ -30,4 +61,22 @@
 }
 
 .cred2 {
+}
+
+@media screen and (max-width: 426px) {
+  .clmns {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0.5rem 0;
+  }
+  .clmn {
+    margin: 1rem 0;
+  }
+
+  .creds {
+    display: flex;
+    align-items: center;
+  }
 }

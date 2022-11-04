@@ -51,7 +51,7 @@ const Navbar = () => {
               color="#fff"
               hovBck="#000"
             />
-            <Button1 img={globeIcon} />
+            <Button1 img={globeIcon} txt="" />
           </div>
         </div>
       </div>

@@ -1,0 +1,92 @@
+.outerDiv {
+  width: 100%;
+  height: auto;
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--gray);
+}
+
+.innerDiv {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box1,
+.box2 {
+  width: 45%;
+}
+
+.ttl {
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+.desc {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 1440px) {
+  .innerDiv {
+    width: 65%;
+  }
+  .box1,
+  .box2 {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .outerDiv {
+    padding: 2rem;
+  }
+  .innerDiv {
+    width: 65%;
+  }
+  .box1 {
+    width: 50%;
+  }
+  .box2 {
+    width: 45%;
+  }
+  .ttl {
+    font-size: 1.8rem;
+  }
+
+  .desc {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .innerDiv {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .outerDiv {
+    padding: 1rem;
+  }
+  .innerDiv {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse !important;
+    width: 90%;
+  }
+
+  .box1,
+  .box2 {
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+}

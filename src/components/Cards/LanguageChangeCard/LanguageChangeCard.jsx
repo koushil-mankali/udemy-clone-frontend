@@ -31,7 +31,6 @@ const LanguageChangeCard = (props) => {
   ];
 
   let changeHandler = (e) => {
-    console.log(e);
     setActive(e.target.innerText || "");
   };
 

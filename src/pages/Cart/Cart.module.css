@@ -1,0 +1,78 @@
+.outerDiv {
+  width: 100%;
+  height: auto;
+  min-height: calc(100vh - 70px);
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: var(--gray);
+}
+
+.innerDiv {
+  width: 80%;
+  height: auto;
+}
+
+.ttl {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.boxs {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.box1 {
+  width: 73%;
+}
+
+.cnt,
+.totalTxt {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.box2 {
+  width: 25%;
+}
+
+.currrency {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.totalDiscount,
+.ttlDisPer {
+  color: var(--light-gray);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.totalDiscount {
+  text-decoration: line-through;
+}
+
+.ctxt {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.cpnBox {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.icon {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  margin: 0 1rem;
+}
+
+.cpnCode {
+}

@@ -3,6 +3,7 @@ import React from "react";
 import css from "./NotFound.module.css";
 
 import Navbar from "../../components/Navbar1/Navbar";
+import Footer from "../../components/Footer/Footer";
 import Button2 from "../../utils/Buttons/Button2/Button2";
 
 const NotFound = () => {
@@ -19,6 +20,7 @@ const NotFound = () => {
           color="#fff"
         />
       </div>
+      <Footer />
     </>
   );
 };

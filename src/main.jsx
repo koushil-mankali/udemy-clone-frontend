@@ -2,10 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 
-import Home1 from "./pages/home/home";
-import Login from "./pages/join/login/login";
-import Signup from "./pages/join/signup/signup";
-import NotFound from "./pages/not-found/not-found";
+import Home1 from "./pages/Home/Home";
+import Login from "./pages/Join/Login/Login";
+import Signup from "./pages/Join/Signup/Signup";
+import Cart from "./pages/Cart/Cart";
+import NotFound from "./pages/NotFound/NotFound";
 import "./index.css";
 import Test from "./pages/Test/Test";
 
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home1 />,
+  },
+  {
+    path: "/cart",
+    element: <Cart />,
   },
   {
     path: "/join/login",

@@ -22,7 +22,16 @@ const HomeShowcaseCard = (props) => {
         <div className={css.box1}>
           <div className={css.ttl}>{ttl}</div>
           <div className={css.desc}>{desc}</div>
-          <Button1 txt={btnTxt} link={btnLink} extraCss={{ margin: "0px" }} />
+          <Button1
+            txt={btnTxt}
+            link={btnLink}
+            extraCss={{
+              margin: "0px",
+              padding: "0.5rem",
+              color: "var(--white)",
+              backgroundColor: "var(--gray)",
+            }}
+          />
         </div>
         <div className={css.box2}>
           <img src={img} alt="show case image" className={css.img} />

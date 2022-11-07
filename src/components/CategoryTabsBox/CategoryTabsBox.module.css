@@ -1,0 +1,114 @@
+.outerDiv {
+  width: 80%;
+  height: auto;
+  color: var(--gray);
+}
+
+.ttl {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.desc {
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.innerDiv {
+}
+
+.tabs {
+  display: flex;
+}
+
+.tab {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0.5rem;
+  color: var(--gray86);
+  cursor: pointer;
+}
+
+.box {
+  width: 100%;
+  height: auto;
+  padding: 2rem;
+  margin: 0.5rem 0;
+  border: 1px solid var(--gray86);
+}
+
+.inBx1 {
+  width: 70%;
+}
+
+.bxTtl {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.bxdesc {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 1rem;
+  margin: 1rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 1024px) {
+  .inBx1 {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .outerDiv {
+    width: 90%;
+  }
+  .inBx1 {
+    width: 90%;
+  }
+
+  .ttl {
+    font-size: 1.8rem;
+  }
+
+  .desc {
+    font-size: 1rem;
+  }
+
+  .tab {
+    font-size: 1rem;
+  }
+
+  .bxTtl {
+    font-size: 1.2rem;
+  }
+
+  .bxdesc {
+    font-size: 0.8rem;
+  }
+
+  .btnStyle {
+    font-size: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .outerDiv {
+    width: 95%;
+  }
+  .ttl {
+    font-size: 1.5rem;
+  }
+
+  .desc {
+    font-size: 1rem;
+  }
+
+  .bxTtl {
+    font-size: 0.9rem;
+  }
+}

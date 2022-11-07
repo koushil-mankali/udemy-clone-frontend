@@ -12,6 +12,7 @@ const Button1 = ({
   onClick = () => {},
   imageCss = {},
   extraCss = {},
+  classNames = {},
   link = false,
 }) => {
   let [style, setStyle] = useState({ backgroundColor: bck, color: color });
@@ -22,13 +23,12 @@ const Button1 = ({
   let mouseLeaveHandler = () => {
     return setStyle({ backgroundColor: bck, color: color });
   };
-
   let btn = (
     <div
       onMouseOver={mouseOverHandler}
       onMouseLeave={mouseLeaveHandler}
       style={{ ...style, ...extraCss }}
-      className={css.btn}
+      className={[css.btn, classNames]?.join(" ")}
       onClick={onClick}
     >
       <span className={css.txtBox}>

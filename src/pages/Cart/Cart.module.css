@@ -29,6 +29,10 @@
   width: 73%;
 }
 
+.courses {
+  /* margin: 0.5rem 0; */
+}
+
 .cnt,
 .totalTxt {
   font-size: 1.1rem;
@@ -75,4 +79,5 @@
 }
 
 .cpnCode {
+  font-size: 1rem;
 }

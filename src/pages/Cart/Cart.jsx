@@ -7,11 +7,31 @@ import Footer from "../../components/Footer/Footer";
 import Button1 from "../../utils/Buttons/Button1/Button1";
 import InputUtil from "../../utils/FormUtils/InputUtil/InputUtil";
 
+import CheckoutCourseCard from "../../components/Cards/CheckoutCourseCard/CheckoutCourseCard";
+
 import crossIcon from "/icons/close.png";
 
 const Cart = () => {
   const [coupon, setCoupon] = useState("");
   const [appliedCoupon, setAppliedCoupon] = useState("");
+
+  const cartData = [
+    {
+      id: 1,
+      img: "",
+      link: "/",
+      ttl: "Learn Python: The complete python programming course",
+      authors: [],
+      ratings: { totalratings: 4.3, count: 3445 },
+      duration: 10000,
+      lectures: 146,
+      level: "All",
+      price: 649,
+      discount: 3399,
+      couponApplied: "koushil mankali",
+      bestSeller: true,
+    },
+  ];
 
   let clearCouponHandler = () => {
     setAppliedCoupon("");
@@ -35,6 +55,11 @@ const Cart = () => {
           <div className={css.boxs}>
             <div className={css.box1}>
               <div className={css.cnt}>1 Course in Cart</div>
+              <div className={css.courses}>
+                {cartData?.map((item) => {
+                  return <CheckoutCourseCard data={item} key={item.id} />;
+                })}
+              </div>
             </div>
             <div className={css.box2}>
               <div className={css.totalTxt}>Total:</div>

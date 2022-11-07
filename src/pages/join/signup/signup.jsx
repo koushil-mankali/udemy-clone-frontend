@@ -36,7 +36,11 @@ const Signup = () => {
   };
 
   let submitHandler = () => {
-    if (!state.email.includes("@") || state.password.length < 10) {
+    if (
+      !state.email.includes("@") ||
+      state.password.length < 10 ||
+      state.username.length < 5
+    ) {
       console.log("Error", state);
       return;
     }

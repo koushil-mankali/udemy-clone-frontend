@@ -6,16 +6,19 @@ import css from "./Navbar.module.css";
 import MobileNavbar from "./MobileNavbar";
 import SearchBar from "../../utils/SearchBar/SearchBar";
 import Button1 from "../../utils/Buttons/Button1/Button1";
+import LanguageChangeCard from "../Cards/LanguageChangeCard/LanguageChangeCard";
 
 import globeIcon from "/icons/globe.png";
 import hamburgerIcon from "/icons/hamburger.png";
 
 const Navbar = () => {
   let [menuState, setMenuState] = useState(false);
+  const [modal, setModal] = useState(false);
 
   return (
     <>
       <div className={css.navbar}>
+        {modal ? <LanguageChangeCard setModal={setModal} /> : ""}
         <div
           className={css.menuBox}
           onClick={() => setMenuState((prev) => !prev)}
@@ -51,7 +54,7 @@ const Navbar = () => {
               color="#fff"
               hovBck="#000"
             />
-            <Button1 img={globeIcon} txt="" />
+            <Button1 img={globeIcon} txt="" onClick={() => setModal(true)} />
           </div>
         </div>
       </div>

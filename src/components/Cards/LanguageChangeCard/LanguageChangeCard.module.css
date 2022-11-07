@@ -1,0 +1,87 @@
+.modalBC {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.modal {
+  width: 47%;
+  height: auto;
+  padding: 2rem;
+  background-color: var(--white);
+}
+
+.ttl {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ttl span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.modalBdy {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.langTxt {
+  min-width: 150px;
+  font-size: 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .modal {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modal {
+    width: 80%;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .modal {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .ttl span {
+    font-size: 1rem;
+  }
+
+  .modalBdy {
+    margin: 0.5rem 0;
+  }
+
+  .icon {
+    width: 10px;
+    height: 10px;
+  }
+
+  .langTxt {
+    min-width: 80px;
+    font-size: 0.8rem;
+  }
+}

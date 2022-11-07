@@ -43,11 +43,11 @@ const Navbar = () => {
             />
           </Link>
           <div className={css.btns}>
-            <Button1 txt="Login" link="/login" />
+            <Button1 txt="Login" link="/join/login" />
             <Button1
               txt="Sign up"
               bck="#1c1d1f"
-              link="/signup"
+              link="/join/signup"
               color="#fff"
               hovBck="#000"
             />

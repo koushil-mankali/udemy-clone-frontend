@@ -38,3 +38,19 @@ hr {
   box-shadow: 0 2px 2px 0 rgb(28 29 31 / 24%), 0 0 2px 0 rgb(28 29 31 / 12%);
   cursor: pointer;
 }
+
+.blck {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blck a {
+  color: var(--purple);
+  text-decoration: none;
+}
+
+.blckTxt {
+  margin: 0 0.5rem;
+}

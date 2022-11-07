@@ -35,6 +35,10 @@ const login = () => {
   };
 
   let submitHandler = () => {
+    if (!state.email.includes("@") || state.password.length < 10) {
+      console.log("Error", state);
+      return;
+    }
     console.log(state, "Form Values");
   };
 
@@ -96,7 +100,7 @@ const login = () => {
             </div>
             <div className={css.blck}>
               <span className={css.blckTxt}>Dont have an account?</span>
-              <Link to="/join/login" className={css.anchor}>
+              <Link to="/join/signup" className={css.anchor}>
                 <b>Signup</b>
               </Link>
             </div>

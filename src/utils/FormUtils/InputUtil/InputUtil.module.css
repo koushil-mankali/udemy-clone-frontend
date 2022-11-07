@@ -1,0 +1,28 @@
+.inptBox {
+  width: 100%;
+  border: 1px solid var(--gray);
+  margin: 0.7rem 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 0.5rem;
+}
+
+.inpt {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  color: var(--gray);
+  outline: none;
+  border: none;
+}
+
+.inpt:placeholder-shown {
+  color: var(--gray86);
+  font-weight: 600;
+}

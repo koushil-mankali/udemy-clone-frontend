@@ -5,11 +5,27 @@ import css from "./Cart.module.css";
 import Navbar from "../../components/Navbar1/Navbar";
 import Footer from "../../components/Footer/Footer";
 import Button1 from "../../utils/Buttons/Button1/Button1";
+import InputUtil from "../../utils/FormUtils/InputUtil/InputUtil";
 
 import crossIcon from "/icons/close.png";
 
 const Cart = () => {
   const [coupon, setCoupon] = useState("");
+  const [appliedCoupon, setAppliedCoupon] = useState("");
+
+  let clearCouponHandler = () => {
+    setAppliedCoupon("");
+  };
+
+  let setCouponHandler = (e) => {
+    setCoupon(e.target.value);
+  };
+
+  let submitCoupon = () => {
+    setAppliedCoupon(coupon);
+    console.log(coupon, "coupon");
+  };
+
   return (
     <>
       <Navbar />
@@ -48,21 +64,28 @@ const Cart = () => {
                 }}
               />
               <div className={css.ctxt}>Coupon code</div>
-              {coupon ? (
+              {appliedCoupon ? (
                 <div className={css.cpnBox}>
                   <img
                     src={crossIcon}
                     alt="close icon"
                     className={css.icon}
-                    onClick={() => setCoupon("")}
+                    onClick={clearCouponHandler}
                   />
                   <div className={css.cpnCode}>
-                    <b>{coupon}</b> is applied
+                    <b>{appliedCoupon}</b> is applied
                   </div>
                 </div>
               ) : (
                 ""
               )}
+              <InputUtil
+                type="text"
+                btnTxt="Apply"
+                onChange={setCouponHandler}
+                btnClick={submitCoupon}
+                extraCss={{ padding: "0.5rem" }}
+              />
             </div>
           </div>
         </div>

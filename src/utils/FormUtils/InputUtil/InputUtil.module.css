@@ -1,3 +1,9 @@
+.outerDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .inptBox {
   width: 100%;
   border: 1px solid var(--gray);

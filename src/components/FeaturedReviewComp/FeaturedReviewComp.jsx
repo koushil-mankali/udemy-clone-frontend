@@ -3,6 +3,7 @@ import { useState } from "react";
 import css from "./FeaturedReviewComp.module.css";
 
 import Button1 from "../../utils/Buttons/Button1/Button1";
+import CircleButton from "../../utils/Buttons/CircleButton/CircleButton";
 
 import TimeSinceFunc from "../../helpers/TimeSinceFunc.js";
 
@@ -59,8 +60,7 @@ const FeaturedReviewComp = (props) => {
         </div>
         <div className={css.fbkBox}>
           <div className={css.btns}>
-            <Button1
-              txt={null}
+            <CircleButton
               img={thumbsupIcon}
               extraCss={{
                 borderRadius: "50%",
@@ -73,8 +73,7 @@ const FeaturedReviewComp = (props) => {
               }}
               onClick={() => likeHandler("liked")}
             />
-            <Button1
-              txt={null}
+            <CircleButton
               img={thumbsdownIcon}
               extraCss={{
                 borderRadius: "50%",

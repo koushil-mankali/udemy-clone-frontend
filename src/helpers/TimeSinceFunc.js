@@ -13,7 +13,7 @@ function TimeSinceFunc(date) {
     }
     seconds -= interval * divisors[i];
   }
-
+  console.log(result);
   return result[0] + " ago";
 }
 

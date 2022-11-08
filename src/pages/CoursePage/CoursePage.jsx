@@ -209,7 +209,7 @@ const CoursePage = () => {
     courses: 23,
     reviews: 12,
     rated: 5,
-    date: "Sun Nov 06 2022",
+    date: "Sun Apr 04 2020",
     cmmt: "An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards",
   };
 

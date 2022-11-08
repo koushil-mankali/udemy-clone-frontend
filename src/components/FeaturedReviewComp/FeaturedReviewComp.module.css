@@ -1,3 +1,82 @@
 .outerDiv {
   width: 100%;
+  height: auto;
+  padding: 1.5rem;
+  color: var(--gray);
+  border: 1px solid var(--gray86);
+}
+
+.ttl {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.topSec {
+  margin: 1rem 0;
+  display: flex;
+}
+
+.imgBox {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.det {
+  margin: 0 1rem;
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.udet {
+  font-size: 0.9rem;
+}
+
+.rats {
+  font-size: 0.9rem;
+  color: var(--light-gray);
+}
+
+.tme {
+  margin-left: 0.5rem;
+}
+
+.cmmt {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.feedback {
+  margin-top: 1rem;
+}
+
+.fbkTxt {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--light-gray);
+}
+
+.fbkBox {
+  display: flex;
+  align-items: center;
+}
+
+.btns {
+  margin: 0.3rem 0;
+  display: flex;
+}
+
+.rpt {
+  margin: 0 1rem;
+  cursor: pointer;
+  text-decoration: underline;
 }

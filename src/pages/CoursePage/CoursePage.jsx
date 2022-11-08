@@ -6,6 +6,7 @@ import TextPointsNoter from "../../components/TextPointsNoter/TextPointsNoter";
 import CourseIncludesCard from "../../components/Cards/CourseIncludesCard/CourseIncludesCard";
 import CourseReqComp from "../../components/CourseReqComp/CourseReqComp";
 import CourseDescriptionComp from "../../components/CourseDescriptionComp/CourseDescriptionComp";
+import FeaturedReviewComp from "../../components/FeaturedReviewComp/FeaturedReviewComp";
 
 import playIcon from "/icons/play-button.png";
 import articleIcon from "/icons/application.png";
@@ -202,6 +203,16 @@ const CoursePage = () => {
   1914 translation by H. Rackham
   "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."`;
 
+  const featuredReviewUserData = {
+    img: "",
+    name: "Obada Q.",
+    courses: 23,
+    reviews: 12,
+    rated: 5,
+    date: "Sun Nov 06 2022",
+    cmmt: "An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards",
+  };
+
   return (
     <>
       <Navbar />
@@ -226,6 +237,9 @@ const CoursePage = () => {
             </div>
             <div className={css.boxSection}>
               <CourseDescriptionComp ttl="Description" desc={desc} />
+            </div>
+            <div className={css.boxSection}>
+              <FeaturedReviewComp data={featuredReviewUserData} />
             </div>
           </div>
           <div className={css.rightSidebar}></div>

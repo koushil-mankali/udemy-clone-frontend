@@ -9,9 +9,9 @@ const TextPointsNoter = (props) => {
       <div className={css.ttl}>{ttl}</div>
       <div className={css.bdy}>
         <ul className={css.ul}>
-          {points?.map((point) => {
+          {points?.map((point, id) => {
             return (
-              <li className={css.li} data-content={prefix}>
+              <li className={css.li} data-content={prefix} key={id}>
                 {point}
               </li>
             );

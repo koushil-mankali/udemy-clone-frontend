@@ -50,6 +50,141 @@ const CoursePage = () => {
     },
   ];
 
+  const courseDetails = {
+    secs: "15",
+    lects: "146",
+    duration: "14h 42m",
+  };
+
+  const courseData = [
+    {
+      ttl: "Getting Started",
+      lects: "10",
+      dur: "41min",
+      list: [
+        {
+          ttl: "Welcome to the Course!",
+          dur: "01:04",
+          preview: true,
+          type: "video",
+          desc: "",
+        },
+        {
+          ttl: "Welcome to the Course!",
+          dur: "01:04",
+          preview: true,
+          type: "video",
+          desc: "",
+        },
+        {
+          ttl: "Welcome to the Course!",
+          dur: "01:04",
+          preview: true,
+          type: "video",
+          desc: "",
+        },
+        {
+          ttl: "Welcome to the Course!",
+          dur: "01:04",
+          preview: true,
+          type: "doc",
+          desc: "This is a sample document description.",
+        },
+        {
+          ttl: "Welcome to the Course!",
+          dur: "01:04",
+          preview: false,
+          type: "doc",
+          desc: "This is a sample document description.",
+        },
+        {
+          ttl: "Welcome to the Course!",
+          dur: "01:04",
+          preview: true,
+          type: "video",
+          desc: "",
+        },
+        {
+          ttl: "Welcome to the Course!",
+          dur: "01:04",
+          preview: false,
+          type: "video",
+          desc: "",
+        },
+        {
+          ttl: "Welcome to the Course!",
+          dur: "01:04",
+          preview: false,
+          type: "query",
+          desc: "This is a sample document description.",
+        },
+      ],
+    },
+    {
+      ttl: "Javascript Refresher",
+      lects: "10",
+      dur: "41min",
+      list: [
+        {
+          ttl: "Welcome to the Course!",
+          dur: "01:04",
+          preview: true,
+          type: "video",
+          desc: "",
+        },
+        {
+          ttl: "Welcome to the Course!",
+          dur: "01:04",
+          preview: true,
+          type: "video",
+          desc: "",
+        },
+        {
+          ttl: "Welcome to the Course!",
+          dur: "01:04",
+          preview: true,
+          type: "video",
+          desc: "",
+        },
+        {
+          ttl: "Welcome to the Course!",
+          dur: "01:04",
+          preview: true,
+          type: "doc",
+          desc: "This is a sample document description.",
+        },
+        {
+          ttl: "Welcome to the Course!",
+          dur: "01:04",
+          preview: false,
+          type: "doc",
+          desc: "This is a sample document description.",
+        },
+        {
+          ttl: "Welcome to the Course!",
+          dur: "01:04",
+          preview: true,
+          type: "video",
+          desc: "",
+        },
+        {
+          ttl: "Welcome to the Course!",
+          dur: "01:04",
+          preview: false,
+          type: "video",
+          desc: "",
+        },
+        {
+          ttl: "Welcome to the Course!",
+          dur: "01:04",
+          preview: false,
+          type: "query",
+          desc: "This is a sample document description.",
+        },
+      ],
+    },
+  ];
+
   return (
     <>
       <Navbar />
@@ -57,13 +192,17 @@ const CoursePage = () => {
         <div className={css.innerDiv}>
           <div className={css.bodySec}>
             <TextPointsNoter data={Learnings} />
-            <div className={css.includesSec}>
+            <div className={css.boxSection}>
               <div className={css.secTtl}>This course includes:</div>
               <div className={css.secBdy}>
                 {courseIncludes?.map((item) => {
                   return <CourseIncludesCard key={item.id} data={item} />;
                 })}
               </div>
+            </div>
+            <div className={css.boxSection}>
+              <div className={css.secTtl}>Course content:</div>
+              <div className={css.secBdy}></div>
             </div>
           </div>
           <div className={css.rightSidebar}></div>

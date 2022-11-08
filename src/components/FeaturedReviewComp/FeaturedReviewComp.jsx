@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 
 import css from "./FeaturedReviewComp.module.css";
 
@@ -11,6 +11,12 @@ import thumbsdownIcon from "/icons/dislike.png";
 import thumbsupIcon from "/icons/like.png";
 
 const FeaturedReviewComp = (props) => {
+  const initObj = {
+    liked: false,
+    disliked: false,
+  };
+  const [liked, setLiked] = useState(initObj);
+
   const {
     profileImg = userprofileIcon,
     name = "",
@@ -20,6 +26,13 @@ const FeaturedReviewComp = (props) => {
     date = "",
     cmmt = "",
   } = props.data;
+
+  let likeHandler = (target) => {
+    setLiked((prev) => {
+      return { ...initObj, [target]: !prev[target] };
+    });
+  };
+
   return (
     <div className={css.outerDiv}>
       <div className={css.ttl}>Featured review</div>
@@ -39,7 +52,11 @@ const FeaturedReviewComp = (props) => {
       </div>
       <div className={css.cmmt}>{cmmt}</div>
       <div className={css.feedback}>
-        <div className={css.fbkTxt}>Was this review helpful?</div>
+        <div className={css.fbkTxt}>
+          {liked.liked || liked.disliked
+            ? "Thank you for your feedback"
+            : "Was this review helpful?"}
+        </div>
         <div className={css.fbkBox}>
           <div className={css.btns}>
             <Button1
@@ -47,16 +64,28 @@ const FeaturedReviewComp = (props) => {
               img={thumbsupIcon}
               extraCss={{
                 borderRadius: "50%",
+                ...{ backgroundColor: liked.liked ? "black" : "" },
               }}
-              imageCss={{ width: "16px", height: "16px" }}
+              imageCss={{
+                width: "16px",
+                height: "16px",
+                ...{ filter: liked.liked ? "invert(1)" : "" },
+              }}
+              onClick={() => likeHandler("liked")}
             />
             <Button1
               txt={null}
               img={thumbsdownIcon}
               extraCss={{
                 borderRadius: "50%",
+                ...{ backgroundColor: liked.disliked ? "black" : "" },
               }}
-              imageCss={{ width: "16px", height: "16px" }}
+              imageCss={{
+                width: "16px",
+                height: "16px",
+                ...{ filter: liked.disliked ? "invert(1)" : "" },
+              }}
+              onClick={() => likeHandler("disliked")}
             />
           </div>
           <div className={css.rpt}>Report</div>

@@ -1,5 +1,3 @@
-import React from "react";
-
 import Navbar from "../../components/Navbar1/Navbar";
 import Footer from "../../components//Footer/Footer";
 import TextPointsNoter from "../../components/TextPointsNoter/TextPointsNoter";

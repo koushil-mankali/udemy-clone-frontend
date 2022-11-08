@@ -1,0 +1,19 @@
+.outerDiv {
+  width: 100%;
+  height: auto;
+}
+
+.ttl {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.ul {
+  margin: 1rem 0;
+  list-style-position: inside;
+}
+
+.li {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}

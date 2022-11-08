@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar1/Navbar";
 import Footer from "../../components//Footer/Footer";
 import TextPointsNoter from "../../components/TextPointsNoter/TextPointsNoter";
 import CourseIncludesCard from "../../components/Cards/CourseIncludesCard/CourseIncludesCard";
+import CourseReqComp from "../../components/CourseReqComp/CourseReqComp";
 
 import playIcon from "/icons/play-button.png";
 import articleIcon from "/icons/application.png";
@@ -35,16 +36,6 @@ const CoursePage = () => {
     },
     {
       id: 3,
-      img: certificateIcon,
-      txt: "Certificate of completion",
-    },
-    {
-      id: 4,
-      img: articleIcon,
-      txt: "4 articles + resources",
-    },
-    {
-      id: 5,
       img: certificateIcon,
       txt: "Certificate of completion",
     },
@@ -185,6 +176,18 @@ const CoursePage = () => {
     },
   ];
 
+  const courseReq = {
+    ttl: "Requirements",
+    reqs: [
+      "JavaScript + HTML + CSS fundamentals are absolutely required",
+      "You DON'T need to be a JavaScript expert to succeed in this course!",
+      "ES6+ JavaScript knowledge is beneficial but not a must-have",
+      "NO prior React or any other JS framework experience is required!",
+    ],
+  };
+
+  const desc = "";
+
   return (
     <>
       <Navbar />
@@ -201,7 +204,14 @@ const CoursePage = () => {
               </div>
             </div>
             <div className={css.boxSection}>
-              <div className={css.secTtl}>Course content:</div>
+              <div className={css.secTtl}>Course content</div>
+              <div className={css.secBdy}></div>
+            </div>
+            <div className={css.boxSection}>
+              <CourseReqComp data={courseReq} />
+            </div>
+            <div className={css.boxSection}>
+              <div className={css.secTtl}>Description</div>
               <div className={css.secBdy}></div>
             </div>
           </div>

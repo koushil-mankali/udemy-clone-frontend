@@ -1,9 +1,13 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 import TagUtil from "../../../utils/Tags/TAG1/TAG1";
 import Button2 from "../../../utils/Buttons/Button2/Button2";
 
 import css from "./CheckoutCourseCard.module.css";
+
+import labelIcon from "/icons/label.png";
 
 const CheckoutCourseCard = (props) => {
   const { data } = props;
@@ -22,23 +26,26 @@ const CheckoutCourseCard = (props) => {
     couponApplied = "xxx",
     bestSeller = false,
   } = data;
+  console.log(authors, "authors");
   return (
-    <div className={css.outerDiv}>
+    <Link className={css.outerDiv} to={link}>
       <div className={css.box1}>
         <div className={css.imgBox}>
           <img src={img} alt="course thumbnail" className={css.img} />
         </div>
         <div className={css.det}>
           <div className={css.ttl}>{ttl}</div>
-          <div className={css.authors}>By {authors.toString()}</div>
+          <div className={css.authors}>
+            By {authors?.join(", ")?.toString()}
+          </div>
           <div className={css.ratings}>
-            <TagUtil />
+            {bestSeller ? <TagUtil /> : ""}
             <div className={css.rats}>
               <span className={css.num}>{ratings.totalratings}</span>
-              <span className={css.count}>{ratings.count}</span>
+              <span className={css.count}>({ratings.count} ratings)</span>
             </div>
           </div>
-          <div className={css.ttl}>
+          <div className={css.crsDet}>
             <span className={css.crsDet}>{duration} total hours</span>
             <span className={[css.crsDet, css.mid].join(" ")}>
               {lectures} lectures
@@ -47,34 +54,55 @@ const CheckoutCourseCard = (props) => {
           </div>
         </div>
       </div>
-      <div className={css.box2}>
-        <Button2
-          txt="Remove"
-          hovBck=""
-          extraCss={{
-            fontWeight: "400",
-            fontSize: "0.9rem",
-            color: "var(--purple)",
+      <div className={css.box23}>
+        <div
+          className={css.box2}
+          onClickCapture={(e) => {
+            e.preventDefault();
           }}
-        />
-        <Button2
-          txt="Save for Later"
-          hovBck=""
-          extraCss={{
-            fontWeight: "400",
-            fontSize: "0.9rem",
-            color: "var(--purple)",
-          }}
-        />
-      </div>
-      <div className={css.box3}>
-        <div>
-          <div>{price}</div>
-          <img src="" />
+        >
+          <Button2
+            txt="Remove"
+            hovBck=""
+            extraCss={{
+              fontWeight: "400",
+              fontSize: "0.9rem",
+              color: "var(--purple)",
+              margin: "0.2rem",
+              padding: "0",
+            }}
+          />
+          <Button2
+            txt="Save for Later"
+            hovBck=""
+            extraCss={{
+              fontWeight: "400",
+              fontSize: "0.9rem",
+              color: "var(--purple)",
+              margin: "0.2rem",
+              padding: "0",
+            }}
+          />
         </div>
-        <div>{discount}</div>
+        <div className={css.box3}>
+          <div className={css.priceDet}>
+            <div className={css.price}>
+              {new Intl.NumberFormat("en-IN", {
+                style: "currency",
+                currency: "INR",
+              }).format(price)}
+            </div>
+            <img src={labelIcon} alt="price tag" className={css.icon} />
+          </div>
+          <div className={css.dis}>
+            {new Intl.NumberFormat("en-IN", {
+              style: "currency",
+              currency: "INR",
+            }).format(discount)}
+          </div>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

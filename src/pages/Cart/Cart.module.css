@@ -35,6 +35,7 @@
 
 .cnt,
 .totalTxt {
+  margin: 0.5rem 0;
   font-size: 1.1rem;
   font-weight: 500;
 }
@@ -80,4 +81,35 @@
 
 .cpnCode {
   font-size: 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .innerDiv {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ttl {
+    font-size: 2rem;
+  }
+  .boxs {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .box1 {
+    margin: 1rem 0;
+    width: 100%;
+  }
+
+  .box2 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .outerDiv {
+    padding: 1rem;
+  }
 }

@@ -9,6 +9,7 @@ import InputUtil from "../../utils/FormUtils/InputUtil/InputUtil";
 
 import CheckoutCourseCard from "../../components/Cards/CheckoutCourseCard/CheckoutCourseCard";
 
+import cardImg from "/images/card.jpg";
 import crossIcon from "/icons/close.png";
 
 const Cart = () => {
@@ -18,10 +19,10 @@ const Cart = () => {
   const cartData = [
     {
       id: 1,
-      img: "",
+      img: cardImg,
       link: "/",
       ttl: "Learn Python: The complete python programming course",
-      authors: [],
+      authors: ["Koushil", "Nani"],
       ratings: { totalratings: 4.3, count: 3445 },
       duration: 10000,
       lectures: 146,

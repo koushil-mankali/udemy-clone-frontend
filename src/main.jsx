@@ -6,6 +6,7 @@ import Home1 from "./pages/Home/Home";
 import Login from "./pages/Join/Login/Login";
 import Signup from "./pages/Join/Signup/Signup";
 import Cart from "./pages/Cart/Cart";
+import CoursePage from "./pages/CoursePage/CoursePage";
 import NotFound from "./pages/NotFound/NotFound";
 import "./index.css";
 import Test from "./pages/Test/Test";
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/join/signup",
     element: <Signup />,
+  },
+  {
+    path: "/course/:id",
+    element: <CoursePage />,
   },
   {
     path: "/test",

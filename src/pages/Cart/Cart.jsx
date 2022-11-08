@@ -20,7 +20,7 @@ const Cart = () => {
     {
       id: 1,
       img: cardImg,
-      link: "/",
+      link: "/course/python",
       ttl: "Learn Python: The complete python programming course",
       authors: ["Koushil", "Nani"],
       ratings: { totalratings: 4.3, count: 3445 },

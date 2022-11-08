@@ -1,0 +1,39 @@
+.box {
+  width: 100%;
+  height: auto;
+  margin: 2rem 0;
+  padding: 1rem;
+  color: var(--gray);
+  border: 1px solid var(--gray86);
+}
+
+.ttl {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.bdy {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ul {
+  list-style-position: inside;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.li {
+  font-size: 0.9rem;
+  margin: 0.5rem;
+  list-style: none;
+}
+
+.li::before {
+  content: attr(data-content);
+  margin-right: 1rem;
+}

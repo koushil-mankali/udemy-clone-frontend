@@ -3,7 +3,7 @@ import React from "react";
 import css from "./TextPointsNoter.module.css";
 
 const TextPointsNoter = (props) => {
-  const { ttl, points, prefix = "✓" } = props;
+  const { ttl = "", points = [], prefix = "✓" } = props.data;
   return (
     <div className={css.box}>
       <div className={css.ttl}>{ttl}</div>

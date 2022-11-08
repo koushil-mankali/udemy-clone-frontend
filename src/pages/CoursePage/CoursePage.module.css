@@ -1,4 +1,19 @@
 .outerDiv {
   width: 100%;
   height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.innerDiv {
+  width: 70%;
+}
+
+.bodySec {
+  width: 65%;
+}
+
+.rightSidebar {
+  width: 35%;
 }

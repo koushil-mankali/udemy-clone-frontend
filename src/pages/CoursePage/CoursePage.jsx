@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import Navbar from "../../components/Navbar1/Navbar";
 import Footer from "../../components//Footer/Footer";
 import TextPointsNoter from "../../components/TextPointsNoter/TextPointsNoter";
@@ -7,10 +9,14 @@ import CourseDescriptionComp from "../../components/CourseDescriptionComp/Course
 import FeaturedReviewComp from "../../components/FeaturedReviewComp/FeaturedReviewComp";
 import StudentsAlsoBought from "../../components/StudentsAlsoBought/StudentsAlsoBought";
 import CourseInstructorComp from "../../components/CourseInstructorComp/CourseInstructorComp";
+import CourseCard from "../../components/Cards/CourseCard/CourseCard";
+
+import Button1 from "../../utils/Buttons/Button1/Button1";
 
 import playIcon from "/icons/play-button.png";
 import articleIcon from "/icons/application.png";
 import certificateIcon from "/icons/certificate.png";
+import cardImg from "/images/card.jpg";
 
 import css from "./CoursePage.module.css";
 
@@ -225,16 +231,47 @@ const CoursePage = () => {
       date: "Sun Apr 04 2020",
       cmmt: "An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards, An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards, An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards",
     },
+  ];
+
+  const moreCourses = [
     {
-      img: "",
-      name: "Obada Q.",
-      desc: "CEO of TheCodex.me - Teaching 500,000+ Students how to code",
-      courses: 23,
-      reviews: 12,
-      rating: 5,
-      students: 200,
-      date: "Sun Apr 04 2020",
-      cmmt: "An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards, An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards, An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards",
+      instructor: "Avinash",
+      link: "/",
+      courses: [
+        {
+          img: cardImg,
+          ttl: "Learn Python: The Complete Python Programming CourseLearn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more!Rating: 4.3 out of 53675 reviews14.5 total hours146 lecturesAll LevelsCurrent price: ₹649Original price: ₹3,399",
+          authDet: "Koushil Mankali, Nani",
+          prc: 649,
+          oldprc: 1338,
+          stars: { a: 5, b: 1, c: 1, d: 1, e: 1 },
+          noOfRats: 9,
+        },
+        {
+          img: cardImg,
+          ttl: "Learn Python: The Complete Python Programming CourseLearn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more!Rating: 4.3 out of 53675 reviews14.5 total hours146 lecturesAll LevelsCurrent price: ₹649Original price: ₹3,399",
+          authDet: "Koushil Mankali, Nani",
+          prc: 649,
+          oldprc: 1338,
+          stars: { a: 5, b: 1, c: 1, d: 1, e: 1 },
+          noOfRats: 9,
+        },
+      ],
+    },
+    {
+      instructor: "The codex",
+      link: "/",
+      courses: [
+        {
+          img: cardImg,
+          ttl: "Learn Python: The Complete Python Programming CourseLearn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more!Rating: 4.3 out of 53675 reviews14.5 total hours146 lecturesAll LevelsCurrent price: ₹649Original price: ₹3,399",
+          authDet: "Koushil Mankali, Nani",
+          prc: 649,
+          oldprc: 1338,
+          stars: { a: 5, b: 1, c: 1, d: 1, e: 1 },
+          noOfRats: 9,
+        },
+      ],
     },
   ];
 
@@ -270,11 +307,30 @@ const CoursePage = () => {
               <FeaturedReviewComp data={featuredReviewUserData} />
             </div>
             <div className={css.boxSection}>
-              <div className={css.secTtl}>Instructors</div>
+              <div className={css.secTtl}>
+                {instructorData?.length > 1 ? "Instructors" : "Instructor"}
+              </div>
               {instructorData?.map((item) => {
                 return <CourseInstructorComp key={item.id} data={item} />;
               })}
             </div>
+            {moreCourses?.map((course, id) => {
+              return (
+                <div className={css.boxSection} key={id}>
+                  <div className={css.secTtl}>
+                    More courses by{" "}
+                    <Link to={course.link}>{course.instructor}</Link>
+                  </div>
+                  <div className={css.secBdy}>
+                    {course.courses?.map((item) => {
+                      return <CourseCard key={item.id} data={item} />;
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+            <hr />
+            <Button1 txt="Report abuse" extraCss={{ width: "100%" }} />
           </div>
           <div className={css.rightSidebar}></div>
         </div>

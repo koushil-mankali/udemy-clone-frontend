@@ -10,7 +10,6 @@ import StudentsAlsoBought from "../../components/StudentsAlsoBought/StudentsAlso
 import playIcon from "/icons/play-button.png";
 import articleIcon from "/icons/application.png";
 import certificateIcon from "/icons/certificate.png";
-import courseImg from "/images/card.jpg";
 
 import css from "./CoursePage.module.css";
 
@@ -213,31 +212,6 @@ const CoursePage = () => {
     cmmt: "An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards",
   };
 
-  const coursesData = [
-    {
-      id: 1,
-      img: courseImg,
-      title: "Python for beginners",
-      duration: "2.3",
-      lastUpdatedOn: new Date(),
-      ratings: 4.3,
-      enrolled: 5000,
-      price: 3399,
-      wishListed: false,
-    },
-    {
-      id: 2,
-      img: courseImg,
-      title: "Javascript for beginners",
-      duration: "5.6",
-      lastUpdatedOn: new Date(),
-      ratings: 3.3,
-      enrolled: 3000,
-      price: 2499,
-      wishListed: true,
-    },
-  ];
-
   return (
     <>
       <Navbar />
@@ -264,10 +238,7 @@ const CoursePage = () => {
               <CourseDescriptionComp ttl="Description" desc={desc} />
             </div>
             <div className={css.boxSection}>
-              <StudentsAlsoBought
-                ttl="Students also bought"
-                coursesData={coursesData}
-              />
+              <StudentsAlsoBought ttl="Students also bought" />
             </div>
             <div className={css.boxSection}>
               <FeaturedReviewComp data={featuredReviewUserData} />

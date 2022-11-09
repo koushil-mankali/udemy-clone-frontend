@@ -10,12 +10,6 @@
 }
 
 .bdy {
-  height: 400px;
-  overflow-y: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.bdy::-webkit-scrollbar {
-  display: none;
+  height: min-content;
+  overflow: hidden;
 }

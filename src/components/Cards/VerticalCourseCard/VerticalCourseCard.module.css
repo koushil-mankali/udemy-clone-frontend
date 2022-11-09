@@ -1,0 +1,97 @@
+.outerDiv {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sec1 {
+  width: 100%;
+  flex: 1;
+  display: flex;
+}
+
+.imgBox {
+  width: 70px;
+  height: 70px;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.det {
+  max-width: calc(100% - 100px);
+  margin: 0 0.5rem;
+}
+
+.ttl {
+  font-size: 1rem;
+  font-weight: 700;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.crsDet {
+  margin: 0.2rem;
+  font-size: 0.9rem;
+}
+
+.crsDet span:first-of-type {
+  font-weight: 700;
+  color: var(--dark-teal2);
+}
+
+.crsDet span:nth-child(2)::after {
+  content: "·";
+  margin: 0 0.3rem;
+  font-weight: 800;
+}
+
+.crsDet span:last-of-type {
+  color: var(--gray);
+}
+
+.sec2 {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.rats {
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-weight: 700;
+  color: var(--glodish1);
+}
+
+.starIcon {
+  margin: 0.2rem;
+  width: 14px;
+  height: 14px;
+}
+
+.pplIcon {
+  margin: 0.2rem;
+  width: 16px;
+  height: 16px;
+}
+
+.prc {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 426px) {
+  .sec2 {
+    align-items: center;
+  }
+}

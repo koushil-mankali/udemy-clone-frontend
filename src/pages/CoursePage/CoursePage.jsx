@@ -1,4 +1,8 @@
+import { useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
+
+import LoginModal from "../../components/Auth/LoginModal/LoginModal";
 
 import Navbar from "../../components/Navbar1/Navbar";
 import Footer from "../../components//Footer/Footer";
@@ -21,6 +25,7 @@ import cardImg from "/images/card.jpg";
 import css from "./CoursePage.module.css";
 
 const CoursePage = () => {
+  const [modal, setModal] = useState(true);
   const Learnings = {
     ttl: "What you'll learn",
     points: [
@@ -277,6 +282,12 @@ const CoursePage = () => {
 
   return (
     <>
+      {modal
+        ? createPortal(
+            <LoginModal setModal={setModal} />,
+            document.getElementById("modal")
+          )
+        : ""}
       <Navbar />
       <div className={css.outerDiv}>
         <div className={css.innerDiv}>

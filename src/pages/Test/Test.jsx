@@ -1,7 +1,10 @@
 import React from "react";
+import { createPortal } from "react-dom";
 
 import cardImg from "/images/card.jpg";
 
+import LoginModal from "../../components/Auth/LoginModal/LoginModal";
+import SignupModal from "../../components/Auth/SignupModal/SignupModal";
 import CourseCard from "../../components/Cards/CourseCard/CourseCard";
 
 const Test = () => {
@@ -28,6 +31,8 @@ const Test = () => {
 
   return (
     <>
+      {/* {createPortal(<LoginModal />, document.getElementById("modal"))} */}
+      {createPortal(<SignupModal />, document.getElementById("modal"))}
       <h1>Test Page</h1>
       <hr />
       <div style={{ display: "flex" }}>

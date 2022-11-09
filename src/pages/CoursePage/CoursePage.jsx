@@ -6,6 +6,7 @@ import CourseReqComp from "../../components/CourseReqComp/CourseReqComp";
 import CourseDescriptionComp from "../../components/CourseDescriptionComp/CourseDescriptionComp";
 import FeaturedReviewComp from "../../components/FeaturedReviewComp/FeaturedReviewComp";
 import StudentsAlsoBought from "../../components/StudentsAlsoBought/StudentsAlsoBought";
+import CourseInstructorComp from "../../components/CourseInstructorComp/CourseInstructorComp";
 
 import playIcon from "/icons/play-button.png";
 import articleIcon from "/icons/application.png";
@@ -212,6 +213,31 @@ const CoursePage = () => {
     cmmt: "An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards",
   };
 
+  const instructorData = [
+    {
+      img: "",
+      name: "Obada Q.",
+      desc: "CEO of TheCodex.me - Teaching 500,000+ Students how to code",
+      courses: 23,
+      reviews: 12,
+      rating: 5,
+      students: 200,
+      date: "Sun Apr 04 2020",
+      cmmt: "An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards, An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards, An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards",
+    },
+    {
+      img: "",
+      name: "Obada Q.",
+      desc: "CEO of TheCodex.me - Teaching 500,000+ Students how to code",
+      courses: 23,
+      reviews: 12,
+      rating: 5,
+      students: 200,
+      date: "Sun Apr 04 2020",
+      cmmt: "An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards, An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards, An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards An amazing course to start building React applications, the instructor is extremely great, he explains everything in different ways and shows us all the possible ways to work with React. If you're thinking about taking your career to the next level and learn something trendy, I really advise you in this course. Lastly, I want to thank the instructor for such a lovely course, I wish you all the best. Regards",
+    },
+  ];
+
   return (
     <>
       <Navbar />
@@ -242,6 +268,12 @@ const CoursePage = () => {
             </div>
             <div className={css.boxSection}>
               <FeaturedReviewComp data={featuredReviewUserData} />
+            </div>
+            <div className={css.boxSection}>
+              <div className={css.secTtl}>Instructors</div>
+              {instructorData?.map((item) => {
+                return <CourseInstructorComp key={item.id} data={item} />;
+              })}
             </div>
           </div>
           <div className={css.rightSidebar}></div>

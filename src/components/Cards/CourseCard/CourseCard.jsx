@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import TAG1 from "../../../utils/Tags/TAG1/TAG1";
 import Button1 from "../../../utils/Buttons/Button1/Button1";
+import CircleButton from "../../../utils/Buttons/CircleButton/CircleButton";
 
 import css from "./CourseCard.module.css";
 
@@ -126,12 +127,7 @@ const CourseCard = (props) => {
               hovBck="#8710d8"
               extraCss={{ width: "100%", border: "none" }}
             />
-            <Button1
-              onClick={addToWishListHandler}
-              txt=""
-              img={heartIcon}
-              extraCss={{ width: "30%", height: "80%", borderRadius: "80%" }}
-            />
+            <CircleButton onClick={addToWishListHandler} img={heartIcon} />
           </div>
         </div>
       </div>

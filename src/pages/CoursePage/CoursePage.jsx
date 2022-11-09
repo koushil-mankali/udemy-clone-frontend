@@ -25,7 +25,7 @@ import cardImg from "/images/card.jpg";
 import css from "./CoursePage.module.css";
 
 const CoursePage = () => {
-  const [modal, setModal] = useState(true);
+  const [modal, setModal] = useState(false);
   const Learnings = {
     ttl: "What you'll learn",
     points: [

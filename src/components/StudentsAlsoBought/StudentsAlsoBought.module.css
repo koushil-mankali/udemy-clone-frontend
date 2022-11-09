@@ -1,0 +1,21 @@
+.outerDiv {
+  width: 100%;
+  height: auto;
+}
+
+.ttl {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.bdy {
+  height: 400px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.bdy::-webkit-scrollbar {
+  display: none;
+}

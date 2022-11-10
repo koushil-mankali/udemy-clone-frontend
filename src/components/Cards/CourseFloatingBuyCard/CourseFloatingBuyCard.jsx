@@ -86,7 +86,6 @@ const CourseFloatingBuyCard = (props) => {
               extraCss={{
                 width: "80%",
                 padding: "0.7rem",
-                border: "none",
                 margin: "0",
                 border: "1px solid var(--purple)",
               }}

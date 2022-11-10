@@ -1,18 +1,13 @@
-import { useState } from "react";
-import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 
-import LoginModal from "../../components/Auth/LoginModal/LoginModal";
-
-import Navbar from "../../components/Navbar1/Navbar";
-import Footer from "../../components//Footer/Footer";
+import Layout1 from "../Layout1/Layout1";
 import TextPointsNoter from "../../components/TextPointsNoter/TextPointsNoter";
 import CourseIncludesCard from "../../components/Cards/CourseIncludesCard/CourseIncludesCard";
-import CourseReqComp from "../../components/CourseReqComp/CourseReqComp";
-import CourseDescriptionComp from "../../components/CourseDescriptionComp/CourseDescriptionComp";
+import CourseReqComp from "../../components/CourseComponents/CourseReqComp/CourseReqComp";
+import CourseDescriptionComp from "../../components/CourseComponents/CourseDescriptionComp/CourseDescriptionComp";
 import FeaturedReviewComp from "../../components/FeaturedReviewComp/FeaturedReviewComp";
 import StudentsAlsoBought from "../../components/StudentsAlsoBought/StudentsAlsoBought";
-import CourseInstructorComp from "../../components/CourseInstructorComp/CourseInstructorComp";
+import CourseInstructorComp from "../../components/CourseComponents/CourseInstructorComp/CourseInstructorComp";
 import CourseCard from "../../components/Cards/CourseCard/CourseCard";
 
 import Button1 from "../../utils/Buttons/Button1/Button1";
@@ -25,7 +20,6 @@ import cardImg from "/images/card.jpg";
 import css from "./CoursePage.module.css";
 
 const CoursePage = () => {
-  const [modal, setModal] = useState(false);
   const Learnings = {
     ttl: "What you'll learn",
     points: [
@@ -282,71 +276,65 @@ const CoursePage = () => {
 
   return (
     <>
-      {modal
-        ? createPortal(
-            <LoginModal setModal={setModal} />,
-            document.getElementById("modal")
-          )
-        : ""}
-      <Navbar />
-      <div className={css.outerDiv}>
-        <div className={css.innerDiv}>
-          <div className={css.bodySec}>
-            <TextPointsNoter data={Learnings} />
-            <div className={css.boxSection}>
-              <div className={css.secTtl}>This course includes:</div>
-              <div className={css.secBdy}>
-                {courseIncludes?.map((item) => {
-                  return <CourseIncludesCard key={item.id} data={item} />;
+      <Layout1>
+        <div className={css.outerDiv}>
+          <div className={css.innerDiv}>
+            <div className={css.bodySec}>
+              <TextPointsNoter data={Learnings} />
+              <div className={css.boxSection}>
+                <div className={css.secTtl}>This course includes:</div>
+                <div className={css.secBdy}>
+                  {courseIncludes?.map((item) => {
+                    return <CourseIncludesCard key={item.id} data={item} />;
+                  })}
+                </div>
+              </div>
+              <div className={css.boxSection}>
+                <div className={css.secTtl}>Course content</div>
+                <div className={css.secBdy}></div>
+              </div>
+              <div className={css.boxSection}>
+                <CourseReqComp data={courseReq} />
+              </div>
+              <div className={css.boxSection}>
+                <CourseDescriptionComp ttl="Description" desc={desc} />
+              </div>
+              <div className={css.boxSection}>
+                <StudentsAlsoBought ttl="Students also bought" />
+              </div>
+              <div className={css.boxSection}>
+                <FeaturedReviewComp data={featuredReviewUserData} />
+              </div>
+              <div className={css.boxSection}>
+                <div className={css.secTtl}>
+                  {instructorData?.length > 1 ? "Instructors" : "Instructor"}
+                </div>
+                {instructorData?.map((item) => {
+                  return <CourseInstructorComp key={item.id} data={item} />;
                 })}
               </div>
-            </div>
-            <div className={css.boxSection}>
-              <div className={css.secTtl}>Course content</div>
-              <div className={css.secBdy}></div>
-            </div>
-            <div className={css.boxSection}>
-              <CourseReqComp data={courseReq} />
-            </div>
-            <div className={css.boxSection}>
-              <CourseDescriptionComp ttl="Description" desc={desc} />
-            </div>
-            <div className={css.boxSection}>
-              <StudentsAlsoBought ttl="Students also bought" />
-            </div>
-            <div className={css.boxSection}>
-              <FeaturedReviewComp data={featuredReviewUserData} />
-            </div>
-            <div className={css.boxSection}>
-              <div className={css.secTtl}>
-                {instructorData?.length > 1 ? "Instructors" : "Instructor"}
-              </div>
-              {instructorData?.map((item) => {
-                return <CourseInstructorComp key={item.id} data={item} />;
+              {moreCourses?.map((course, id) => {
+                return (
+                  <div className={css.boxSection} key={id}>
+                    <div className={css.secTtl}>
+                      More courses by{" "}
+                      <Link to={course.link}>{course.instructor}</Link>
+                    </div>
+                    <div className={css.secBdy}>
+                      {course.courses?.map((item) => {
+                        return <CourseCard key={item.id} data={item} />;
+                      })}
+                    </div>
+                  </div>
+                );
               })}
+              <hr />
+              <Button1 txt="Report abuse" extraCss={{ width: "100%" }} />
             </div>
-            {moreCourses?.map((course, id) => {
-              return (
-                <div className={css.boxSection} key={id}>
-                  <div className={css.secTtl}>
-                    More courses by{" "}
-                    <Link to={course.link}>{course.instructor}</Link>
-                  </div>
-                  <div className={css.secBdy}>
-                    {course.courses?.map((item) => {
-                      return <CourseCard key={item.id} data={item} />;
-                    })}
-                  </div>
-                </div>
-              );
-            })}
-            <hr />
-            <Button1 txt="Report abuse" extraCss={{ width: "100%" }} />
+            <div className={css.rightSidebar}></div>
           </div>
-          <div className={css.rightSidebar}></div>
         </div>
-      </div>
-      <Footer />
+      </Layout1>
     </>
   );
 };

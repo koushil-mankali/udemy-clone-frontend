@@ -1,8 +1,8 @@
 import React from "react";
 import css from "./Navbar.module.css";
 
-import SearchBar from "../../utils/SearchBar/SearchBar";
-import Button1 from "../../utils/Buttons/Button1/Button1";
+import SearchBar from "../../../utils/SearchBar/SearchBar";
+import Button1 from "../../../utils/Buttons/Button1/Button1";
 
 import cartIcon from "/icons/shopping-cart.png";
 

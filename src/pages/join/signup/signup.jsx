@@ -2,8 +2,7 @@ import { useState } from "react";
 
 import { Link } from "react-router-dom";
 
-import Navbar from "../../../components/Navbar1/Navbar";
-import Footer from "../../../components/Footer/Footer";
+import Layout1 from "../../Layout1/Layout1";
 
 import InputUtil from "../../../utils/FormUtils/InputUtil/InputUtil";
 import CheckboxUtil from "../../../utils/FormUtils/CheckboxUtil/CheckboxUtil";
@@ -49,80 +48,80 @@ const Signup = () => {
 
   return (
     <>
-      <Navbar />
-      <div className={css.outerDiv}>
-        <div className={css.loginBox}>
-          <div className={css.ttl}>Sign up and start learning</div>
-          <hr />
-          <div className={css.boxBdy}>
-            <InputUtil
-              type="text"
-              name="username"
-              state={state.username}
-              icon={user}
-              placeholderTxt="Username"
-              onChange={changeHanlder}
-            />
-            <InputUtil
-              type="email"
-              name="email"
-              state={state.email}
-              icon={email}
-              placeholderTxt="Email"
-              onChange={changeHanlder}
-            />
-            <InputUtil
-              type="password"
-              name="password"
-              state={state.password}
-              icon={lock}
-              placeholderTxt="Password"
-              onChange={changeHanlder}
-            />
-            <CheckboxUtil
-              label="Send me special offers, personalized recommendations, and learning tips."
-              type="checkbox"
-              name="checkbox"
-              id="checkbox"
-              state={state.check}
-              onChange={checkboxChangeHanlder}
-            />
-            <Button1
-              txt="Signup"
-              color="var(--white)"
-              bck="var(--purple)"
-              hovBck="var(--purple-dark)"
-              extraCss={{
-                width: "100%",
-                margin: "0",
-                border: "none",
-                padding: "1rem",
-              }}
-              onClick={submitHandler}
-            />
-            <div className={css.blck}>
-              <span className={css.blckTxt}>
-                By signing up, you agree to our
-                <Link to="/join/forgot-password" className={css.anchor}>
-                  Terms of Use
+      <Layout1>
+        <div className={css.outerDiv}>
+          <div className={css.loginBox}>
+            <div className={css.ttl}>Sign up and start learning</div>
+            <hr />
+            <div className={css.boxBdy}>
+              <InputUtil
+                type="text"
+                name="username"
+                state={state.username}
+                icon={user}
+                placeholderTxt="Username"
+                onChange={changeHanlder}
+              />
+              <InputUtil
+                type="email"
+                name="email"
+                state={state.email}
+                icon={email}
+                placeholderTxt="Email"
+                onChange={changeHanlder}
+              />
+              <InputUtil
+                type="password"
+                name="password"
+                state={state.password}
+                icon={lock}
+                placeholderTxt="Password"
+                onChange={changeHanlder}
+              />
+              <CheckboxUtil
+                label="Send me special offers, personalized recommendations, and learning tips."
+                type="checkbox"
+                name="checkbox"
+                id="checkbox"
+                state={state.check}
+                onChange={checkboxChangeHanlder}
+              />
+              <Button1
+                txt="Signup"
+                color="var(--white)"
+                bck="var(--purple)"
+                hovBck="var(--purple-dark)"
+                extraCss={{
+                  width: "100%",
+                  margin: "0",
+                  border: "none",
+                  padding: "1rem",
+                }}
+                onClick={submitHandler}
+              />
+              <div className={css.blck}>
+                <span className={css.blckTxt}>
+                  By signing up, you agree to our
+                  <Link to="/join/forgot-password" className={css.anchor}>
+                    Terms of Use
+                  </Link>
+                  and
+                  <Link to="/join/forgot-password" className={css.anchor}>
+                    Privacy Policy
+                  </Link>
+                  .
+                </span>
+              </div>
+              <div className={css.blck}>
+                <span className={css.blckTxt2}>Already have an account?</span>
+                <Link to="/join/login" className={css.anchor}>
+                  <b>Log in</b>
                 </Link>
-                and
-                <Link to="/join/forgot-password" className={css.anchor}>
-                  Privacy Policy
-                </Link>
-                .
-              </span>
-            </div>
-            <div className={css.blck}>
-              <span className={css.blckTxt2}>Already have an account?</span>
-              <Link to="/join/login" className={css.anchor}>
-                <b>Log in</b>
-              </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <Footer />
+      </Layout1>
     </>
   );
 };

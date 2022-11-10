@@ -2,8 +2,7 @@ import { useState } from "react";
 
 import { Link } from "react-router-dom";
 
-import Navbar from "../../../components/Navbar1/Navbar";
-import Footer from "../../../components/Footer/Footer";
+import Layout1 from "../../Layout1/Layout1";
 
 import InputUtil from "../../../utils/FormUtils/InputUtil/InputUtil";
 import Button1 from "../../../utils/Buttons/Button1/Button1";
@@ -44,75 +43,75 @@ const login = () => {
 
   return (
     <>
-      <Navbar />
-      <div className={css.outerDiv}>
-        <div className={css.loginBox}>
-          <div className={css.ttl}>Log in to your Udemy account</div>
-          <hr />
-          <div className={css.boxBdy}>
-            {oauth?.map((item, id) => {
-              return (
-                <div className={css.oauth} key={id}>
-                  <img src={item?.img} alt="login img" className={css.icon} />
-                  <span className={css.txt}>{item?.txt}</span>
-                </div>
-              );
-            })}
-            <InputUtil
-              type="email"
-              name="email"
-              state={state.email}
-              icon={email}
-              placeholderTxt="Email"
-              onChange={changeHanlder}
-            />
-            <InputUtil
-              type="password"
-              name="password"
-              state={state.password}
-              icon={lock}
-              placeholderTxt="Password"
-              onChange={changeHanlder}
-            />
-            <Button1
-              txt="Login"
-              color="var(--white)"
-              bck="var(--purple)"
-              hovBck="var(--purple-dark)"
-              extraCss={{
-                width: "100%",
-                margin: "0",
-                border: "none",
-                padding: "1rem",
-              }}
-              onClick={submitHandler}
-            />
-            <div className={css.blck}>
-              <span className={css.blckTxt}>or</span>
-              <Link to="/join/forgot-password" className={css.anchor}>
-                Forgot password
-              </Link>
-            </div>
-            <div className={css.blck}>
-              <Link to="/join/login" className={css.anchor}>
-                Log in to a different account
-              </Link>
-            </div>
-            <div className={css.blck}>
-              <span className={css.blckTxt}>Dont have an account?</span>
-              <Link to="/join/signup" className={css.anchor}>
-                <b>Signup</b>
-              </Link>
-            </div>
-            <div className={css.blck}>
-              <Link to="/join/login" className={css.anchor}>
-                <b>Login with your organization</b>
-              </Link>
+      <Layout1>
+        <div className={css.outerDiv}>
+          <div className={css.loginBox}>
+            <div className={css.ttl}>Log in to your Udemy account</div>
+            <hr />
+            <div className={css.boxBdy}>
+              {oauth?.map((item, id) => {
+                return (
+                  <div className={css.oauth} key={id}>
+                    <img src={item?.img} alt="login img" className={css.icon} />
+                    <span className={css.txt}>{item?.txt}</span>
+                  </div>
+                );
+              })}
+              <InputUtil
+                type="email"
+                name="email"
+                state={state.email}
+                icon={email}
+                placeholderTxt="Email"
+                onChange={changeHanlder}
+              />
+              <InputUtil
+                type="password"
+                name="password"
+                state={state.password}
+                icon={lock}
+                placeholderTxt="Password"
+                onChange={changeHanlder}
+              />
+              <Button1
+                txt="Login"
+                color="var(--white)"
+                bck="var(--purple)"
+                hovBck="var(--purple-dark)"
+                extraCss={{
+                  width: "100%",
+                  margin: "0",
+                  border: "none",
+                  padding: "1rem",
+                }}
+                onClick={submitHandler}
+              />
+              <div className={css.blck}>
+                <span className={css.blckTxt}>or</span>
+                <Link to="/join/forgot-password" className={css.anchor}>
+                  Forgot password
+                </Link>
+              </div>
+              <div className={css.blck}>
+                <Link to="/join/login" className={css.anchor}>
+                  Log in to a different account
+                </Link>
+              </div>
+              <div className={css.blck}>
+                <span className={css.blckTxt}>Dont have an account?</span>
+                <Link to="/join/signup" className={css.anchor}>
+                  <b>Signup</b>
+                </Link>
+              </div>
+              <div className={css.blck}>
+                <Link to="/join/login" className={css.anchor}>
+                  <b>Login with your organization</b>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <Footer />
+      </Layout1>
     </>
   );
 };

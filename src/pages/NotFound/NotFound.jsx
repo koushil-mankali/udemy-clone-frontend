@@ -2,8 +2,8 @@ import React from "react";
 
 import css from "./NotFound.module.css";
 
-import Navbar from "../../components/Navbar1/Navbar";
-import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/LayoutComponents/Navbar1/Navbar";
+import Footer from "../../components/LayoutComponents/Footer/Footer";
 import Button2 from "../../utils/Buttons/Button2/Button2";
 
 const NotFound = () => {

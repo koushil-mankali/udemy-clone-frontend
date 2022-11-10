@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Navbar from "../../components/Navbar1/Navbar";
+
+import Layout1 from "../Layout1/Layout1";
 import CategoryTabsBox from "../../components/CategoryTabsBox/CategoryTabsBox";
 import FeaturedTopics from "../../components/FeaturedTopics/FeaturedTopics";
 import TrustedByBest from "../../components/TrustedByBest/TrustedByBest";
 import HomeShowcaseCard from "../../components/Cards/HomeShowcaseCard/HomeShowcaseCard";
-import Footer from "../../components/Footer/Footer";
 
 import showcaseImg from "/images/showcase.jpg";
 
@@ -55,29 +55,29 @@ const Home1 = () => {
   };
   return (
     <>
-      <Navbar />
-      <h1>Home</h1>
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: "2rem",
-        }}
-      >
-        <CategoryTabsBox
-          clickHandler={clickHandler}
-          title="A broad selection of courses"
-          desc="Choose from 204,000 online video courses with new additions published every month"
-          data={categoryBoxData}
-          outerCss={{}}
-        />
-      </div>
-      <HomeShowcaseCard det={det} />
-      <TrustedByBest />
-      <FeaturedTopics />
-      <Footer />
+      <Layout1>
+        <h1>Home</h1>
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "2rem",
+          }}
+        >
+          <CategoryTabsBox
+            clickHandler={clickHandler}
+            title="A broad selection of courses"
+            desc="Choose from 204,000 online video courses with new additions published every month"
+            data={categoryBoxData}
+            outerCss={{}}
+          />
+        </div>
+        <HomeShowcaseCard det={det} />
+        <TrustedByBest />
+        <FeaturedTopics />
+      </Layout1>
     </>
   );
 };

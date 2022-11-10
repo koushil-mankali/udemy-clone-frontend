@@ -6,7 +6,7 @@ import globeIcon from "/icons/globe.png";
 
 import css from "./Footer.module.css";
 
-import Button1 from "../../utils/Buttons/Button1/Button1";
+import Button1 from "../../../utils/Buttons/Button1/Button1";
 
 const Footer = () => {
   return (

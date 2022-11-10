@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import css from "./Navbar.module.css";
 
 import MobileNavbar from "./MobileNavbar";
-import SearchBar from "../../utils/SearchBar/SearchBar";
-import Button1 from "../../utils/Buttons/Button1/Button1";
-import LanguageChangeCard from "../Cards/LanguageChangeCard/LanguageChangeCard";
+import SearchBar from "../../../utils/SearchBar/SearchBar";
+import Button1 from "../../../utils/Buttons/Button1/Button1";
+import LanguageChangeCard from "../../Cards/LanguageChangeCard/LanguageChangeCard";
 
 import globeIcon from "/icons/globe.png";
 import hamburgerIcon from "/icons/hamburger.png";

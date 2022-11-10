@@ -7,6 +7,7 @@ import InputUtil from "../../../utils/FormUtils/InputUtil/InputUtil";
 
 import alarmIcon from "/icons/alarm.png";
 import playIcon from "/icons/play.png";
+import heartIcon from "/icons/heart.png";
 
 const CourseFloatingBuyCard = (props) => {
   const {
@@ -75,13 +76,42 @@ const CourseFloatingBuyCard = (props) => {
             <b>{tmLeft} hours</b> left at this price!
           </span>
         </div>
-        <Button1
-          txt="Add to cart"
-          color="var(--white)"
-          bck="var(--purple)"
-          hovBck="var(--purple-dark)"
-          extraCss={{ width: "100%", padding: "0.7rem" }}
-        />
+        <div className={css.btns}>
+          <div className={css.btnsSec1}>
+            <Button1
+              txt="Add to cart"
+              color="var(--white)"
+              bck="var(--purple)"
+              hovBck="var(--purple-dark)"
+              extraCss={{
+                width: "80%",
+                padding: "0.7rem",
+                border: "none",
+                margin: "0",
+                border: "1px solid var(--purple)",
+              }}
+            />
+            <Button1
+              txt={null}
+              img={heartIcon}
+              extraCss={{
+                width: "15%",
+                margin: "0",
+                padding: "0.7rem",
+              }}
+            />
+          </div>
+          <div className={css.btnsSec2}>
+            <Button1
+              txt="Buy now"
+              extraCss={{
+                width: "100%",
+                padding: "0.7rem",
+                margin: "0.5rem 0",
+              }}
+            />
+          </div>
+        </div>
         <div className={css.crsePmtDtTxt}>30-Day Money-Back Guarantee</div>
         <div className={css.crsePmtDtTxt}>Full Lifetime Access</div>
         <div className={css.crsePmtDtExSec}>
@@ -105,12 +135,23 @@ const CourseFloatingBuyCard = (props) => {
               btnTxt="Apply"
               onChange={(e) => setCoupon(e.target.value)}
               btnClick={() => console.log(coupon, "coupon")}
-              extraCss={{ height: "41px" }}
+              extraCss={{ height: "42px" }}
             />
           ) : (
             ""
           )}
         </div>
+      </div>
+      <hr />
+      <div className={css.footerSec}>
+        <div className={css.fooTtl}>Training 5 or more people?</div>
+        <div className={css.fooDesc}>
+          Get your team access to 17,000+ top Udemy courses anytime, anywhere.
+        </div>
+        <Button1
+          txt="Try Udemy Business"
+          extraCss={{ width: "100%", padding: "0.7rem", margin: 0 }}
+        />
       </div>
     </div>
   );

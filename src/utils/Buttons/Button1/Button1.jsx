@@ -33,7 +33,7 @@ const Button1 = ({
     >
       <span className={css.txtBox}>
         {img ? <img src={img} className={css.btnImg} style={imageCss} /> : ""}
-        <span className={css.txt}>{txt}</span>
+        {txt ? <span className={css.txt}>{txt}</span> : null}
       </span>
     </div>
   );
@@ -50,7 +50,7 @@ const Button1 = ({
       >
         <span className={css.txtBox}>
           {img ? <img src={img} className={css.btnImg} style={imageCss} /> : ""}
-          <span className={css.txt}>{txt}</span>
+          {txt ? <span className={css.txt}>{txt}</span> : null}
         </span>
       </Link>
     );

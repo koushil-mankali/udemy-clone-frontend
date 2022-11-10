@@ -1,11 +1,11 @@
 .outerDiv {
   width: 350px;
-  height: 600px;
+  height: max-content;
   background-color: var(--white);
   position: absolute;
   top: 15%;
   right: 12%;
-  color: orange;
+  color: var(--gray);
   box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
 }
 
@@ -78,20 +78,18 @@
 }
 
 .prc {
-  margin: 0.5rem 0;
   font-size: 2rem;
   font-weight: 700;
 }
 .dscPrc {
   font-size: 0.9rem;
   text-decoration: line-through;
-  color: var(--gray86);
+  color: var(--light-gray);
   margin: 0 0.5rem;
 }
 
 .tmLeft {
   color: var(--red);
-  margin: 0.5rem 0;
 }
 
 .cicon {
@@ -100,6 +98,19 @@
   filter: brightness(0) saturate(100%) invert(43%) sepia(70%) saturate(2307%)
     hue-rotate(340deg) brightness(94%) contrast(103%);
   margin-right: 0.5rem;
+}
+
+.btns {
+  margin: 0.5rem 0;
+}
+
+.btnsSec1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btnsSec2 {
+  width: 100%;
 }
 
 .crsePmtDtTxt {
@@ -117,15 +128,30 @@
 }
 
 .innCrsePmtDtExSec {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 0.2rem;
+  cursor: pointer;
 }
 
 .inptBox {
   width: 100%;
   margin: 1rem 0;
+}
+
+.footerSec {
+  padding: 1rem;
+}
+
+.fooTtl {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.fooDesc {
+  font-size: 0.9rem;
+  margin: 0.7rem 0;
 }
 
 @media screen and (max-width: 1024px) {

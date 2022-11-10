@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import Layout1 from "../Layout1/Layout1";
+import CourseHeaderComp from "../../components/CourseComponents/CourseHeaderComp/CourseHeaderComp";
 import TextPointsNoter from "../../components/TextPointsNoter/TextPointsNoter";
 import CourseIncludesCard from "../../components/Cards/CourseIncludesCard/CourseIncludesCard";
 import CourseReqComp from "../../components/CourseComponents/CourseReqComp/CourseReqComp";
@@ -220,8 +221,9 @@ const CoursePage = () => {
 
   const instructorData = [
     {
+      id: 1,
       img: "",
-      name: "Obada Q.",
+      name: "Avinash",
       desc: "CEO of TheCodex.me - Teaching 500,000+ Students how to code",
       courses: 23,
       reviews: 12,
@@ -234,10 +236,12 @@ const CoursePage = () => {
 
   const moreCourses = [
     {
+      id: "1",
       instructor: "Avinash",
       link: "/",
       courses: [
         {
+          id: "c1",
           img: cardImg,
           ttl: "Learn Python: The Complete Python Programming CourseLearn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more!Rating: 4.3 out of 53675 reviews14.5 total hours146 lecturesAll LevelsCurrent price: ₹649Original price: ₹3,399",
           authDet: "Koushil Mankali, Nani",
@@ -247,6 +251,7 @@ const CoursePage = () => {
           noOfRats: 9,
         },
         {
+          id: "c2",
           img: cardImg,
           ttl: "Learn Python: The Complete Python Programming CourseLearn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more!Rating: 4.3 out of 53675 reviews14.5 total hours146 lecturesAll LevelsCurrent price: ₹649Original price: ₹3,399",
           authDet: "Koushil Mankali, Nani",
@@ -258,10 +263,12 @@ const CoursePage = () => {
       ],
     },
     {
+      id: "2",
       instructor: "The codex",
       link: "/",
       courses: [
         {
+          id: "c21",
           img: cardImg,
           ttl: "Learn Python: The Complete Python Programming CourseLearn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more!Rating: 4.3 out of 53675 reviews14.5 total hours146 lecturesAll LevelsCurrent price: ₹649Original price: ₹3,399",
           authDet: "Koushil Mankali, Nani",
@@ -274,10 +281,29 @@ const CoursePage = () => {
     },
   ];
 
+  const courseDetData = {
+    img: cardImg,
+    id: 1,
+    ttl: "Learn Python: The Complete Python Programming Course",
+    desc: "Learn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more!",
+    price: 3299,
+    discPrice: 600,
+    disc: 85,
+    tmLeft: 7,
+    rating: 4.3,
+    rats: 3788,
+    enrolled: 21000,
+    authors: ["Avinash", "The Codex"],
+    lastUpdated: new Date(),
+    lang: "English",
+    subTtl: "English",
+  };
+
   return (
     <>
       <Layout1>
         <div className={css.outerDiv}>
+          <CourseHeaderComp data={courseDetData} />
           <div className={css.innerDiv}>
             <div className={css.bodySec}>
               <TextPointsNoter data={Learnings} />
@@ -317,7 +343,7 @@ const CoursePage = () => {
                 return (
                   <div className={css.boxSection} key={id}>
                     <div className={css.secTtl}>
-                      More courses by{" "}
+                      More courses by
                       <Link to={course.link}>{course.instructor}</Link>
                     </div>
                     <div className={css.secBdy}>

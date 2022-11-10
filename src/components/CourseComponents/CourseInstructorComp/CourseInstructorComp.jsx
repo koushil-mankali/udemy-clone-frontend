@@ -31,7 +31,7 @@ const CourseInstructorComp = (props) => {
   };
 
   return (
-    <div className={css.outerDiv}>
+    <div className={css.outerDiv} id={`author-${name}`}>
       <Link to={link} className={css.name}>
         {name}
       </Link>

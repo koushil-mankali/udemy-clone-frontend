@@ -15,7 +15,7 @@ const Layout1 = ({ modal = false, setModal = () => {}, children }) => {
         : ""}
       <Navbar />
       {children}
-      <Footer />;
+      <Footer />
     </>
   );
 };

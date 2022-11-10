@@ -1,93 +1,19 @@
 .outerDiv {
-  width: 100%;
-  height: auto;
-  padding: 2rem 0;
-  display: flex;
-  justify-content: center;
-  color: var(--white);
-  background-color: var(--gray);
-  position: relative;
-}
-
-.innerDiv {
-  width: 70%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.leftDiv {
-  width: 60%;
-}
-
-.ttl {
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.desc {
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin: 0.5rem 0;
-}
-
-.rats {
-  display: flex;
-}
-
-.rating {
-}
-
-.ratss {
-  margin: 0 0.5rem;
-}
-
-.enrolled {
-}
-
-.authors {
-  margin: 0.5rem 0;
-  display: flex;
-}
-
-.authors > a {
-  margin: 0 0.2rem;
-  color: var(--indigo200);
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.authorSpn::after {
-  content: ", ";
-}
-
-.det {
-  display: flex;
-  align-items: center;
-}
-
-.lastUpdated,
-.lang,
-.subTtl {
-  margin-right: 0.5rem;
-}
-
-.icon {
-  width: 14px;
-  height: 14px;
-  margin-right: 0.5rem;
-}
-
-.rightDiv {
-  width: 30%;
-  position: relative;
-  visibility: hidden;
+  width: 350px;
+  height: 600px;
+  background-color: var(--white);
+  position: absolute;
+  top: 15%;
+  right: 12%;
+  color: orange;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
 }
 
 .innRightDiv {
   width: 100%;
-  height: 80%;
-  position: relative;
+  height: 35%;
   cursor: pointer;
+  position: relative;
 }
 
 .imgBox {
@@ -143,7 +69,7 @@
 }
 
 .crsePmtDt {
-  display: none;
+  padding: 1rem;
 }
 
 .prcDet {
@@ -203,58 +129,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .innerDiv {
-    flex-direction: column-reverse;
-  }
-
-  .rightDiv {
-    visibility: visible;
-  }
-
-  .innRightDiv {
-    height: 90%;
-  }
-
-  .leftDiv {
-    width: 100%;
-  }
-
-  .rightDiv {
-    width: 100%;
-  }
-
-  .crsePmtDt {
-    width: 100%;
-    margin-top: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 426px) {
-  .innerDiv {
-    width: 90%;
-  }
-  .ttl {
-    font-size: 1.5rem;
-  }
-
-  .desc {
-    font-size: 1rem;
-  }
-
-  .prc {
-    font-size: 1.8rem;
-  }
-}
-
-@media screen and (max-width: 426px) {
-  .crsePmtDtExSec {
-    flex-direction: column;
-    align-items: center;
-  }
-  .innCrsePmtDtExSec {
-    margin: 0.5rem 0;
+  .outerDiv {
+    display: none;
   }
 }

@@ -4,13 +4,16 @@ import css from "./CourseHeaderComp.module.css";
 
 import Button1 from "../../../utils/Buttons/Button1/Button1";
 import InputUtil from "../../../utils/FormUtils/InputUtil/InputUtil";
+import CourseFloatingBuyCard from "../../Cards/CourseFloatingBuyCard/CourseFloatingBuyCard";
 
 import captionIcon from "/icons/caption.png";
 import globIcon from "/icons/globe.png";
 import warningIcon from "/icons/warning.png";
 import playIcon from "/icons/play.png";
+import alarmIcon from "/icons/alarm.png";
 
 const CourseHeaderComp = (props) => {
+  const [scrolled, setScrolled] = useState(false);
   const [applyCoupon, setApplyCoupon] = useState(false);
   const [coupon, setCoupon] = useState("");
   const [shareModal, setShareModal] = useState(false);
@@ -30,8 +33,27 @@ const CourseHeaderComp = (props) => {
     lang = "English",
     subTtl = "English",
   } = props?.data;
+
+  window.addEventListener("scroll", () => {
+    if (document.body.scrollHeight - window?.pageYOffset <= 1026) {
+      return setScrolled(false);
+    }
+    if (window?.pageYOffset >= 375) {
+      return setScrolled(true);
+    }
+
+    setScrolled(false);
+  });
   return (
     <div className={css.outerDiv}>
+      <CourseFloatingBuyCard
+        scrolled={scrolled}
+        data={props.data}
+        setCoupon={setCoupon}
+        applyCoupon={applyCoupon}
+        setApplyCoupon={setApplyCoupon}
+        setShareModal={setShareModal}
+      />
       <div className={css.innerDiv}>
         <div className={css.leftDiv}>
           <div className={css.ttl}>{ttl}</div>
@@ -79,11 +101,26 @@ const CourseHeaderComp = (props) => {
             </div>
           </div>
           <div className={css.crsePmtDt}>
-            <div className={css.prc}>
-              {new Intl.NumberFormat("en-IN", {
-                style: "currency",
-                currency: "INR",
-              }).format(price)}
+            <div className={css.prcDet}>
+              <div className={css.prc}>
+                {new Intl.NumberFormat("en-IN", {
+                  style: "currency",
+                  currency: "INR",
+                }).format(price)}
+              </div>
+              <div className={css.dscPrc}>
+                {new Intl.NumberFormat("en-IN", {
+                  style: "currency",
+                  currency: "INR",
+                }).format(discPrice)}
+              </div>
+              <div className={css.desc}>{disc}% off</div>
+            </div>
+            <div className={css.tmLeft}>
+              <img src={alarmIcon} alt="clock icon" className={css.cicon} />
+              <span>
+                <b>{tmLeft} hours</b> left at this price!
+              </span>
             </div>
             <Button1
               txt="Add to cart"

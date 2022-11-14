@@ -48,6 +48,7 @@
 }
 
 .icon {
+  margin-right: 0.5rem;
   width: 12px;
   height: 12px;
 }
@@ -69,10 +70,10 @@
   border: none;
 }
 
-.icon {
-  margin-right: 0.5rem;
-  width: 14px;
-  height: 14px;
+.sicon {
+  margin-left: 0.5rem;
+  width: 10px;
+  height: 10px;
 }
 
 .coverup {

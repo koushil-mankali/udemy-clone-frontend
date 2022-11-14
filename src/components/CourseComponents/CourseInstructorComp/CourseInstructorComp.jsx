@@ -61,7 +61,9 @@ const CourseInstructorComp = (props) => {
       </div>
       <div
         className={css.cmmt}
-        style={{ height: toggle ? "max-content" : "200px" }}
+        style={{
+          height: toggle ? "max-content" : "200px",
+        }}
       >
         {cmmt}
         <div className={css.coverup}></div>
@@ -72,7 +74,7 @@ const CourseInstructorComp = (props) => {
           style={{ transform: toggle ? "rotate(180deg)" : "none" }}
           src={downArrowImg}
           alt="down arrow"
-          className={css.icon}
+          className={css.sicon}
         />
       </button>
     </div>

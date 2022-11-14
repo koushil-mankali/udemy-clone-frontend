@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import Layout1 from "../Layout1/Layout1";
@@ -10,6 +11,7 @@ import FeaturedReviewComp from "../../components/FeaturedReviewComp/FeaturedRevi
 import StudentsAlsoBought from "../../components/StudentsAlsoBought/StudentsAlsoBought";
 import CourseInstructorComp from "../../components/CourseComponents/CourseInstructorComp/CourseInstructorComp";
 import CourseCard from "../../components/Cards/CourseCard/CourseCard";
+import ShareCourseCard from "../../components/Cards/ShareCourseCard/ShareCourseCard";
 
 import Button1 from "../../utils/Buttons/Button1/Button1";
 
@@ -21,6 +23,7 @@ import cardImg from "/images/card.jpg";
 import css from "./CoursePage.module.css";
 
 const CoursePage = () => {
+  const [shareModal, setShareModal] = useState(false);
   const Learnings = {
     ttl: "What you'll learn",
     points: [
@@ -301,9 +304,20 @@ const CoursePage = () => {
 
   return (
     <>
+      {shareModal ? (
+        <ShareCourseCard
+          ttl="Share this Course"
+          txt={location.href}
+          btnTxt="Copy"
+          closeModal={() => setShareModal(false)}
+        />
+      ) : null}
       <Layout1>
         <div className={css.outerDiv}>
-          <CourseHeaderComp data={courseDetData} />
+          <CourseHeaderComp
+            data={courseDetData}
+            setShareModal={setShareModal}
+          />
           <div className={css.innerDiv}>
             <div className={css.bodySec}>
               <TextPointsNoter data={Learnings} />

@@ -13,10 +13,11 @@ import playIcon from "/icons/play.png";
 import alarmIcon from "/icons/alarm.png";
 
 const CourseHeaderComp = (props) => {
+  const { setShareModal } = props;
   const [scrolled, setScrolled] = useState(false);
   const [applyCoupon, setApplyCoupon] = useState(false);
   const [coupon, setCoupon] = useState("");
-  const [shareModal, setShareModal] = useState(false);
+
   const {
     img = "",
     ttl = "xxxx",

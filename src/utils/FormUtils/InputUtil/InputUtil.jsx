@@ -17,6 +17,7 @@ const InputUtil = (props) => {
     inptBoxCss = {},
     imgCss = {},
     extraCss = {},
+    btnCss = {},
   } = props;
   return (
     <div className={css.outerDiv}>
@@ -43,7 +44,9 @@ const InputUtil = (props) => {
             margin: "0",
             padding: "10px",
             width: "30%",
+            height: "100%",
             borderLeft: "none",
+            ...btnCss,
           }}
         />
       ) : (

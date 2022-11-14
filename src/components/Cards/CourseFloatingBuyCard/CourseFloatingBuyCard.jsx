@@ -27,7 +27,7 @@ const CourseFloatingBuyCard = (props) => {
     subTtl = "English",
   } = props?.data;
 
-  const { scrolled, setCoupon, applyCoupon, setApplyCoupon, setShareModa } =
+  const { scrolled, setCoupon, applyCoupon, setApplyCoupon, setShareModal } =
     props;
 
   const styleGuide = {

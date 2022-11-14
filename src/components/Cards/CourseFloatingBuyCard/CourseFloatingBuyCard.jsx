@@ -84,7 +84,7 @@ const CourseFloatingBuyCard = (props) => {
               bck="var(--purple)"
               hovBck="var(--purple-dark)"
               extraCss={{
-                width: "80%",
+                width: "83%",
                 padding: "0.7rem",
                 margin: "0",
                 border: "1px solid var(--purple)",

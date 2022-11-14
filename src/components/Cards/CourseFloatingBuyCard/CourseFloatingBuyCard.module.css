@@ -122,7 +122,7 @@
 
 .crsePmtDtExSec {
   margin-top: 1rem;
-  margin-bottom: -1rem;
+  margin-bottom: 0rem;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -138,7 +138,8 @@
 
 .inptBox {
   width: 100%;
-  margin: 1rem 0;
+  margin-top: 1rem;
+  margin-bottom: -2rem;
 }
 
 .footerSec {

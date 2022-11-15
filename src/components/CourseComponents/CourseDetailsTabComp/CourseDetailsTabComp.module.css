@@ -1,7 +1,7 @@
 .outerDiv {
   width: 100%;
   color: var(--gray);
-  max-height: 600px;
+  max-height: auto;
   overflow: hidden;
 }
 
@@ -47,6 +47,14 @@ summary {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.crsTtl {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .summDet {
@@ -122,4 +130,12 @@ details[open] summary {
 
 .time {
   margin: 0 1rem;
+}
+
+@media screen and (max-width: 426px) {
+  .crseDet {
+    padding: 0.2rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }

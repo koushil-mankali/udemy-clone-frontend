@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
+import Button1 from "../../../utils/Buttons/Button1/Button1";
 import Button2 from "../../../utils/Buttons/Button2/Button2";
 
 import css from "./CourseDetailsTabComp.module.css";
@@ -9,12 +10,20 @@ import docIcon from "/icons/google-docs.png";
 import queryIcon from "/icons/question-sign.png";
 
 const CourseDetailsTabComp = (props) => {
+  const courseData = props.courseData;
+  const [stopId, setStopId] = useState(9);
+  const [crseDataTab, setCrseDataTab] = useState({
+    total: courseData.length,
+    leftOver: courseData.length - 9,
+  });
+
   const [btnTxtState, setBtnTxtState] = useState("Expand all sections");
   const [state, setState] = useState({
     sections: 2,
     lectures: 2,
     length: "14h 23m",
   });
+  const [btnDisabled, setBtnDisabled] = useState(false);
 
   let tabHandler = () => {
     let tags = document.getElementsByTagName("details");
@@ -39,7 +48,24 @@ const CourseDetailsTabComp = (props) => {
     }
   };
 
-  const courseData = props.courseData;
+  const showMoreHandler = () => {
+    setStopId((prev) => prev + 9);
+    setCrseDataTab((prev) => {
+      return {
+        ...prev,
+        leftOver: prev.leftOver - 9,
+      };
+    });
+  };
+
+  useEffect(() => {
+    if (stopId > 9) {
+      if (crseDataTab.leftOver <= 0) {
+        setBtnDisabled(true);
+      }
+    }
+  }, [stopId, crseDataTab.leftOver]);
+
   return (
     <div className={css.outerDiv}>
       <div className={css.innerDiv}>
@@ -58,11 +84,14 @@ const CourseDetailsTabComp = (props) => {
           />
         </div>
         {courseData?.map((item, id) => {
+          if (id >= stopId) {
+            return;
+          }
           return (
             <details key={id}>
               <summary>
                 <span className={css.summaryDiv}>
-                  <span>{item.ttl}</span>
+                  <span className={css.crsTtl}>{item.ttl}</span>
                   <span className={css.summDet}>
                     <span>{item.lects} lectures</span>
                     <span>{item.dur}</span>
@@ -80,7 +109,14 @@ const CourseDetailsTabComp = (props) => {
                       />
                     </div>
                     <div className={css.detSumCenter}>
-                      <p key={id} className={list.preview ? css.prvwBtn : ""}>
+                      <p
+                        key={id}
+                        className={
+                          list.preview
+                            ? [css.prvwBtn, css.crsTtl].join(" ")
+                            : css.crsTt
+                        }
+                      >
                         {list.ttl}
                       </p>
                       <p className={list.preview ? css.prvwBtn : ""}>Preview</p>
@@ -94,6 +130,12 @@ const CourseDetailsTabComp = (props) => {
             </details>
           );
         })}
+        <Button1
+          txt={`${crseDataTab.leftOver} more sections`}
+          onClick={showMoreHandler}
+          disableBtn={btnDisabled}
+          extraCss={{ width: "100%", margin: "1rem 0", padding: "0.5rem" }}
+        />
       </div>
     </div>
   );

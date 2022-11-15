@@ -14,6 +14,7 @@ const Button1 = ({
   extraCss = {},
   classNames = {},
   link = false,
+  disableBtn = false,
 }) => {
   let [style, setStyle] = useState({ backgroundColor: bck, color: color });
 
@@ -24,18 +25,23 @@ const Button1 = ({
     return setStyle({ backgroundColor: bck, color: color });
   };
   let btn = (
-    <div
+    <button
       onMouseOver={mouseOverHandler}
       onMouseLeave={mouseLeaveHandler}
-      style={{ ...style, ...extraCss }}
+      style={{
+        ...style,
+        ...extraCss,
+        ...{ cursor: disableBtn ? "not-allowed" : "pointer" },
+      }}
       className={[css.btn, classNames]?.join(" ")}
       onClick={onClick}
+      disabled={disableBtn}
     >
       <span className={css.txtBox}>
         {img ? <img src={img} className={css.btnImg} style={imageCss} /> : ""}
         {txt ? <span className={css.txt}>{txt}</span> : null}
       </span>
-    </div>
+    </button>
   );
 
   if (link) {
@@ -44,9 +50,14 @@ const Button1 = ({
         to={link}
         onMouseOver={mouseOverHandler}
         onMouseLeave={mouseLeaveHandler}
-        style={{ ...style, ...extraCss }}
+        style={{
+          ...style,
+          ...extraCss,
+          ...{ cursor: disableBtn ? "not-allowed" : "pointer" },
+        }}
         className={css.btn}
         onClick={onClick}
+        disabled={disableBtn}
       >
         <span className={css.txtBox}>
           {img ? <img src={img} className={css.btnImg} style={imageCss} /> : ""}

@@ -3559,4 +3559,15 @@ const courseDetData = {
   subTtl: "English",
 };
 
-export {Learnings, courseIncludes, courseDetails, courseData, courseReq, desc, courseDetData, moreCourses, instructorData, featuredReviewUserData};
+export {
+  Learnings,
+  courseIncludes,
+  courseDetails,
+  courseData,
+  courseReq,
+  desc,
+  courseDetData,
+  moreCourses,
+  instructorData,
+  featuredReviewUserData,
+};

@@ -53,85 +53,89 @@ const CourseCard = (props) => {
   };
 
   return (
-    <div className={css.outerDiv}>
-      <Link className={css.innerDiv} to={path}>
-        <div className={css.imgBox}>
-          <img src={img} alt="course thumbnail" className={css.courseImg} />
-        </div>
-        <div className={css.cardBdy}>
-          <div className={css.ttl}>{ttl}</div>
-          <div className={css.authDet}>{authDet}</div>
-          <div className={css.stats}>
-            <div className={css.rat1}>{totalRating}</div>
-            <div className={css.rat2}>{totalRating}</div>
-            <div className={css.noOfRats}>({noOfRats})</div>
+    <>
+      <div className={css.outerDiv}>
+        <Link className={css.innerDiv} to={path}>
+          <div className={css.imgBox}>
+            <img src={img} alt="course thumbnail" className={css.courseImg} />
           </div>
-          <div className={css.prc}>
-            <span className={css.newPrc}>
-              {new Intl.NumberFormat("en-IN", {
-                style: "currency",
-                currency: "INR",
-              }).format(prc)}
-            </span>
-            <span className={css.oldPrc}>
-              {new Intl.NumberFormat("en-IN", {
-                style: "currency",
-                currency: "INR",
-              }).format(oldprc)}
-            </span>
-          </div>
-          <div className={css.tags}>
-            <TAG1 />
-          </div>
-        </div>
-      </Link>
-      <div className={css.hovCard}>
-        <div className={css.innerBox}>
-          <div className={css.ttl}>{ttl}</div>
-          <div className={css.shrtDet}>
+          <div className={css.cardBdy}>
+            <div className={css.ttl}>{ttl}</div>
+            <div className={css.authDet}>{authDet}</div>
+            <div className={css.stats}>
+              <div className={css.rat1}>{totalRating}</div>
+              <div className={css.rat2}>{totalRating}</div>
+              <div className={css.noOfRats}>({noOfRats})</div>
+            </div>
+            <div className={css.prc}>
+              <span className={css.newPrc}>
+                {new Intl.NumberFormat("en-IN", {
+                  style: "currency",
+                  currency: "INR",
+                }).format(prc)}
+              </span>
+              <span className={css.oldPrc}>
+                {new Intl.NumberFormat("en-IN", {
+                  style: "currency",
+                  currency: "INR",
+                }).format(oldprc)}
+              </span>
+            </div>
             <div className={css.tags}>
               <TAG1 />
             </div>
-            <div className={css.lstUpdt}>
-              Updated <b>{updatedDate}</b>
+          </div>
+        </Link>
+        <div className={css.hovCard}>
+          <div className={css.innerBox}>
+            <div className={css.ttl}>{ttl}</div>
+            <div className={css.shrtDet}>
+              <div className={css.tags}>
+                <TAG1 />
+              </div>
+              <div className={css.lstUpdt}>
+                Updated <b>{updatedDate}</b>
+              </div>
             </div>
-          </div>
-          <div className={css.crseDet}>
-            <div className={css.crseDetInerS}>{durationInHrs} total hours</div>
-            <div className={css.crseDetInerM}>{level}</div>
-            <div className={css.crseDetInerE}>Subtitles</div>
-          </div>
-          <div className={css.crsSubtxt}>{crsSubtxt}</div>
-          <ul className={css.list}>
-            <li className={css.listItem}>
-              <span className={css.tick}></span>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-              dolore reiciendis ea maiores eos eligendi architecto illo.
-              Cupiditate iure, vero, laboriosam laudantium perferendis odio
-              expedita quisquam culpa quae earum provident.
-            </li>
-            <li className={css.listItem}>
-              <span className={css.tick}></span>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora
-              ullam autem impedit porro veniam, laboriosam debitis eveniet
-              reprehenderit numquam atque inventore recusandae hic veritatis
-              similique officia? Rerum, nesciunt! Repudiandae, sint.
-            </li>
-          </ul>
-          <div className={css.btns}>
-            <Button1
-              onClick={addToCartHandler}
-              txt="Add to cart"
-              color="#fff"
-              bck="#a435f0"
-              hovBck="#8710d8"
-              extraCss={{ width: "100%", border: "none" }}
-            />
-            <CircleButton onClick={addToWishListHandler} img={heartIcon} />
+            <div className={css.crseDet}>
+              <div className={css.crseDetInerS}>
+                {durationInHrs} total hours
+              </div>
+              <div className={css.crseDetInerM}>{level}</div>
+              <div className={css.crseDetInerE}>Subtitles</div>
+            </div>
+            <div className={css.crsSubtxt}>{crsSubtxt}</div>
+            <ul className={css.list}>
+              <li className={css.listItem}>
+                <span className={css.tick}></span>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+                dolore reiciendis ea maiores eos eligendi architecto illo.
+                Cupiditate iure, vero, laboriosam laudantium perferendis odio
+                expedita quisquam culpa quae earum provident.
+              </li>
+              <li className={css.listItem}>
+                <span className={css.tick}></span>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Tempora ullam autem impedit porro veniam, laboriosam debitis
+                eveniet reprehenderit numquam atque inventore recusandae hic
+                veritatis similique officia? Rerum, nesciunt! Repudiandae, sint.
+              </li>
+            </ul>
+            <div className={css.btns}>
+              <Button1
+                onClick={addToCartHandler}
+                txt="Add to cart"
+                color="#fff"
+                bck="#a435f0"
+                hovBck="#8710d8"
+                extraCss={{ width: "100%", border: "none" }}
+              />
+              <CircleButton onClick={addToWishListHandler} img={heartIcon} />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,0 +1,6 @@
+.img {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  z-index: 100;
+}

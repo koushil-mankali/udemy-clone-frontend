@@ -3542,6 +3542,7 @@ const moreCourses = [
 ];
 
 const courseDetData = {
+  path: "/",
   img: cardImg,
   id: 1,
   ttl: "Learn Python: The Complete Python Programming Course",
@@ -3559,7 +3560,43 @@ const courseDetData = {
   subTtl: "English",
 };
 
+const crsData = {
+  path: "/",
+  img: cardImg,
+  id: 1,
+  ttl: "Learn Python: The Complete Python Programming Course",
+  authDet:
+    "Learn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more",
+  prc: 600,
+  oldprc: 3299,
+  stars: { a: 2, b: 3, c: 5, d: 8, e: 9 },
+  noOfRats: 5,
+  updatedDate: new Intl.DateTimeFormat("en-IN", {
+    dateStyle: "long",
+  }).format(new Date()),
+  courseDuration: 1000000,
+  level: "Beginner Level",
+  crsSubtxt:
+    "Python For Beginners : This course is meant for absolute beginners in programming or in python.",
+};
+
+const coursesData = [
+  crsData,
+  crsData,
+  crsData,
+  crsData,
+  crsData,
+  crsData,
+  crsData,
+  crsData,
+  crsData,
+  crsData,
+  crsData,
+  crsData,
+];
+
 export {
+  coursesData,
   Learnings,
   courseIncludes,
   courseDetails,

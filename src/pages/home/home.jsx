@@ -5,8 +5,14 @@ import CategoryTabsBox from "../../components/CategoryTabsBox/CategoryTabsBox";
 import FeaturedTopics from "../../components/FeaturedTopics/FeaturedTopics";
 import TrustedByBest from "../../components/TrustedByBest/TrustedByBest";
 import HomeShowcaseCard from "../../components/Cards/HomeShowcaseCard/HomeShowcaseCard";
+import CourseCarouselComp from "../../components/CourseCarouselComp/CourseCarouselComp";
 
 import showcaseImg from "/images/showcase.jpg";
+
+import { coursesData } from "../../fakedata/fakedata";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Home1 = () => {
   const det = {
@@ -72,7 +78,9 @@ const Home1 = () => {
             desc="Choose from 204,000 online video courses with new additions published every month"
             data={categoryBoxData}
             outerCss={{}}
-          />
+          >
+            <CourseCarouselComp coursesData={coursesData} />
+          </CategoryTabsBox>
         </div>
         <HomeShowcaseCard det={det} />
         <TrustedByBest />

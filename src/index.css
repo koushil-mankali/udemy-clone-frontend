@@ -62,3 +62,10 @@
 .show {
   display: block;
 }
+
+.slick-arrow::after {
+  display: none;
+}
+.slick-arrow::before {
+  display: none;
+}

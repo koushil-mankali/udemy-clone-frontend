@@ -3,7 +3,14 @@ import css from "./CategoryTabsBox.module.css";
 
 import Button1 from "../../utils/Buttons/Button1/Button1";
 
-const CategoryTabsBox = ({ title, desc, data, clickHandler, outerCss }) => {
+const CategoryTabsBox = ({
+  title,
+  desc,
+  data,
+  clickHandler,
+  outerCss,
+  children,
+}) => {
   return (
     <div className={css.outerDiv} style={outerCss}>
       <div className={css.ttl}>{title}</div>
@@ -39,7 +46,7 @@ const CategoryTabsBox = ({ title, desc, data, clickHandler, outerCss }) => {
                   extraCss={{ margin: "1rem 0px", fontSize: "0.9rem" }}
                   classNames={css.btnStyle}
                 />
-                <div className={css.scroll}></div>
+                <div className={css.scroll}>{children}</div>
               </div>
             ) : (
               ""

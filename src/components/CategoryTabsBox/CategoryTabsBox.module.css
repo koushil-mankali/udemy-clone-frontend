@@ -57,6 +57,9 @@
   text-overflow: ellipsis;
 }
 
+.scroll {
+}
+
 @media screen and (max-width: 1024px) {
   .inBx1 {
     width: 80%;

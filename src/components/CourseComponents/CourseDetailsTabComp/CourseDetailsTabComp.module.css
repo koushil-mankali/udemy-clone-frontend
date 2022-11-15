@@ -1,6 +1,8 @@
 .outerDiv {
   width: 100%;
   color: var(--gray);
+  max-height: 600px;
+  overflow: hidden;
 }
 
 .crseDet {
@@ -27,7 +29,6 @@
 details {
   border: 1px solid var(--gray86);
   padding: 0.5em 0.5em 0;
-  cursor: pointer;
   background-color: var(--lighish-white);
 }
 
@@ -38,6 +39,7 @@ summary {
   list-style: none;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .summaryDiv {
@@ -83,4 +85,41 @@ details[open] {
 details[open] summary {
   border-bottom: 1px solid #aaa;
   margin-bottom: 0.5em;
+}
+
+.detSumm {
+  width: 100%;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.detSummLeft,
+.detSumCenter,
+.detSummRight {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.detSumCenter {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.icon {
+  width: 15px;
+  height: 15px;
+  margin: 0 1rem;
+}
+
+.prvwBtn {
+  color: var(--purple-dark);
+  text-decoration: underline;
+}
+
+.time {
+  margin: 0 1rem;
 }

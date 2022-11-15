@@ -1,8 +1,12 @@
 import { useState } from "react";
 
+import Button2 from "../../../utils/Buttons/Button2/Button2";
+
 import css from "./CourseDetailsTabComp.module.css";
 
-import Button2 from "../../../utils/Buttons/Button2/Button2";
+import playIcon from "/icons/play-button.png";
+import docIcon from "/icons/google-docs.png";
+import queryIcon from "/icons/question-sign.png";
 
 const CourseDetailsTabComp = (props) => {
   const [btnTxtState, setBtnTxtState] = useState("Expand all sections");
@@ -22,6 +26,16 @@ const CourseDetailsTabComp = (props) => {
         setBtnTxtState("Collapse all sections");
         tags[i].open = true;
       }
+    }
+  };
+
+  const imageTypeHandler = (list) => {
+    if (list.type === "doc") {
+      return docIcon;
+    } else if (list.type === "query") {
+      return queryIcon;
+    } else {
+      return playIcon;
     }
   };
 
@@ -56,7 +70,26 @@ const CourseDetailsTabComp = (props) => {
                 </span>
               </summary>
               {item.list?.map((list, id) => {
-                return <p key={id}>{list.ttl}</p>;
+                return (
+                  <div className={css.detSumm} key={`detSum-${id}`}>
+                    <div className={css.detSummLeft}>
+                      <img
+                        src={imageTypeHandler(list)}
+                        alt="icon"
+                        className={css.icon}
+                      />
+                    </div>
+                    <div className={css.detSumCenter}>
+                      <p key={id} className={list.preview ? css.prvwBtn : ""}>
+                        {list.ttl}
+                      </p>
+                      <p className={list.preview ? css.prvwBtn : ""}>Preview</p>
+                    </div>
+                    <div className={css.detSummRight}>
+                      <p className={css.time}>{list.dur}</p>
+                    </div>
+                  </div>
+                );
               })}
             </details>
           );

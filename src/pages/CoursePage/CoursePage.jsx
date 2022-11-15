@@ -12,6 +12,7 @@ import StudentsAlsoBought from "../../components/StudentsAlsoBought/StudentsAlso
 import CourseInstructorComp from "../../components/CourseComponents/CourseInstructorComp/CourseInstructorComp";
 import CourseCard from "../../components/Cards/CourseCard/CourseCard";
 import ShareCourseCard from "../../components/Cards/ShareCourseCard/ShareCourseCard";
+import CourseDetailsTabComp from "../../components/CourseComponents/CourseDetailsTabComp/CourseDetailsTabComp";
 
 import Button1 from "../../utils/Buttons/Button1/Button1";
 
@@ -331,7 +332,9 @@ const CoursePage = () => {
               </div>
               <div className={css.boxSection}>
                 <div className={css.secTtl}>Course content</div>
-                <div className={css.secBdy}></div>
+                <div className={css.secBdy}>
+                  <CourseDetailsTabComp courseData={courseData} />
+                </div>
               </div>
               <div className={css.boxSection}>
                 <CourseReqComp data={courseReq} />

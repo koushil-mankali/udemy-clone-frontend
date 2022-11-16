@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
@@ -12,7 +12,9 @@ import ArrowsComp from "../ArrowComp/ArrowsComp";
 import css from "./TabbedCourseCarouselComp.module.css";
 
 const TabbedCourseCarouselComp = (props) => {
+  const [activeTab, setActiveTab] = useState(0);
   const { ttl, link = null, linkTxt = "", coursesData } = props;
+  const tabs = ["Most Popular", "New", "Intermediate & Advanced"];
   const settings = {
     dots: false,
     infinite: false,
@@ -58,6 +60,26 @@ const TabbedCourseCarouselComp = (props) => {
           </Link>
         </h2>
       ) : null}
+      <div className={css.tabbedBox}>
+        <div className={css.tabs}>
+          {tabs?.map((tab, id) => {
+            return (
+              <div
+                onClick={() => setActiveTab(id)}
+                className={[
+                  css.tab,
+                  activeTab === id ? css.activeTab : "",
+                ].join(" ")}
+                key={`tab-${id}`}
+                id={id}
+              >
+                {tab}
+              </div>
+            );
+          })}
+        </div>
+        <hr className={css.hr} />
+      </div>
       <Slider {...settings}>
         {coursesData?.map((item, id) => {
           return <CourseCard key={id} data={item} />;

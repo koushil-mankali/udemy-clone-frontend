@@ -19,3 +19,36 @@
   color: var(--purple-dark);
   text-decoration: none;
 }
+
+.tabbedBox {
+  position: relative;
+}
+
+.tabs {
+  display: flex;
+}
+
+.tab {
+  color: var(--light-gray);
+  font-weight: 700;
+  margin: 0 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.activeTab {
+  color: var(--gray);
+  z-index: 2;
+  border-bottom: 2px solid var(--gray);
+}
+
+.hr {
+  width: 100%;
+  margin: 0 0.5rem;
+  padding: 0;
+  border: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-bottom: 2px solid var(--gray86);
+}

@@ -60,6 +60,7 @@ const Cart = () => {
                     return <CheckoutCourseCard data={item} key={item.id} />;
                   })}
                 </div>
+                <div>keep shopping div</div>
               </div>
               <div className={css.box2}>
                 <div className={css.totalTxt}>Total:</div>

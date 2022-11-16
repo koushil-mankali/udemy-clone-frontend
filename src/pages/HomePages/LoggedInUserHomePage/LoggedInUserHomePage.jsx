@@ -80,12 +80,6 @@ const LoggedInUserHomePage = () => {
             />
           </div>
           <div className={css.m1}>
-            <TopicsCarouselComp
-              ttl="Topics recommended for you"
-              categories={categoriesData}
-            />
-          </div>
-          <div className={css.m1}>
             <CourseCarouselComp
               ttl="New and noteworthy in Web Development"
               link="/"

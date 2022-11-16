@@ -1,0 +1,77 @@
+.outerDiv {
+  width: 100%;
+}
+
+.innerBox {
+  width: 100%;
+}
+
+.labelBox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.labelTxt {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.txt {
+  font-size: 0.8rem;
+  color: var(--light-gray);
+}
+
+.selectBox {
+  margin: 0.5rem 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+}
+
+.select {
+  width: 100%;
+  padding: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--light-gray);
+}
+
+.selectLeft {
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  margin: 0 0.5rem;
+}
+
+.icon {
+  width: 10px;
+  height: 10px;
+}
+
+.optionsBox {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  margin: 0.2rem 0;
+  border: 1px solid var(--light-gray);
+  background-color: var(--white);
+}
+
+.option {
+  padding: 0.5rem 1rem;
+}
+
+.option:hover {
+  background-color: cadetblue;
+}
+
+.dnone {
+  display: none;
+}

@@ -99,6 +99,13 @@
   margin: 0 1rem;
 }
 
+.formBox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .rightDiv {
   width: 40%;
   height: initial;

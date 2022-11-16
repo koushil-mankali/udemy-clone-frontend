@@ -8,6 +8,7 @@ import showcaseImg3 from "/images/showcase3.jpg";
 import bannerImg1 from "/images/banners/banner1.jpg";
 import bannerImg2 from "/images/banners/banner2.jpg";
 import bannerImg3 from "/images/banners/banner3.jpg";
+import crseImg from "/images/card.jpg";
 
 const Learnings = {
   ttl: "What you'll learn",
@@ -3729,7 +3730,34 @@ const categoriesData = [
   },
 ];
 
+const coursesInCartData = [
+  {
+    id: 1,
+    ttl: "Learn Python: The Complete Python Programming Course",
+    img: crseImg,
+    price: "3399",
+  },
+  {
+    id: 2,
+    ttl: "Learn Python: The Complete Python Programming Course",
+    img: crseImg,
+    price: "3399",
+  },
+];
+
+const countryOptions = [
+  { txt: "Bhutan", value: "bhutan" },
+  { txt: "India", value: "india" },
+];
+const stateOptions = [
+  { txt: "Telangana", value: "telangana" },
+  { txt: "Andhra Pradesh", value: "andhra pradesh" },
+];
+
 export {
+  coursesInCartData,
+  countryOptions,
+  stateOptions,
   categoriesData,
   bannerData,
   det,

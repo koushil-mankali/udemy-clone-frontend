@@ -1,28 +1,31 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import Navbar2 from "../../components/LayoutComponents/Navbar2/Navbar2";
 import Button1 from "../../utils/Buttons/Button1/Button1";
+import SelectUtil from "../../utils/FormUtils/SelectUtil/SelectUtil";
+
+import {
+  coursesInCartData,
+  countryOptions,
+  stateOptions,
+} from "../../fakedata/fakedata";
 
 import css from "./Checkout.module.css";
 
 import lockIcon from "/icons/lock2.png";
-import crseImg from "/images/card.jpg";
+import globIcon from "/icons/globe.png";
 
 const Checkout = () => {
-  const coursesInCartData = [
-    {
-      id: 1,
-      ttl: "Learn Python: The Complete Python Programming Course",
-      img: crseImg,
-      price: "3399",
-    },
-    {
-      id: 2,
-      ttl: "Learn Python: The Complete Python Programming Course",
-      img: crseImg,
-      price: "3399",
-    },
-  ];
+  const [state, setState] = useState({
+    country: "India",
+    state: "Please select...",
+  });
+
+  const selectHandler = (value) => {
+    console.log("value", value);
+  };
+
   return (
     <>
       <Navbar2 />
@@ -33,6 +36,23 @@ const Checkout = () => {
             <div className={css.cbdy}>
               <div className={css.bx}>
                 <h2 className={css.cbdyTtl}>Billing Address</h2>
+                <div className={css.formBox}>
+                  <SelectUtil
+                    label="Country"
+                    txt="Required"
+                    options={countryOptions}
+                    value={state.country}
+                    setValue={selectHandler}
+                    img={globIcon}
+                  />
+                  <SelectUtil
+                    label="State / Union Territory"
+                    txt="Required"
+                    options={stateOptions}
+                    value={state.state}
+                    setValue={selectHandler}
+                  />
+                </div>
                 <div className={css.note}>
                   Udemy is required by law to collect applicable transaction
                   taxes for purchases made in certain tax jurisdictions.

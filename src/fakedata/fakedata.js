@@ -7,6 +7,7 @@ import showcaseImg2 from "/images/showcase2.jpg";
 import showcaseImg3 from "/images/showcase3.jpg";
 import bannerImg1 from "/images/banners/banner1.jpg";
 import bannerImg2 from "/images/banners/banner2.jpg";
+import bannerImg3 from "/images/banners/banner3.jpg";
 
 const Learnings = {
   ttl: "What you'll learn",
@@ -3644,9 +3645,92 @@ const bannerData = [
       desc: "Udemy Business is trusted by 12.5K+ companies around the world. Find out what we can do for yours.",
     },
   },
+  {
+    id: 3,
+    img: bannerImg3,
+    link: null,
+    boxData: {
+      ttl: "Code your future",
+      desc: "Take control of your career. Learn the latest skills in web development.",
+    },
+  },
+];
+
+const categoriesData = [
+  {
+    id: 1,
+    link: "/",
+    txt: "React Js",
+  },
+  {
+    id: 2,
+    link: "/",
+    txt: "MongoDB",
+  },
+  {
+    id: 3,
+    link: "/",
+    txt: "Node Js",
+  },
+  {
+    id: 4,
+    link: "/",
+    txt: "Express Js",
+  },
+  {
+    id: 5,
+    link: "/",
+    txt: "Flask",
+  },
+  {
+    id: 6,
+    link: "/",
+    txt: "SQL",
+  },
+  {
+    id: 7,
+    link: "/",
+    txt: "JavaScript",
+  },
+  {
+    id: 8,
+    link: "/",
+    txt: "Web Development",
+  },
+  {
+    id: 9,
+    link: "/",
+    txt: "TypeScript",
+  },
+  {
+    id: 10,
+    link: "/",
+    txt: "Nest Js",
+  },
+  {
+    id: 11,
+    link: "/",
+    txt: "Next Js",
+  },
+  {
+    id: 12,
+    link: "/",
+    txt: "Web HTML",
+  },
+  {
+    id: 13,
+    link: "/",
+    txt: "CSS",
+  },
+  {
+    id: 14,
+    link: "/",
+    txt: "Python",
+  },
 ];
 
 export {
+  categoriesData,
   bannerData,
   det,
   det2,

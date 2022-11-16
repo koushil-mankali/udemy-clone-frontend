@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
 import backIcon from "/icons/back.png";
@@ -11,7 +12,7 @@ import ArrowsComp from "../ArrowComp/ArrowsComp";
 import css from "./CourseCarouselComp.module.css";
 
 const CourseCarouselComp = (props) => {
-  const { ttl, coursesData } = props;
+  const { ttl, link = null, linkTxt = "", coursesData } = props;
   const settings = {
     dots: false,
     infinite: false,
@@ -49,7 +50,14 @@ const CourseCarouselComp = (props) => {
   };
   return (
     <div className={css.scrollBox}>
-      {ttl ? <h2>{ttl}</h2> : null}
+      {ttl ? (
+        <h2 className={css.ttl}>
+          {ttl}
+          <Link className={css.linkTxt} to={link}>
+            {linkTxt}
+          </Link>
+        </h2>
+      ) : null}
       <Slider {...settings}>
         {coursesData?.map((item, id) => {
           return <CourseCard key={id} data={item} />;

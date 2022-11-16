@@ -4,6 +4,7 @@
   text-decoration: none;
   color: var(--gray);
   position: relative;
+  display: flex;
 }
 
 .img {

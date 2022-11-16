@@ -1,20 +1,27 @@
 import { useState } from "react";
 
-import Layout1 from "../Layout1/Layout1";
-import CategoryTabsBox from "../../components/HomePageComponents/CategoryTabsBox/CategoryTabsBox";
-import FeaturedTopics from "../../components/HomePageComponents/FeaturedTopics/FeaturedTopics";
-import TrustedByBest from "../../components/HomePageComponents/TrustedByBest/TrustedByBest";
-import HomeShowcaseCard from "../../components/Cards/HomeShowcaseCard/HomeShowcaseCard";
-import CourseCarouselComp from "../../components/CarouselComponents/CourseCarouselComp/CourseCarouselComp";
-import BannerCarouselComp from "../../components/CarouselComponents/BannerCarouselComp/BannerCarouselComp";
+import Layout1 from "../../Layout1/Layout1";
+import CategoryTabsBox from "../../../components/HomePageComponents/CategoryTabsBox/CategoryTabsBox";
+import FeaturedTopics from "../../../components/HomePageComponents/FeaturedTopics/FeaturedTopics";
+import TrustedByBest from "../../../components/HomePageComponents/TrustedByBest/TrustedByBest";
+import HomeShowcaseCard from "../../../components/Cards/HomeShowcaseCard/HomeShowcaseCard";
+import CourseCarouselComp from "../../../components/CarouselComponents/CourseCarouselComp/CourseCarouselComp";
+import BannerComp from "../../../components/HomePageComponents/BannerComp/BannerComp";
 
-import { coursesData, det, det2, det3 } from "../../fakedata/fakedata";
+import {
+  coursesData,
+  det,
+  det2,
+  det3,
+  bannerData,
+  categoriesData,
+} from "../../../fakedata/fakedata";
 
-import css from "./Home.module.css";
+import css from "./LoggedInUserHomePage.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const Home1 = () => {
+const LoggedInUserHomePage = () => {
   const [categoryBoxData, setCategoryBoxData] = useState([
     {
       id: 1,
@@ -55,18 +62,36 @@ const Home1 = () => {
       <Layout1>
         <div className={css.ma}>
           <div className={css.banner}>
-            <BannerCarouselComp />
+            <BannerComp bannerData={bannerData[2]} />
           </div>
           <div className={css.m1}>
-            <CategoryTabsBox
-              clickHandler={clickHandler}
-              title="A broad selection of courses"
-              desc="Choose from 204,000 online video courses with new additions published every month"
-              data={categoryBoxData}
-              outerCss={{}}
-            >
-              <CourseCarouselComp coursesData={coursesData} />
-            </CategoryTabsBox>
+            <h1 className={css.colTtl}>What to learn next</h1>
+            <CourseCarouselComp
+              ttl="Students are viewing"
+              link="/"
+              linkTxt="Txt for link"
+              coursesData={coursesData}
+            />
+          </div>
+          <div className={css.m1}>
+            <CourseCarouselComp
+              ttl="Recommended for you"
+              coursesData={coursesData}
+            />
+          </div>
+          <div className={css.m1}>
+            <TopicsCarouselComp
+              ttl="Topics recommended for you"
+              categories={categoriesData}
+            />
+          </div>
+          <div className={css.m1}>
+            <CourseCarouselComp
+              ttl="New and noteworthy in Web Development"
+              link="/"
+              linkTxt="Web Development"
+              coursesData={coursesData}
+            />
           </div>
           <div className={css.m1}>
             <CourseCarouselComp
@@ -75,14 +100,9 @@ const Home1 = () => {
             />
           </div>
         </div>
-        <FeaturedTopics />
-        <HomeShowcaseCard det={det} />
-        <TrustedByBest />
-        <HomeShowcaseCard det={det2} />
-        <HomeShowcaseCard det={det3} />
       </Layout1>
     </>
   );
 };
 
-export default Home1;
+export default LoggedInUserHomePage;

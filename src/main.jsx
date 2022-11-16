@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 
-import Home1 from "./pages/Home/Home";
+import HomePage from "./pages/HomePages/HomePage/HomePage";
+import LoggedInUserHomePage from "./pages/HomePages/LoggedInUserHomePage/LoggedInUserHomePage";
 import Login from "./pages/Join/Login/Login";
 import Signup from "./pages/Join/Signup/Signup";
 import Cart from "./pages/Cart/Cart";
@@ -14,7 +15,8 @@ import Test from "./pages/Test/Test";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home1 />,
+    // element: <HomePage />,
+    element: <LoggedInUserHomePage />,
   },
   {
     path: "/cart",

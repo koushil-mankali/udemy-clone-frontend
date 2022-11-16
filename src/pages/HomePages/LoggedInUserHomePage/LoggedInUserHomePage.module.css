@@ -1,0 +1,24 @@
+.ma {
+  width: 80%;
+  margin: auto;
+}
+
+.m1 {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.banner {
+  margin-bottom: 1rem;
+}
+
+.colTtl {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 320px) {
+  .banner {
+    display: none;
+  }
+}

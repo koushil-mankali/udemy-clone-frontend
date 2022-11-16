@@ -2,6 +2,9 @@ import playIcon from "/icons/play-button.png";
 import articleIcon from "/icons/application.png";
 import certificateIcon from "/icons/certificate.png";
 import cardImg from "/images/card.jpg";
+import showcaseImg from "/images/showcase.jpg";
+import showcaseImg2 from "/images/showcase2.jpg";
+import showcaseImg3 from "/images/showcase3.jpg";
 
 const Learnings = {
   ttl: "What you'll learn",
@@ -3595,7 +3598,35 @@ const coursesData = [
   crsData,
 ];
 
+const det = {
+  ttl: "Become an instructor",
+  desc: "Instructors from around the world teach millions of students on Udemy. We provide the tools and skills to teach what you love.",
+  btnTxt: "Start teaching today",
+  btnLink: "/start-teaching",
+  img: showcaseImg,
+  dir: "left",
+};
+const det2 = {
+  ttl: "Udemy Bussiness",
+  desc: "Get unlimited access to 17,000+ of Udemy’s top courses for your team. Learn and improve skills across business, tech, design, and more.",
+  btnTxt: "Get Udemy Business",
+  btnLink: "/start-teaching",
+  img: showcaseImg2,
+  dir: "right",
+};
+const det3 = {
+  ttl: "Transform your life through education",
+  desc: "Learners around the world are launching new careers, advancing in their fields, and enriching their lives.",
+  btnTxt: "Find out how",
+  btnLink: "/start-teaching",
+  img: showcaseImg3,
+  dir: "left",
+};
+
 export {
+  det,
+  det2,
+  det3,
   coursesData,
   Learnings,
   courseIncludes,

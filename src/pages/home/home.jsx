@@ -7,23 +7,13 @@ import TrustedByBest from "../../components/TrustedByBest/TrustedByBest";
 import HomeShowcaseCard from "../../components/Cards/HomeShowcaseCard/HomeShowcaseCard";
 import CourseCarouselComp from "../../components/CourseCarouselComp/CourseCarouselComp";
 
-import showcaseImg from "/images/showcase.jpg";
+import { coursesData, det, det2, det3 } from "../../fakedata/fakedata";
 
-import { coursesData } from "../../fakedata/fakedata";
-
+import css from "./Home.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Home1 = () => {
-  const det = {
-    ttl: "Become an instructor",
-    desc: "Instructors from around the world teach millions of students on Udemy. We provide the tools and skills to teach what you love.",
-    btnTxt: "Start teaching today",
-    btnLink: "/start-teaching",
-    img: showcaseImg,
-    dir: "right",
-  };
-
   const [categoryBoxData, setCategoryBoxData] = useState([
     {
       id: 1,
@@ -62,29 +52,30 @@ const Home1 = () => {
   return (
     <>
       <Layout1>
-        <h1>Home</h1>
-        <div
-          style={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "2rem",
-          }}
-        >
-          <CategoryTabsBox
-            clickHandler={clickHandler}
-            title="A broad selection of courses"
-            desc="Choose from 204,000 online video courses with new additions published every month"
-            data={categoryBoxData}
-            outerCss={{}}
-          >
-            <CourseCarouselComp coursesData={coursesData} />
-          </CategoryTabsBox>
+        <div className={css.ma}>
+          <div className={css.m1}>
+            <CategoryTabsBox
+              clickHandler={clickHandler}
+              title="A broad selection of courses"
+              desc="Choose from 204,000 online video courses with new additions published every month"
+              data={categoryBoxData}
+              outerCss={{}}
+            >
+              <CourseCarouselComp coursesData={coursesData} />
+            </CategoryTabsBox>
+          </div>
+          <div className={css.m1}>
+            <CourseCarouselComp
+              ttl="Students are viewing"
+              coursesData={coursesData}
+            />
+          </div>
         </div>
+        <FeaturedTopics />
         <HomeShowcaseCard det={det} />
         <TrustedByBest />
-        <FeaturedTopics />
+        <HomeShowcaseCard det={det2} />
+        <HomeShowcaseCard det={det3} />
       </Layout1>
     </>
   );

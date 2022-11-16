@@ -8,6 +8,8 @@ import CourseCard from "../Cards/CourseCard/CourseCard";
 
 import ArrowsComp from "./ArrowsComp";
 
+import css from "./CourseCarouselComp.module.css";
+
 const CourseCarouselComp = (props) => {
   const { ttl, coursesData } = props;
   const settings = {
@@ -22,16 +24,14 @@ const CourseCarouselComp = (props) => {
     prevArrow: <ArrowsComp img={backIcon} />,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1200,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          infinite: true,
-          dots: true,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 800,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -48,14 +48,14 @@ const CourseCarouselComp = (props) => {
     ],
   };
   return (
-    <>
+    <div className={css.scrollBox}>
       {ttl ? <h2>{ttl}</h2> : null}
       <Slider {...settings}>
         {coursesData?.map((item, id) => {
           return <CourseCard key={id} data={item} />;
         })}
       </Slider>
-    </>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 .outerDiv {
-  width: 80%;
+  width: 100%;
   height: auto;
   color: var(--gray);
 }
@@ -67,13 +67,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .outerDiv {
-    width: 90%;
-  }
-  .inBx1 {
-    width: 90%;
-  }
-
   .ttl {
     font-size: 1.8rem;
   }
@@ -100,9 +93,6 @@
 }
 
 @media screen and (max-width: 426px) {
-  .outerDiv {
-    width: 95%;
-  }
   .ttl {
     font-size: 1.5rem;
   }

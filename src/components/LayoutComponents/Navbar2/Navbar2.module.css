@@ -1,0 +1,50 @@
+.navbar {
+  width: 100%;
+  height: 4.4rem;
+  padding: 0 3rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--white);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+  font-size: 1rem;
+  position: relative;
+}
+
+.left {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoBox {
+  width: 90px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+}
+
+.btn {
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--purple-dark);
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    height: 3.5rem;
+    font-size: 0.8rem;
+  }
+}

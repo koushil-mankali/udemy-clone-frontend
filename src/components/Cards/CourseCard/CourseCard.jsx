@@ -54,7 +54,7 @@ const CourseCard = (props) => {
 
   return (
     <>
-      <div className={css.outerDiv}>
+      <div className={css.outerDiv} id={props.id}>
         <Link className={css.innerDiv} to={path}>
           <div className={css.imgBox}>
             <img src={img} alt="course thumbnail" className={css.courseImg} />

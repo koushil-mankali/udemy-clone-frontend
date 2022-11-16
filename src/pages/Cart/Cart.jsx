@@ -77,6 +77,7 @@ const Cart = () => {
                 </div>
                 <div className={css.ttlDisPer}>81% off</div>
                 <Button1
+                  link="/checkout"
                   txt="Checkout"
                   bck="var(--purple)"
                   hovBck="var(--purple-dark)"

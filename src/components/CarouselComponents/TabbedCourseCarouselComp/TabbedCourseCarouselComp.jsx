@@ -13,7 +13,7 @@ import css from "./TabbedCourseCarouselComp.module.css";
 
 const TabbedCourseCarouselComp = (props) => {
   const [activeTab, setActiveTab] = useState(0);
-  const { ttl, link = null, linkTxt = "", coursesData } = props;
+  const { ttl, link = null, linkTxt = "", coursesData = [] } = props;
   const tabs = ["Most Popular", "New", "Intermediate & Advanced"];
   const settings = {
     dots: false,
@@ -50,6 +50,7 @@ const TabbedCourseCarouselComp = (props) => {
       },
     ],
   };
+
   return (
     <div className={css.scrollBox}>
       {ttl ? (
@@ -82,7 +83,13 @@ const TabbedCourseCarouselComp = (props) => {
       </div>
       <Slider {...settings}>
         {coursesData?.map((item, id) => {
-          return <CourseCard key={id} data={item} />;
+          return (
+            <CourseCard
+              key={`tabbed-course-${id}`}
+              id={`tabbed-course-${id}`}
+              data={item}
+            />
+          );
         })}
       </Slider>
     </div>

@@ -1,0 +1,184 @@
+.outerDiv {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--gray);
+}
+
+.bdy {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.leftDiv {
+  width: 60%;
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  background-color: var(--white);
+}
+
+.ttl {
+  width: 70%;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.cbdy {
+  width: 70%;
+  margin: 1rem 0;
+}
+
+.cbdyTtl {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cbdyTtl span:last-child {
+  color: var(--light-gray);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.icon {
+  width: 15px;
+  height: 15px;
+  margin: 0 0.5rem;
+}
+
+.mc {
+  display: flex;
+  justify-content: center;
+}
+
+.note {
+  margin: 1rem 0;
+  width: 100%;
+  font-size: 0.8rem;
+  color: var(--light-gray);
+}
+
+.noteLink {
+  margin: 0 0.4rem;
+}
+
+.crsBox {
+  width: 100%;
+}
+
+.cres {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.crsebx1 {
+  display: flex;
+}
+
+.img {
+  width: 40px;
+  height: 40px;
+}
+
+.crsTtl {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0 1rem;
+}
+
+.rightDiv {
+  width: 40%;
+  height: initial;
+  padding: 8rem 3rem;
+  background-color: var(--gray100);
+}
+
+.innerRightDiv {
+  width: 55%;
+}
+
+.p1,
+.p2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.p1 span:first-child {
+  font-size: 0.9rem;
+}
+
+.p2 {
+  font-weight: 700;
+}
+
+.hr {
+  margin: 1rem 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .cbdy,
+  .ttl {
+    width: 80%;
+  }
+
+  .innerRightDiv {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cbdy,
+  .ttl {
+    width: 90%;
+  }
+
+  .innerRightDiv {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 426px) {
+  .bdy {
+    flex-direction: column;
+  }
+
+  .leftDiv,
+  .rightDiv {
+    width: 100%;
+  }
+
+  .rightDiv {
+    padding: 2rem;
+  }
+
+  .cbdy,
+  .ttl {
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+
+  .crsTtl {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .innerRightDiv {
+    width: 100%;
+  }
+}

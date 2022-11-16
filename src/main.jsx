@@ -8,6 +8,7 @@ import Login from "./pages/Join/Login/Login";
 import Signup from "./pages/Join/Signup/Signup";
 import Cart from "./pages/Cart/Cart";
 import CoursePage from "./pages/CoursePage/CoursePage";
+import Checkout from "./pages/Checkout/Checkout";
 import NotFound from "./pages/NotFound/NotFound";
 import "./index.css";
 import Test from "./pages/Test/Test";
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: "/course/:id",
     element: <CoursePage />,
+  },
+  {
+    path: "/checkout",
+    element: <Checkout />,
   },
   {
     path: "/test",

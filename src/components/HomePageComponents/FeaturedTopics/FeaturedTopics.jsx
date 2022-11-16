@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Button1 from "../../utils/Buttons/Button1/Button1";
+import Button1 from "../../../utils/Buttons/Button1/Button1";
 
 import css from "./FeaturedTopics.module.css";
 

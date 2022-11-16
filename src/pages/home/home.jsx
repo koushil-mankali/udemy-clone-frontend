@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 import Layout1 from "../Layout1/Layout1";
-import CategoryTabsBox from "../../components/CategoryTabsBox/CategoryTabsBox";
-import FeaturedTopics from "../../components/FeaturedTopics/FeaturedTopics";
-import TrustedByBest from "../../components/TrustedByBest/TrustedByBest";
+import CategoryTabsBox from "../../components/HomePageComponents/CategoryTabsBox/CategoryTabsBox";
+import FeaturedTopics from "../../components/HomePageComponents/FeaturedTopics/FeaturedTopics";
+import TrustedByBest from "../../components/HomePageComponents/TrustedByBest/TrustedByBest";
 import HomeShowcaseCard from "../../components/Cards/HomeShowcaseCard/HomeShowcaseCard";
-import CourseCarouselComp from "../../components/CourseCarouselComp/CourseCarouselComp";
+import CourseCarouselComp from "../../components/HomePageComponents/CourseCarouselComp/CourseCarouselComp";
 
 import { coursesData, det, det2, det3 } from "../../fakedata/fakedata";
 

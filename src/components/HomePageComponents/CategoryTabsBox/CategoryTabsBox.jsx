@@ -1,7 +1,7 @@
 import React from "react";
 import css from "./CategoryTabsBox.module.css";
 
-import Button1 from "../../utils/Buttons/Button1/Button1";
+import Button1 from "../../../utils/Buttons/Button1/Button1";
 
 const CategoryTabsBox = ({
   title,

@@ -2,8 +2,8 @@ import { useState } from "react";
 
 import css from "./StudentsAlsoBought.module.css";
 
-import Button1 from "../../utils/Buttons/Button1/Button1";
-import VerticalCourseCard from "../Cards/VerticalCourseCard/VerticalCourseCard";
+import Button1 from "../../../utils/Buttons/Button1/Button1";
+import VerticalCourseCard from "../../Cards/VerticalCourseCard/VerticalCourseCard";
 
 import courseImg from "/images/card.jpg";
 

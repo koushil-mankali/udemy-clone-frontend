@@ -16,12 +16,12 @@ import {
 
 import Layout1 from "../Layout1/Layout1";
 import CourseHeaderComp from "../../components/CourseComponents/CourseHeaderComp/CourseHeaderComp";
-import TextPointsNoter from "../../components/TextPointsNoter/TextPointsNoter";
+import TextPointsNoter from "../../components/CourseComponents/TextPointsNoter/TextPointsNoter";
 import CourseIncludesCard from "../../components/Cards/CourseIncludesCard/CourseIncludesCard";
 import CourseReqComp from "../../components/CourseComponents/CourseReqComp/CourseReqComp";
 import CourseDescriptionComp from "../../components/CourseComponents/CourseDescriptionComp/CourseDescriptionComp";
-import FeaturedReviewComp from "../../components/FeaturedReviewComp/FeaturedReviewComp";
-import StudentsAlsoBought from "../../components/StudentsAlsoBought/StudentsAlsoBought";
+import FeaturedReviewComp from "../../components/CourseComponents/FeaturedReviewComp/FeaturedReviewComp";
+import StudentsAlsoBought from "../../components/CourseComponents/StudentsAlsoBought/StudentsAlsoBought";
 import CourseInstructorComp from "../../components/CourseComponents/CourseInstructorComp/CourseInstructorComp";
 import CourseCard from "../../components/Cards/CourseCard/CourseCard";
 import ShareCourseCard from "../../components/Cards/ShareCourseCard/ShareCourseCard";

@@ -2,10 +2,9 @@ import { useState } from "react";
 
 import css from "./FeaturedReviewComp.module.css";
 
-import Button1 from "../../utils/Buttons/Button1/Button1";
-import CircleButton from "../../utils/Buttons/CircleButton/CircleButton";
+import CircleButton from "../../../utils/Buttons/CircleButton/CircleButton";
 
-import TimeSinceFunc from "../../helpers/TimeSinceFunc.js";
+import TimeSinceFunc from "../../../helpers/TimeSinceFunc.js";
 
 import userprofileIcon from "/icons/userprofile.png";
 import thumbsdownIcon from "/icons/dislike.png";

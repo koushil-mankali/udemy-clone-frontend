@@ -1,6 +1,6 @@
 import React from "react";
 
-import css from "./CourseCarouselComp.module.css";
+import css from "./ArrowsComp.module.css";
 
 const ArrowsComp = (props) => {
   const { className, style, onClick, img } = props;

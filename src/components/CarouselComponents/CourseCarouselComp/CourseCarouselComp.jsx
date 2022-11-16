@@ -6,7 +6,7 @@ import nextIcon from "/icons/next.png";
 
 import CourseCard from "../../Cards/CourseCard/CourseCard";
 
-import ArrowsComp from "./ArrowsComp";
+import ArrowsComp from "../ArrowComp/ArrowsComp";
 
 import css from "./CourseCarouselComp.module.css";
 

@@ -5,7 +5,8 @@ import CategoryTabsBox from "../../components/HomePageComponents/CategoryTabsBox
 import FeaturedTopics from "../../components/HomePageComponents/FeaturedTopics/FeaturedTopics";
 import TrustedByBest from "../../components/HomePageComponents/TrustedByBest/TrustedByBest";
 import HomeShowcaseCard from "../../components/Cards/HomeShowcaseCard/HomeShowcaseCard";
-import CourseCarouselComp from "../../components/HomePageComponents/CourseCarouselComp/CourseCarouselComp";
+import CourseCarouselComp from "../../components/CarouselComponents/CourseCarouselComp/CourseCarouselComp";
+import BannerCarouselComp from "../../components/CarouselComponents/BannerCarouselComp/BannerCarouselComp";
 
 import { coursesData, det, det2, det3 } from "../../fakedata/fakedata";
 
@@ -53,6 +54,9 @@ const Home1 = () => {
     <>
       <Layout1>
         <div className={css.ma}>
+          <div className={css.banner}>
+            <BannerCarouselComp />
+          </div>
           <div className={css.m1}>
             <CategoryTabsBox
               clickHandler={clickHandler}

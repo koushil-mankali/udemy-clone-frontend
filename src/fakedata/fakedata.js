@@ -5,6 +5,8 @@ import cardImg from "/images/card.jpg";
 import showcaseImg from "/images/showcase.jpg";
 import showcaseImg2 from "/images/showcase2.jpg";
 import showcaseImg3 from "/images/showcase3.jpg";
+import bannerImg1 from "/images/banners/banner1.jpg";
+import bannerImg2 from "/images/banners/banner2.jpg";
 
 const Learnings = {
   ttl: "What you'll learn",
@@ -3623,7 +3625,29 @@ const det3 = {
   dir: "left",
 };
 
+const bannerData = [
+  {
+    id: 1,
+    img: bannerImg1,
+    link: null,
+    boxData: {
+      ttl: "Learning that gets you",
+      desc: "Skills for your present (and your future). Get started with us.",
+    },
+  },
+  {
+    id: 2,
+    img: bannerImg2,
+    link: "/request-a-demo",
+    boxData: {
+      ttl: "Unlock the power of your people",
+      desc: "Udemy Business is trusted by 12.5K+ companies around the world. Find out what we can do for yours.",
+    },
+  },
+];
+
 export {
+  bannerData,
   det,
   det2,
   det3,

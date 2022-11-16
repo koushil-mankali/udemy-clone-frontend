@@ -7,6 +7,7 @@ import TrustedByBest from "../../../components/HomePageComponents/TrustedByBest/
 import HomeShowcaseCard from "../../../components/Cards/HomeShowcaseCard/HomeShowcaseCard";
 import CourseCarouselComp from "../../../components/CarouselComponents/CourseCarouselComp/CourseCarouselComp";
 import BannerComp from "../../../components/HomePageComponents/BannerComp/BannerComp";
+import TabbedCourseCarouselComp from "../../../components/CarouselComponents/TabbedCourseCarouselComp/TabbedCourseCarouselComp";
 
 import {
   coursesData,
@@ -76,6 +77,14 @@ const LoggedInUserHomePage = () => {
           <div className={css.m1}>
             <CourseCarouselComp
               ttl="Recommended for you"
+              coursesData={coursesData}
+            />
+          </div>
+          <div className={css.m1}>
+            <TabbedCourseCarouselComp
+              ttl="Featured courses in"
+              link="/"
+              linkTxt=" React JS"
               coursesData={coursesData}
             />
           </div>

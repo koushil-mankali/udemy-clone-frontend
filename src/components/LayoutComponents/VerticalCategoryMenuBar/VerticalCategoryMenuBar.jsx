@@ -50,18 +50,13 @@ const VerticalCategoryMenuBar = () => {
           {categoriesSubCategoriesData?.map((cat) => {
             return (
               <div key={cat.id}>
-                <div
-                  data-id="cat"
-                  className={css.category}
-                  id={`cat-${cat.id}`}
-                >
+                <div className={css.category} id={`cat-${cat.id}`}>
                   {cat.ttl}
                 </div>
                 <div className={css.subCat} id={cat.subCatId}>
                   {cat.sub?.map((item) => {
                     return (
                       <div
-                        data-id="subCat"
                         key={`subcat-${item.id}`}
                         className={css.subCategory}
                       >

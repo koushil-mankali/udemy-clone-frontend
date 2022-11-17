@@ -49,10 +49,9 @@ const VerticalCategoryMenuBar = () => {
         <div className={css.cats} id="cats">
           {categoriesSubCategoriesData?.map((cat) => {
             return (
-              <>
+              <div key={cat.id}>
                 <div
                   data-id="cat"
-                  key={`cat-${cat.id}`}
                   className={css.category}
                   id={`cat-${cat.id}`}
                 >
@@ -71,7 +70,7 @@ const VerticalCategoryMenuBar = () => {
                     );
                   })}
                 </div>
-              </>
+              </div>
             );
           })}
         </div>

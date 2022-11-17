@@ -2,6 +2,8 @@ import playIcon from "/icons/play-button.png";
 import articleIcon from "/icons/application.png";
 import certificateIcon from "/icons/certificate.png";
 import cardImg from "/images/card.jpg";
+import cardImg2 from "/images/card2.jpg";
+import cardImg3 from "/images/card3.jpg";
 import showcaseImg from "/images/showcase.jpg";
 import showcaseImg2 from "/images/showcase2.jpg";
 import showcaseImg3 from "/images/showcase3.jpg";
@@ -3586,6 +3588,44 @@ const crsData = {
   crsSubtxt:
     "Python For Beginners : This course is meant for absolute beginners in programming or in python.",
 };
+const crsData2 = {
+  path: "/",
+  img: cardImg2,
+  id: 1,
+  ttl: "Learn Python: The Complete Python Programming Course",
+  authDet:
+    "Learn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more",
+  prc: 600,
+  oldprc: 3299,
+  stars: { a: 2, b: 3, c: 5, d: 8, e: 9 },
+  noOfRats: 5,
+  updatedDate: new Intl.DateTimeFormat("en-IN", {
+    dateStyle: "long",
+  }).format(new Date()),
+  courseDuration: 1000000,
+  level: "Beginner Level",
+  crsSubtxt:
+    "Python For Beginners : This course is meant for absolute beginners in programming or in python.",
+};
+const crsData3 = {
+  path: "/",
+  img: cardImg3,
+  id: 1,
+  ttl: "Learn Python: The Complete Python Programming Course",
+  authDet:
+    "Learn A-Z everything about Python, from the basics, to advanced topics like Python GUI, Python Data Analysis, and more",
+  prc: 600,
+  oldprc: 3299,
+  stars: { a: 2, b: 3, c: 5, d: 8, e: 9 },
+  noOfRats: 5,
+  updatedDate: new Intl.DateTimeFormat("en-IN", {
+    dateStyle: "long",
+  }).format(new Date()),
+  courseDuration: 1000000,
+  level: "Beginner Level",
+  crsSubtxt:
+    "Python For Beginners : This course is meant for absolute beginners in programming or in python.",
+};
 
 const coursesData = [
   crsData,
@@ -3600,6 +3640,34 @@ const coursesData = [
   crsData,
   crsData,
   crsData,
+];
+const coursesData2 = [
+  crsData2,
+  crsData2,
+  crsData2,
+  crsData2,
+  crsData2,
+  crsData2,
+  crsData2,
+  crsData2,
+  crsData2,
+  crsData2,
+  crsData2,
+  crsData2,
+];
+const coursesData3 = [
+  crsData3,
+  crsData3,
+  crsData3,
+  crsData3,
+  crsData3,
+  crsData3,
+  crsData3,
+  crsData3,
+  crsData3,
+  crsData3,
+  crsData3,
+  crsData3,
 ];
 
 const det = {
@@ -3756,6 +3824,8 @@ const stateOptions = [
 
 export {
   coursesInCartData,
+  coursesData2,
+  coursesData3,
   countryOptions,
   stateOptions,
   categoriesData,

@@ -6,14 +6,18 @@ import backIcon from "/icons/back.png";
 import nextIcon from "/icons/next.png";
 
 import CourseCard from "../../Cards/CourseCard/CourseCard";
-
 import ArrowsComp from "../ArrowComp/ArrowsComp";
+import {
+  coursesData,
+  coursesData2,
+  coursesData3,
+} from "../../../fakedata/fakedata";
 
 import css from "./TabbedCourseCarouselComp.module.css";
 
 const TabbedCourseCarouselComp = (props) => {
   const [activeTab, setActiveTab] = useState(0);
-  const { ttl, link = null, linkTxt = "", coursesData = [] } = props;
+  const { ttl, link = null, linkTxt = "" } = props;
   const tabs = ["Most Popular", "New", "Intermediate & Advanced"];
   const settings = {
     dots: false,
@@ -51,6 +55,8 @@ const TabbedCourseCarouselComp = (props) => {
     ],
   };
 
+  const courseData = [coursesData, coursesData2, coursesData3];
+
   return (
     <div className={css.scrollBox}>
       {ttl ? (
@@ -82,7 +88,7 @@ const TabbedCourseCarouselComp = (props) => {
         <hr className={css.hr} />
       </div>
       <Slider {...settings}>
-        {coursesData?.map((item, id) => {
+        {courseData[activeTab]?.map((item, id) => {
           return (
             <CourseCard
               key={`tabbed-course-${id}`}

@@ -21,8 +21,8 @@ const BannerCarouselComp = () => {
   };
   return (
     <Slider {...settings}>
-      {bannerData?.map((item) => {
-        return <BannerComp bannerData={item} />;
+      {bannerData?.map((item, id) => {
+        return <BannerComp bannerData={item} key={id} />;
       })}
     </Slider>
   );

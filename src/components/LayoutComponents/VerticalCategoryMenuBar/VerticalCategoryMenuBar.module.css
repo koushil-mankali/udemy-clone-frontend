@@ -1,5 +1,6 @@
 .outerDiv {
   width: 100%;
+  max-height: 53px;
   padding: 1rem;
   color: var(--gray);
   background-color: var(--white);
@@ -9,7 +10,7 @@
 }
 
 .innerDiv {
-  overflow: scroll;
+  overflow-y: scroll;
   display: flex;
 }
 
@@ -17,7 +18,8 @@
   display: none;
 }
 
-.cats {
+.cats,
+.subs {
   padding-right: 100px;
   display: flex;
 }
@@ -27,7 +29,7 @@
   width: 100px;
   font-size: 0.9rem;
   font-weight: 700;
-  position: fixed;
+  position: absolute;
   right: 0;
   cursor: pointer;
   display: flex;
@@ -43,13 +45,47 @@
   transform: rotate(-90deg);
 }
 
-.category {
+.category,
+.subCategory {
   width: max-content;
   margin: 0 0.5rem;
   cursor: pointer;
   white-space: nowrap;
+  position: relative;
 }
 
 .category:hover {
-  color: var(--purple-dark);
+  color: var(--indigo);
+}
+.subCategory:hover {
+  color: var(--indigo200);
+}
+
+.category:hover::after {
+  display: flex;
+  justify-content: center;
+  content: "▲";
+  color: var(--gray);
+  z-index: 100;
+}
+
+.subCat {
+  width: 100%;
+  display: none;
+  position: absolute;
+  top: 55px;
+  left: 0;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  overflow-y: scroll;
+  color: var(--white);
+  background-color: black;
+}
+
+.subCat::-webkit-scrollbar {
+  display: none;
+}
+
+.dvis {
+  display: flex;
 }

@@ -1,0 +1,55 @@
+.outerDiv {
+  width: 100%;
+  padding: 1rem;
+  color: var(--gray);
+  background-color: var(--white);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+  z-index: 1;
+  position: relative;
+}
+
+.innerDiv {
+  overflow: scroll;
+  display: flex;
+}
+
+.innerDiv::-webkit-scrollbar {
+  display: none;
+}
+
+.cats {
+  padding-right: 100px;
+  display: flex;
+}
+
+.iconBox {
+  height: 30px;
+  width: 100px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  position: fixed;
+  right: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+}
+
+.icon {
+  width: 10px;
+  height: 10px;
+  margin: 0 0.2rem;
+  transform: rotate(-90deg);
+}
+
+.category {
+  width: max-content;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.category:hover {
+  color: var(--purple-dark);
+}

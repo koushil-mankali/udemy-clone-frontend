@@ -26,7 +26,7 @@ const CheckoutCourseCard = (props) => {
     couponApplied = "xxx",
     bestSeller = false,
   } = data;
-  console.log(authors, "authors");
+
   return (
     <Link className={css.outerDiv} to={link}>
       <div className={css.box1}>

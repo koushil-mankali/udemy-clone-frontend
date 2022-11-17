@@ -44,12 +44,15 @@
 }
 
 .searchBox {
-  width: 60%;
+  flex: 1;
+  margin: 0 1rem;
 }
 
 .hovBox {
+  width: max-content;
   text-decoration: none;
   color: var(--gray);
+  margin: 0 0.5rem;
 }
 
 .hovBox:hover,
@@ -61,6 +64,7 @@
   width: 20px;
   height: 20px;
   cursor: pointer;
+  margin: 0 0.5rem;
 }
 
 .cartIcon {

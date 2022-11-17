@@ -5,6 +5,7 @@
   color: var(--gray);
   background-color: var(--white);
   box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+  border-top: 1px solid var(--gray86);
   z-index: 1;
   position: relative;
 }

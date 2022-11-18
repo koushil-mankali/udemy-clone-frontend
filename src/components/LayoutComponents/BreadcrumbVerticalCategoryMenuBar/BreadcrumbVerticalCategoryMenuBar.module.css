@@ -3,10 +3,6 @@
   height: 55px;
   color: var(--gray);
   z-index: 1;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
   background-color: var(--white);
   box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
   border-top: 1px solid var(--gray86);
@@ -14,40 +10,41 @@
 
 .innerDiv {
   width: 100%;
-  overflow-y: scroll;
+  height: 100%;
+  font-size: 0.9rem;
   display: flex;
-  flex-wrap: wrap;
-}
-
-.innerDiv::-webkit-scrollbar {
-  display: none;
+  justify-content: space-between;
 }
 
 .cats {
+  width: 90%;
   display: flex;
-  position: relative;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.cat {
+  margin: 1rem;
+  font-weight: 700;
 }
 
 .iconBox {
-  height: 100%;
-  width: 100px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  position: absolute;
-  right: 0;
-  margin-top: 15px;
+  width: 5%;
+  height: auto;
   cursor: pointer;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  background-color: var(--white);
+  align-content: center;
+}
+
+.nextIcon {
+  height: 100%;
 }
 
 .icon {
-  width: 10px;
-  height: 10px;
-  margin: 0 0.2rem;
-  transform: rotate(-90deg);
+  width: 20px;
+  height: 20px;
 }
 
 .category {

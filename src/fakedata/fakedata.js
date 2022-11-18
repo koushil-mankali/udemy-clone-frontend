@@ -3943,6 +3943,27 @@ const categoriesSubCategoriesData = [
   },
 ];
 
+const categorySubCategoriesData = {
+  id: 1,
+  ttl: "Development",
+  link: "/",
+  subCatId: "subCat-1",
+  sub: [
+    { id: 1, ttl: "Development", link: "/" },
+    { id: 2, ttl: "Mobile Development", link: "/" },
+    { id: 3, ttl: "Web Development", link: "/" },
+    { id: 4, ttl: "Mobile Development", link: "/" },
+    { id: 5, ttl: "Web Development", link: "/" },
+    { id: 6, ttl: "Mobile Development", link: "/" },
+    { id: 7, ttl: "Development", link: "/" },
+    { id: 8, ttl: "Mobile Development", link: "/" },
+    { id: 9, ttl: "Web Development", link: "/" },
+    { id: 10, ttl: "Mobile Development", link: "/" },
+    { id: 11, ttl: "Web Development", link: "/" },
+    { id: 12, ttl: "Mobile Development", link: "/" },
+  ],
+};
+
 const coursesInCartData = [
   {
     id: 1,
@@ -3975,6 +3996,7 @@ export {
   stateOptions,
   categoriesData,
   categoriesSubCategoriesData,
+  categorySubCategoriesData,
   bannerData,
   det,
   det2,

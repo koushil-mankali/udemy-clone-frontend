@@ -13,14 +13,14 @@
 .innerDiv {
   overflow-y: scroll;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .innerDiv::-webkit-scrollbar {
   display: none;
 }
 
-.cats,
-.subs {
+.cats {
   padding-right: 100px;
   display: flex;
 }
@@ -46,8 +46,7 @@
   transform: rotate(-90deg);
 }
 
-.category,
-.subCategory {
+.category {
   width: max-content;
   margin: 0 0.5rem;
   cursor: pointer;
@@ -72,21 +71,8 @@
 
 .subCat {
   width: 100%;
-  display: none;
-  position: absolute;
-  top: 55px;
-  left: 0;
-  padding: 0.5rem;
-  font-size: 0.9rem;
-  overflow-y: scroll;
-  color: var(--white);
-  background-color: black;
-}
-
-.subCat::-webkit-scrollbar {
-  display: none;
-}
-
-.dvis {
+  margin: 1rem 0;
   display: flex;
+  color: var(--white);
+  background-color: var(--black);
 }

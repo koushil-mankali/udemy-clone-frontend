@@ -23,7 +23,6 @@ const BreadcrumbVerticalCategoryMenuBar = () => {
         </div>
 
         <div className={css.iconBox}>
-          <span>Scroll</span>
           <img src={rightArrowIcon} alt="right arrow" className={css.icon} />
         </div>
       </div>

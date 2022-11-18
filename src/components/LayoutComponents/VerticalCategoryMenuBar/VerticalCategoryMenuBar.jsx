@@ -7,76 +7,86 @@ import rightArrowIcon from "/icons/down-arrow.svg";
 import css from "./VerticalCategoryMenuBar.module.css";
 
 const VerticalCategoryMenuBar = () => {
-  // useEffect(() => {
-  //   document.getElementById("cats").addEventListener("mouseover", (e) => {
-  //     let subId = "subCat-" + e.target.id?.split("-")[1];
-  //     let elem = document.getElementById(subId);
-  //     if (elem) {
-  //       elem.style = "display:flex";
-  //       elem.addEventListener("mouseleave", () => {
-  //         elem.style = "display:none";
-  //       });
-  //       document
-  //         .getElementById("vouterDiv")
-  //         ?.addEventListener("mouseleave", () => {
-  //           elem.style = "display:none";
-  //         });
-  //     }
-  //   });
+  // Adding event listener to toggle VerticalCategoryMenuBar on hover
+  useEffect(() => {
+    const cats = document.getElementById("cats");
+    const catDivs = document.getElementsByClassName("categoryDiv");
+    const subCatDivs = document.getElementsByClassName("subCatDiv");
+    cats.addEventListener("mouseover", (e) => {
+      const catId = e.target.id?.split("-")[1] || 0;
+      const subCatId = "subCat-" + catId;
 
-  //   return () => {
-  //     document.getElementById("cats").removeEventListener("mouseover", (e) => {
-  //       let subId = "subCat-" + e.target.id?.split("-")[1];
-  //       let elem = document.getElementById(subId);
-  //       if (elem) {
-  //         elem.style = "display:flex";
-  //         elem.removeEventListener("mouseleave", () => {
-  //           elem.style = "display:none";
-  //         });
-  //         document
-  //           .getElementById("vouterDiv")
-  //           ?.removeEventListener("mouseleave", () => {
-  //             elem.style = "display:none";
-  //           });
-  //       }
-  //     });
-  //   };
-  // }, []);
+      const subCats = document.getElementsByClassName(subCatId);
+
+      for (let i = 0; i < subCats.length; i++) {
+        subCats[i].style = "display: flex";
+      }
+    });
+
+    for (let i = 0; i < catDivs.length; i++) {
+      catDivs[i].addEventListener("mouseleave", () => {
+        subCatDivs[i].style = "display: none";
+      });
+    }
+
+    return () => {
+      cats.removeEventListener("mouseover", (e) => {
+        const catId = e.target.id?.split("-")[1] || 0;
+        const subCatId = "subCat-" + catId;
+
+        const subCats = document.getElementsByClassName(subCatId);
+
+        for (let i = 0; i < subCats.length; i++) {
+          console.log("sub", subCats[i]);
+          subCats[i].style = "display: none";
+        }
+      });
+
+      for (let i = 0; i < catDivs.length; i++) {
+        catDivs[i].removeEventListener("mouseleave", () => {
+          subCatDivs[i].style = "display: none";
+        });
+      }
+    };
+  }, []);
 
   return (
     <div className={css.outerDiv} id="vouterDiv">
       <div className={css.innerDiv}>
         <div className={css.cats} id="cats">
-          {categoriesSubCategoriesData?.map((cat) => {
-            return (
-              <div key={cat.id}>
-                <div className={css.category} id={`cat-${cat.id}`}>
-                  {cat.ttl}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-        {categoriesSubCategoriesData?.map((cat) => {
-          return (
-            <div className={css.subCat}>
-              {cat.sub?.map((item) => (
-                <div
-                  key={`subcat-${item.id}`}
-                  id="subcat"
-                  className={css.subCategory}
-                >
-                  {item.ttl}
-                </div>
-              ))}
+          {categoriesSubCategoriesData?.map((cat) => (
+            <div
+              key={cat.id}
+              className={[css.category, "categoryDiv"].join(" ")}
+              id={`cat-${cat.id}`}
+            >
+              {cat.ttl}
             </div>
-          );
-        })}
+          ))}
+        </div>
+
         <div className={css.iconBox}>
           <span>Scroll</span>
           <img src={rightArrowIcon} alt="right arrow" className={css.icon} />
         </div>
       </div>
+      {categoriesSubCategoriesData?.map((cat) => (
+        <div
+          className={[css.subCat, `subCat-${cat.id}`, "subCatDiv"].join(" ")}
+          key={`subcatCat-${cat.id}`}
+          id="{`subCat-${cat.id}`}"
+        >
+          {cat.sub?.map((item) => (
+            <div
+              key={`subcat-${item.id}`}
+              id={`subcat-${item.id}`}
+              className={css.subCategory}
+            >
+              {item.ttl}
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 };

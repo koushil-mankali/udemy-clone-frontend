@@ -3885,6 +3885,62 @@ const categoriesSubCategoriesData = [
       { id: 6, ttl: "Mobile Development", link: "/" },
     ],
   },
+  {
+    id: 7,
+    ttl: "Game Development",
+    link: "/",
+    subCatId: "subCat-7",
+    sub: [
+      { id: 1, ttl: "Personal Development", link: "/" },
+      { id: 2, ttl: "Mobile Development", link: "/" },
+      { id: 3, ttl: "Web Development", link: "/" },
+      { id: 4, ttl: "Mobile Development", link: "/" },
+      { id: 5, ttl: "Web Development", link: "/" },
+      { id: 6, ttl: "Mobile Development", link: "/" },
+    ],
+  },
+  {
+    id: 8,
+    ttl: "Data Science",
+    link: "/",
+    subCatId: "subCat-8",
+    sub: [
+      { id: 1, ttl: "Personal Development", link: "/" },
+      { id: 2, ttl: "Mobile Development", link: "/" },
+      { id: 3, ttl: "Web Development", link: "/" },
+      { id: 4, ttl: "Mobile Development", link: "/" },
+      { id: 5, ttl: "Web Development", link: "/" },
+      { id: 6, ttl: "Mobile Development", link: "/" },
+    ],
+  },
+  {
+    id: 9,
+    ttl: "Software Development Tools",
+    link: "/",
+    subCatId: "subCat-9",
+    sub: [
+      { id: 1, ttl: "Personal Development", link: "/" },
+      { id: 2, ttl: "Mobile Development", link: "/" },
+      { id: 3, ttl: "Web Development", link: "/" },
+      { id: 4, ttl: "Mobile Development", link: "/" },
+      { id: 5, ttl: "Web Development", link: "/" },
+      { id: 6, ttl: "Mobile Development", link: "/" },
+    ],
+  },
+  {
+    id: 10,
+    ttl: "No-code Development",
+    link: "/",
+    subCatId: "subCat-10",
+    sub: [
+      { id: 1, ttl: "Personal Development", link: "/" },
+      { id: 2, ttl: "Mobile Development", link: "/" },
+      { id: 3, ttl: "Web Development", link: "/" },
+      { id: 4, ttl: "Mobile Development", link: "/" },
+      { id: 5, ttl: "Web Development", link: "/" },
+      { id: 6, ttl: "Mobile Development", link: "/" },
+    ],
+  },
 ];
 
 const coursesInCartData = [

@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import css from "./LoggedInNavbar.module.css";
 
 import SearchBar from "../../../utils/SearchBar/SearchBar";
-import VerticalCategoryMenuBar from "../VerticalCategoryMenuBar/VerticalCategoryMenuBar";
 
 import globeIcon from "/icons/globe.png";
 import userEmptyIcon from "/icons/user-empty.png";
@@ -172,7 +171,6 @@ const LoggedInNavbar = () => {
           </div>
         </div>
       </div>
-      <VerticalCategoryMenuBar />
     </>
   );
 };

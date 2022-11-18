@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import Layout1 from "../../Layout1/Layout1";
+import VerticalCategoryMenuBar from "../../../components/LayoutComponents/VerticalCategoryMenuBar/VerticalCategoryMenuBar";
 import CategoryTabsBox from "../../../components/HomePageComponents/CategoryTabsBox/CategoryTabsBox";
 import FeaturedTopics from "../../../components/HomePageComponents/FeaturedTopics/FeaturedTopics";
 import TrustedByBest from "../../../components/HomePageComponents/TrustedByBest/TrustedByBest";
@@ -61,6 +62,7 @@ const LoggedInUserHomePage = () => {
   return (
     <>
       <Layout1>
+        <VerticalCategoryMenuBar />
         <div className={css.ma}>
           <div className={css.banner}>
             <BannerComp bannerData={bannerData[2]} />

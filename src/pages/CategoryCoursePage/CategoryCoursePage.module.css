@@ -1,6 +1,7 @@
 .outerDiv {
   width: 100%;
   display: flex;
+  color: var(--gray);
 }
 
 .bdy {
@@ -8,8 +9,20 @@
   margin: auto;
 }
 
+.pageTtl {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin: 2rem 0;
+}
+
+.box {
+  width: 100%;
+  margin: 3rem 0;
+}
+
 .ttl {
-  color: var(--gray);
   font-size: 1.5rem;
   font-weight: 700;
+  margin: 1rem 0;
 }

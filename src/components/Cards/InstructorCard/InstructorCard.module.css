@@ -1,0 +1,71 @@
+.outerDiv {
+  width: 280px;
+  height: 160px;
+  padding: 1rem;
+  margin: 0 1rem;
+  border: 1px solid var(--gray86);
+}
+
+.innerDiv {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.imgBox {
+  width: 28%;
+}
+
+.img {
+  width: 80%;
+  height: 50%;
+  border-radius: 50%;
+  object-fit: fill;
+}
+
+.det {
+  width: 68%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem 0;
+}
+
+.name,
+.langs {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.langs {
+  font-size: 0.9rem;
+}
+
+.rats {
+  color: var(--glodish1);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.rats > span {
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+
+.txt {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.txt > span {
+  margin: 0 0.3rem;
+  font-weight: 400;
+}

@@ -10,14 +10,22 @@ import ArrowsComp from "../ArrowComp/ArrowsComp";
 import css from "./CarouselLayout.module.css";
 
 const CarouselLayout = (props) => {
-  const { ttl, link = null, linkTxt = "", children, autoplay = false } = props;
+  const {
+    ttl,
+    link = null,
+    linkTxt = "",
+    children,
+    autoplay = false,
+    slidesToShow = 1,
+    slidesToScroll = 1,
+  } = props;
 
   const settings = {
     autoplay: autoplay,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToShow: slidesToShow,
+    slidesToScroll: slidesToScroll,
     lazyLoad: true,
     nextArrow: <ArrowsComp img={nextIcon} />,
     prevArrow: <ArrowsComp img={backIcon} />,

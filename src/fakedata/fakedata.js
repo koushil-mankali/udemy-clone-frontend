@@ -10,7 +10,6 @@ import showcaseImg3 from "/images/showcase3.jpg";
 import bannerImg1 from "/images/banners/banner1.jpg";
 import bannerImg2 from "/images/banners/banner2.jpg";
 import bannerImg3 from "/images/banners/banner3.jpg";
-import crseImg from "/images/card.jpg";
 
 const Learnings = {
   ttl: "What you'll learn",
@@ -3976,13 +3975,13 @@ const coursesInCartData = [
   {
     id: 1,
     ttl: "Learn Python: The Complete Python Programming Course",
-    img: crseImg,
+    img: cardImg,
     price: "3399",
   },
   {
     id: 2,
     ttl: "Learn Python: The Complete Python Programming Course",
-    img: crseImg,
+    img: cardImg,
     price: "3399",
   },
 ];
@@ -4047,7 +4046,101 @@ const BigVerticalCourseCardData = [
   },
 ];
 
+const popularInstructorsData = [
+  {
+    id: 1,
+    name: "Koushil Mankali",
+    img: cardImg,
+    majorLang: ["React Js", "React Native"],
+    rating: 4.2,
+    students: 39000,
+    courses: 40,
+  },
+  {
+    id: 2,
+    name: "Nani Mankali",
+    img: cardImg,
+    majorLang: ["Python", "MySql"],
+    rating: 3.8,
+    students: 21000,
+    courses: 22,
+  },
+  {
+    id: 3,
+    name: "Koushil Mankali",
+    img: cardImg,
+    majorLang: ["React Js", "React Native"],
+    rating: 4.2,
+    students: 39000,
+    courses: 40,
+  },
+  {
+    id: 4,
+    name: "Nani Mankali",
+    img: cardImg,
+    majorLang: ["Python", "MySql"],
+    rating: 3.8,
+    students: 21000,
+    courses: 22,
+  },
+  {
+    id: 5,
+    name: "Koushil Mankali",
+    img: cardImg,
+    majorLang: ["React Js", "React Native"],
+    rating: 4.2,
+    students: 39000,
+    courses: 40,
+  },
+  {
+    id: 6,
+    name: "Nani Mankali",
+    img: cardImg,
+    majorLang: ["Python", "MySql"],
+    rating: 3.8,
+    students: 21000,
+    courses: 22,
+  },
+  {
+    id: 7,
+    name: "Koushil Mankali",
+    img: cardImg,
+    majorLang: ["React Js", "React Native"],
+    rating: 4.2,
+    students: 39000,
+    courses: 40,
+  },
+  {
+    id: 8,
+    name: "Nani Mankali",
+    img: cardImg,
+    majorLang: ["Python", "MySql"],
+    rating: 3.8,
+    students: 21000,
+    courses: 22,
+  },
+  {
+    id: 9,
+    name: "Koushil Mankali",
+    img: cardImg,
+    majorLang: ["React Js", "React Native"],
+    rating: 4.2,
+    students: 39000,
+    courses: 40,
+  },
+  {
+    id: 10,
+    name: "Nani Mankali",
+    img: cardImg,
+    majorLang: ["Python", "MySql"],
+    rating: 3.8,
+    students: 21000,
+    courses: 22,
+  },
+];
+
 export {
+  popularInstructorsData,
   BigVerticalCourseCardData,
   coursesInCartData,
   coursesData2,

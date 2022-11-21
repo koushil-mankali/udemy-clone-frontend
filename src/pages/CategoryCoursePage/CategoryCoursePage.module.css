@@ -2,3 +2,14 @@
   width: 100%;
   display: flex;
 }
+
+.bdy {
+  width: 80%;
+  margin: auto;
+}
+
+.ttl {
+  color: var(--gray);
+  font-size: 1.5rem;
+  font-weight: 700;
+}

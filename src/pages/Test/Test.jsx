@@ -6,6 +6,10 @@ import cardImg from "/images/card.jpg";
 import LoginModal from "../../components/Auth/LoginModal/LoginModal";
 import SignupModal from "../../components/Auth/SignupModal/SignupModal";
 import CourseCard from "../../components/Cards/CourseCard/CourseCard";
+import BigVerticalCourseCard from "../../components/Cards/BigVerticalCourseCard/BigVerticalCourseCard";
+import CarouselLayout from "../../components/CarouselComponents/CarouselLayout/CarouselLayout";
+
+import { BigVerticalCourseCardData } from "../../fakedata/fakedata";
 
 const Test = () => {
   const moreCourses = [
@@ -31,15 +35,22 @@ const Test = () => {
 
   return (
     <>
+      <div style={{ width: "80%", margin: "auto" }}>
+        <CarouselLayout>
+          {BigVerticalCourseCardData?.map((item) => {
+            return <BigVerticalCourseCard data={item} key={item.id} />;
+          })}
+        </CarouselLayout>
+      </div>
       {/* {createPortal(<LoginModal />, document.getElementById("modal"))} */}
-      {createPortal(<SignupModal />, document.getElementById("modal"))}
-      <h1>Test Page</h1>
-      <hr />
-      <div style={{ display: "flex" }}>
+      {/* {createPortal(<SignupModal />, document.getElementById("modal"))} */}
+      {/* <h1>Test Page</h1> */}
+      {/* <hr /> */}
+      {/* <div style={{ display: "flex" }}>
         {moreCourses?.map((item) => {
           return <CourseCard key={item.id} data={item} />;
         })}
-      </div>
+      </div> */}
     </>
   );
 };

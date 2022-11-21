@@ -1,0 +1,21 @@
+.img {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  z-index: 100;
+}
+
+.scrollBox {
+  width: 100%;
+}
+
+.ttl {
+  margin: 0.2rem 0;
+  font-size: 1.5rem;
+}
+
+.linkTxt {
+  margin: 0 0.5rem;
+  color: var(--purple-dark);
+  text-decoration: none;
+}

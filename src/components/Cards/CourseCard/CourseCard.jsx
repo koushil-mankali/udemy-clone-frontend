@@ -25,7 +25,7 @@ const CourseCard = (props) => {
     courseDuration = 1000000,
     level = "Beginner Level",
     crsSubtxt = "Python For Beginners : This course is meant for absolute beginners in programming or in python.",
-  } = props.data;
+  } = props?.data;
 
   let totalRating = (
     (1 * stars?.a + 2 * stars?.b + 3 * stars?.c + 4 * stars?.d + 5 * stars?.e) /

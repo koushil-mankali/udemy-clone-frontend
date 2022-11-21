@@ -1,0 +1,144 @@
+.outerDiv {
+  width: 98%;
+  height: auto;
+  margin: 1rem;
+  max-height: 300px;
+  padding: 1rem;
+  border: 1px solid var(--gray86);
+  color: var(--gray);
+}
+
+.innerDiv {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.imgBox {
+  width: 33%;
+  height: 100%;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detBox {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.leftDetBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem 0;
+}
+
+.ttl,
+.desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ttl {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.desc {
+  font-size: 1rem;
+}
+
+.author,
+.det {
+  font-size: 0.8rem;
+  color: var(--light-gray);
+}
+
+.det,
+.rats {
+  display: flex;
+  gap: 0 0.5rem;
+}
+
+.updated {
+}
+
+.inDet > span::after {
+  content: "·";
+  font-weight: 700;
+  margin: 0 0.2rem;
+}
+
+.inDet > span:last-child:after {
+  content: "";
+}
+
+.rats {
+  display: flex;
+  align-items: center;
+}
+
+.rat {
+  font-size: 0.9rem;
+}
+
+.cnt {
+  font-size: 0.8rem;
+}
+
+.rightDetBox {
+  display: flex;
+  gap: 1rem 0.5rem;
+}
+
+.prc {
+  font-weight: 700;
+}
+
+.oPrc {
+  text-decoration: line-through;
+  font-weight: 600;
+  color: var(--light-gray);
+}
+
+@media screen and (max-width: 426px) {
+  .innerDiv {
+    flex-direction: column;
+  }
+
+  .imgBox,
+  .detBox {
+    width: 100%;
+  }
+
+  .outerDiv {
+    height: auto;
+    max-height: none;
+  }
+
+  .ttl {
+    font-size: 1.1rem;
+  }
+
+  .desc {
+    font-size: 0.9rem;
+  }
+
+  .rats {
+    font-size: 0.7rem;
+  }
+
+  .rightDetBox {
+    font-size: 1rem;
+  }
+}

@@ -12,6 +12,7 @@
   width: 100%;
   height: 100%;
   font-size: 0.9rem;
+  font-weight: 500;
   display: flex;
   justify-content: space-between;
 }
@@ -29,6 +30,7 @@
 }
 
 .iconBox {
+  margin-right: 50px;
   width: 5%;
   height: auto;
   cursor: pointer;
@@ -36,6 +38,18 @@
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
+  position: relative;
+}
+
+.dropDown {
+  min-width: 170px;
+  width: max-content;
+  position: absolute;
+  top: 55px;
+  right: 20px;
+  background-color: var(--white);
+  box-shadow: 0 0 0 1px #d1d7dc, 0 2px 4px rgb(0 0 0 / 8%),
+    0 4px 12px rgb(0 0 0 / 8%);
 }
 
 .nextIcon {
@@ -52,7 +66,6 @@
   margin: 1rem;
   cursor: pointer;
   white-space: nowrap;
-  position: relative;
 }
 
 .category:hover {

@@ -8,10 +8,10 @@ import dotsIcon from "/icons/dots.png";
 import css from "./BreadcrumbVerticalCategoryMenuBar.module.css";
 
 const BreadcrumbVerticalCategoryMenuBar = () => {
+  const [showDropDown, setShowDropDown] = useState(false);
   const [lastVisiableEle, setLastVisiableEle] = useState(null);
-  const { width, height } = window.screen;
 
-  addEventListener("resize", () => {
+  function setRemainingElementsInDropDown() {
     const eles = document.getElementById("cats");
     const isVisible = function (ele, container) {
       const { bottom, height, top } = ele.getBoundingClientRect();
@@ -21,15 +21,46 @@ const BreadcrumbVerticalCategoryMenuBar = () => {
         ? containerRect.top - top <= height
         : bottom - containerRect.bottom <= height;
     };
-
     if (eles) {
+      let obj = {};
       for (let i = 0; i < eles.children.length; i++) {
-        if (!isVisible(eles.children[i], eles)) {
-          setLastVisiableEle(eles.children[i].id);
-        }
+        const value = isVisible(eles.children[i], eles);
+        obj[eles.children[i].id?.split("-")[1]] = value;
+      }
+      const values = Object.entries(obj).find((obj) => {
+        return obj[1] === false;
+      });
+      if (values) {
+        setLastVisiableEle(values[0]);
+        return;
       }
     }
-  });
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setRemainingElementsInDropDown();
+    });
+    window.addEventListener("click", (e) => {
+      if (e?.target?.dataset?.id === "iconBox") {
+        return;
+      }
+      setShowDropDown(false);
+    });
+    setRemainingElementsInDropDown();
+
+    return () => {
+      window.removeEventListener("resize", () => {
+        setRemainingElementsInDropDown();
+      });
+      window.removeEventListener("click", () => {
+        if (e?.target?.dataset?.id === "iconBox") {
+          return;
+        }
+        setShowDropDown(false);
+      });
+    };
+  }, []);
 
   return (
     <div className={css.outerDiv} id="vouterDiv">
@@ -48,8 +79,35 @@ const BreadcrumbVerticalCategoryMenuBar = () => {
             </div>
           ))}
         </div>
-        <div className={css.iconBox}>
-          <img src={dotsIcon} alt="right arrow" className={css.icon} />
+        <div
+          className={css.iconBox}
+          onClick={() => setShowDropDown((prev) => !prev)}
+        >
+          <img
+            src={dotsIcon}
+            alt="right arrow"
+            className={css.icon}
+            data-id="iconBox"
+          />
+          {showDropDown ? (
+            <div className={css.dropDown} data-id="iconBox">
+              {categorySubCategoriesData.sub?.map((cat) => {
+                if (+lastVisiableEle > cat.id || lastVisiableEle === null) {
+                  return;
+                }
+                return (
+                  <div
+                    data-id="iconBox"
+                    key={cat.id}
+                    className={[css.category, "categoryDiv"].join(" ")}
+                    id={`cat-${cat.id}`}
+                  >
+                    {cat.ttl}
+                  </div>
+                );
+              })}
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

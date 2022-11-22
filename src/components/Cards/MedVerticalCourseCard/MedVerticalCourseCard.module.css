@@ -4,7 +4,7 @@
   margin: 1rem;
   max-height: 200px;
   padding: 1rem;
-  border: 1px solid var(--gray86);
+  /* border: 1px solid var(--gray86); */
   color: var(--gray);
 }
 

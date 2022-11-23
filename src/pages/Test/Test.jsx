@@ -11,6 +11,7 @@ import CarouselLayout from "../../components/CarouselComponents/CarouselLayout/C
 import MedVerticalCourseCard from "../../components/Cards/MedVerticalCourseCard/MedVerticalCourseCard";
 
 import { BigVerticalCourseCardData } from "../../fakedata/fakedata";
+import InstructorMenuBar from "../../components/LayoutComponents/InstructorMenuBar/InstructorMenuBar";
 
 const Test = () => {
   const moreCourses = [
@@ -36,27 +37,7 @@ const Test = () => {
 
   return (
     <>
-      <div style={{ width: "80%", margin: "auto" }}>
-        <CarouselLayout>
-          {BigVerticalCourseCardData?.map((item) => {
-            return <BigVerticalCourseCard data={item} key={item.id} />;
-          })}
-        </CarouselLayout>
-      </div>
-      <div style={{ width: "80%", margin: "auto" }}>
-        {BigVerticalCourseCardData?.map((item) => {
-          return <MedVerticalCourseCard data={item} key={item.id} />;
-        })}
-      </div>
-      {/* {createPortal(<LoginModal />, document.getElementById("modal"))} */}
-      {/* {createPortal(<SignupModal />, document.getElementById("modal"))} */}
-      {/* <h1>Test Page</h1> */}
-      {/* <hr /> */}
-      {/* <div style={{ display: "flex" }}>
-        {moreCourses?.map((item) => {
-          return <CourseCard key={item.id} data={item} />;
-        })}
-      </div> */}
+      <InstructorMenuBar />
     </>
   );
 };

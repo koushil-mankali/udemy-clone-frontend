@@ -14,18 +14,18 @@
 }
 
 .imgBox {
-  width: 28%;
+  width: 22%;
 }
 
 .img {
-  width: 80%;
-  height: 50%;
+  width: 100%;
+  height: 45%;
   border-radius: 50%;
   object-fit: fill;
 }
 
 .det {
-  width: 68%;
+  width: 72%;
   display: flex;
   flex-direction: column;
   gap: 0.3rem 0;

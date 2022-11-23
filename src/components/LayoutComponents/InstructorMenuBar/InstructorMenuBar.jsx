@@ -90,7 +90,20 @@ const InstructorMenuBar = () => {
           name: "Customer",
           icon: monitorIcon,
           hovIcon: "",
+          arrowIcon: downArrowIcon,
           link: "",
+          children: [
+            {
+              id: "c31-1",
+              name: "User1",
+              link: "",
+            },
+            {
+              id: "c31-2",
+              name: "User2",
+              link: "",
+            },
+          ],
         },
         {
           id: "c33",

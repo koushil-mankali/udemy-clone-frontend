@@ -6,6 +6,7 @@ import BigVerticalCourseCard from "../../components/Cards/BigVerticalCourseCard/
 import CarouselLayout from "../../components/CarouselComponents/CarouselLayout/CarouselLayout";
 import TabbedCourseCarouselComp from "../../components/CarouselComponents/TabbedCourseCarouselComp/TabbedCourseCarouselComp";
 import InstructorCard from "../../components/Cards/InstructorCard/InstructorCard";
+import CourseSearchResultsComponent from "../../components/CourseSearchResultsComponent/CourseSearchResultsComponent";
 
 import {
   BigVerticalCourseCardData,
@@ -41,6 +42,9 @@ const CategoryCoursePage = () => {
               return <InstructorCard data={item} key={item.id} />;
             })}
           </CarouselLayout>
+        </div>
+        <div className={css.box}>
+          <CourseSearchResultsComponent />
         </div>
       </div>
     </Layout1>

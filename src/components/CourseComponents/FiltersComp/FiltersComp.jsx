@@ -8,13 +8,8 @@ import css from "./FiltersComp.module.css";
 
 const FiltersComp = (props) => {
   let [searchParams, setSearchParams] = useSearchParams();
-  const {
-    title = "",
-    slug = "",
-    dropdownState = false,
-    type = "checkbox",
-    filtersData = [],
-  } = props.data;
+  const { dropdownState, data } = props;
+  const { title = "", slug = "", type = "checkbox", filtersData = [] } = data;
 
   const [inptState, setInptState] = useState({
     name: "",

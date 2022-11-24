@@ -45,7 +45,7 @@
   margin: 1rem 0;
   padding: 0 0.3rem;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 0.5rem;
 }
 

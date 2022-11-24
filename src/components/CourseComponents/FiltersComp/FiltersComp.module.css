@@ -17,7 +17,7 @@
 }
 
 .ttl {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
 }
 
@@ -43,11 +43,82 @@
   width: 100%;
   font-size: 0.9rem;
   margin: 1rem 0;
+  padding: 0 0.3rem;
   display: flex;
+  align-items: center;
   gap: 0.5rem;
 }
 
+.radio {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border-width: 2px;
+  appearance: none;
+  outline: 2px solid var(--gray);
+  outline-offset: 2px;
+  accent-color: var(--gray);
+  padding: 0.1rem;
+}
+
+.radio:checked {
+  outline-offset: 2px;
+  background-color: var(--gray);
+}
+
+.checkbox {
+  width: 11px;
+  height: 11px;
+  border-width: 2px;
+  appearance: none;
+  outline: 2px solid var(--gray);
+  accent-color: var(--gray);
+  padding: 0.1rem;
+}
+
+.checkbox:checked {
+  background-color: var(--gray);
+  background-image: url("/icons/white-check.png");
+  background-repeat: no-repeat;
+  background-size: 11px;
+}
+
 .label {
+  display: flex;
   gap: 0.5rem;
   cursor: pointer;
+}
+
+.showMoreBox {
+  width: max-content;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: var(--purple-dark);
+}
+
+.arrowIcon2 {
+  width: 8px;
+  height: 8px;
+  transition: all 0.5s;
+}
+
+.arrowIcon2Rotate {
+  transform: rotate(180deg);
+}
+
+.inpts {
+  position: relative;
+}
+
+.whiteScreen {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+  background-color: var(--white);
+  -webkit-mask-image: linear-gradient(transparent, var(--white));
 }

@@ -4139,7 +4139,46 @@ const popularInstructorsData = [
   },
 ];
 
+const filtersData = [
+  {
+    id: "fd-1",
+    title: "Ratings",
+    type: "radio",
+    filtersData: [
+      { txt: "4.5 & up", count: "9998", stars: true },
+      { txt: "4.0 & up", count: "10000", stars: true },
+      { txt: "3.5 & up", count: "10000", stars: true },
+      { txt: "3.0 & up", count: "10000", stars: true },
+    ],
+  },
+  {
+    id: "fd-2",
+    title: "Video Duration",
+    type: "checkbox",
+    filtersData: [
+      { txt: "0-1 Hour", count: "1442", stars: false },
+      { txt: "1-3 Hours", count: "6918", stars: false },
+      { txt: "3-6 Hours", count: "7240", stars: false },
+      { txt: "6-7 Hours", count: "8498", stars: false },
+      { txt: "17+ Hours", count: "3502", stars: false },
+    ],
+  },
+  {
+    id: "fd-3",
+    title: "Topic",
+    type: "checkbox",
+    filtersData: [
+      { txt: "Python", count: "1442", stars: false },
+      { txt: "JavaScript", count: "6918", stars: false },
+      { txt: "React", count: "7240", stars: false },
+      { txt: "NodeJs", count: "8498", stars: false },
+      { txt: "Remix", count: "3502", stars: false },
+    ],
+  },
+];
+
 export {
+  filtersData,
   popularInstructorsData,
   BigVerticalCourseCardData,
   coursesInCartData,

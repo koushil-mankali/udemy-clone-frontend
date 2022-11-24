@@ -10,7 +10,10 @@ import BigVerticalCourseCard from "../../components/Cards/BigVerticalCourseCard/
 import CarouselLayout from "../../components/CarouselComponents/CarouselLayout/CarouselLayout";
 import MedVerticalCourseCard from "../../components/Cards/MedVerticalCourseCard/MedVerticalCourseCard";
 
-import { BigVerticalCourseCardData } from "../../fakedata/fakedata";
+import {
+  BigVerticalCourseCardData,
+  courseDetData,
+} from "../../fakedata/fakedata";
 import InstructorMenuBar from "../../components/LayoutComponents/InstructorMenuBar/InstructorMenuBar";
 
 const Test = () => {

@@ -26,10 +26,11 @@
 
 .leftBox {
   width: 20%;
-  background-color: yellowgreen;
+  /* background-color: yellowgreen; */
 }
 
 .rightBox {
+  margin-top: 1rem;
   width: 80%;
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
 }

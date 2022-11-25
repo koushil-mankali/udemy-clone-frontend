@@ -12,12 +12,15 @@ import filterIcon from "/icons/filter.png";
 import css from "./CourseSearchResultsComponent.module.css";
 
 const CourseSearchResultsComponent = () => {
-  const options = [
-    { key: "Higest Rated", value: "higest rated" },
-    { key: "Most Popular", value: "most popular" },
-    { key: "Newest", value: "newest" },
-  ];
+  const options = ["Higest Rated", "Most Popular", "Newest"];
+  const [selectedOption, setSelectedOption] = useState("");
   const [showFilters, setShowFilters] = useState(false);
+
+  const selectFunctionHandler = (value) => {
+    console.log("selected option", value);
+    setSelectedOption(value);
+  };
+
   return (
     <div className={css.outerDiv}>
       <div className={css.innerDiv}>
@@ -36,7 +39,9 @@ const CourseSearchResultsComponent = () => {
             />
             <SelectBtnUtil
               label="Sort by"
+              selectedOption={selectedOption}
               options={options}
+              onChange={selectFunctionHandler}
               extraCss={{ maxHeight: "55px" }}
             />
             <div className={css.clAllTxt}>Clear filters</div>

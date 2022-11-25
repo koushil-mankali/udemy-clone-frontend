@@ -10,6 +10,11 @@ import Cart from "./pages/Cart/Cart";
 import CoursePage from "./pages/CoursePage/CoursePage";
 import CategoryCoursePage from "./pages/CategoryCoursePage/CategoryCoursePage";
 import MyCoursesPage from "./pages/User/MyCoursesPage/MyCoursesPage";
+import AllCoursesComponent from "./components/UserComponents/MyCourses/AllCoursesComponent/AllCoursesComponent";
+import MyListsComponent from "./components/UserComponents/MyCourses/MyListsComponent/MyListsComponent";
+import WishListComponent from "./components/UserComponents/MyCourses/WishListComponent/WishListComponent";
+import ArchivedComponent from "./components/UserComponents/MyCourses/ArchivedComponent/ArchivedComponent";
+import LearningToolsComponent from "./components/UserComponents/MyCourses/LearningToolsComponent/LearningToolsComponent";
 import Checkout from "./pages/Checkout/Checkout";
 import NotFound from "./pages/NotFound/NotFound";
 import "./index.css";
@@ -59,23 +64,23 @@ const router = createBrowserRouter([
     children: [
       {
         path: "learning",
-        element: <CategoryCoursePage />,
+        element: <AllCoursesComponent />,
       },
       {
         path: "lists",
-        element: <CategoryCoursePage />,
+        element: <MyListsComponent />,
       },
       {
-        path: "whishlist",
-        element: <CategoryCoursePage />,
+        path: "wishlist",
+        element: <WishListComponent />,
       },
       {
         path: "archived",
-        element: <CategoryCoursePage />,
+        element: <ArchivedComponent />,
       },
       {
-        path: "learning-tool",
-        element: <CategoryCoursePage />,
+        path: "learning-tools",
+        element: <LearningToolsComponent />,
       },
     ],
   },

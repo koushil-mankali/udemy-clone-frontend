@@ -78,10 +78,10 @@ const LoggedInNavbar = () => {
                 <Link to="/user/my-courses/learning" className={css.menuItem}>
                   My Learning
                 </Link>
-                <Link to="/" className={css.menuItem}>
+                <Link to="/cart" className={css.menuItem}>
                   My Cart
                 </Link>
-                <Link to="/" className={css.menuItem}>
+                <Link to="/user/my-courses/whishlist" className={css.menuItem}>
                   My Wishlist
                 </Link>
                 <Link to="/" className={css.menuItem}>

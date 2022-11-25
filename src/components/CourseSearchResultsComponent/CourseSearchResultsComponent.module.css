@@ -8,6 +8,21 @@
   height: 100%;
 }
 
+.TtlBox {
+  margin: 1rem 0;
+}
+
+.ttl {
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.ttl > span:last-child {
+  text-transform: capitalize;
+}
+
 .topBar {
   width: 100%;
   height: max-content;

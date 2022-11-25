@@ -9,6 +9,7 @@ import Signup from "./pages/Join/signup/Signup";
 import Cart from "./pages/Cart/Cart";
 import CoursePage from "./pages/CoursePage/CoursePage";
 import CategoryCoursePage from "./pages/CategoryCoursePage/CategoryCoursePage";
+import MyCoursesPage from "./pages/User/MyCoursesPage/MyCoursesPage";
 import Checkout from "./pages/Checkout/Checkout";
 import NotFound from "./pages/NotFound/NotFound";
 import "./index.css";
@@ -49,6 +50,32 @@ const router = createBrowserRouter([
             element: <CategoryCoursePage />,
           },
         ],
+      },
+    ],
+  },
+  {
+    path: "/user/my-courses",
+    element: <MyCoursesPage />,
+    children: [
+      {
+        path: "learning",
+        element: <CategoryCoursePage />,
+      },
+      {
+        path: "lists",
+        element: <CategoryCoursePage />,
+      },
+      {
+        path: "whishlist",
+        element: <CategoryCoursePage />,
+      },
+      {
+        path: "archived",
+        element: <CategoryCoursePage />,
+      },
+      {
+        path: "learning-tool",
+        element: <CategoryCoursePage />,
       },
     ],
   },

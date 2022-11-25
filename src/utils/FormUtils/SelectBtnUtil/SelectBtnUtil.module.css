@@ -1,0 +1,26 @@
+.outerDiv {
+  width: min-content;
+  height: auto;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--gray);
+}
+
+.outerDiv:hover,
+.outerDiv:hover .select {
+  background-color: var(--gray100);
+}
+
+.label {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.select {
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+.select:focus {
+  background-color: rebeccapurple;
+}

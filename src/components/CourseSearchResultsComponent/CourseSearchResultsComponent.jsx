@@ -3,6 +3,7 @@ import { useState } from "react";
 import FiltersComp from "../CourseComponents/FiltersComp/FiltersComp";
 import MedVerticalCourseCard from "../Cards/MedVerticalCourseCard/MedVerticalCourseCard";
 import Button1 from "../../utils/Buttons/Button1/Button1";
+import SelectBtnUtil from "../../utils/FormUtils/SelectBtnUtil/SelectBtnUtil";
 
 import { courseDetData, filtersData } from "../../fakedata/fakedata.js";
 
@@ -11,6 +12,11 @@ import filterIcon from "/icons/filter.png";
 import css from "./CourseSearchResultsComponent.module.css";
 
 const CourseSearchResultsComponent = () => {
+  const options = [
+    { key: "Higest Rated", value: "higest rated" },
+    { key: "Most Popular", value: "most popular" },
+    { key: "Newest", value: "newest" },
+  ];
   const [showFilters, setShowFilters] = useState(false);
   return (
     <div className={css.outerDiv}>
@@ -28,15 +34,10 @@ const CourseSearchResultsComponent = () => {
                 alignItems: "center",
               }}
             />
-            <Button1
-              txt="Filters"
-              img={filterIcon}
-              extraCss={{
-                padding: "1rem",
-                display: "flex",
-                justtifyContent: "center",
-                alignItems: "center",
-              }}
+            <SelectBtnUtil
+              label="Sort by"
+              options={options}
+              extraCss={{ maxHeight: "55px" }}
             />
             <div className={css.clAllTxt}>Clear filters</div>
           </div>

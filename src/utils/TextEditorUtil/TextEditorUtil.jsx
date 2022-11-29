@@ -10,13 +10,13 @@ const TextEditorUtil = (props) => {
   const { editorState, setEditor } = props;
 
   const editorChangeHandler = (e) => {
-    const selection = e.getSelection;
-    console.log(
-      "Editor Value:",
-      e.target.innerText,
-      document.getSelection(),
-      selection
-    );
+    let range = document.createRange();
+    let sel = window.getSelection();
+    range.setStartAfter(e.target.childNodes[0], e.target.childNodes[0].length);
+    range.collapse(true);
+
+    sel.removeAllRanges();
+    sel.addRange(range);
     setEditor(e.target.innerText || "");
   };
 
@@ -24,6 +24,10 @@ const TextEditorUtil = (props) => {
     setToolOptions((prev) => {
       return { ...prev, [item]: !prev[item] };
     });
+  };
+
+  const editorTextHandler = (e) => {
+    console.log(document.getSelection().toString(), "pp");
   };
 
   return (
@@ -58,6 +62,7 @@ const TextEditorUtil = (props) => {
         contentEditable={true}
         suppressContentEditableWarning={true}
         onInput={editorChangeHandler}
+        onMouseUp={editorTextHandler}
       >
         {editorState}
       </div>

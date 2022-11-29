@@ -1,17 +1,23 @@
-import React from "react";
+import { useState } from "react";
 
 import InputUtil from "../../../../utils/FormUtils/InputUtil/InputUtil";
 import SelectUtil from "../../../../utils/FormUtils/SelectUtil/SelectUtil";
+import TextEditorUtil from "../../../../utils/TextEditorUtil/TextEditorUtil";
 
 import css from "./BasicSettingsComponent.module.css";
 
 const BasicSettingsComponent = () => {
+  const [textEditorState, setTextEditorState] = useState("Hi this is Editor!");
   const options = [
     { value: "ss", txt: "see" },
     { value: "ss", txt: "see" },
   ];
   return (
     <div className={css.outerDiv}>
+      <TextEditorUtil
+        editorState={textEditorState}
+        setEditor={setTextEditorState}
+      />
       <InputUtil
         inptTxt="http://www.twitter.com/"
         label="First Name"

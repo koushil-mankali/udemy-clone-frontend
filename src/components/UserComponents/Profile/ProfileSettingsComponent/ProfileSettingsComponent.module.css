@@ -15,7 +15,12 @@
 .tabs {
   display: flex;
   gap: 1rem;
+  overflow: scroll;
   border-bottom: 1px solid var(--gray86);
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .tab {
@@ -25,6 +30,7 @@
   color: var(--light-gray);
   cursor: pointer;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .tabActive {

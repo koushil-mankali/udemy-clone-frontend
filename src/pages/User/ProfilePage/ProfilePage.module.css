@@ -3,3 +3,9 @@
   height: 100%;
   padding: 2rem 3rem;
 }
+
+@media screen and (max-width: 426px) {
+  .outerDiv {
+    padding: 1rem;
+  }
+}

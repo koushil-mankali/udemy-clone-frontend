@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+
+import UploadUtil from "../../../../utils/FormUtils/UploadUtil/UploadUtil";
 
 const PhotoComponent = () => {
   return (
-    <div>PhotoComponent</div>
-  )
-}
+    <div style={{ margin: "2rem" }}>
+      <UploadUtil txt="Upload Image" />
+    </div>
+  );
+};
 
-export default PhotoComponent
+export default PhotoComponent;

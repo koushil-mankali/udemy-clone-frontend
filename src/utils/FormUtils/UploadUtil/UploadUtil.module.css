@@ -1,0 +1,33 @@
+.outerDiv {
+  width: 100%;
+  display: flex;
+}
+
+.uploadLabel {
+  min-width: 300px;
+  max-width: 600px;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--light-gray);
+  background-color: var(--lighish-white);
+}
+
+.lblTxt {
+  padding: 0 1rem;
+  font-size: 1rem;
+}
+
+.txt {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.8rem;
+  background-color: var(--white);
+  border-left: 1px solid var(--light-gray);
+}
+
+.uploadBtn {
+  display: none;
+}

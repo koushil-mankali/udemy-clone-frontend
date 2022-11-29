@@ -6,6 +6,7 @@
   align-items: center;
   background-color: var(--gray);
   color: var(--white);
+  border-top: 1px solid var(--light-gray3);
 }
 
 .innerDiv {

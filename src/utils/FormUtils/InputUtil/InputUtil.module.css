@@ -1,7 +1,17 @@
 .outerDiv {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+}
+
+.inptBoxDiv {
+  display: flex;
   align-items: center;
+}
+
+.label {
+  color: var(--gray);
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .inptBox {
@@ -11,6 +21,10 @@
   display: flex;
   justify-content: start;
   align-items: center;
+}
+
+.count {
+  padding: 0.5rem 1rem;
 }
 
 .icon {

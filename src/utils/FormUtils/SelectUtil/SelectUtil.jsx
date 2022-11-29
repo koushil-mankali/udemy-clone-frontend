@@ -21,6 +21,7 @@ const SelectUtil = (props) => {
   };
 
   const optionHandler = (value) => {
+    console.log("SelectUtil", value);
     setValue(value);
     dropdownHandler();
   };

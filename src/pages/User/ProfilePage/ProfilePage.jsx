@@ -2,13 +2,15 @@ import React from "react";
 
 import css from "./ProfilePage.module.css";
 
-import Layout1 from "../../Layout1/Layout1";
+import InstructorLayout from "../../InstructorLayout/InstructorLayout";
 
 const ProfilePage = () => {
   return (
-    <Layout1>
-      <h1>hi</h1>
-    </Layout1>
+    <InstructorLayout>
+      <div className={css.outerDiv}>
+        <h1>hello</h1>
+      </div>
+    </InstructorLayout>
   );
 };
 

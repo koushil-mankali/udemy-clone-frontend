@@ -1,0 +1,183 @@
+.navbar {
+  width: 100%;
+  height: 4.4rem;
+  padding: 0 2rem;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+  font-size: 1rem;
+  position: fixed;
+  top: 0;
+  color: var(--gray);
+  background-color: var(--white);
+}
+
+.right {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.hovBox {
+  width: max-content;
+  text-decoration: none;
+  color: var(--gray);
+}
+
+.hovBox:hover {
+  color: var(--purple-dark);
+}
+
+.notiBox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+
+.notiIcon {
+  width: 100%;
+  height: 100%;
+}
+
+.notiIcon:hover {
+  filter: brightness(0) saturate(100%) invert(14%) sepia(85%) saturate(4507%)
+    hue-rotate(274deg) brightness(95%) contrast(109%);
+}
+
+.profile {
+  margin: 0 0.5rem;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+}
+
+.profileIcon {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.menuBox {
+  position: absolute;
+  top: 35px;
+  right: 0px;
+  display: none;
+}
+
+.profile:hover .menuBox {
+  width: 300px;
+  height: auto;
+  padding-top: 1rem;
+  display: flex;
+}
+
+.prflDiv:last-child {
+  margin-bottom: 1rem;
+}
+
+.innerMenuBox {
+  width: 100%;
+  height: 100%;
+  background-color: var(--white);
+  box-shadow: 0 0 0 1px #d1d7dc, 0 2px 4px rgb(0 0 0 / 8%),
+    0 4px 12px rgb(0 0 0 / 8%);
+}
+
+.user {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--gray);
+}
+
+.leftUserDiv {
+  width: 30%;
+}
+
+.rightUserDiv {
+  width: 70%;
+}
+
+.userProfileImg {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.uname {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.email {
+  font-size: 0.9rem;
+}
+
+.menuItem {
+  display: block;
+  font-size: 0.9rem;
+  margin: 1rem;
+  text-decoration: none;
+  color: var(--gray);
+}
+
+.menuItem:hover {
+  color: var(--purple-dark);
+}
+
+.menuItem2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  padding: 0 1rem;
+  color: var(--gray);
+}
+
+.menuItem2 > span:last-of-type {
+  display: flex;
+  align-items: center;
+}
+
+.menuItem2 > span:first-of-type {
+  color: var(--purple-dark);
+}
+
+.icon {
+  margin: 0 0.5rem;
+  width: 15px;
+  height: 15px;
+}
+
+.menuItemTxt1 {
+  color: var(--gray);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.menuItemTxt2 {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    height: 3rem;
+  }
+  .menuBox {
+    margin: 0 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .menuIcon {
+    width: 24px;
+    height: 24px;
+  }
+}

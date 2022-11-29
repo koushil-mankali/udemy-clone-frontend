@@ -17,6 +17,9 @@ import WishListComponent from "./components/UserComponents/MyCourses/WishListCom
 import ArchivedComponent from "./components/UserComponents/MyCourses/ArchivedComponent/ArchivedComponent";
 import LearningToolsComponent from "./components/UserComponents/MyCourses/LearningToolsComponent/LearningToolsComponent";
 import ProfileSettingsComponent from "./components/UserComponents/Profile/ProfileSettingsComponent/ProfileSettingsComponent";
+import BasicSettingsComponent from "./components/UserComponents/Profile/BasicSettingsComponent/BasicSettingsComponent";
+import PhotoComponent from "./components/UserComponents/Profile/PhotoComponent/PhotoComponent";
+import PrivacyComponent from "./components/UserComponents/Profile/PrivacyComponent/PrivacyComponent";
 import Checkout from "./pages/Checkout/Checkout";
 import NotFound from "./pages/NotFound/NotFound";
 import "./index.css";
@@ -70,15 +73,15 @@ const router = createBrowserRouter([
         children: [
           {
             path: "basic",
-            element: <AllCoursesComponent />,
+            element: <BasicSettingsComponent />,
           },
           {
             path: "photo",
-            element: <AllCoursesComponent />,
+            element: <PhotoComponent />,
           },
           {
             path: "privacy",
-            element: <AllCoursesComponent />,
+            element: <PrivacyComponent />,
           },
         ],
       },

@@ -9,6 +9,7 @@ import Signup from "./pages/Join/signup/Signup";
 import Cart from "./pages/Cart/Cart";
 import CoursePage from "./pages/CoursePage/CoursePage";
 import CategoryCoursePage from "./pages/CategoryCoursePage/CategoryCoursePage";
+import ProfilePage from "./pages/User/ProfilePage/ProfilePage";
 import MyCoursesPage from "./pages/User/MyCoursesPage/MyCoursesPage";
 import AllCoursesComponent from "./components/UserComponents/MyCourses/AllCoursesComponent/AllCoursesComponent";
 import MyListsComponent from "./components/UserComponents/MyCourses/MyListsComponent/MyListsComponent";
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
         ],
       },
     ],
+  },
+  {
+    path: "/user/profile",
+    element: <ProfilePage />,
   },
   {
     path: "/user/my-courses",

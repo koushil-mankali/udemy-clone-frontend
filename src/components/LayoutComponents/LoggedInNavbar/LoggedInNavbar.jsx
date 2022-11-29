@@ -37,7 +37,7 @@ const LoggedInNavbar = () => {
         <Link className={css.hovBox} to="/">
           Instructor
         </Link>
-        <Link className={css.hovBox} to="/">
+        <Link className={css.hovBox} to="/user/my-courses">
           My Learning
         </Link>
         <Link to="/cart" className={css.cartBox}>
@@ -59,7 +59,7 @@ const LoggedInNavbar = () => {
           <div className={css.menuBox}>
             <div className={css.innerMenuBox}>
               <div className={css.prflDiv}>
-                <div className={css.user}>
+                <Link to="/user/profile" className={css.user}>
                   <div className={css.leftUserDiv}>
                     <img
                       src={userEmptyIcon}
@@ -71,7 +71,7 @@ const LoggedInNavbar = () => {
                     <div className={css.uname}>Koushil Mankali</div>
                     <div className={css.email}>koushilmankali@gmail.com</div>
                   </div>
-                </div>
+                </Link>
               </div>
               <hr className={css.hr} />
               <div className={css.prflDiv}>
@@ -81,7 +81,7 @@ const LoggedInNavbar = () => {
                 <Link to="/cart" className={css.menuItem}>
                   My Cart
                 </Link>
-                <Link to="/user/my-courses/whishlist" className={css.menuItem}>
+                <Link to="/user/my-courses/wishlist" className={css.menuItem}>
                   My Wishlist
                 </Link>
                 <Link to="/" className={css.menuItem}>
@@ -99,7 +99,7 @@ const LoggedInNavbar = () => {
               </div>
               <hr className={css.hr} />
               <div className={css.prflDiv}>
-                <Link to="/" className={css.menuItem}>
+                <Link to="/user/account" className={css.menuItem}>
                   Account Settings
                 </Link>
                 <Link to="/" className={css.menuItem}>
@@ -130,7 +130,7 @@ const LoggedInNavbar = () => {
                 <Link to="/" className={css.menuItem}>
                   Public Profile
                 </Link>
-                <Link to="/" className={css.menuItem}>
+                <Link to="/user/profile" className={css.menuItem}>
                   Edit Profile
                 </Link>
               </div>

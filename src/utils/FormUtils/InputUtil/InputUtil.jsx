@@ -9,6 +9,7 @@ const InputUtil = (props) => {
   const {
     type = "text",
     label = null,
+    inptTxt = null,
     name = "",
     icon = "",
     placeholderTxt = "",
@@ -22,6 +23,8 @@ const InputUtil = (props) => {
     btnCss = {},
     count = false,
     countLimit = null,
+    disabledInpt = false,
+    disabledBtn = false,
   } = props;
 
   const changeHandler = (e) => {
@@ -37,6 +40,7 @@ const InputUtil = (props) => {
       {label ? <label className={css.label}>{label}</label> : null}
       <div className={css.inptBoxDiv}>
         <div className={css.inptBox} style={inptBoxCss}>
+          {inptTxt ? <div className={css.inptTxt}>{inptTxt}</div> : null}
           {icon ? <img src={icon} className={css.icon} style={imgCss} /> : ""}
           <input
             type={type}
@@ -47,6 +51,7 @@ const InputUtil = (props) => {
             defaultValue={state}
             onChange={changeHandler}
             maxLength={countLimit}
+            disabled={disabledInpt}
           />
           {count ? <div className={css.count}>{countNumber}</div> : null}
         </div>
@@ -57,6 +62,7 @@ const InputUtil = (props) => {
             bck="var(--purple)"
             hovBck="var(--purple-dark)"
             color="var(--white)"
+            disableBtn={disabledBtn}
             extraCss={{
               margin: "0",
               padding: "1.3rem",

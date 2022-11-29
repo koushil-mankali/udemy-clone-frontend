@@ -8,6 +8,12 @@
   align-items: center;
 }
 
+.inptTxt {
+  padding: 1.2rem;
+  border-right: 1px solid var(--gray);
+  background-color: var(--lighish-white);
+}
+
 .label {
   color: var(--gray);
   font-size: 1rem;
@@ -40,6 +46,10 @@
   color: var(--gray);
   outline: none;
   border: none;
+}
+
+.inpt:disabled {
+  cursor: not-allowed;
 }
 
 .inpt:placeholder-shown {

@@ -13,11 +13,21 @@ const BasicSettingsComponent = () => {
   return (
     <div className={css.outerDiv}>
       <InputUtil
+        inptTxt="http://www.twitter.com/"
+        label="First Name"
+        name="firstname"
+        count={true}
+        countLimit={40}
+        disabledInpt={false}
+      />
+      <InputUtil
         label="First Name"
         name="firstname"
         count={true}
         countLimit={40}
         btnTxt="hello"
+        disabledBtn={false}
+        btnClick={() => console.log("Btn")}
       />
       <SelectUtil options={options} />
     </div>

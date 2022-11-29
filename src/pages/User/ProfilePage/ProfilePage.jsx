@@ -1,4 +1,4 @@
-import React from "react";
+import { Outlet } from "react-router-dom";
 
 import css from "./ProfilePage.module.css";
 
@@ -8,7 +8,7 @@ const ProfilePage = () => {
   return (
     <InstructorLayout>
       <div className={css.outerDiv}>
-        <h1>hello</h1>
+        <Outlet />
       </div>
     </InstructorLayout>
   );

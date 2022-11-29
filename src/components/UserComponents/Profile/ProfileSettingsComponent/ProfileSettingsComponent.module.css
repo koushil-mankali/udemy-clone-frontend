@@ -1,2 +1,37 @@
 .outerDiv {
+  width: 100%;
+}
+
+.ttl {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.innerDiv {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+  border-bottom: 1px solid var(--gray86);
+}
+
+.tab {
+  padding: 1rem 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--light-gray);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.tabActive {
+  color: var(--gray);
+  border-bottom: 2px solid var(--gray);
+}
+
+.bdy {
+  margin: 1rem 0;
 }

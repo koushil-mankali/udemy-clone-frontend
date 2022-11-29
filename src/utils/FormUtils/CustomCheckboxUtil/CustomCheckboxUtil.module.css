@@ -1,0 +1,29 @@
+.inptBox {
+  width: 100%;
+  margin: 1rem 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.label {
+  width: 85%;
+  font-size: 1rem;
+}
+
+.checkbox {
+  width: 11px;
+  height: 11px;
+  border-width: 2px;
+  appearance: none;
+  outline: 2px solid var(--gray);
+  accent-color: var(--gray);
+  padding: 0.1rem;
+}
+
+.checkbox:checked {
+  background-color: var(--gray);
+  background-image: url("/icons/white-check.png");
+  background-repeat: no-repeat;
+  background-size: 11px;
+}

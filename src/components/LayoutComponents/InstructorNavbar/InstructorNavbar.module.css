@@ -169,13 +169,19 @@
 @media screen and (max-width: 768px) {
   .navbar {
     height: 3rem;
+    background-color: rebeccapurple;
   }
   .menuBox {
     margin: 0 0.5rem;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
   }
+
+  .menuBox:hover {
+    display: flex;
+  }
+
   .menuIcon {
     width: 24px;
     height: 24px;

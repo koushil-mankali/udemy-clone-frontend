@@ -1,19 +1,17 @@
 .outerDiv {
-  width: 40px;
+  width: 60px;
   height: calc(100vh - 4.4rem);
   background-color: var(--gray);
-  transition: all 1s;
   cursor: pointer;
+  transition: all 0.5s;
 }
 
 .outerDiv:hover {
-  min-width: 200px;
-  width: max-content;
+  width: 250px;
 }
 
-.iconBox,
-.menuItem {
-  width: 100px;
+.iconBox {
+  width: 50px;
   height: 50px;
   padding: 1rem;
 }
@@ -21,5 +19,36 @@
 .icon {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+}
+
+.menuBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menuItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.menuItem:hover {
+  background-color: rgba(256, 256, 256, 0.3);
+}
+
+.activeLink {
+  border-left: 5px solid var(--purple);
+}
+
+.menuTxt {
+  color: var(--white);
+  font-weight: 700;
+  display: none;
+}
+
+.outerDiv:hover .menuTxt {
+  display: flex;
 }

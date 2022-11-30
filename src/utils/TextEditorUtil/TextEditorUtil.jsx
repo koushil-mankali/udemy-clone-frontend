@@ -4,30 +4,35 @@ import { useState } from "react";
 import css from "./TextEditorUtil.module.css";
 
 const TextEditorUtil = (props) => {
+  const tagMappings = new Map();
+  tagMappings.set("bold", "strong");
+  tagMappings.set("italic", "em");
+
   const [toolOptions, setToolOptions] = useState({
     bold: false,
     italic: false,
   });
-  const [selectedText, setSelectedText] = useState("");
+  const [selectedText, setSelectedText] = useState({
+    txt: "",
+    parent: "",
+  });
   const { editorState, setEditor } = props;
 
   const editorChangeHandler = (e) => {
-    let range = document.createRange();
-    let sel = window.getSelection();
-    range.setStartAfter(e.target.childNodes[0], e.target.childNodes[0].length);
-    range.collapse(true);
-
-    sel.removeAllRanges();
-    sel.addRange(range);
     setEditor(e.target.innerText || "");
   };
 
   const toolOptionHandler = (item) => {
-    // selectedText.startsWith("<b>");
-    // console.log(item, "button", selectedText.bold());
-    const modifiedText = "mod";
+    const tag = tagMappings.get(item);
+    const tagEle = tagMappings.get(item)?.toUpperCase();
+    let modifiedText = "";
+    modifiedText = `<${tag}>${selectedText.txt}</${tag}>`;
+    if (selectedText.parent === tag?.toUpperCase()) {
+      modifiedText = `</${tagEle}>${selectedText.txt}<${tagEle}>`;
+    }
+
     setEditor((prev) => {
-      return prev.replace(selectedText, modifiedText);
+      return prev.replace(selectedText.txt, modifiedText);
     });
     setToolOptions((prev) => {
       return { ...prev, [item]: !prev[item] };
@@ -35,8 +40,25 @@ const TextEditorUtil = (props) => {
   };
 
   const editorTextHandler = (e) => {
-    console.log(document.getSelection().toString(), "pp");
-    setSelectedText(document.getSelection().toString() || "");
+    const tagName = document.getSelection().anchorNode.parentElement.tagName;
+    console.log(tagName);
+    if (tagName === "STRONG") {
+      setToolOptions((prev) => {
+        return { ...prev, bold: true, italic: false };
+      });
+    } else if (tagName === "EM") {
+      setToolOptions((prev) => {
+        return { ...prev, bold: false, italic: true };
+      });
+    } else {
+      setToolOptions((prev) => {
+        return { ...prev, bold: false, italic: false };
+      });
+    }
+    setSelectedText({
+      txt: document.getSelection().toString() || "",
+      parent: tagName,
+    });
   };
 
   useEffect(() => {

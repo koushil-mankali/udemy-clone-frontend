@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useState } from "react";
 
 import css from "./TextEditorUtil.module.css";
@@ -7,6 +8,7 @@ const TextEditorUtil = (props) => {
     bold: false,
     italic: false,
   });
+  const [selectedText, setSelectedText] = useState("");
   const { editorState, setEditor } = props;
 
   const editorChangeHandler = (e) => {
@@ -21,6 +23,12 @@ const TextEditorUtil = (props) => {
   };
 
   const toolOptionHandler = (item) => {
+    // selectedText.startsWith("<b>");
+    // console.log(item, "button", selectedText.bold());
+    const modifiedText = "mod";
+    setEditor((prev) => {
+      return prev.replace(selectedText, modifiedText);
+    });
     setToolOptions((prev) => {
       return { ...prev, [item]: !prev[item] };
     });
@@ -28,7 +36,12 @@ const TextEditorUtil = (props) => {
 
   const editorTextHandler = (e) => {
     console.log(document.getSelection().toString(), "pp");
+    setSelectedText(document.getSelection().toString() || "");
   };
+
+  useEffect(() => {
+    document.querySelector("#editor").innerHTML = editorState;
+  }, [editorState]);
 
   return (
     <div className={css.textEditor}>
@@ -63,9 +76,7 @@ const TextEditorUtil = (props) => {
         suppressContentEditableWarning={true}
         onInput={editorChangeHandler}
         onMouseUp={editorTextHandler}
-      >
-        {editorState}
-      </div>
+      ></div>
     </div>
   );
 };

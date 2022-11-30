@@ -97,7 +97,10 @@ const InstructorNavbar = () => {
                 <Link to="/" className={css.menuItem}>
                   Public Profile
                 </Link>
-                <Link to="/user/profile" className={css.menuItem}>
+                <Link
+                  to="/user/profile/settings/basic"
+                  className={css.menuItem}
+                >
                   Edit Profile
                 </Link>
               </div>

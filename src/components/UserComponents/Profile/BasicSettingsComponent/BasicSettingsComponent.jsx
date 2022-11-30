@@ -7,7 +7,9 @@ import TextEditorUtil from "../../../../utils/TextEditorUtil/TextEditorUtil";
 import css from "./BasicSettingsComponent.module.css";
 
 const BasicSettingsComponent = () => {
-  const [textEditorState, setTextEditorState] = useState("Hi this is Editor!");
+  const [textEditorState, setTextEditorState] = useState(
+    "<p><strong>Hi this is Editor!</strong></p>"
+  );
   const options = [
     { value: "ss", txt: "see" },
     { value: "ss", txt: "see" },

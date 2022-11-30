@@ -15,6 +15,7 @@ const TextEditorUtil = (props) => {
   const [selectedText, setSelectedText] = useState({
     txt: "",
     parent: "",
+    ancestorParent: "",
   });
   const { editorState, setEditor } = props;
 
@@ -26,9 +27,14 @@ const TextEditorUtil = (props) => {
     const tag = tagMappings.get(item);
     const tagEle = tagMappings.get(item)?.toUpperCase();
     let modifiedText = "";
-    modifiedText = `<${tag}>${selectedText.txt}</${tag}>`;
     if (selectedText.parent === tag?.toUpperCase()) {
       modifiedText = `</${tagEle}>${selectedText.txt}<${tagEle}>`;
+    } else if (selectedText.ancestorParent === tag?.toUpperCase()) {
+      modifiedText = `</${selectedText.ancestorParent?.toUpperCase()}>${
+        selectedText.txt
+      }<${selectedText.ancestorParent?.toUpperCase()}>`;
+    } else {
+      modifiedText = `<${tag}>${selectedText.txt}</${tag}>`;
     }
 
     setEditor((prev) => {
@@ -40,9 +46,19 @@ const TextEditorUtil = (props) => {
   };
 
   const editorTextHandler = (e) => {
+    const parentTagName =
+      document.getSelection().anchorNode.parentElement.parentElement.tagName ||
+      "";
     const tagName = document.getSelection().anchorNode.parentElement.tagName;
-    console.log(tagName);
-    if (tagName === "STRONG") {
+    console.log(parentTagName, "parentTagName", tagName);
+    if (
+      (tagName === "EM" || tagName === "STRONG") &&
+      (parentTagName === "EM" || parentTagName === "STRONG")
+    ) {
+      setToolOptions((prev) => {
+        return { ...prev, bold: true, italic: true };
+      });
+    } else if (tagName === "STRONG") {
       setToolOptions((prev) => {
         return { ...prev, bold: true, italic: false };
       });
@@ -58,6 +74,7 @@ const TextEditorUtil = (props) => {
     setSelectedText({
       txt: document.getSelection().toString() || "",
       parent: tagName,
+      ancestorParent: parentTagName,
     });
   };
 

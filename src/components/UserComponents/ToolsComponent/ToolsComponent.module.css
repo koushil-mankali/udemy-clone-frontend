@@ -1,0 +1,23 @@
+.outerDiv {
+  width: 100%;
+  height: auto;
+  color: var(--gray);
+}
+
+.ttl {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.cards {
+  margin: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+  .cards {
+    gap: none;
+  }
+}

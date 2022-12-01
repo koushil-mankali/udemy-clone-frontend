@@ -53,7 +53,7 @@ const InstructorMenuBar = () => {
           <div className={css.menuTxt}>Performance</div>
         </NavLink>
         <NavLink
-          to="/user/profile/settings/basic"
+          to="/user/profile/tools"
           className={({ isActive }) =>
             isActive ? [css.menuItem, css.activeLink].join(" ") : css.menuItem
           }

@@ -4183,6 +4183,26 @@ const filtersData = [
   },
 ];
 
+const toolsResources = [
+  {
+    id: "tr-1",
+    icon: teachIcon,
+    ttl: "Test Video",
+    txt: "Get free feedback from Udemy video experts on your audio, video, and delivery.",
+  },
+  {
+    id: "tr-2",
+    icon: groupUsersIcon,
+    ttl: "Marketplace Insights",
+    txt: "Get Udemy-wide market data to create successful courses.",
+  },
+  {
+    id: "tr-3",
+    icon: askIcon,
+    ttl: "Bulk coupon creation",
+    txt: "Create multiple coupons at once via CSV upload.",
+  },
+];
 const helpResources = [
   {
     id: "hr-1",
@@ -4205,6 +4225,7 @@ const helpResources = [
 ];
 
 export {
+  toolsResources,
   helpResources,
   filtersData,
   popularInstructorsData,

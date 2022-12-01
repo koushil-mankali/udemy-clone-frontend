@@ -20,6 +20,7 @@ import ProfileSettingsComponent from "./components/UserComponents/Profile/Profil
 import BasicSettingsComponent from "./components/UserComponents/Profile/BasicSettingsComponent/BasicSettingsComponent";
 import PhotoComponent from "./components/UserComponents/Profile/PhotoComponent/PhotoComponent";
 import PrivacyComponent from "./components/UserComponents/Profile/PrivacyComponent/PrivacyComponent";
+import ToolsComponent from "./components/UserComponents/ToolsComponent/ToolsComponent";
 import ResourcesComponent from "./components/UserComponents/ResourcesComponent/ResourcesComponent";
 import Checkout from "./pages/Checkout/Checkout";
 import NotFound from "./pages/NotFound/NotFound";
@@ -97,6 +98,10 @@ const router = createBrowserRouter([
             element: <PrivacyComponent />,
           },
         ],
+      },
+      {
+        path: "tools",
+        element: <ToolsComponent />,
       },
       {
         path: "resources",

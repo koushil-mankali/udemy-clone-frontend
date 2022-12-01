@@ -17,6 +17,7 @@
   align-items: center;
   font-weight: 700;
   border: none;
+  outline: none;
   cursor: pointer;
   background-color: transparent;
 }

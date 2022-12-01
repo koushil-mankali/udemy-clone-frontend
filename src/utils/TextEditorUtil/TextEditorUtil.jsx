@@ -5,7 +5,7 @@ import css from "./TextEditorUtil.module.css";
 
 const TextEditorUtil = (props) => {
   const textEditorRef = createRef();
-
+  const allowedFormats = ["B", "I"];
   const [toolOptions, setToolOptions] = useState({
     bold: false,
     italic: false,
@@ -27,8 +27,8 @@ const TextEditorUtil = (props) => {
 
   useEffect(() => {
     textEditorRef.current.innerHTML = editorState;
-
     const el = textEditorRef.current;
+
     const selection = window.getSelection();
     const range = document.createRange();
     selection.removeAllRanges();
@@ -43,7 +43,20 @@ const TextEditorUtil = (props) => {
 
   const selectTextHandler = (e) => {
     const selection = document.getSelection();
-    console.log(e, "s", selection);
+    const parentElement = selection?.anchorNode?.parentElement;
+    const ancestorParentElement =
+      selection?.anchorNode?.parentElement?.parentElement;
+
+    if (
+      allowedFormats.includes(parentElement.tagName) &&
+      allowedFormats.includes(ancestorParentElement.tagName)
+    ) {
+      setToolOptions({ bold: true, italic: true });
+    } else if (parentElement.tagName === "B") {
+      setToolOptions({ bold: true, italic: false });
+    } else if (parentElement.tagName === "I") {
+      setToolOptions({ bold: false, italic: true });
+    }
   };
 
   return (
@@ -77,7 +90,7 @@ const TextEditorUtil = (props) => {
         ref={textEditorRef}
         className={css.editor}
         contentEditable={true}
-        onSelect={(e) => selectTextHandler(e)}
+        onMouseUp={(e) => selectTextHandler(e)}
         onInput={(e) => textEditorHandler(e)}
         suppressContentEditableWarning={true}
       ></div>

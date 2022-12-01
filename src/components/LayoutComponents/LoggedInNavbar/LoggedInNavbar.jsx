@@ -59,7 +59,7 @@ const LoggedInNavbar = () => {
           <div className={css.menuBox}>
             <div className={css.innerMenuBox}>
               <div className={css.prflDiv}>
-                <Link to="/user/profile" className={css.user}>
+                <Link to="/user/profile/settings/basic" className={css.user}>
                   <div className={css.leftUserDiv}>
                     <img
                       src={userEmptyIcon}

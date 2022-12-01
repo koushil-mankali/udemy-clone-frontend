@@ -15,8 +15,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   font-weight: 700;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
 }
 
 .toolItemActive {

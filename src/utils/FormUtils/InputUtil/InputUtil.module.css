@@ -53,6 +53,7 @@
 }
 
 .inpt:placeholder-shown {
+  font-size: 1rem;
   color: var(--gray86);
-  font-weight: 600;
+  font-weight: 500;
 }

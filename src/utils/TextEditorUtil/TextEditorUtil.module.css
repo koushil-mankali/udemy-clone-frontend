@@ -1,4 +1,10 @@
+.editorBox {
+  width: auto;
+  height: auto;
+}
+
 .textEditor {
+  margin: 1rem 0;
   border: 1px solid var(--gray);
 }
 
@@ -28,9 +34,20 @@
   outline: 1px solid var(--gray);
 }
 
+.label {
+  color: var(--gray);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
 .editor {
   border: none;
   outline: none;
   padding: 1rem;
   min-height: 5rem;
+}
+
+.note {
+  font-size: 0.7rem;
+  color: var(--light-gray);
 }

@@ -4,6 +4,7 @@ import { useState } from "react";
 import css from "./TextEditorUtil.module.css";
 
 const TextEditorUtil = (props) => {
+  const { label, disclaimer } = props;
   const textEditorRef = createRef();
   const allowedFormats = ["B", "I"];
   const [toolOptions, setToolOptions] = useState({
@@ -60,40 +61,44 @@ const TextEditorUtil = (props) => {
   };
 
   return (
-    <div className={css.textEditor}>
-      <div className={css.toolBar}>
-        <button
-          onClick={() => toolOptionHandler("bold")}
-          className={[
-            css.toolItem,
-            toolOptions.bold ? css.toolItemActive : null,
-          ].join(" ")}
-        >
-          B
-        </button>
-        <button
-          style={{
-            fontStyle: "italic",
-            fontFamily: "none",
-          }}
-          onClick={() => toolOptionHandler("italic")}
-          className={[
-            css.toolItem,
-            toolOptions.italic ? css.toolItemActive : null,
-          ].join(" ")}
-        >
-          I
-        </button>
+    <div className={css.editorBox}>
+      {label ? <label className={css.label}>{label}</label> : null}
+      <div className={css.textEditor}>
+        <div className={css.toolBar}>
+          <button
+            onClick={() => toolOptionHandler("bold")}
+            className={[
+              css.toolItem,
+              toolOptions.bold ? css.toolItemActive : null,
+            ].join(" ")}
+          >
+            B
+          </button>
+          <button
+            style={{
+              fontStyle: "italic",
+              fontFamily: "none",
+            }}
+            onClick={() => toolOptionHandler("italic")}
+            className={[
+              css.toolItem,
+              toolOptions.italic ? css.toolItemActive : null,
+            ].join(" ")}
+          >
+            I
+          </button>
+        </div>
+        <div
+          id="editor"
+          ref={textEditorRef}
+          className={css.editor}
+          contentEditable={true}
+          onMouseUp={(e) => selectTextHandler(e)}
+          onInput={(e) => textEditorHandler(e)}
+          suppressContentEditableWarning={true}
+        ></div>
       </div>
-      <div
-        id="editor"
-        ref={textEditorRef}
-        className={css.editor}
-        contentEditable={true}
-        onMouseUp={(e) => selectTextHandler(e)}
-        onInput={(e) => textEditorHandler(e)}
-        suppressContentEditableWarning={true}
-      ></div>
+      <div className={css.note}>{disclaimer}</div>
     </div>
   );
 };

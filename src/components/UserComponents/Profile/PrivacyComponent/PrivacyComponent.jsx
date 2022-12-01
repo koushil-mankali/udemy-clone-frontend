@@ -53,15 +53,14 @@ const PrivacyComponent = () => {
         })}
 
         <Button1
-          type="submit"
           txt="Save"
-          bck="var(--light-gray2)"
           color="var(--white)"
+          bck="var(--light-gray2)"
           hovBck="var(--gray)"
           extraCss={{
-            padding: "0.5rem",
-            fontSize: "1rem",
-            margin: "2rem 0rem",
+            margin: "1rem 0",
+            fontSize: "1.1rem",
+            padding: "0.8rem 1.2rem",
           }}
         />
       </form>

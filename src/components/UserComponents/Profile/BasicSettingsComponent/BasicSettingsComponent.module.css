@@ -1,3 +1,14 @@
 .outerDiv {
   width: 100%;
 }
+
+.innerDiv {
+  width: 90%;
+  display: flex;
+  gap: 2rem;
+}
+
+.box1,
+.box2 {
+  width: 50%;
+}

@@ -1,6 +1,9 @@
 import { useState } from "react";
 
+import InputUtil from "../../../../utils/FormUtils/InputUtil/InputUtil";
 import SelectDropdownUtil from "../../../../utils/FormUtils/SelectDropdownUtil/SelectDropdownUtil";
+
+import searchIcon from "/icons/search.png";
 
 import css from "./AllCoursesComponent.module.css";
 
@@ -137,7 +140,14 @@ const AllCoursesComponent = () => {
             options={filterByInstructorOptions}
           />
         </div>
-        <div className={css.searchBar}>Search Bar</div>
+        <div className={css.searchBar}>
+          <InputUtil
+            icon={searchIcon}
+            iconPosition="right"
+            placeholderTxt="Search my courses"
+            extraCss={{ padding: "0.3rem", fontSize: "1rem" }}
+          />
+        </div>
       </div>
     </div>
   );

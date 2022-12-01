@@ -7,6 +7,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }
 
 .filters {
@@ -16,8 +17,7 @@
 }
 
 .searchBar {
-  width: 60px;
-  background-color: rebeccapurple;
+  width: max-content;
 }
 
 @media screen and (max-width: 768px) {

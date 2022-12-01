@@ -12,6 +12,7 @@ const InputUtil = (props) => {
     inptTxt = null,
     name = "",
     icon = "",
+    iconPosition = "left",
     placeholderTxt = "",
     state = "",
     btnTxt = "",
@@ -41,7 +42,11 @@ const InputUtil = (props) => {
       <div className={css.inptBoxDiv}>
         <div className={css.inptBox} style={inptBoxCss}>
           {inptTxt ? <div className={css.inptTxt}>{inptTxt}</div> : null}
-          {icon ? <img src={icon} className={css.icon} style={imgCss} /> : ""}
+          {icon && iconPosition === "left" ? (
+            <img src={icon} className={css.icon} style={imgCss} />
+          ) : (
+            ""
+          )}
           <input
             type={type}
             name={name}
@@ -54,6 +59,11 @@ const InputUtil = (props) => {
             disabled={disabledInpt}
           />
           {count ? <div className={css.count}>{countNumber}</div> : null}
+          {icon && iconPosition === "right" ? (
+            <img src={icon} className={css.icon} style={imgCss} />
+          ) : (
+            ""
+          )}
         </div>
         {btnTxt ? (
           <Button1

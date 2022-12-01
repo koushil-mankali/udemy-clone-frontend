@@ -15,6 +15,7 @@ const PhotoComponent = () => {
         color="var(--white)"
         bck="var(--light-gray2)"
         hovBck="var(--gray)"
+        disableBtn={true}
         extraCss={{
           margin: "1rem 0",
           fontSize: "1.1rem",

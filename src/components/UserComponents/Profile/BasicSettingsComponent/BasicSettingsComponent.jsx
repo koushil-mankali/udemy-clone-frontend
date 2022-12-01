@@ -45,17 +45,6 @@ const BasicSettingsComponent = () => {
             value={options[0].txt}
             options={options}
           />
-          <Button1
-            txt="Save"
-            color="var(--white)"
-            bck="var(--light-gray2)"
-            hovBck="var(--gray)"
-            extraCss={{
-              margin: "1rem 0",
-              fontSize: "1.1rem",
-              padding: "0.8rem 1.2rem",
-            }}
-          />
         </div>
         <div className={css.box2}>
           <InputUtil
@@ -89,6 +78,20 @@ const BasicSettingsComponent = () => {
             placeholderTxt="Username"
           />
         </div>
+      </div>
+      <div className={css.bottomDiv}>
+        <Button1
+          txt="Save"
+          color="var(--white)"
+          bck="var(--light-gray2)"
+          hovBck="var(--gray)"
+          disableBtn={true}
+          extraCss={{
+            margin: "1rem 0",
+            fontSize: "1.1rem",
+            padding: "0.8rem 1.2rem",
+          }}
+        />
       </div>
     </div>
   );

@@ -12,3 +12,19 @@
 .box2 {
   width: 50%;
 }
+
+@media screen and (max-width: 1024px) {
+  .innerDiv {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .innerDiv {
+    display: block;
+  }
+  .box1,
+  .box2 {
+    width: 100%;
+  }
+}

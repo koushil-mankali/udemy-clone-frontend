@@ -8,10 +8,8 @@ const InstructorLayout = ({ children }) => {
   return (
     <div className={css.outerDiv}>
       <InstructorNavbar />
-      <div className={css.innerDiv}>
-        <InstructorMenuBar />
-        {children}
-      </div>
+      <InstructorMenuBar />
+      <div className={css.innerDiv}>{children}</div>
       <Footer />
     </div>
   );

@@ -1,2 +1,19 @@
 .outerDiv {
+  width: 100%;
+}
+
+.topBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filters {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+
+.searchBar {
+  width: 60px;
 }

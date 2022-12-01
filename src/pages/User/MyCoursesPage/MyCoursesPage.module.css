@@ -15,12 +15,13 @@
 }
 
 .topBarTtl {
-  width: 70%;
+  width: 60%;
   font-size: 2.5rem;
   font-weight: 700;
 }
 
 .menuBar {
+  margin-bottom: 2rem;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -29,7 +30,9 @@
 }
 
 .links {
+  width: 60%;
   display: flex;
+  justify-content: left;
   gap: 2rem;
   overflow: scroll;
 }
@@ -49,4 +52,12 @@
 .linkActive {
   color: var(--white);
   border-bottom: 5px solid var(--white);
+}
+
+.outletBdy {
+  width: 60%;
+  margin: 2rem 0;
+  min-height: 40vh;
+  margin: auto;
+  /* background-color: orange; */
 }

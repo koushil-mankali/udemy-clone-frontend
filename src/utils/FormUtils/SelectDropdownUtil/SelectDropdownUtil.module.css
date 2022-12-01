@@ -1,0 +1,61 @@
+.outerDiv {
+  margin: 1rem 0;
+  min-width: 100px;
+  max-width: 300px;
+  background-color: var(--white);
+}
+
+.selectBox {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.label {
+  font-size: 0.9rem;
+}
+
+.selectedDP {
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: 1px solid var(--gray);
+  cursor: pointer;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.icon {
+  width: 10px;
+  height: 10px;
+}
+
+.options {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  width: max-content;
+  height: auto;
+  max-height: 300px;
+  border: 1px solid var(--gray86);
+  background-color: var(--white);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+  display: none;
+}
+
+.option {
+  width: max-content;
+  font-size: 0.9rem;
+  margin: 1rem 2rem;
+  cursor: pointer;
+}
+
+.option:hover {
+  color: var(--purple-dark);
+}

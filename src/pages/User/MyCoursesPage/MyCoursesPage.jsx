@@ -22,6 +22,7 @@ const MyCoursesPage = () => {
           <div className={css.links}>
             {tabs?.map((item) => (
               <NavLink
+                key={item.name}
                 to={item.link}
                 className={({ isActive }) =>
                   isActive ? [css.link, css.linkActive].join(" ") : css.link
@@ -32,7 +33,9 @@ const MyCoursesPage = () => {
             ))}
           </div>
         </div>
-        <Outlet />
+        <div className={css.outletBdy}>
+          <Outlet />
+        </div>
       </div>
     </Layout1>
   );

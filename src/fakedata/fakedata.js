@@ -10,6 +10,9 @@ import showcaseImg3 from "/images/showcase3.jpg";
 import bannerImg1 from "/images/banners/banner1.jpg";
 import bannerImg2 from "/images/banners/banner2.jpg";
 import bannerImg3 from "/images/banners/banner3.jpg";
+import teachIcon from "/icons/teach.png";
+import askIcon from "/icons/ask.png";
+import groupUsersIcon from "/icons/group-users.png";
 
 const Learnings = {
   ttl: "What you'll learn",
@@ -4180,7 +4183,29 @@ const filtersData = [
   },
 ];
 
+const helpResources = [
+  {
+    id: "hr-1",
+    icon: teachIcon,
+    ttl: "Teaching Center",
+    txt: "Find articles on Udemy teaching — from course creation to marketing.",
+  },
+  {
+    id: "hr-2",
+    icon: groupUsersIcon,
+    ttl: "Instructor Community",
+    txt: "Share your progress and ask other instructors questions in our community.",
+  },
+  {
+    id: "hr-3",
+    icon: askIcon,
+    ttl: "Help and Support",
+    txt: "Can’t find what you need? Our support team is happy to help.",
+  },
+];
+
 export {
+  helpResources,
   filtersData,
   popularInstructorsData,
   BigVerticalCourseCardData,

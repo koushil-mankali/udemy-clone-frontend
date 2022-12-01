@@ -3,7 +3,7 @@
   height: 4.4rem;
   padding: 0 2rem;
   font-size: 1rem;
-  position: fixed;
+  position: absolute;
   top: 0;
   color: var(--gray);
   background-color: var(--white);

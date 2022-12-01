@@ -7,9 +7,12 @@ import css from "./InstructorLayout.module.css";
 const InstructorLayout = ({ children }) => {
   return (
     <div className={css.outerDiv}>
-      <InstructorNavbar />
       <InstructorMenuBar />
-      <div className={css.innerDiv}>{children}</div>
+      <InstructorNavbar />
+      <div className={css.innerDiv}>
+        <div className={css.dummy}>d</div>
+        <div className={css.outletBdy}>{children}</div>
+      </div>
       <Footer />
     </div>
   );

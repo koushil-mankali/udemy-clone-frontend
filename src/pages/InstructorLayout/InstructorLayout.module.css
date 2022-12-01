@@ -8,5 +8,15 @@
   width: 100%;
   min-height: calc(100vh - 4.4rem);
   height: 100%;
-  padding-left: 3rem;
+  display: flex;
+}
+
+.dummy {
+  width: 50px;
+  height: 100%;
+  background-color: rebeccapurple;
+}
+
+.outletBdy {
+  width: 100%;
 }

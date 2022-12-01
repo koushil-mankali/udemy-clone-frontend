@@ -20,6 +20,7 @@ import ProfileSettingsComponent from "./components/UserComponents/Profile/Profil
 import BasicSettingsComponent from "./components/UserComponents/Profile/BasicSettingsComponent/BasicSettingsComponent";
 import PhotoComponent from "./components/UserComponents/Profile/PhotoComponent/PhotoComponent";
 import PrivacyComponent from "./components/UserComponents/Profile/PrivacyComponent/PrivacyComponent";
+import ResourcesComponent from "./components/UserComponents/ResourcesComponent/ResourcesComponent";
 import Checkout from "./pages/Checkout/Checkout";
 import NotFound from "./pages/NotFound/NotFound";
 import "./index.css";
@@ -68,6 +69,18 @@ const router = createBrowserRouter([
     element: <ProfilePage />,
     children: [
       {
+        path: "courses",
+        element: <ResourcesComponent />,
+      },
+      {
+        path: "communication",
+        element: <ResourcesComponent />,
+      },
+      {
+        path: "performance",
+        element: <ResourcesComponent />,
+      },
+      {
         path: "settings",
         element: <ProfileSettingsComponent />,
         children: [
@@ -84,6 +97,10 @@ const router = createBrowserRouter([
             element: <PrivacyComponent />,
           },
         ],
+      },
+      {
+        path: "resources",
+        element: <ResourcesComponent />,
       },
     ],
   },

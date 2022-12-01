@@ -1,0 +1,49 @@
+.card {
+  flex: 1;
+  margin: 1rem;
+  padding: 2rem;
+  width: auto;
+  height: auto;
+  min-width: 300px;
+  min-height: 200px;
+  border: 1px solid var(--gray86);
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--gray);
+}
+
+.card:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.iconBox {
+  width: 40px;
+  height: 40px;
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ttl {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.txt {
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    margin: 0.5rem;
+  }
+}

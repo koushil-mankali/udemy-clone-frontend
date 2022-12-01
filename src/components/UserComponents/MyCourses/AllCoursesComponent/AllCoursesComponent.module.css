@@ -1,5 +1,6 @@
 .outerDiv {
   width: 100%;
+  margin: 1rem 0;
 }
 
 .topBar {
@@ -16,4 +17,21 @@
 
 .searchBar {
   width: 60px;
+  background-color: rebeccapurple;
+}
+
+@media screen and (max-width: 768px) {
+  .topBar {
+    flex-wrap: wrap;
+  }
+  .searchBar {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .filters {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }

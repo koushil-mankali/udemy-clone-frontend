@@ -1,8 +1,6 @@
 .outerDiv {
-  margin: 1rem 0;
   min-width: 100px;
   max-width: 300px;
-  background-color: var(--white);
 }
 
 .selectBox {
@@ -12,6 +10,7 @@
   flex-direction: column;
   justify-content: flex-end;
   position: relative;
+  background-color: var(--white);
 }
 
 .label {
@@ -47,6 +46,7 @@
   background-color: var(--white);
   box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
   display: none;
+  z-index: 1;
 }
 
 .option {
@@ -58,4 +58,14 @@
 
 .option:hover {
   color: var(--purple-dark);
+}
+
+@media screen and (max-width: 426px) {
+  .outerDiv {
+    min-width: 100%;
+    max-width: none;
+  }
+  .selectBox {
+    height: max-content;
+  }
 }

@@ -96,7 +96,6 @@ const AllCoursesComponent = () => {
 
   return (
     <div className={css.outerDiv}>
-      <h1>My Courses</h1>
       <div className={css.topBar}>
         <div className={css.filters}>
           <SelectDropdownUtil

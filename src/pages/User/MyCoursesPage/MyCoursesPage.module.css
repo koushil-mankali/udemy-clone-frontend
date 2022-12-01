@@ -61,3 +61,19 @@
   margin: auto;
   /* background-color: orange; */
 }
+
+@media screen and (max-width: 1024px) {
+  .topBarTtl,
+  .links,
+  .outletBdy {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .topBarTtl,
+  .links,
+  .outletBdy {
+    width: 90%;
+  }
+}

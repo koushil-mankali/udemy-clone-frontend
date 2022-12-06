@@ -24,7 +24,6 @@ const CourseCardWithOptions = (props) => {
       if (e.target.id !== `cwo-${id}`) {
         return setMenuBox(false);
       }
-      setMenuBox(true);
     });
 
     return () => {
@@ -32,7 +31,6 @@ const CourseCardWithOptions = (props) => {
         if (e.target.id !== `cwo-${id}`) {
           return setMenuBox(false);
         }
-        setMenuBox(true);
       });
     };
   }, []);
@@ -43,7 +41,12 @@ const CourseCardWithOptions = (props) => {
         className={css.optionsBox}
         onClickCapture={(e) => e.preventDefault()}
       >
-        <button id={`cwo-${id}`} type="button" className={css.menuBtn}>
+        <button
+          id={`cwo-${id}`}
+          type="button"
+          className={css.menuBtn}
+          onClick={() => setMenuBox((prev) => !prev)}
+        >
           <img src={dotsIcon} className={css.menuIcon} id={`cwo-${id}`} />
           {menuBox ? (
             <div className={css.menuBox}>

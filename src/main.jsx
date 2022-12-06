@@ -27,127 +27,136 @@ import NotFound from "./pages/NotFound/NotFound";
 import "./index.css";
 import Test from "./pages/Test/Test";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    // element: <HomePage />,
-    element: <LoggedInUserHomePage />,
-  },
-  {
-    path: "/cart",
-    element: <Cart />,
-  },
-  {
-    path: "/join/login",
-    element: <Login />,
-  },
-  {
-    path: "/join/signup",
-    element: <Signup />,
-  },
-  {
-    path: "/course/:id",
-    element: <CoursePage />,
-  },
-  {
-    path: "/courses",
-    element: <CategoryCoursePage />,
-    children: [
-      {
-        path: ":catId",
-        element: <CategoryCoursePage />,
-        children: [
-          {
-            path: ":subCatId",
-            element: <CategoryCoursePage />,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    path: "/user/:id",
-    element: <PublicProfile />,
-  },
-  {
-    path: "/user/profile",
-    element: <ProfilePage />,
-    children: [
-      {
-        path: "courses",
-        element: <ResourcesComponent />,
-      },
-      {
-        path: "communication",
-        element: <ResourcesComponent />,
-      },
-      {
-        path: "performance",
-        element: <ResourcesComponent />,
-      },
-      {
-        path: "settings",
-        element: <ProfileSettingsComponent />,
-        children: [
-          {
-            path: "basic",
-            element: <BasicSettingsComponent />,
-          },
-          {
-            path: "photo",
-            element: <PhotoComponent />,
-          },
-          {
-            path: "privacy",
-            element: <PrivacyComponent />,
-          },
-        ],
-      },
-      {
-        path: "tools",
-        element: <ToolsComponent />,
-      },
-      {
-        path: "resources",
-        element: <ResourcesComponent />,
-      },
-    ],
-  },
-  {
-    path: "/user/my-courses",
-    element: <MyCoursesPage />,
-    children: [
-      {
-        path: "learning",
-        element: <AllCoursesComponent />,
-      },
-      {
-        path: "lists",
-        element: <MyListsComponent />,
-      },
-      {
-        path: "wishlist",
-        element: <WishListComponent />,
-      },
-      {
-        path: "archived",
-        element: <ArchivedComponent />,
-      },
-    ],
-  },
-  {
-    path: "/checkout",
-    element: <Checkout />,
-  },
-  {
-    path: "/test",
-    element: <Test />,
-  },
-  {
-    path: "*",
-    element: <NotFound />,
-  },
-]);
+let login = true;
+let routes;
+
+if (login) {
+  routes = [
+    {
+      path: "/",
+      // element: <HomePage />,
+      element: <LoggedInUserHomePage />,
+    },
+    {
+      path: "/cart",
+      element: <Cart />,
+    },
+    {
+      path: "/join/login",
+      element: <Login />,
+    },
+    {
+      path: "/join/signup",
+      element: <Signup />,
+    },
+    {
+      path: "/course/:id",
+      element: <CoursePage />,
+    },
+    {
+      path: "/courses",
+      element: <CategoryCoursePage />,
+      children: [
+        {
+          path: ":catId",
+          element: <CategoryCoursePage />,
+          children: [
+            {
+              path: ":subCatId",
+              element: <CategoryCoursePage />,
+            },
+          ],
+        },
+      ],
+    },
+    {
+      path: "/user/:id",
+      element: <PublicProfile />,
+    },
+    {
+      path: "/user/profile",
+      element: <ProfilePage />,
+      children: [
+        {
+          path: "courses",
+          element: <ResourcesComponent />,
+        },
+        {
+          path: "communication",
+          element: <ResourcesComponent />,
+        },
+        {
+          path: "performance",
+          element: <ResourcesComponent />,
+        },
+        {
+          path: "settings",
+          element: <ProfileSettingsComponent />,
+          children: [
+            {
+              path: "basic",
+              element: <BasicSettingsComponent />,
+            },
+            {
+              path: "photo",
+              element: <PhotoComponent />,
+            },
+            {
+              path: "privacy",
+              element: <PrivacyComponent />,
+            },
+          ],
+        },
+        {
+          path: "tools",
+          element: <ToolsComponent />,
+        },
+        {
+          path: "resources",
+          element: <ResourcesComponent />,
+        },
+      ],
+    },
+    {
+      path: "/user/my-courses",
+      element: <MyCoursesPage />,
+      children: [
+        {
+          path: "learning",
+          element: <AllCoursesComponent />,
+        },
+        {
+          path: "lists",
+          element: <MyListsComponent />,
+        },
+        {
+          path: "wishlist",
+          element: <WishListComponent />,
+        },
+        {
+          path: "archived",
+          element: <ArchivedComponent />,
+        },
+      ],
+    },
+    {
+      path: "/checkout",
+      element: <Checkout />,
+    },
+    {
+      path: "/test",
+      element: <Test />,
+    },
+    {
+      path: "*",
+      element: <NotFound />,
+    },
+  ];
+} else {
+  routes = [];
+}
+
+const router = createBrowserRouter(routes);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

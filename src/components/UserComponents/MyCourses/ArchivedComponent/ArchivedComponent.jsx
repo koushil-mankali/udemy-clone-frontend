@@ -30,6 +30,7 @@ const ArchivedComponent = () => {
             <CourseCardWithOptions
               key={item.id}
               data={item}
+              isOptions={true}
               options={optionsComps}
             />
           );

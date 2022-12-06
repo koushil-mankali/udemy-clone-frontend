@@ -7,6 +7,7 @@ import playIcon from "/icons/play-button.png";
 import dotsIcon from "/icons/dots.png";
 
 const CourseCardWithOptions = (props) => {
+  const { isOptions = false, options, data } = props;
   const {
     path = "",
     img = "",
@@ -15,8 +16,7 @@ const CourseCardWithOptions = (props) => {
     author = "",
     ratings = 0,
     courseCoveredPercent = 0,
-  } = props.data;
-  const optionsComps = props.options;
+  } = data;
   const [menuBox, setMenuBox] = useState(false);
 
   useEffect(() => {
@@ -37,30 +37,32 @@ const CourseCardWithOptions = (props) => {
 
   return (
     <Link to={path} className={css.outerDiv}>
-      <div
-        className={css.optionsBox}
-        onClickCapture={(e) => e.preventDefault()}
-      >
-        <button
-          id={`cwo-${id}`}
-          type="button"
-          className={css.menuBtn}
-          onClick={() => setMenuBox((prev) => !prev)}
+      {isOptions ? (
+        <div
+          className={css.optionsBox}
+          onClickCapture={(e) => e.preventDefault()}
         >
-          <img src={dotsIcon} className={css.menuIcon} id={`cwo-${id}`} />
-          {menuBox ? (
-            <div className={css.menuBox}>
-              {optionsComps?.map((Option, id) => {
-                return (
-                  <div className={css.optionComp} key={id}>
-                    {Option}
-                  </div>
-                );
-              })}
-            </div>
-          ) : null}
-        </button>
-      </div>
+          <button
+            id={`cwo-${id}`}
+            type="button"
+            className={css.menuBtn}
+            onClick={() => setMenuBox((prev) => !prev)}
+          >
+            <img src={dotsIcon} className={css.menuIcon} id={`cwo-${id}`} />
+            {menuBox ? (
+              <div className={css.menuBox}>
+                {options?.map((Option, id) => {
+                  return (
+                    <div className={css.optionComp} key={id}>
+                      {Option}
+                    </div>
+                  );
+                })}
+              </div>
+            ) : null}
+          </button>
+        </div>
+      ) : null}
       <div className={css.imgBox}>
         <img src={img} alt="course image" className={css.img} />
         <div className={css.hovImgBox}>

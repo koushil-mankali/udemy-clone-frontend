@@ -1,10 +1,15 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import InputUtil from "../../../../utils/FormUtils/InputUtil/InputUtil";
 import SelectDropdownUtil from "../../../../utils/FormUtils/SelectDropdownUtil/SelectDropdownUtil";
 import CourseCardWithOptions from "../../../Cards/CourseCardWithOptions/CourseCardWithOptions";
 
 import searchIcon from "/icons/search.png";
+import shareIcon from "/icons/share.png";
+import starIcon from "/icons/star-b.png";
+import plusIcon from "/icons/plus.png";
+import folderIcon from "/icons/folder.png";
 import { courseDataWithOptions } from "../../../../fakedata/fakedata";
 
 import css from "./AllCoursesComponent.module.css";
@@ -122,7 +127,39 @@ const AllCoursesComponent = () => {
     });
   };
 
-  const optionsComps = [<h1>Heelo</h1>, <h1>Heelo</h1>];
+  const optionsComps = [
+    <div className={css.opt}>
+      <div className={css.httl}>Lists</div>
+      <Link  className={css.ctxt}>Dynamics</Link>
+      <Link className={css.ctxt}>NCloud</Link>
+    </div>,
+    <div className={css.opt}>
+      <div className={css.txtBox}>
+        <span className={css.iconBox}>
+          <img src={shareIcon} alt="icon" className={css.icon} />
+        </span>
+        <span className={css.txt}>Share</span>
+      </div>
+      <div className={css.txtBox}>
+        <span className={css.iconBox}>
+          <img src={plusIcon} alt="icon" className={css.icon} />
+        </span>
+        <span className={css.txt}>Create New List</span>
+      </div>
+      <div className={css.txtBox}>
+        <span className={css.iconBox}>
+          <img src={starIcon} alt="icon" className={css.icon} />
+        </span>
+        <span className={css.txt}>Favorite</span>
+      </div>
+      <div className={css.txtBox}>
+        <span className={css.iconBox}>
+          <img src={folderIcon} alt="icon" className={css.icon} />
+        </span>
+        <span className={css.txt}>Unarchive</span>
+      </div>
+    </div>,
+  ];
 
   return (
     <div className={css.outerDiv}>
@@ -189,6 +226,7 @@ const AllCoursesComponent = () => {
             <CourseCardWithOptions
               key={item.id}
               data={item}
+              isOptions={true}
               options={optionsComps}
             />
           );

@@ -4,7 +4,6 @@
   height: 250px;
   /* margin: 0.5rem; */
   color: var(--gray);
-  border: 1px solid red;
   cursor: pointer;
   position: relative;
   text-decoration: none;

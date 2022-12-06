@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import css from "./CourseCardWithOptions.module.css";
@@ -19,18 +19,32 @@ const CourseCardWithOptions = (props) => {
   const optionsComps = props.options;
   const [menuBox, setMenuBox] = useState(false);
 
+  useEffect(() => {
+    window.addEventListener("click", (e) => {
+      if (e.target.id !== `cwo-${id}`) {
+        return setMenuBox(false);
+      }
+      setMenuBox(true);
+    });
+
+    return () => {
+      window.removeEventListener("click", (e) => {
+        if (e.target.id !== `cwo-${id}`) {
+          return setMenuBox(false);
+        }
+        setMenuBox(true);
+      });
+    };
+  }, []);
+
   return (
     <Link to={path} className={css.outerDiv}>
       <div
         className={css.optionsBox}
         onClickCapture={(e) => e.preventDefault()}
       >
-        <button
-          type="button"
-          className={css.menuBtn}
-          onClick={() => setMenuBox((prev) => !prev)}
-        >
-          <img src={dotsIcon} className={css.menuIcon} />
+        <button id={`cwo-${id}`} type="button" className={css.menuBtn}>
+          <img src={dotsIcon} className={css.menuIcon} id={`cwo-${id}`} />
           {menuBox ? (
             <div className={css.menuBox}>
               {optionsComps?.map((Option, id) => {

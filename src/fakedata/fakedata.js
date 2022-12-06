@@ -3684,11 +3684,11 @@ const crsDataWO = {
 
 const courseDataWithOptions = [
   crsDataWO,
-  crsDataWO,
-  crsDataWO,
-  crsDataWO,
-  crsDataWO,
-  crsDataWO,
+  { ...crsDataWO, id: 2 },
+  { ...crsDataWO, id: 3 },
+  { ...crsDataWO, id: 4 },
+  { ...crsDataWO, id: 5 },
+  { ...crsDataWO, id: 6 },
 ];
 
 const det = {

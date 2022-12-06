@@ -1,0 +1,50 @@
+.outerDiv {
+  width: 100%;
+  height: auto;
+  color: var(--gray);
+}
+
+.topbar {
+  width: 100%;
+  padding: 0.5rem 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.ttl {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.desc {
+  font-size: 1rem;
+}
+
+.icon {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.bdy {
+  width: 100%;
+  height: 100%;
+  margin: 1rem 0;
+}
+
+.cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.seeMoreBtn {
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  color: var(--indigo);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}

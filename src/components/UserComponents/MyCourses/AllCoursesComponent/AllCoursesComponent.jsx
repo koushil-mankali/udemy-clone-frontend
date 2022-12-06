@@ -130,34 +130,38 @@ const AllCoursesComponent = () => {
   const optionsComps = [
     <div className={css.opt}>
       <div className={css.httl}>Lists</div>
-      <Link  className={css.ctxt}>Dynamics</Link>
-      <Link className={css.ctxt}>NCloud</Link>
+      <Link to="/" className={css.ctxt}>
+        Dynamics
+      </Link>
+      <Link to="/" className={css.ctxt}>
+        NCloud
+      </Link>
     </div>,
     <div className={css.opt}>
-      <div className={css.txtBox}>
+      <Link to="/" className={css.txtBox}>
         <span className={css.iconBox}>
           <img src={shareIcon} alt="icon" className={css.icon} />
         </span>
         <span className={css.txt}>Share</span>
-      </div>
-      <div className={css.txtBox}>
+      </Link>
+      <Link to="/" className={css.txtBox}>
         <span className={css.iconBox}>
           <img src={plusIcon} alt="icon" className={css.icon} />
         </span>
         <span className={css.txt}>Create New List</span>
-      </div>
-      <div className={css.txtBox}>
+      </Link>
+      <Link to="/" className={css.txtBox}>
         <span className={css.iconBox}>
           <img src={starIcon} alt="icon" className={css.icon} />
         </span>
         <span className={css.txt}>Favorite</span>
-      </div>
-      <div className={css.txtBox}>
+      </Link>
+      <Link to="/" className={css.txtBox}>
         <span className={css.iconBox}>
           <img src={folderIcon} alt="icon" className={css.icon} />
         </span>
         <span className={css.txt}>Unarchive</span>
-      </div>
+      </Link>
     </div>,
   ];
 

@@ -10,7 +10,6 @@ const MyCoursesPage = () => {
     { name: "My Lists", link: "lists" },
     { name: "Wishlist", link: "wishlist" },
     { name: "Archived", link: "archived" },
-    { name: "Learning tools", link: "learning-tools" },
   ];
   return (
     <Layout1>

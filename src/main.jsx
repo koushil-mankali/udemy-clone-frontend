@@ -15,7 +15,6 @@ import AllCoursesComponent from "./components/UserComponents/MyCourses/AllCourse
 import MyListsComponent from "./components/UserComponents/MyCourses/MyListsComponent/MyListsComponent";
 import WishListComponent from "./components/UserComponents/MyCourses/WishListComponent/WishListComponent";
 import ArchivedComponent from "./components/UserComponents/MyCourses/ArchivedComponent/ArchivedComponent";
-import LearningToolsComponent from "./components/UserComponents/MyCourses/LearningToolsComponent/LearningToolsComponent";
 import ProfileSettingsComponent from "./components/UserComponents/Profile/ProfileSettingsComponent/ProfileSettingsComponent";
 import BasicSettingsComponent from "./components/UserComponents/Profile/BasicSettingsComponent/BasicSettingsComponent";
 import PhotoComponent from "./components/UserComponents/Profile/PhotoComponent/PhotoComponent";
@@ -133,10 +132,6 @@ const router = createBrowserRouter([
       {
         path: "archived",
         element: <ArchivedComponent />,
-      },
-      {
-        path: "learning-tools",
-        element: <LearningToolsComponent />,
       },
     ],
   },

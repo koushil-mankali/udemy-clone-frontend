@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import InputUtil from "../../../../utils/FormUtils/InputUtil/InputUtil";
 import SelectDropdownUtil from "../../../../utils/FormUtils/SelectDropdownUtil/SelectDropdownUtil";
+import CourseCardWithOptions from "../../../Cards/CourseCardWithOptions/CourseCardWithOptions";
 
 import searchIcon from "/icons/search.png";
+import { courseDataWithOptions } from "../../../../fakedata/fakedata";
 
 import css from "./AllCoursesComponent.module.css";
-import { useEffect } from "react";
 
 const AllCoursesComponent = () => {
   const [filters, setFilers] = useState({
@@ -121,6 +122,8 @@ const AllCoursesComponent = () => {
     });
   };
 
+  const optionsComps = [<h1>Heelo</h1>, <h1>Heelo</h1>];
+
   return (
     <div className={css.outerDiv}>
       <div className={css.topBar}>
@@ -179,6 +182,17 @@ const AllCoursesComponent = () => {
             extraCss={{ padding: "0.3rem", fontSize: "1rem" }}
           />
         </div>
+      </div>
+      <div className={css.bdy}>
+        {courseDataWithOptions.map((item) => {
+          return (
+            <CourseCardWithOptions
+              key={item.id}
+              data={item}
+              options={optionsComps}
+            />
+          );
+        })}
       </div>
     </div>
   );

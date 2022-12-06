@@ -3672,6 +3672,25 @@ const coursesData3 = [
   crsData3,
 ];
 
+const crsDataWO = {
+  path: "/",
+  img: cardImg3,
+  id: 1,
+  ttl: "Learn Python: The Complete Python Programming Course Learn Python: The Complete Python Programming Course",
+  author: "Koushil Mankali",
+  ratings: 2.5,
+  courseCoveredPercent: 22.4,
+};
+
+const courseDataWithOptions = [
+  crsDataWO,
+  crsDataWO,
+  crsDataWO,
+  crsDataWO,
+  crsDataWO,
+  crsDataWO,
+];
+
 const det = {
   ttl: "Become an instructor",
   desc: "Instructors from around the world teach millions of students on Udemy. We provide the tools and skills to teach what you love.",
@@ -4233,6 +4252,7 @@ export {
   coursesInCartData,
   coursesData2,
   coursesData3,
+  courseDataWithOptions,
   countryOptions,
   stateOptions,
   categoriesData,

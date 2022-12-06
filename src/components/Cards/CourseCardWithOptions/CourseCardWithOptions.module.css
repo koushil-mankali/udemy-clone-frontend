@@ -1,0 +1,150 @@
+.outerDiv {
+  display: block;
+  width: 230px;
+  height: 250px;
+  /* margin: 0.5rem; */
+  color: var(--gray);
+  border: 1px solid red;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+}
+
+.optionsBox {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 1;
+  background-color: var(--gray86);
+}
+
+.menuBtn {
+  width: 35px;
+  height: 35px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menuBtn:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.menuIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.menuBox {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 250px;
+  height: auto;
+  z-index: 1;
+  background-color: var(--white);
+  border: 1px solid var(--gray86);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+}
+
+.optionComp {
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--gray86);
+}
+
+.optionComp:last-child {
+  border-bottom: none;
+}
+
+.imgBox {
+  width: 100%;
+  height: 50%;
+  position: relative;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imgBox:hover .hovImgBox {
+  display: flex;
+}
+
+.hovImgBox {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hovImg {
+  width: 30px;
+  height: 30px;
+  filter: invert(1);
+}
+
+.bdy {
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ttl {
+  font-size: 1rem;
+  font-weight: 700;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.author {
+  width: 100%;
+  font-size: 0.8rem;
+  color: var(--light-gray);
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.progressBar {
+  width: 100%;
+  height: 3px;
+  appearance: none;
+}
+
+.progressBar::-webkit-progress-value {
+  background-color: pink;
+}
+
+.progressBar::-moz-progress-bar {
+  background-color: pink;
+}
+
+.progressBar::-webkit-progress-bar {
+  background-color: var(--gray86);
+}
+
+.footerBox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.txt {
+}
+
+.stars {
+  display: flex;
+}

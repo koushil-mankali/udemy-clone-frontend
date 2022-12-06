@@ -17,18 +17,14 @@ const PlanModalUtil = (props) => {
   } = props;
 
   useEffect(() => {
-    console.log(state);
-    if (state) {
-      window.addEventListener("click", (e) => {
-        if (e.target.id !== "modal") {
-          console.log("clicked");
-          return setModal("");
-        }
-      });
-    }
+    window.addEventListener("click", (e) => {
+      if (e.target.id === "modalBC" && e.target.id !== "modal") {
+        return setModal("");
+      }
+    });
     return () => {
       window.removeEventListener("click", (e) => {
-        if (e.target.id !== "modal") {
+        if (e.target.id === "modalBC" && e.target.id !== "modal") {
           return setModal("");
         }
       });
@@ -36,8 +32,8 @@ const PlanModalUtil = (props) => {
   }, []);
 
   const modal = (
-    <div className={css.outerDiv} id="modal">
-      <div className={css.innerDiv}>
+    <div className={css.outerDiv} id="modalBC">
+      <div className={css.innerDiv} id="modal">
         <div className={css.bar}>
           <div className={css.ttl}>{title}</div>
           <div className={css.imgBox}>

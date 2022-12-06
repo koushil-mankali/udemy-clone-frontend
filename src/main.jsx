@@ -23,6 +23,7 @@ import PrivacyComponent from "./components/UserComponents/Profile/PrivacyCompone
 import ToolsComponent from "./components/UserComponents/ToolsComponent/ToolsComponent";
 import ResourcesComponent from "./components/UserComponents/ResourcesComponent/ResourcesComponent";
 import Checkout from "./pages/Checkout/Checkout";
+import PublicProfile from "./pages/User/PublicProfile/PublicProfile";
 import NotFound from "./pages/NotFound/NotFound";
 import "./index.css";
 import Test from "./pages/Test/Test";
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
         ],
       },
     ],
+  },
+  {
+    path: "/user/:id",
+    element: <PublicProfile />,
   },
   {
     path: "/user/profile",

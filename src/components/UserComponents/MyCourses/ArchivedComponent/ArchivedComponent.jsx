@@ -1,16 +1,25 @@
 import CourseCardWithOptions from "../../../Cards/CourseCardWithOptions/CourseCardWithOptions";
-
 import { courseDataWithOptions } from "../../../../fakedata/fakedata";
+
+import folderIcon from "/icons/folder.png";
 
 import css from "./ArchivedComponent.module.css";
 
-const ArchivedComponent = (props) => {
+const ArchivedComponent = () => {
   const optionsComps = [
-    <div className={css.txtBox}>
-      <span className={css.iconBox}>
-        <img src="" alt="icon" className={css.icon} />
-      </span>
-      <span className={css.txt}>Unarchive</span>
+    <div>
+      <div className={css.txtBox}>
+        <span className={css.iconBox}>
+          <img src={folderIcon} alt="icon" className={css.icon} />
+        </span>
+        <span className={css.txt}>Unarchive</span>
+      </div>
+      <div className={css.txtBox}>
+        <span className={css.iconBox}>
+          <img src={folderIcon} alt="icon" className={css.icon} />
+        </span>
+        <span className={css.txt}>Unarchive</span>
+      </div>
     </div>,
   ];
   return (

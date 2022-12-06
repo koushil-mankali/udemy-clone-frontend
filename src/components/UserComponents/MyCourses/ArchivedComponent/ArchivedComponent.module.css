@@ -9,3 +9,33 @@
   gap: 1rem;
   flex-wrap: wrap;
 }
+
+.txtBox {
+  width: 100%;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.txtBox:hover {
+  color: var(--indigo);
+}
+.txtBox:hover .icon {
+  filter: brightness(0) saturate(100%) invert(12%) sepia(86%) saturate(5699%)
+    hue-rotate(260deg) brightness(90%) contrast(90%);
+}
+
+.iconBox {
+  width: 15px;
+  height: 15px;
+  margin: 5px 10px;
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+}
+
+.txt {
+  font-size: 0.9rem;
+}

@@ -1,7 +1,13 @@
-import React from "react";
+
+
+import css from "./MyListsComponent.module.css";
 
 const MyListsComponent = () => {
-  return <div>MyListsComponent</div>;
+  return (
+    <div className={css.outerDiv}>
+
+    </div>
+  );
 };
 
 export default MyListsComponent;

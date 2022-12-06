@@ -127,7 +127,7 @@ const LoggedInNavbar = () => {
               </div>
               <hr className={css.hr} />
               <div className={css.prflDiv}>
-                <Link to="/" className={css.menuItem}>
+                <Link to="user/koushil" className={css.menuItem}>
                   Public Profile
                 </Link>
                 <Link

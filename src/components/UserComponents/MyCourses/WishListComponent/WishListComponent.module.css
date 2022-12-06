@@ -1,2 +1,19 @@
 .outerDiv {
+  width: 100%;
+  height: 100%;
+}
+
+.topBAR {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.searchBar {
+  height: auto;
+  width: 200px;
 }

@@ -6,6 +6,7 @@ import SelectDropdownUtil from "../../../../utils/FormUtils/SelectDropdownUtil/S
 import searchIcon from "/icons/search.png";
 
 import css from "./AllCoursesComponent.module.css";
+import { useEffect } from "react";
 
 const AllCoursesComponent = () => {
   const [filters, setFilers] = useState({
@@ -14,6 +15,8 @@ const AllCoursesComponent = () => {
     filterByState: {},
     filterByInstructor: {},
   });
+
+  const [resetBtn, setRestBtn] = useState(false);
 
   const sortByOptions = [
     {
@@ -97,6 +100,27 @@ const AllCoursesComponent = () => {
     },
   ];
 
+  useEffect(() => {
+    if (
+      Object.keys(filters.sortBy).length ||
+      Object.keys(filters.filterByCategory).length ||
+      Object.keys(filters.filterByState).length ||
+      Object.keys(filters.filterByInstructor).length
+    ) {
+      return setRestBtn(true);
+    }
+    setRestBtn(false);
+  }, [filters]);
+
+  const resetFiltersHandler = () => {
+    setFilers({
+      sortBy: {},
+      filterByCategory: {},
+      filterByState: {},
+      filterByInstructor: {},
+    });
+  };
+
   return (
     <div className={css.outerDiv}>
       <div className={css.topBar}>
@@ -139,7 +163,14 @@ const AllCoursesComponent = () => {
             multipleOptions={false}
             options={filterByInstructorOptions}
           />
+          <div
+            className={[css.rstBtn, resetBtn ? css.activeRstBtn : ""].join(" ")}
+            onClick={resetFiltersHandler}
+          >
+            Reset
+          </div>
         </div>
+
         <div className={css.searchBar}>
           <InputUtil
             icon={searchIcon}

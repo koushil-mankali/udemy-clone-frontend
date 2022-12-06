@@ -27,6 +27,10 @@ const CourseCard = (props) => {
     crsSubtxt = "Python For Beginners : This course is meant for absolute beginners in programming or in python.",
   } = props?.data;
 
+  const extraCss = props.extraCss;
+
+  console.log("extraCss", extraCss);
+
   let totalRating = (
     (1 * stars?.a + 2 * stars?.b + 3 * stars?.c + 4 * stars?.d + 5 * stars?.e) /
       stars?.a +
@@ -54,7 +58,7 @@ const CourseCard = (props) => {
 
   return (
     <>
-      <div className={css.outerDiv} id={props.id}>
+      <div className={css.outerDiv} id={props.id} style={extraCss}>
         <Link className={css.innerDiv} to={path}>
           <div className={css.imgBox}>
             <img src={img} alt="course thumbnail" className={css.courseImg} />

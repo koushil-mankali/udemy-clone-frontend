@@ -21,7 +21,9 @@ const WishListComponent = () => {
       </div>
       <div className={css.courses}>
         {coursesData?.map((item, id) => {
-          return <CourseCard key={id} data={item} />;
+          return (
+            <CourseCard key={id} data={item} extraCss={{ margin: "1rem 0" }} />
+          );
         })}
       </div>
     </div>

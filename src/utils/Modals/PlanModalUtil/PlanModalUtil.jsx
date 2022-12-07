@@ -36,7 +36,7 @@ const PlanModalUtil = (props) => {
       <div className={css.innerDiv} id="modal">
         <div className={css.bar}>
           <div className={css.ttl}>{title}</div>
-          <div className={css.imgBox}>
+          <div className={css.imgBox} onClick={() => setModal("")}>
             <img src={cancelIcon} alt="close icon" className={css.icon} />
           </div>
         </div>

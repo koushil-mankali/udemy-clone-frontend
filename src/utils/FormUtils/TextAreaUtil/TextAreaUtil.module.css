@@ -1,0 +1,68 @@
+.outerDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.inptBoxDiv {
+  display: flex;
+  align-items: center;
+}
+
+.inptTxt {
+  padding: 1.2rem;
+  border-right: 1px solid var(--gray);
+  background-color: var(--lighish-white);
+}
+
+.label {
+  color: var(--gray);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.inptBox {
+  width: 100%;
+  border: 1px solid var(--gray);
+  margin: 0.7rem 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+}
+
+.inpt {
+  width: 100%;
+  padding: 1rem 3rem 1rem 1rem;
+  font-size: 1.2rem;
+  color: var(--gray);
+  outline: none;
+  resize: vertical;
+  border: none;
+}
+
+/* .inpt::-webkit-scrollbar {
+  display: none;
+} */
+
+.inpt:disabled {
+  cursor: not-allowed;
+}
+
+.inpt:placeholder-shown {
+  font-size: 1rem;
+  color: var(--gray86);
+  font-weight: 500;
+}
+
+.count {
+  position: absolute;
+  right: 0px;
+  padding: 0.5rem 1rem;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}

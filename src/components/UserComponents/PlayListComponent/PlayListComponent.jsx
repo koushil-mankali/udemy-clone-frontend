@@ -1,6 +1,8 @@
 import { Fragment, useState } from "react";
 
 import PlanModalUtil from "../../../utils/Modals/PlanModalUtil/PlanModalUtil";
+import InputUtil from "../../../utils/FormUtils/InputUtil/InputUtil";
+import TextAreaUtil from "../../../utils/FormUtils/TextAreaUtil/TextAreaUtil";
 
 import editIcon from "/icons/pencil.png";
 import deleteIcon from "/icons/delete.png";
@@ -18,6 +20,10 @@ const PlayListComponent = (props) => {
 
   const [editModal, setEditModal] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
+  const [editState, setEditState] = useState({
+    name: "",
+    desc: "",
+  });
 
   const modalHandler = (type) => {
     switch (type) {
@@ -37,12 +43,41 @@ const PlayListComponent = (props) => {
     }
   };
 
+  const editChangeHandler = (e) => {
+    setEditState((prev) => {
+      return { ...prev, [e.target.name]: e.target.value };
+    });
+  };
+
+  const EditModalContent = (
+    <>
+      <InputUtil
+        name="name"
+        type="text"
+        count={true}
+        countLimit={60}
+        showCount={false}
+        state={editState.name}
+        onChange={editChangeHandler}
+      />
+      <TextAreaUtil
+        name="desc"
+        type="textarea"
+        count={true}
+        countLimit={200}
+        showCount={false}
+        state={editState.desc}
+        onChange={editChangeHandler}
+      />
+    </>
+  );
+
   return (
     <div className={css.outerDiv}>
       {editModal ? (
         <PlanModalUtil
-          title=""
-          content=""
+          title="Edit your list"
+          content={EditModalContent}
           btns={["cancel", "edit"]}
           state={editModal}
           setModal={modalHandler}

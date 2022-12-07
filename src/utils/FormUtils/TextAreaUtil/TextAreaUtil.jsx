@@ -1,13 +1,12 @@
 import { useState } from "react";
 
-import css from "./InputUtil.module.css";
+import css from "./TextAreaUtil.module.css";
 
 import Button1 from "../../Buttons/Button1/Button1";
 
-const InputUtil = (props) => {
+const TextAreaUtil = (props) => {
   const [countNumber, setCountNumber] = useState(0);
   const {
-    type = "text",
     label = null,
     inptTxt = null,
     name = "",
@@ -48,17 +47,17 @@ const InputUtil = (props) => {
           ) : (
             ""
           )}
-          <input
-            type={type}
+          <textarea
             name={name}
             placeholder={placeholderTxt}
             className={css.inpt}
             style={extraCss}
-            defaultValue={state}
             onChange={changeHandler}
             maxLength={countLimit}
             disabled={disabledInpt}
-          />
+          >
+            {state}
+          </textarea>
           {count ? (
             <div className={css.count}>
               {showCount ? countNumber : countLimit - state?.length}
@@ -95,4 +94,4 @@ const InputUtil = (props) => {
   );
 };
 
-export default InputUtil;
+export default TextAreaUtil;

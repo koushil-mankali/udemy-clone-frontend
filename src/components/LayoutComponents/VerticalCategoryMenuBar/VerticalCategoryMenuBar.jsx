@@ -29,6 +29,15 @@ const VerticalCategoryMenuBar = () => {
       });
     }
 
+    for (let i = 0; i < subCatDivs.length; i++) {
+      subCatDivs[i].addEventListener("mouseover", () => {
+        subCatDivs[i].style = "display: flex";
+      });
+      subCatDivs[i].addEventListener("mouseleave", () => {
+        subCatDivs[i].style = "display: none";
+      });
+    }
+
     return () => {
       cats.removeEventListener("mouseover", (e) => {
         const catId = e.target.id?.split("-")[1] || 0;
@@ -43,6 +52,14 @@ const VerticalCategoryMenuBar = () => {
 
       for (let i = 0; i < catDivs.length; i++) {
         catDivs[i].removeEventListener("mouseleave", () => {
+          subCatDivs[i].style = "display: none";
+        });
+      }
+      for (let i = 0; i < subCatDivs.length; i++) {
+        subCatDivs[i].removeEventListener("mouseover", () => {
+          subCatDivs[i].style = "display: flex";
+        });
+        subCatDivs[i].addEventListener("mouseleave", () => {
           subCatDivs[i].style = "display: none";
         });
       }

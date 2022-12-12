@@ -34,7 +34,7 @@ const LoggedInNavbar = () => {
         <a className={css.hovBox} href="#" target="_blank">
           Udemy Bussiness
         </a>
-        <Link className={css.hovBox} to="/">
+        <Link className={css.hovBox} to="/user/profile/courses">
           Instructor
         </Link>
         <Link className={css.hovBox} to="/user/my-courses">
@@ -84,7 +84,7 @@ const LoggedInNavbar = () => {
                 <Link to="/user/my-courses/wishlist" className={css.menuItem}>
                   My Wishlist
                 </Link>
-                <Link to="/" className={css.menuItem}>
+                <Link to="/user/profile/courses" className={css.menuItem}>
                   Instructor Dashboard
                 </Link>
               </div>

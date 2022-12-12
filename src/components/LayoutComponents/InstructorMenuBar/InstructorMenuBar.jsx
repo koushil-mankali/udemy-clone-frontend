@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import smallLogoIcon from "/images/udemy-icon.svg";
 import queryIcon from "/icons/query-question-mark.png";
@@ -14,9 +14,9 @@ const InstructorMenuBar = () => {
   return (
     <div className={css.outerDiv}>
       <div className={css.menuItem}>
-        <div className={css.iconBox}>
+        <Link to="/" className={css.iconBox}>
           <img className={css.icon} src={smallLogoIcon} alt="icon" />
-        </div>
+        </Link>
       </div>
       <div className={css.menuBox}>
         <NavLink

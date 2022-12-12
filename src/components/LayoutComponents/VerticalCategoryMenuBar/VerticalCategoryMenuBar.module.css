@@ -52,7 +52,7 @@
 
 .category {
   width: max-content;
-  margin: 1rem;
+  padding: 1rem;
   cursor: pointer;
   white-space: nowrap;
   position: relative;

@@ -83,6 +83,47 @@
   font-size: 1rem;
 }
 
+.emptyBdy {
+  width: 100%;
+  height: auto;
+}
+
+.cartItemsLen {
+  margin: 1rem 0;
+  display: flex;
+  gap: 0.5rem;
+  font-weight: 700;
+}
+
+.cartBox {
+  width: 100%;
+  min-height: 300px;
+  height: auto;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 2px solid var(--gray100);
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.emptyCartImg {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.whitlistedCourses {
+  margin: 1rem 0;
+}
+
+.whTtl {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
 @media screen and (max-width: 1024px) {
   .innerDiv {
     width: 100%;

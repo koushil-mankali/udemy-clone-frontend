@@ -10,7 +10,7 @@ import css from "./CheckoutCourseCard.module.css";
 import labelIcon from "/icons/label.png";
 
 const CheckoutCourseCard = (props) => {
-  const { data } = props;
+  const { data, extraCss, } = props;
   const {
     id = 1,
     img = "",
@@ -28,7 +28,7 @@ const CheckoutCourseCard = (props) => {
   } = data;
 
   return (
-    <Link className={css.outerDiv} to={link}>
+    <Link className={css.outerDiv} to={link} style={extraCss}>
       <div className={css.box1}>
         <div className={css.imgBox}>
           <img src={img} alt="course thumbnail" className={css.img} />

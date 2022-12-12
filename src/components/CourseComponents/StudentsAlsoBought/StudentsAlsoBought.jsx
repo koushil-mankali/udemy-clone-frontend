@@ -59,7 +59,6 @@ const StudentsAlsoBought = (props) => {
   ]);
 
   const showMoreHanlder = () => {
-    console.log("Show More");
     setData((prev) => [
       ...prev,
       {

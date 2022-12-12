@@ -29,8 +29,6 @@ const CourseCard = (props) => {
 
   const extraCss = props.extraCss;
 
-  console.log("extraCss", extraCss);
-
   let totalRating = (
     (1 * stars?.a + 2 * stars?.b + 3 * stars?.c + 4 * stars?.d + 5 * stars?.e) /
       stars?.a +

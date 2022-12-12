@@ -143,6 +143,30 @@
 .txt {
 }
 
-.stars {
+.starsRatings {
   display: flex;
+}
+
+.mHeader {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.mtxt {
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.stars {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.star {
+  margin: 0 1rem;
+  cursor: pointer;
 }

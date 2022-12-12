@@ -37,7 +37,6 @@ const VerticalCategoryMenuBar = () => {
         const subCats = document.getElementsByClassName(subCatId);
 
         for (let i = 0; i < subCats.length; i++) {
-          console.log("sub", subCats[i]);
           subCats[i].style = "display: none";
         }
       });

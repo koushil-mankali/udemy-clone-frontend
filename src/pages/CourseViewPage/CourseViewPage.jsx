@@ -1,4 +1,5 @@
 import VideoPlayer from "../../components/CourseVideoComponents/VideoPlayer/VideoPlayer";
+import DetailDPComponent from "../../components/CourseVideoComponents/DetailDPComponent/DetailDPComponent";
 
 import CourseVideoNavbar from "../../components/LayoutComponents/CourseVideoNavbar/CourseVideoNavbar";
 import Footer from "../../components/LayoutComponents/Footer/Footer";
@@ -19,7 +20,9 @@ const CourseViewPage = () => {
             <VideoPlayer />
           </div>
         </div>
-        <div className={css.right}>ddd</div>
+        <div className={css.right}>
+          <DetailDPComponent />
+        </div>
       </div>
       <div className={css.footer}>
         <Footer />

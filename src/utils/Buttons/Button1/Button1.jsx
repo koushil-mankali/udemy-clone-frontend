@@ -4,15 +4,17 @@ import { Link } from "react-router-dom";
 import css from "./Button1.module.css";
 
 const Button1 = ({
-  txt = "Button1",
+  txt = null,
   img = "",
   bck = "white",
   color = "#1c1d1f",
   hovBck = "rgba(0, 0, 0, 0.04)",
   onClick = () => {},
   imageCss = {},
+  imgDir = "left",
   extraCss = {},
   classNames = {},
+  txtBoxCss = {},
   link = false,
   disableBtn = false,
 }) => {
@@ -37,9 +39,18 @@ const Button1 = ({
       onClick={onClick}
       disabled={disableBtn}
     >
-      <span className={css.txtBox}>
-        {img ? <img src={img} className={css.btnImg} style={imageCss} /> : ""}
+      <span className={css.txtBox} style={{ ...txtBoxCss }}>
+        {img && imgDir === "left" ? (
+          <img src={img} className={css.btnImg} style={imageCss} />
+        ) : (
+          ""
+        )}
         {txt ? <span className={css.txt}>{txt}</span> : null}
+        {img && imgDir === "right" ? (
+          <img src={img} className={css.btnImg} style={imageCss} />
+        ) : (
+          ""
+        )}
       </span>
     </button>
   );

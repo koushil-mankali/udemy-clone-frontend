@@ -23,6 +23,7 @@ import ToolsComponent from "./components/UserComponents/ToolsComponent/ToolsComp
 import ResourcesComponent from "./components/UserComponents/ResourcesComponent/ResourcesComponent";
 import Checkout from "./pages/Checkout/Checkout";
 import PublicProfile from "./pages/User/PublicProfile/PublicProfile";
+import CourseViewPage from "./pages/CourseViewPage/CourseViewPage";
 import NotFound from "./pages/NotFound/NotFound";
 import "./index.css";
 import Test from "./pages/Test/Test";
@@ -150,6 +151,10 @@ if (login) {
     {
       path: "*",
       element: <NotFound />,
+    },
+    {
+      path: "/course/view/:id",
+      element: <CourseViewPage />,
     },
   ];
 } else {

@@ -3673,7 +3673,7 @@ const coursesData3 = [
 ];
 
 const crsDataWO = {
-  path: "/",
+  path: "/course/view/video",
   img: cardImg3,
   id: 1,
   ttl: "Learn Python: The Complete Python Programming Course Learn Python: The Complete Python Programming Course",

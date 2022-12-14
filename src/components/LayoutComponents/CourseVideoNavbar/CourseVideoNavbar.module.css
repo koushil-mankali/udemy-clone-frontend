@@ -1,0 +1,71 @@
+.outerDiv {
+  width: 100%;
+  height: 60px;
+  padding: 1rem;
+  color: var(--white);
+  background-color: var(--gray);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vhr {
+  height: 20px;
+  border: none;
+  border-right: 1px solid var(--light-gray);
+}
+
+.left,
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ttl {
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.logoBox {
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  filter: invert(1);
+}
+
+.icon {
+  width: 15px;
+  height: 15px;
+}
+
+.arrowIcon {
+  width: 10px;
+  height: 10px;
+  filter: invert(1);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .right {
+    display: none;
+  }
+  .ttl {
+    font-size: 1rem;
+  }
+}

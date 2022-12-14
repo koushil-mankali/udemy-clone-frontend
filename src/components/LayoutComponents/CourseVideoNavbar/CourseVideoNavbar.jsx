@@ -22,9 +22,7 @@ const CourseVideoNavbar = (props) => {
           <img src={logoIcon} alt="logo" className={css.logo} />
         </div>
         <hr className={css.vhr} />
-        <div className={css.ttl}>
-          React - The Complete Guide (incl Hooks, React Router, Redux)
-        </div>
+        <div className={css.ttl}>{title}</div>
       </div>
       <div className={css.right}>
         <div className={css.item}>

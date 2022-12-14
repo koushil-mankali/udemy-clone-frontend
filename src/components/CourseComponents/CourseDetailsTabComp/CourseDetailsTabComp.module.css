@@ -26,13 +26,13 @@
   content: "";
 }
 
-details {
+.details {
   border: 1px solid var(--gray86);
   padding: 0.5em 0.5em 0;
   background-color: var(--lighish-white);
 }
 
-summary {
+.summary {
   font-weight: bold;
   margin: -0.5em -0.5em 0;
   padding: 1rem;
@@ -67,7 +67,7 @@ summary {
   font-weight: 800;
 }
 
-summary::before {
+.summary::before {
   content: "";
   display: inline-block;
   margin: 0 1rem;
@@ -78,7 +78,7 @@ summary::before {
   background-repeat: no-repeat;
 }
 
-details[open] summary::before {
+.details[open] .summary::before {
   height: 10px;
   width: 10px;
   transform: rotate(-180deg);
@@ -86,11 +86,11 @@ details[open] summary::before {
   background-repeat: no-repeat;
 }
 
-details[open] {
+.details[open] {
   padding: 0.5em;
 }
 
-details[open] summary {
+.details[open] .summary {
   border-bottom: 1px solid #aaa;
   margin-bottom: 0.5em;
 }

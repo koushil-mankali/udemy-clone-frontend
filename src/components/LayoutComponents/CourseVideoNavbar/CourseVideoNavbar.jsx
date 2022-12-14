@@ -1,4 +1,5 @@
 // import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import Button1 from "../../../utils/Buttons/Button1/Button1";
 
@@ -18,9 +19,9 @@ const CourseVideoNavbar = (props) => {
   return (
     <div className={css.outerDiv}>
       <div className={css.left}>
-        <div className={css.logoBox}>
+        <Link to="/" className={css.logoBox}>
           <img src={logoIcon} alt="logo" className={css.logo} />
-        </div>
+        </Link>
         <hr className={css.vhr} />
         <div className={css.ttl}>{title}</div>
       </div>

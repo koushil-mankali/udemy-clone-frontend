@@ -21,7 +21,11 @@ const CourseViewPage = () => {
           </div>
         </div>
         <div className={css.right}>
-          <DetailDPComponent />
+          <DetailDPComponent
+            title="Take a Udemy Assessment to check your skills"
+            desc="Made by Udemy, this generalized assessment is a great way to check in on your skills."
+            btnTxt="Launch Assessment"
+          />
         </div>
       </div>
       <div className={css.footer}>

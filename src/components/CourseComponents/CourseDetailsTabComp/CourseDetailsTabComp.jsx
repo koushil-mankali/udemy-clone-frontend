@@ -88,8 +88,8 @@ const CourseDetailsTabComp = (props) => {
             return;
           }
           return (
-            <details key={id}>
-              <summary>
+            <details key={id} className={css.details}>
+              <summary className={css.summary}>
                 <span className={css.summaryDiv}>
                   <span className={css.crsTtl}>{item.ttl}</span>
                   <span className={css.summDet}>

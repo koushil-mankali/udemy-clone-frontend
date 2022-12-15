@@ -1,11 +1,11 @@
 import css from "./VideoPlayer.module.css";
 
-import video from "/videos/flower.webm";
+import video from "/videos/coding.mp4";
 
-const VideoPlayer = () => {
+const VideoPlayer = (props) => {
   return (
     <div className={css.outerDiv}>
-      <video controls controlsList="nodownload" className={css.video}>
+      <video controlsList="nodownload" className={css.video}>
         <source src={video} type="video/webm" />
         <source src={video} type="video/mp4" />
       </video>

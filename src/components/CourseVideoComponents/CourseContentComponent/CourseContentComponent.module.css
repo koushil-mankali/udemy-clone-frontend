@@ -1,0 +1,93 @@
+.outerDiv {
+  width: 100%;
+  height: 100%;
+  color: var(--gray);
+}
+
+.innerDiv {
+  width: 100%;
+  height: 100%;
+}
+
+.titleBox {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white);
+  border-top: 1px solid var(--gray86);
+  border-bottom: 1px solid var(--gray86);
+}
+
+.ttl {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.imgBox {
+  height: 100%;
+  cursor: pointer;
+}
+
+.closeIcon {
+  width: 13px;
+  height: 13px;
+}
+
+.bdy {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  background-color: var(--lighish-white);
+}
+
+.tab {
+  width: 100%;
+  cursor: pointer;
+  border-bottom: 1px solid var(--gray86);
+}
+
+.tab:last-child {
+  border-bottom: none;
+}
+
+.tabTitleBox {
+  font-size: 1rem;
+  padding: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tabTtl {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.tabDesc {
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.3rem;
+}
+
+.tabDesc > span:nth-child(2) {
+  height: 11px;
+  border-right: 1px solid var(--gray);
+}
+
+.icon {
+  width: 10px;
+  height: 10px;
+  transition: all 0.5s;
+}
+
+.iconReverse {
+  transform: rotate(180deg);
+}
+
+.tabBdy {
+  padding: 1rem;
+  height: max-content;
+  background-color: var(--white);
+}

@@ -60,6 +60,14 @@ const courseData = [
         preview: true,
         type: "video",
         desc: "",
+        resources: [
+          {
+            text: "css file",
+            link: "https://github.com/",
+            icon: teachIcon,
+            downloadable: false,
+          },
+        ],
       },
       {
         ttl: "Welcome to the Course!",
@@ -67,6 +75,14 @@ const courseData = [
         preview: true,
         type: "video",
         desc: "",
+        resources: [
+          {
+            text: "css file",
+            link: "https://github.com/",
+            icon: teachIcon,
+            downloadable: true,
+          },
+        ],
       },
       {
         ttl: "Welcome to the Course!",
@@ -74,6 +90,20 @@ const courseData = [
         preview: true,
         type: "video",
         desc: "",
+        resources: [
+          {
+            text: "css file",
+            link: "https://github.com/",
+            icon: teachIcon,
+            downloadable: false,
+          },
+          {
+            text: "html file",
+            link: "https://github.com/",
+            icon: teachIcon,
+            downloadable: false,
+          },
+        ],
       },
       {
         ttl: "Welcome to the Course!",

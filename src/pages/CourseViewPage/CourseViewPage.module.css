@@ -22,7 +22,10 @@
 
 .right {
   width: 25%;
-  height: 100%;
+  height: calc(100vh - 60px);
+  position: fixed;
+  top: 60px;
+  right: 0px;
 }
 
 @media screen and (max-width: 768px) {

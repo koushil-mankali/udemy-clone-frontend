@@ -1,7 +1,6 @@
 .outerDiv {
   width: 100%;
-  min-height: 400px;
-  height: auto;
+  height: 600px;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -13,5 +12,4 @@
   height: 100vh;
   min-height: 500px;
   max-height: 600px;
-  aspect-ratio: 16/9;
 }

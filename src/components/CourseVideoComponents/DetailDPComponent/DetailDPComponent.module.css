@@ -1,8 +1,35 @@
 .outerDiv {
   width: 100%;
   height: auto;
+  color: var(--gray);
+  background-color: var(--lighish-white);
+}
+
+.details {
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .summary {
   list-style: none;
+  display: flex;
+}
+
+.icon {
+  width: 10px;
+  height: 10px;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+.iconReverse {
+  transform: rotate(180deg);
+}
+
+.desc {
+  margin: 1rem 0;
+  font-size: 1rem;
+  font-weight: normal;
 }

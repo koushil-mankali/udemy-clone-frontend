@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import closeIcon from "/icons/close.png";
 import downArrowIcon from "/icons/down-arrow.svg";
@@ -8,7 +9,7 @@ import css from "./CourseContentComponent.module.css";
 const CourseContentComponent = (props) => {
   const { title = "", data = [] } = props;
   const [toggleBox, setToggleBox] = useState({});
-  let desc = "asdasdsad";
+
   return (
     <div className={css.outterDiv}>
       <div className={css.innerDiv}>
@@ -32,7 +33,9 @@ const CourseContentComponent = (props) => {
               >
                 <div className={css.tabTitleBox}>
                   <div className={css.tabTitleLeft}>
-                    <div className={css.tabTtl}>{`Section ${id + 1}`}</div>
+                    <div className={css.tabTtl}>{`Section ${id + 1}: ${
+                      item.ttl
+                    }`}</div>
                     <div className={css.tabDesc}>
                       <span>10/10</span>
                       <span></span>
@@ -51,7 +54,51 @@ const CourseContentComponent = (props) => {
                   </div>
                 </div>
                 {toggleBox[id] ? (
-                  <div className={css.tabBdy}>{desc}</div>
+                  <div className={css.tabBdy}>
+                    {item.list?.map((subItem) => {
+                      return (
+                        <div className={css.descBdy}>
+                          <div className={css.descBdyLeft}></div>
+                          <div className={css.descBdyRight}>
+                            <div className={css.sbTtl}>{subItem.ttl}</div>
+                            <div className={css.sbBox}>
+                              <span className={css.subDur}>{subItem.dur}</span>
+                              <span className={css.subDrp}>
+                                <div className={css.subDrpBox}>
+                                  <img alt="icon" className={css.subIcon} />
+                                  <div>Resources</div>
+                                  <img
+                                    icon="dropdown icon"
+                                    className={css.subIcon}
+                                  />
+                                </div>
+                                <div className={css.subDrpItemsBox}>
+                                  {subItem?.resources?.map((resItem) => {
+                                    return (
+                                      <Link
+                                        download={resItem.downloadable}
+                                        to={resItem.link}
+                                        className={css.resItem}
+                                      >
+                                        <img
+                                          src={resItem.icon}
+                                          alt="icon"
+                                          className={css.resItemIcon}
+                                        />
+                                        <span className={css.resItemTxt}>
+                                          {resItem.text}
+                                        </span>
+                                      </Link>
+                                    );
+                                  })}
+                                </div>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 ) : null}
               </div>
             );

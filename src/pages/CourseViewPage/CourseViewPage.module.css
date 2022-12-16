@@ -1,15 +1,13 @@
 .outterDiv {
   width: 100%;
-  min-height: 100vh;
   height: 100%;
-  background-color: red;
+  background-color: crimson;
 }
 
 .bdy {
   width: 100%;
   height: 100%;
   display: flex;
-  background-color: rebeccapurple;
 }
 
 .left {
@@ -22,12 +20,12 @@
 }
 
 .right {
-  position: fixed;
-  right: 0;
   width: 25%;
-  height: 100%;
-  /* max-height: calc(100vh - 60px); */
-  background-color: orange;
+  max-height: 100vh;
+  overflow-y: scroll;
+  position: sticky;
+  top: 0;
+  right: 0;
 }
 
 @media screen and (max-width: 768px) {

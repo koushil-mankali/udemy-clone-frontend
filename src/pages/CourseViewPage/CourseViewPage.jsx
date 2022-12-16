@@ -12,7 +12,7 @@ import css from "./CourseViewPage.module.css";
 import { courseData } from "../../fakedata/fakedata";
 
 const CourseViewPage = () => {
-  const [sidebarH, setSidebarH] = useState(false);
+  const [sidebarH, setSidebarH] = useState(60);
   const data = {
     title: "React - The Complete Guide (incl Hooks, React Router, Redux)",
   };
@@ -23,14 +23,12 @@ const CourseViewPage = () => {
       var docHeight = window.innerHeight;
       var winHeight = window.outerHeight;
       var scrollPercent = scrollTop / (docHeight - winHeight);
-      var scrollPercentRounded = Math.round(scrollPercent * 100);
-      console.log(scrollPercentRounded);
-      if (scrollPercentRounded >= -31) {
-        console.log(true);
-        setSidebarH(true);
+      var scrollPercentRounded = Math.abs(Math.round(scrollPercent * 100));
+      console.log(+scrollPercentRounded);
+      if (scrollPercentRounded >= 50) {
+        setSidebarH(0);
       } else {
-        console.log(false);
-        setSidebarH(false);
+        setSidebarH(60 - scrollPercentRounded - 1);
       }
     });
   }, []);
@@ -48,7 +46,7 @@ const CourseViewPage = () => {
             <Footer />
           </div>
         </div>
-        <div className={css.right} style={{ top: sidebarH ? "0px" : "60px" }}>
+        <div className={css.right} style={{ top: sidebarH + "px" }}>
           <DetailDPComponent
             title="Take a Udemy Assessment to check your skills"
             desc="Made by Udemy, this generalized assessment is a great way to check in on your skills."

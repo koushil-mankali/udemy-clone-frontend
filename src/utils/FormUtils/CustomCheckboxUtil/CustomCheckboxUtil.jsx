@@ -7,7 +7,7 @@ const CustomCheckboxUtil = (props) => {
     name = "",
     id = "",
     state = false,
-    onChange,
+    onChange = () => {},
     extraCss = {},
     inputCss = {},
     ...extraProps

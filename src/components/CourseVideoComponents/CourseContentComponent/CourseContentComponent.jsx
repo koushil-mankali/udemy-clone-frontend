@@ -58,7 +58,7 @@ const CourseContentComponent = (props) => {
                   </div>
                 </div>
                 {toggleBox[id] ? (
-                  <div className={css.tabBdy}>
+                  <Link to="" className={css.tabBdy}>
                     {item.list?.map((subItem) => {
                       return (
                         <div
@@ -83,62 +83,70 @@ const CourseContentComponent = (props) => {
                                   {subItem.dur}
                                 </span>
                               </span>
-                              <span className={css.subDrp}>
-                                <div
-                                  className={css.subDrpBox}
-                                  // onClick={() => {
-                                  //   console.log(subItem.id, !![subItem.id]);
-                                  //   setToggleDrpDwn(() => {
-                                  //     return {
-                                  //       [subItem.id]: [subItem.id]
-                                  //         ? !![subItem.id]
-                                  //         : true,
-                                  //     };
-                                  //   });
-                                  // }}
-                                >
-                                  <img
-                                    src={openFolderIcon}
-                                    alt="icon"
-                                    className={css.subIcon}
-                                  />
-                                  <div className={css.subDrpTxt}>Resources</div>
-                                  <img
-                                    src={downArrowIcon}
-                                    icon="dropdown icon"
-                                    className={css.drowDownIcon}
-                                  />
-                                </div>
-                                {toggleDrpDwn[subItem.id] ? (
-                                  <div className={css.subDrpItemsBox}>
-                                    {subItem?.resources?.map((resItem) => {
-                                      return (
-                                        <Link
-                                          key={`resItem-${resItem.id}`}
-                                          download={resItem.downloadable}
-                                          to={resItem.link}
-                                          className={css.resItem}
-                                        >
-                                          <img
-                                            src={resItem.icon}
-                                            alt="icon"
-                                            className={css.resItemIcon}
-                                          />
-                                          <span className={css.resItemTxt}>
-                                            {resItem.text}
-                                          </span>
-                                        </Link>
-                                      );
-                                    })}
+                              {subItem?.resources?.length > 0 ? (
+                                <span className={css.subDrp}>
+                                  <div
+                                    className={css.subDrpBox}
+                                    onClick={() => {
+                                      setToggleDrpDwn((p) => {
+                                        return {
+                                          [subItem.id]: p[subItem.id]
+                                            ? !p[subItem.id]
+                                            : true,
+                                        };
+                                      });
+                                    }}
+                                  >
+                                    <img
+                                      src={openFolderIcon}
+                                      alt="icon"
+                                      className={css.subIcon}
+                                    />
+                                    <div className={css.subDrpTxt}>
+                                      Resources
+                                    </div>
+                                    <img
+                                      src={downArrowIcon}
+                                      icon="dropdown icon"
+                                      className={[
+                                        css.drowDownIcon,
+                                        toggleDrpDwn[subItem.id]
+                                          ? css.reverseDrowDownIcon
+                                          : null,
+                                      ].join(" ")}
+                                    />
                                   </div>
-                                ) : null}
-                              </span>
+                                  {toggleDrpDwn[subItem.id] ? (
+                                    <div className={css.subDrpItemsBox}>
+                                      {subItem?.resources?.map((resItem) => {
+                                        return (
+                                          <Link
+                                            key={`resItem-${resItem.id}`}
+                                            download={resItem.downloadable}
+                                            to={resItem.link}
+                                            className={css.resItem}
+                                          >
+                                            <img
+                                              src={resItem.icon}
+                                              alt="icon"
+                                              className={css.resItemIcon}
+                                            />
+                                            <span className={css.resItemTxt}>
+                                              {resItem.text}
+                                            </span>
+                                          </Link>
+                                        );
+                                      })}
+                                    </div>
+                                  ) : null}
+                                </span>
+                              ) : null}
                             </div>
                           </div>
                         </div>
                       );
                     })}
-                  </div>
+                  </Link>
                 ) : null}
               </div>
             );

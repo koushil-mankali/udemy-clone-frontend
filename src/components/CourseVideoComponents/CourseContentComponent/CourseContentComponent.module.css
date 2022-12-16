@@ -100,6 +100,8 @@
 .tabBdy {
   height: max-content;
   background-color: var(--white);
+  text-decoration: none;
+  color: var(--gray);
 }
 
 .descBdy {
@@ -144,6 +146,7 @@
 }
 
 .subDrp {
+  position: relative;
 }
 
 .subDrpBox {
@@ -161,6 +164,11 @@
 .drowDownIcon {
   width: 10px;
   height: 10px;
+  transition: all 0.5s;
+}
+
+.reverseDrowDownIcon {
+  transform: rotate(180deg);
 }
 
 .subDrpTxt {
@@ -168,5 +176,37 @@
 }
 
 .subDrpItemsBox {
-  /* display: none; */
+  position: absolute;
+  top: 33px;
+  right: 0;
+  padding: 0.5rem;
+  width: max-content;
+  max-width: 200px;
+  z-index: 1;
+  border: 1px solid --var(gray86);
+  background-color: var(--white);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+}
+
+.resItem {
+  margin: 0.5rem 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  text-decoration: none;
+  color: var(--gray);
+}
+
+.resItem:hover {
+  color: var(--purple);
+}
+
+.resItem:hover .resItemIcon {
+  filter: brightness(0) saturate(100%) invert(28%) sepia(93%) saturate(3440%)
+    hue-rotate(264deg) brightness(95%) contrast(98%);
+}
+
+.resItemIcon {
+  width: 15px;
+  height: 15px;
 }

@@ -98,7 +98,75 @@
 }
 
 .tabBdy {
-  padding: 1rem;
   height: max-content;
   background-color: var(--white);
+}
+
+.descBdy {
+  padding: 0.5rem 1rem;
+  display: flex;
+}
+
+.descBdy:hover {
+  background-color: var(--gray86);
+}
+
+.descBdyLeft {
+  width: 10%;
+}
+
+.descBdyRight {
+  width: 90%;
+}
+
+.sbTtl {
+}
+
+.sbBox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subDur {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.plyIcon {
+  width: 13px;
+  height: 13px;
+}
+
+.subDurTxt {
+  color: var(--light-gray);
+  font-size: 0.8rem;
+}
+
+.subDrp {
+}
+
+.subDrpBox {
+  padding: 0.2rem 0.4rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  border: 1px solid var(--gray);
+}
+
+.subIcon {
+  width: 15px;
+  height: 15px;
+}
+.drowDownIcon {
+  width: 10px;
+  height: 10px;
+}
+
+.subDrpTxt {
+  font-size: 0.9rem;
+}
+
+.subDrpItemsBox {
+  /* display: none; */
 }

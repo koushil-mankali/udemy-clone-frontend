@@ -1,5 +1,4 @@
 .inptBox {
-  width: 100%;
   margin: 1rem 0;
   display: flex;
   gap: 1rem;
@@ -19,6 +18,7 @@
   outline: 2px solid var(--gray);
   accent-color: var(--gray);
   padding: 0.1rem;
+  cursor: pointer;
 }
 
 .checkbox:checked {

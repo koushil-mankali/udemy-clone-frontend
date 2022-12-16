@@ -2,7 +2,13 @@ import React from "react";
 import css from "./CheckboxUtil.module.css";
 
 const CheckboxUtil = (props) => {
-  const { label, name = "", id = "", state = false, onChange } = props;
+  const {
+    label = "",
+    name = "",
+    id = "",
+    state = false,
+    onChange = () => {},
+  } = props;
   return (
     <div className={css.inptBox}>
       <input

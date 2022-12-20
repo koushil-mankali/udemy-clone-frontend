@@ -165,6 +165,10 @@ if (login) {
       element: <CourseViewPage />,
       children: [
         {
+          path: "",
+          element: <SearchTabComponent />,
+        },
+        {
           path: "search",
           element: <SearchTabComponent />,
         },

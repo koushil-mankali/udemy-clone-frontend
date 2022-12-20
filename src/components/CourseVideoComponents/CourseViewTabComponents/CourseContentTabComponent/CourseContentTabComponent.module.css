@@ -1,0 +1,9 @@
+.outerDiv {
+  width: 100%;
+  height: 100%;
+}
+
+.contentBdy {
+  margin: 1rem 0;
+  border: 1px solid var(--gray86);
+}

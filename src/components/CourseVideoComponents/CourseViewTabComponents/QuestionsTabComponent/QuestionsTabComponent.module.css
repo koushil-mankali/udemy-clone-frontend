@@ -1,0 +1,33 @@
+.outerDiv {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.innerDiv {
+  width: 80%;
+}
+
+.filtersBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.searchContent {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.sTtl {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 1024px) {
+  .innerDiv {
+    width: 100%;
+  }
+}

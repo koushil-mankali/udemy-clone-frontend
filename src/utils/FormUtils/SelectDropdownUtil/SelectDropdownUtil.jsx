@@ -15,6 +15,7 @@ const SelectDropdownUtil = (props) => {
     setValue = () => {},
     multipleOptions = false,
     options = "",
+    selectBoxCss = {},
   } = props;
 
   const optionHandler = (option) => {
@@ -35,8 +36,8 @@ const SelectDropdownUtil = (props) => {
 
   return (
     <div className={css.outerDiv}>
-      <div className={css.selectBox}>
-        <label className={css.label}>{label ? label : ""}</label>
+      <div className={css.selectBox} style={selectBoxCss}>
+        {label ? <label className={css.label}>{label}</label> : null}
         <div
           data-id={id}
           className={css.selectedDP}

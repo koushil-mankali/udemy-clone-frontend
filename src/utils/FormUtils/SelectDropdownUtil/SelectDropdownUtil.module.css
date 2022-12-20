@@ -36,7 +36,7 @@
 
 .options {
   position: absolute;
-  top: 65px;
+  top: 95%;
   left: 0;
   width: max-content;
   height: auto;
@@ -45,7 +45,7 @@
   background-color: var(--white);
   box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
   display: none;
-  z-index: 1;
+  z-index: 2;
 }
 
 .option {

@@ -34,6 +34,7 @@ import QuestionsTabComponent from "./components/CourseVideoComponents/CourseView
 import ReviewsTabComponent from "./components/CourseVideoComponents/CourseViewTabComponents/ReviewsTabComponent/ReviewsTabComponent";
 import AnnouncementsTabComponent from "./components/CourseVideoComponents/CourseViewTabComponents/AnnouncementsTabComponent/AnnouncementsTabComponent";
 import SearchTabComponent from "./components/CourseVideoComponents/CourseViewTabComponents/SearchTabComponent/SearchTabComponent";
+import CourseContentTabComponent from "./components/CourseVideoComponents/CourseViewTabComponents/CourseContentTabComponent/CourseContentTabComponent";
 
 let login = true;
 let routes;
@@ -166,6 +167,10 @@ if (login) {
         {
           path: "search",
           element: <SearchTabComponent />,
+        },
+        {
+          path: "content",
+          element: <CourseContentTabComponent />,
         },
         {
           path: "overview",

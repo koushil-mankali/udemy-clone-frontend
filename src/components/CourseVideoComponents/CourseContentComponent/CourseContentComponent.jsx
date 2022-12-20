@@ -18,12 +18,14 @@ const CourseContentComponent = (props) => {
   return (
     <div className={css.outterDiv}>
       <div className={css.innerDiv}>
-        <div className={css.titleBox}>
-          <span className={css.ttl}>{title}</span>
-          <span className={css.imgBox}>
-            <img src={closeIcon} alt="close icon" className={css.closeIcon} />
-          </span>
-        </div>
+        {title ? (
+          <div className={css.titleBox}>
+            <span className={css.ttl}>{title}</span>
+            <span className={css.imgBox}>
+              <img src={closeIcon} alt="close icon" className={css.closeIcon} />
+            </span>
+          </div>
+        ) : null}
         <div className={css.bdy}>
           {data?.map((item, id) => {
             return (

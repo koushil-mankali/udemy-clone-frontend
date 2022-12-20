@@ -7,12 +7,18 @@ import downArrowIcon from "/icons/down-arrow.svg";
 import css from "./DetailDPComponent.module.css";
 
 const DetailDPComponent = (props) => {
-  const { title = "", desc = "", btnTxt = "", btnLink = "" } = props;
+  const {
+    title = "",
+    desc = "",
+    btnTxt = "",
+    btnLink = "",
+    extraCss = {},
+  } = props;
 
   const [toggleIcon, setToggleIcon] = useState(false);
 
   return (
-    <div className={css.outerDiv}>
+    <div className={css.outerDiv} style={extraCss}>
       <details
         className={css.details}
         onClick={() => setToggleIcon((prev) => !prev)}

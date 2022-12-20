@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import VideoPlayer from "../../components/CourseVideoComponents/VideoPlayer/VideoPlayer";
 import DetailDPComponent from "../../components/CourseVideoComponents/DetailDPComponent/DetailDPComponent";
 import CourseContentComponent from "../../components/CourseVideoComponents/CourseContentComponent/CourseContentComponent";
+import CourseViewTabComponent from "../../components/CourseVideoComponents/CourseViewTabComponents/CourseViewTabComponent/CourseViewTabComponent";
 
 import CourseVideoNavbar from "../../components/LayoutComponents/CourseVideoNavbar/CourseVideoNavbar";
 import Footer from "../../components/LayoutComponents/Footer/Footer";
@@ -24,7 +25,7 @@ const CourseViewPage = () => {
           <div className={css.content}>
             <VideoPlayer />
           </div>
-          <div style={{ height: "500px" }}>content</div>
+          <CourseViewTabComponent />
           <div className={css.footer}>
             <Footer />
           </div>

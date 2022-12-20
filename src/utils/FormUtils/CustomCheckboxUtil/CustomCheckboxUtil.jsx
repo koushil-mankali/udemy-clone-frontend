@@ -12,14 +12,15 @@ const CustomCheckboxUtil = (props) => {
     inputCss = {},
     ...extraProps
   } = props;
+
   return (
     <div className={css.inptBox} style={extraCss}>
       <input
         type="checkbox"
         name={name}
         id={id}
-        onChange={(e) => onChange(e.currentTarget)}
-        defaultChecked={state}
+        onChange={(e) => onChange(e)}
+        checked={state}
         className={css.checkbox}
         {...extraProps}
         style={inputCss}

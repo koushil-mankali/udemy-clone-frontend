@@ -67,6 +67,17 @@ const CourseContentComponent = (props) => {
                         >
                           <div className={css.descBdyLeft}>
                             <CustomCheckboxUtil
+                              state={toggleDrpDwn[subItem.id] ?? false}
+                              name={subItem.id}
+                              id={subItem.id}
+                              onChange={(e) => {
+                                setToggleDrpDwn((prev) => {
+                                  return {
+                                    ...prev,
+                                    [e.target?.name]: !prev[e.target?.name],
+                                  };
+                                });
+                              }}
                               extraCss={{
                                 width: "40px",
                                 gap: "0",

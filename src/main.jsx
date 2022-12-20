@@ -28,6 +28,13 @@ import NotFound from "./pages/NotFound/NotFound";
 import "./index.css";
 import Test from "./pages/Test/Test";
 
+import OverViewTabComponent from "./components/CourseVideoComponents/CourseViewTabComponents/OverViewTabComponent/OverViewTabComponent";
+import NotesTabComponent from "./components/CourseVideoComponents/CourseViewTabComponents/NotesTabComponent/NotesTabComponent";
+import QuestionsTabComponent from "./components/CourseVideoComponents/CourseViewTabComponents/QuestionsTabComponent/QuestionsTabComponent";
+import ReviewsTabComponent from "./components/CourseVideoComponents/CourseViewTabComponents/ReviewsTabComponent/ReviewsTabComponent";
+import AnnouncementsTabComponent from "./components/CourseVideoComponents/CourseViewTabComponents/AnnouncementsTabComponent/AnnouncementsTabComponent";
+import SearchTabComponent from "./components/CourseVideoComponents/CourseViewTabComponents/SearchTabComponent/SearchTabComponent";
+
 let login = true;
 let routes;
 
@@ -155,6 +162,32 @@ if (login) {
     {
       path: "/course/view/:id",
       element: <CourseViewPage />,
+      children: [
+        {
+          path: "search",
+          element: <SearchTabComponent />,
+        },
+        {
+          path: "overview",
+          element: <OverViewTabComponent />,
+        },
+        {
+          path: "questions",
+          element: <QuestionsTabComponent />,
+        },
+        {
+          path: "notes",
+          element: <NotesTabComponent />,
+        },
+        {
+          path: "announcements",
+          element: <AnnouncementsTabComponent />,
+        },
+        {
+          path: "reviews",
+          element: <ReviewsTabComponent />,
+        },
+      ],
     },
   ];
 } else {

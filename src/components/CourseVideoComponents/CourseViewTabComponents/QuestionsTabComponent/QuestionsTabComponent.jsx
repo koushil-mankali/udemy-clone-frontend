@@ -1,10 +1,12 @@
 import { useState } from "react";
 import InputUtil from "../../../../utils/FormUtils/InputUtil/InputUtil";
 import SelectDropdownUtil from "../../../../utils/FormUtils/SelectDropdownUtil/SelectDropdownUtil";
+import CommentBoxUtil from "../../../../utils/CommentBoxUtil/CommentBoxUtil";
 
 import css from "./QuestionsTabComponent.module.css";
 
 import searchIcon from "/icons/search.png";
+import showcaseImg from "/images/showcase.jpg";
 
 const QuestionsTabComponent = () => {
   const [state, setState] = useState("");
@@ -56,6 +58,23 @@ const QuestionsTabComponent = () => {
       value: "questions withour responses",
     },
   ];
+
+  const cmtData = {
+    cmmntId: 0,
+    name: "koushil",
+    img: showcaseImg,
+    ttl: "This is awesome lecture",
+    cnt: "This is awesome lecture This is awesome lecture This is awesome lecture This is awesome lecture This is awesome lecture This is awesome lecture This is awesome lecture This is awesome lectureThis is awesome lecture",
+    upvotes: 3,
+    comments: 2,
+    lecture: 3,
+    date: {
+      y: 2000,
+      m: 3,
+      d: 29,
+    },
+  };
+
   return (
     <div className={css.outerDiv}>
       <div className={css.innerDiv}>
@@ -105,7 +124,9 @@ const QuestionsTabComponent = () => {
           <div className={css.sTtl}>
             All questions in this course ({data.length})
           </div>
-          <div className={css.comments}></div>
+          <div className={css.comments}>
+            <CommentBoxUtil data={cmtData} />
+          </div>
         </div>
       </div>
     </div>

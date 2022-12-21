@@ -3,6 +3,7 @@
   height: auto;
   max-height: 200px;
   padding: 1rem;
+  overflow: hidden;
 }
 
 .outerDiv:hover {
@@ -11,7 +12,7 @@
 
 .innerDiv {
   display: flex;
-  flex-direction: column;
+  gap: 1rem;
 }
 
 .pc1 {
@@ -39,6 +40,7 @@
 }
 
 .cred {
+  margin-top: 1rem;
   font-size: 0.8rem;
   display: flex;
   gap: 0.5rem;
@@ -60,4 +62,64 @@
 
 .date span {
   margin-left: 0.5rem;
+}
+
+.pc2 {
+}
+
+.p2In {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.p2Box {
+  display: flex;
+  align-items: center;
+  margin: 0.8rem 0;
+  gap: 1rem;
+}
+
+.p2Txt {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gray);
+}
+
+.p2Icon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) saturate(100%) invert(44%) sepia(7%) saturate(316%)
+    hue-rotate(164deg) brightness(94%) contrast(84%);
+}
+
+.p2Iconf2 {
+  width: 20px;
+  height: 20px;
+}
+
+.p2Box:hover .p2Icon {
+  filter: brightness(0) saturate(100%) invert(7%) sepia(12%) saturate(413%)
+    hue-rotate(181deg) brightness(95%) contrast(89%);
+}
+
+@media screen and (max-width: 426px) {
+  .outerDiv {
+    max-height: 220px;
+  }
+  .innerDiv {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .pc1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .pc2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
 }

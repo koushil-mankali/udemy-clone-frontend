@@ -1,4 +1,11 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import css from "./CommentBoxUtil.module.css";
+
+import upArrowCircleBoldIcon from "/icons/up-arrow-circle-bold.png";
+import upArrowCircleIcon from "/icons/up-arrow-circle.png";
+import chatIcon from "/icons/chat.png";
 
 const CommentBoxUtil = (props) => {
   const {
@@ -10,6 +17,7 @@ const CommentBoxUtil = (props) => {
     cnt = "",
     upvotes = 0,
     comments = 0,
+    commentsLink = "",
     lecture = 0,
     date = {
       y: 2020,
@@ -17,6 +25,10 @@ const CommentBoxUtil = (props) => {
       d: 12,
     },
   } = props.data;
+  const [state, setState] = useState({
+    upvote: false,
+    comment: false,
+  });
 
   const cred = (
     <div className={css.cred}>
@@ -43,7 +55,31 @@ const CommentBoxUtil = (props) => {
             {nameDirection === "bottom" ? cred : null}
           </div>
         </div>
-        <div className={css.pc2}></div>
+        <div className={css.pc2}>
+          <div className={css.p2In}>
+            <span
+              className={css.p2Box}
+              onClick={() =>
+                setState((p) => {
+                  return { ...p, upvote: !p.upvote };
+                })
+              }
+            >
+              <span className={css.p2Txt}>{upvotes}</span>
+              <img
+                className={state.upvote ? css.p2Iconf2 : css.p2Icon}
+                src={state.upvote ? upArrowCircleBoldIcon : upArrowCircleIcon}
+                alt="upvotes"
+              />
+            </span>
+          </div>
+          <Link to={commentsLink} className={css.p2In}>
+            <span className={css.p2Box}>
+              <span className={css.p2Txt}>{upvotes}</span>
+              <img className={css.p2Icon} src={chatIcon} alt="upvotes" />
+            </span>
+          </Link>
+        </div>
       </div>
     </div>
   );

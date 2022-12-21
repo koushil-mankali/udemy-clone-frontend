@@ -1,0 +1,62 @@
+.outerDiv {
+  width: 80%;
+  height: auto;
+  margin: 1rem auto;
+}
+
+.editorBox {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+
+.detWithTTl {
+  margin: 1rem 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detCnt {
+  display: flex;
+  gap: 1rem;
+}
+
+.optionBtns {
+  display: flex;
+  gap: 1rem;
+}
+
+.optionBtn {
+  cursor: pointer;
+}
+
+.optionIcon {
+  width: 15px;
+  height: 15px;
+}
+
+.dur {
+  border-radius: 50px;
+  height: max-content;
+  padding: 0.2rem 0.5rem;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: var(--gray);
+}
+
+.detTxt {
+  font-size: 1rem;
+}
+
+.editor {
+  width: 100%;
+}
+
+.btns {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}

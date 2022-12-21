@@ -3,19 +3,18 @@ import "react-quill/dist/quill.snow.css";
 
 import Button1 from "../Buttons/Button1/Button1";
 
-import pencilIcon from "/icons/pencil.png";
-import deleteIcon from "/icons/delete.png";
-
 import css from "./DraftTextEditorUtil.module.css";
 
 const DraftTextEditorUtil = (props) => {
   const {
+    dur = "",
     editorState = "",
     setEditorState = () => {},
     catTtl = "",
     vidTtl = "",
     editClickHanlder = () => {},
     deleteClickHanlder = () => {},
+    cancelHandler = () => {},
     saveHandler = () => {},
   } = props;
 
@@ -25,33 +24,12 @@ const DraftTextEditorUtil = (props) => {
 
   return (
     <div className={css.outerDiv}>
-      <div
-        className={css.editorBox}
-        style={{
-          display: catTtl.length > 0 || vidTtl.length > 0 ? "block" : "flex",
-        }}
-      >
-        {catTtl.length > 0 || vidTtl.length > 0 ? (
-          <div className={css.detWithTTl}>
-            <div className={css.detCnt}>
-              <div className={css.dur}>1:45</div>
-              <strong className={css.detTxt}>{catTtl}</strong>
-              <div className={css.detTxt}>{vidTtl}</div>
-            </div>
-            <div className={css.optionBtns}>
-              <div className={css.optionBtn} onClick={editClickHanlder}>
-                <img alt="edit" src={pencilIcon} className={css.optionIcon} />
-              </div>
-              <div className={css.optionBtn} onClick={deleteClickHanlder}>
-                <img alt="edit" src={deleteIcon} className={css.optionIcon} />
-              </div>
-            </div>
-          </div>
-        ) : (
+      <div className={css.editorBox}>
+        {dur ? (
           <div className={css.det}>
-            <div className={css.dur}>1:45</div>
+            <div className={css.dur}>{dur}</div>
           </div>
-        )}
+        ) : null}
         <div className={css.editor}>
           <ReactQuill
             theme="snow"
@@ -61,7 +39,7 @@ const DraftTextEditorUtil = (props) => {
         </div>
       </div>
       <div className={css.btns}>
-        <Button1 txt="Cancel" />
+        <Button1 txt="Cancel" onClick={cancelHandler} />
         <Button1
           onClick={() => saveHandler(editorState)}
           txt="Save note"

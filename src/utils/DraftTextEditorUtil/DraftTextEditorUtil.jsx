@@ -10,10 +10,6 @@ const DraftTextEditorUtil = (props) => {
     dur = "",
     editorState = "",
     setEditorState = () => {},
-    catTtl = "",
-    vidTtl = "",
-    editClickHanlder = () => {},
-    deleteClickHanlder = () => {},
     cancelHandler = () => {},
     saveHandler = () => {},
   } = props;

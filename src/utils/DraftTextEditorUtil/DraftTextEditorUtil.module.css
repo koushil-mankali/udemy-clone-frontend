@@ -49,6 +49,10 @@
 
 .detTxt {
   font-size: 1rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 .editor {
@@ -59,4 +63,14 @@
   margin-top: 1rem;
   display: flex;
   justify-content: flex-end;
+}
+
+@media screen and (max-width: 426px) {
+  .dur {
+    width: max-content;
+  }
+  .editorBox {
+    display: flex;
+    flex-direction: column;
+  }
 }

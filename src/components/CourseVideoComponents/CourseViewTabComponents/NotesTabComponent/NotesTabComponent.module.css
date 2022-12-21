@@ -23,6 +23,7 @@
 
 .filtersBox {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
@@ -44,6 +45,14 @@
   justify-content: space-between;
 }
 
+.detTxt {
+  font-size: 1rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
 .detCnt {
   display: flex;
   gap: 1rem;
@@ -61,4 +70,30 @@
 .optionIcon {
   width: 15px;
   height: 15px;
+}
+
+.note {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--lighish-white);
+}
+
+@media screen and (max-width: 426px) {
+  .outerDiv {
+    width: 100%;
+  }
+  .detWithTTl {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .dur {
+    width: max-content;
+  }
+  .detCnt {
+    display: flex;
+    flex-direction: column;
+  }
 }

@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import DraftTextEditorUtil from "../../../../utils/DraftTextEditorUtil/DraftTextEditorUtil";
 import SelectDropdownUtil from "../../../../utils/FormUtils/SelectDropdownUtil/SelectDropdownUtil";
+import PlanModalUtil from "../../../../utils/Modals/PlanModalUtil/PlanModalUtil";
 
 import css from "./NotesTabComponent.module.css";
 
@@ -9,8 +10,10 @@ import pencilIcon from "/icons/pencil.png";
 import deleteIcon from "/icons/delete.png";
 
 const NotesTabComponent = () => {
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showEditor, setShowEditor] = useState(false);
-  const [editorState, setEditorState] = useState("");
+  const [editorState, setEditorState] = useState("value");
+  const [editNote, setEditNote] = useState(false);
   const [filters, setFilers] = useState({
     lectures: {},
     recomended: {},
@@ -18,23 +21,51 @@ const NotesTabComponent = () => {
 
   const fakeData = {
     playTime: "1:45",
-    catTtl: "s",
-    vidTtl: "s",
+    catTtl: "1. Getting Started",
+    vidTtl: "3. Why React Instead Of `Just JavaScript`?",
   };
 
   const editClickHanlder = () => {
-    console.log("edit");
+    setEditNote((p) => !p);
+    console.log("edit", editNote);
   };
   const deleteClickHanlder = () => {
     console.log("delete");
+    setShowDeleteModal(true);
     setShowEditor(false);
   };
   const cancelHandler = () => {
     setShowEditor(false);
   };
+  const cancelHandler2 = () => {
+    setEditNote((p) => !p);
+  };
+
   const saveHandler = (value) => {
     console.log(value);
     setShowEditor(false);
+  };
+  const saveHandler2 = (value) => {
+    console.log(value);
+    setEditNote(false);
+  };
+
+  const setModalHanlder = (value) => {
+    switch (value) {
+      case "":
+        setShowDeleteModal(false);
+        break;
+      case "Cancel":
+        console.log("Cancel-M");
+        setShowDeleteModal(false);
+        break;
+      case "Ok":
+        console.log("OK-M");
+        setShowDeleteModal(false);
+        break;
+      default:
+        setShowDeleteModal(false);
+    }
   };
 
   const sortByOptions1 = [
@@ -79,8 +110,6 @@ const NotesTabComponent = () => {
           dur="1:45"
           editorState={editorState}
           setEditorState={setEditorState}
-          editClickHanlder={editClickHanlder}
-          deleteClickHanlder={deleteClickHanlder}
           cancelHandler={cancelHandler}
           saveHandler={saveHandler}
         />
@@ -123,14 +152,27 @@ const NotesTabComponent = () => {
             </div>
           </div>
         </div>
-        <DraftTextEditorUtil
-          editorState={editorState}
-          setEditorState={setEditorState}
-          editClickHanlder={editClickHanlder}
-          deleteClickHanlder={deleteClickHanlder}
-          cancelHandler={cancelHandler}
-          saveHandler={saveHandler}
-        />
+        {editNote ? (
+          <DraftTextEditorUtil
+            editorState={editorState}
+            setEditorState={setEditorState}
+            cancelHandler={cancelHandler2}
+            saveHandler={saveHandler2}
+          />
+        ) : (
+          <div
+            className={css.note}
+            dangerouslySetInnerHTML={{ __html: editorState }}
+          ></div>
+        )}
+        {showDeleteModal ? (
+          <PlanModalUtil
+            title="Please confirm"
+            content="Are you sure you want to delete your note?"
+            btns={["Cancel", "Ok"]}
+            setModal={setModalHanlder}
+          />
+        ) : null}
       </div>
     </div>
   );

@@ -6,6 +6,31 @@
   gap: 1rem;
 }
 
+.ratingBox {
+  width: max-content;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ratingNum {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--glodish1);
+}
+
+.rStars {
+  width: 100%;
+  display: flex;
+}
+
+.ratingTxt {
+  font-weight: 700;
+  color: var(--glodish1);
+}
+
 .bar {
   display: flex;
   flex-wrap: wrap;

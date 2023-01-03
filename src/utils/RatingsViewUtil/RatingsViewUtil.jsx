@@ -10,11 +10,23 @@ const RatingsViewUtil = (props) => {
 
   let content = [];
 
+  const totalRatingCalc =
+    (1 * (data["1star"] || 0) +
+      2 * (data["2star"] || 0) +
+      3 * (data["3star"] || 0) +
+      4 * (data["4star"] || 0) +
+      5 * (data["5star"] || 0)) /
+    ((data["1star"] || 0) +
+      (data["2star"] || 0) +
+      (data["3star"] || 0) +
+      (data["4star"] || 0) +
+      (data["5star"] || 0));
+
   for (let i = 0; i <= 4; i++) {
     content.push(
       <div className={css.ratingBar} key={i}>
         <div className={css.progressBars}>
-          <ProgressBar value={data[`${5 - i}star`]} />
+          <ProgressBar value={data[`${5 - i}star`] || 0} />
         </div>
         <div className={css.starsBox}>
           <div className={css.starsItem}>
@@ -36,7 +48,7 @@ const RatingsViewUtil = (props) => {
                 />
               ))}
             </span>
-            <span className={css.rating}>{data[`${5 - i}star`]}%</span>
+            <span className={css.rating}>{data[`${5 - i}star`] || 0}%</span>
           </div>
         </div>
       </div>
@@ -45,7 +57,28 @@ const RatingsViewUtil = (props) => {
 
   return (
     <div className={css.outerDiv}>
-      <div>rating</div>
+      <div className={css.ratingBox}>
+        <div className={css.ratingNum}>{totalRatingCalc}</div>
+        <div className={css.rStars}>
+          {Array.from(new Array(Math.floor(totalRatingCalc)), (_, i) => (
+            <img
+              src={starIcon}
+              key={`star-${i}`}
+              alt="star"
+              className={css.starIcon}
+            />
+          ))}
+          {Array.from(new Array(5 - Math.floor(totalRatingCalc)), (_, i) => (
+            <img
+              src={starGOIcon}
+              key={`star-${i}`}
+              alt="star"
+              className={css.starIcon}
+            />
+          ))}
+        </div>
+        <div className={css.ratingTxt}>Course Rating</div>
+      </div>
       <div className={css.bar}>{content}</div>
     </div>
   );

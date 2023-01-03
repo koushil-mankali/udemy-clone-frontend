@@ -70,3 +70,11 @@
 .ratingBar {
   display: flex;
 }
+
+@media screen and (max-width: 426px) {
+  .outerDiv {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,83 @@
+.outerDiv {
+  width: 100%;
+  height: 100%;
+  color: var(--gray);
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.leftBar {
+}
+
+.img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.rightBar {
+}
+
+.ttl {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+}
+
+.ratingBox {
+  display: flex;
+  gap: 1rem;
+}
+
+.rating {
+}
+
+.starIcon {
+  width: 20px;
+  height: 20px;
+  margin: 0 0.1rem;
+}
+
+.time {
+  font-size: 0.9rem;
+  color: var(--light-gray);
+}
+
+.cnt {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.fdbkBox {
+  width: 100%;
+}
+
+.box1 {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.box2 {
+  margin: 0.8rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fdbkIcon,
+.fdbkIconR {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.fdbkIconR {
+  transform: rotate(180deg);
+}
+
+.fdbkRptTxt {
+  text-decoration: underline;
+  cursor: pointer;
+}

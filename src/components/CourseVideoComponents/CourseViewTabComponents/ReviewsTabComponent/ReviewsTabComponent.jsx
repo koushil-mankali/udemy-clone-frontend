@@ -22,19 +22,28 @@ const ReviewsTabComponent = () => {
       id: "c1",
       img: imgC,
       name: "koushil",
-      rating: "1",
+      rating: 3,
       date: "12-12-2022",
       comment: "This is a comment!",
-      like: false,
+      like: "liked",
     },
     {
       id: "c2",
       img: imgC,
       name: "nani",
-      rating: "5",
+      rating: 5,
       date: "02-02-2022",
       comment: "This is a comment too!",
-      like: true,
+      like: "disliked",
+    },
+    {
+      id: "c3",
+      img: imgC,
+      name: "Koushil Mankali",
+      rating: 2,
+      date: "02-02-2022",
+      comment: "This is a comment too!",
+      like: "",
     },
   ];
 
@@ -82,7 +91,11 @@ const ReviewsTabComponent = () => {
           </span>
         </div>
         {comments?.map((comment) => {
-          return <CommentViewUtil key={comment.id} data={comment} />;
+          return (
+            <div className={css.comment} key={comment.id}>
+              <CommentViewUtil data={comment} />
+            </div>
+          );
         })}
       </div>
     </div>

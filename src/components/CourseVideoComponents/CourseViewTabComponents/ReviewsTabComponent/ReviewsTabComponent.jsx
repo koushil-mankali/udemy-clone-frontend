@@ -12,7 +12,10 @@ import SelectDropdownUtil from "../../../../utils/FormUtils/SelectDropdownUtil/S
 const ReviewsTabComponent = () => {
   const [filter, setFilter] = useState({
     searchFilter: "",
-    drpFilter: "",
+    drpFilter: {
+      key: "All Ratings",
+      value: "All Ratings",
+    },
   });
   const comments = [
     {
@@ -40,38 +43,43 @@ const ReviewsTabComponent = () => {
       key: "All Ratings",
       value: "All Ratings",
     },
+    {
+      key: "Five Stars",
+      value: "Five Stars",
+    },
   ];
 
   const filterHandler = (e) => {
-    console.log("ReviewsTabComponent", e);
     setFilter((p) => {
       return { ...p, drpFilter: e.target?.value };
     });
   };
-
-  const drpFilterHandler = () => {};
 
   return (
     <div className={css.outerDiv}>
       <div className={css.reviewBox}>
         <div className={css.ttl}>Reviews</div>
         <div className={css.filters}>
-          <InputUtil
-            state={filter.searchFilter}
-            onChange={filterHandler}
-            placeholderTxt="Search reviews"
-            icon={searchIcon}
-            iconPosition="right"
-          />
-          <SelectDropdownUtil
-            id="drpFilter"
-            label="Filter ratings"
-            filterType="drpFilter"
-            defaultValue={filter.drpFilter}
-            value={filter.drpFilter}
-            setValue={drpFilterHandler}
-            options={drpFilterOptions}
-          />
+          <span className={css.inptFilter}>
+            <InputUtil
+              state={filter.searchFilter}
+              onChange={filterHandler}
+              placeholderTxt="Search reviews"
+              icon={searchIcon}
+              iconPosition="right"
+            />
+          </span>
+          <span className={css.drpFilter}>
+            <SelectDropdownUtil
+              id="drpFilter"
+              label="Filter ratings"
+              filterType="drpFilter"
+              defaultValue={filter.drpFilter}
+              value={filter.drpFilter}
+              setValue={setFilter}
+              options={drpFilterOptions}
+            />
+          </span>
         </div>
         {comments?.map((comment) => {
           return <CommentViewUtil key={comment.id} data={comment} />;

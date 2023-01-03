@@ -77,8 +77,6 @@ const SelectDropdownUtil = (props) => {
             style={{ display: dpToggle ? "block" : "none" }}
           >
             {options?.map((option) => {
-              console.log(option, "option");
-
               return (
                 <div
                   className={css.option}

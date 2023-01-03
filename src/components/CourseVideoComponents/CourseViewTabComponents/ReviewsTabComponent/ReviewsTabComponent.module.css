@@ -1,0 +1,40 @@
+.outerDiv {
+  width: 100%;
+  height: 100%;
+}
+
+.reviewBox {
+  width: 100%;
+  height: 100%;
+}
+
+.filters {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+
+.inptFilter {
+  width: 70%;
+}
+
+.drpFilter {
+  width: 30%;
+}
+
+@media screen and (max-width: 426px) {
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .inptFilter {
+    width: 100%;
+  }
+
+  .drpFilter {
+    width: 100%;
+  }
+}

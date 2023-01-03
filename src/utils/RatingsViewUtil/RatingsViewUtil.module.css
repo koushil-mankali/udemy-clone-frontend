@@ -1,0 +1,47 @@
+.outerDiv {
+  width: 100%;
+  height: 100%;
+  margin: 1rem 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.ratingBar {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+
+.progressBars {
+  width: 100%;
+  flex: 1;
+}
+
+.starsItem {
+  display: flex;
+  gap: 0.5rem;
+  align-content: center;
+}
+
+.starIcon {
+  width: 20px;
+  height: 20px;
+  margin: 0 0.2rem;
+}
+
+.rating {
+  width: 10px;
+  color: var(--indigo);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.ratingBar {
+  display: flex;
+}

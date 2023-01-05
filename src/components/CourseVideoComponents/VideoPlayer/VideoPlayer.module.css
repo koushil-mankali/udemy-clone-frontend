@@ -1,15 +1,90 @@
-.outerDiv {
+.videoContainer {
   width: 100%;
-  height: 600px;
+  max-width: 1200px;
+  height: 100%;
+  max-height: 600px;
   display: flex;
   justify-content: center;
-  align-content: center;
+  margin-inline: auto;
   background-color: var(--gray);
+  position: relative;
 }
 
 .video {
   width: 100%;
-  height: 100vh;
-  min-height: 500px;
-  max-height: 600px;
+  height: 100%;
+}
+
+.videoControlsContainer {
+  padding: 0.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: orange;
+  /* display: none; */
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rightControls {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+.expandIcon,
+.settingsIcon,
+.captionIcon,
+.volumeIcon,
+.muteIcon,
+.notesIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.voulmeDiv {
+  position: relative;
+}
+
+.volumeProgressBar {
+  display: none;
+  position: absolute;
+  top: -1.8rem;
+  left: -2rem;
+  width: 200px;
+  height: 30px;
+  background-color: var(--gray-silver);
+  cursor: pointer;
+}
+
+/* .volumeScrollBar {
+  width: 50%;
+  height: 100%;
+  background-color: var(--purple);
+} */
+
+.voulmeDiv:hover .volumeProgressBar {
+  display: flex;
+}
+
+.volumeRange {
+  /* display: none; */
 }

@@ -88,3 +88,37 @@
 .volumeRange {
   /* display: none; */
 }
+
+.captionsBox {
+  position: relative;
+}
+
+.captionsMenu {
+  height: 200px;
+  overflow-y: scroll;
+  position: absolute;
+  bottom: 3rem;
+  right: -1rem;
+  color: var(--white);
+  background-color: var(--gray);
+}
+
+.captionLangItem {
+  min-width: 200px;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.activeLangCaption::after {
+  margin: 0 1rem;
+  border-radius: 50%;
+  display: block;
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #a435f0;
+}

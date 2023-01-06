@@ -22,6 +22,8 @@ const VideoPlayer = (props) => {
   const [videoState, setVideostate] = useState(false);
   const [volumeState, setVolumeState] = useState(true);
   const [currVolume, setCurrVolume] = useState(0.3);
+  const [captionsMenuBar, setCaptionsMenuBar] = useState(false);
+  const [captionLang, setCaptionLang] = useState("off");
 
   const videoPlayer = useRef();
 
@@ -31,6 +33,11 @@ const VideoPlayer = (props) => {
     });
     window.addEventListener("pause", () => {
       setVideostate(true);
+    });
+    window.addEventListener("click", (e) => {
+      if (e.target.dataset.div !== "caption") {
+        setCaptionsMenuBar(false);
+      }
     });
   }, []);
 
@@ -86,13 +93,35 @@ const VideoPlayer = (props) => {
     }
   };
 
-  const playbackSpeedOptions = [
-    { key: "0.5x", value: "0.5" },
-    { key: "0.75x", value: "0.75" },
-    { key: "1x", value: "1" },
-    { key: "1.5x", value: "1.5" },
-    { key: "1.75x", value: "1.75" },
-    { key: "2x", value: "2" },
+  const captionsLangOptions = [
+    {
+      key: "Off",
+      value: "off",
+    },
+    {
+      key: "Telugu[Auto]",
+      value: "telugu",
+    },
+    {
+      key: "Sanskrit[Auto]",
+      value: "sanskrit",
+    },
+    {
+      key: "Hindi[Auto]",
+      value: "hindi",
+    },
+    {
+      key: "Tamil[Auto]",
+      value: "tamil",
+    },
+    {
+      key: "English[Auto]",
+      value: "english",
+    },
+    {
+      key: "French[Auto]",
+      value: "french",
+    },
   ];
 
   return (
@@ -143,18 +172,20 @@ const VideoPlayer = (props) => {
           </div>
           <div className={css.rightControls}>
             <div className={css.voulmeDiv}>
-              <div className={css.volumeProgressBar}>
-                <input
-                  type="range"
-                  min="0"
-                  max="1"
-                  value={currVolume}
-                  step="0.1"
-                  className={css.volumeRange}
-                  onChange={volumeChangeHandler}
-                />
-                {/* <div className={css.volumeScrollBar}></div> */}
-              </div>
+              {!captionsMenuBar ? (
+                <div className={css.volumeProgressBar}>
+                  <input
+                    type="range"
+                    min="0"
+                    max="1"
+                    value={currVolume}
+                    step="0.1"
+                    className={css.volumeRange}
+                    onChange={volumeChangeHandler}
+                  />
+                  {/* <div className={css.volumeScrollBar}></div> */}
+                </div>
+              ) : null}
               <button className={[css.voulmeBtn, css.btn].join(" ")}>
                 {volumeState ? (
                   <img
@@ -173,13 +204,40 @@ const VideoPlayer = (props) => {
                 )}
               </button>
             </div>
-            <button className={[css.btn].join(" ")}>
-              <img
-                className={[css.captionIcon, css.icon].join(" ")}
-                src={captionIcon}
-                alt="caption icon"
-              />
-            </button>
+            <div className={css.captionsBox}>
+              {captionsMenuBar ? (
+                <div className={css.captionsMenu}>
+                  {captionsLangOptions?.map((item, id) => {
+                    return (
+                      <div
+                        key={`captionlang-${id}`}
+                        className={[
+                          css.captionLangItem,
+                          item.value === captionLang
+                            ? css.activeLangCaption
+                            : "",
+                        ].join(" ")}
+                        id={`captionlang-${id}`}
+                        onClick={() => setCaptionLang(item.value)}
+                      >
+                        {item.key}
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : null}
+              <button
+                className={[css.btn].join(" ")}
+                onClick={() => setCaptionsMenuBar((p) => !p)}
+              >
+                <img
+                  data-div="caption"
+                  className={[css.captionIcon, css.icon].join(" ")}
+                  src={captionIcon}
+                  alt="caption icon"
+                />
+              </button>
+            </div>
             <button className={[css.btn].join(" ")}>
               <img
                 className={[css.settingsIcon, css.icon].join(" ")}

@@ -19,6 +19,7 @@ import video2 from "/videos/sample2.mp4";
 import { useEffect } from "react";
 
 const VideoPlayer = (props) => {
+  const { autoplay = false } = props.data;
   const [videoState, setVideostate] = useState(false);
   const [volumeState, setVolumeState] = useState(true);
   const [currVolume, setCurrVolume] = useState(0.3);
@@ -26,10 +27,15 @@ const VideoPlayer = (props) => {
   const [captionLang, setCaptionLang] = useState("off");
   const [settingsMenu, setSettingsMenu] = useState(false);
   const [settingsOption, setSettingsOption] = useState("auto");
-
+  const [autoPlayState, setAutoPlayState] = useState(autoplay);
   const videoPlayer = useRef();
 
   useEffect(() => {
+    const videoControlsContainer = document.querySelector(
+      "#videoControlsContainer"
+    );
+    const videoContainer = document.querySelector("#videoContainer");
+
     window.addEventListener("play", () => {
       setVideostate(false);
     });
@@ -52,6 +58,16 @@ const VideoPlayer = (props) => {
         setSettingsMenu(false);
       }
     });
+
+    setTimeout(() => {
+      videoControlsContainer.classList.add(css["dnone"]);
+    }, [1000]);
+    videoContainer.addEventListener("mouseenter", () => {
+      videoControlsContainer.classList.remove(css["dnone"]);
+    });
+    videoContainer.addEventListener("mouseleave", () => {
+      videoControlsContainer.classList.add(css["dnone"]);
+    });
   }, []);
 
   useEffect(() => {
@@ -68,10 +84,10 @@ const VideoPlayer = (props) => {
   };
 
   const videoPlayerHandler = () => {
-    // setVideostate((p) => !p);
-    // videoPlayer?.current.paused
-    //   ? videoPlayer?.current.play()
-    //   : videoPlayer?.current.pause();
+    setVideostate((p) => !p);
+    videoPlayer?.current.paused
+      ? videoPlayer?.current.play()
+      : videoPlayer?.current.pause();
   };
 
   const reversePlaybackHandler = () => {
@@ -165,8 +181,12 @@ const VideoPlayer = (props) => {
   ];
 
   return (
-    <div className={[css.videoContainer].join(" ")}>
-      <div className={css.videoControlsContainer} onClick={() => {}}>
+    <div className={[css.videoContainer].join(" ")} id="videoContainer">
+      <div
+        className={css.videoControlsContainer}
+        onClick={() => {}}
+        id="videoControlsContainer"
+      >
         <div className={css.timelineContainer}></div>
         <div className={css.controls}>
           <div className={css.leftControls}>
@@ -302,7 +322,14 @@ const VideoPlayer = (props) => {
                   <div className={css.autoplayOption} id="autoplay">
                     Autoplay
                     <label className={css.switch} data-switch>
-                      <input type="checkbox" data-switch />
+                      <input
+                        type="checkbox"
+                        checked={autoPlayState}
+                        data-switch
+                        onChange={() => {
+                          setAutoPlayState((p) => !p);
+                        }}
+                      />
                       <span
                         data-switch
                         className={[css.slider, css.round].join(" ")}
@@ -339,7 +366,6 @@ const VideoPlayer = (props) => {
         </div>
       </div>
       <video
-        // controls
         ref={videoPlayer}
         controlsList="nodownload"
         className={css.video}

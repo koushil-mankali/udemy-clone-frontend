@@ -23,7 +23,7 @@ const CourseViewPage = () => {
       <div className={css.bdy}>
         <div className={css.left}>
           <div className={css.content}>
-            <VideoPlayer />
+            <VideoPlayer data={{ autoplay: true }} />
           </div>
           <CourseViewTabComponent />
           <div className={css.footer}>

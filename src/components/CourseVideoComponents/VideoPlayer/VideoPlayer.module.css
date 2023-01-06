@@ -13,6 +13,7 @@
 .video {
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .videoControlsContainer {
@@ -22,8 +23,14 @@
   left: 0;
   right: 0;
   z-index: 1;
-  background-color: orange;
-  /* display: none; */
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 1;
+}
+
+.dnone {
+  transition: all 0.5s linear;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .controls {

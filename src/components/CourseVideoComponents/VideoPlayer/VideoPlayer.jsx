@@ -30,6 +30,10 @@ const VideoPlayer = (props) => {
   const [settingsOption, setSettingsOption] = useState("auto");
   const [autoPlayState, setAutoPlayState] = useState(autoplay);
   const [fullScreen, setFullScreen] = useState(false);
+  const [videoDuration, setVideoDuration] = useState({
+    current: 0,
+    total: 0,
+  });
   const videoPlayer = useRef();
 
   useEffect(() => {
@@ -82,6 +86,33 @@ const VideoPlayer = (props) => {
           (videoPlayer.current.duration || 0)) *
           100 +
         "%";
+    });
+  }, []);
+
+  useEffect(() => {
+    console.log(videoPlayer.current.duration, "pp");
+    let hours = parseInt(videoPlayer.current.duration / (60 * 60), 10);
+    let minutes = parseInt(videoPlayer.current.duration / 60, 10);
+    let seconds = parseInt(videoPlayer.current.duration % 60);
+
+    setVideoDuration((p) => {
+      return {
+        current: p.current,
+        total: `${hours}:${minutes}:${seconds}`,
+      };
+    });
+
+    videoPlayer.current.addEventListener("timeupdate", () => {
+      let hours = parseInt(videoPlayer.current.currentTime / (60 * 60), 10);
+      let minutes = parseInt(videoPlayer.current.currentTime / 60, 10);
+      let seconds = parseInt(videoPlayer.current.currentTime % 60);
+
+      setVideoDuration((p) => {
+        return {
+          current: `${hours}:${minutes}:${seconds}`,
+          total: videoPlayer.current.duration,
+        };
+      });
     });
   }, []);
 
@@ -246,6 +277,9 @@ const VideoPlayer = (props) => {
                 onClick={forwardPlaybackHanlder}
               />
             </button>
+            <div className={css.durationCount}>
+              {`${videoDuration.current}/${videoDuration.total}`}
+            </div>
             <button className={[css.btn].join(" ")}>
               <img
                 className={[css.notesIcon, css.icon].join(" ")}

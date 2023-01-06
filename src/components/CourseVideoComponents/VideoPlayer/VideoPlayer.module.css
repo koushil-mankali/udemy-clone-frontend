@@ -64,6 +64,7 @@
   justify-content: space-between;
 }
 
+.leftControls,
 .rightControls {
   display: flex;
   align-items: center;
@@ -74,6 +75,13 @@
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+.durationCount {
+  margin: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
 }
 
 .icon {

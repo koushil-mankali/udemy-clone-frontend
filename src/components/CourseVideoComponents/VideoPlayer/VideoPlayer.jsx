@@ -6,6 +6,7 @@ import playIcon from "/icons/videoPlayer/play.png";
 import pauseIcon from "/icons/videoPlayer/pause.png";
 import captionIcon from "/icons/videoPlayer/caption.png";
 import expandIcon from "/icons/videoPlayer/expand.png";
+import contractIcon from "/icons/videoPlayer/opposite-arrows.png";
 import forwardIcon from "/icons/videoPlayer/forward.png";
 import backwardIcon from "/icons/videoPlayer/backward.png";
 import muteIcon from "/icons/videoPlayer/mute.png";
@@ -15,7 +16,7 @@ import settingsIcon from "/icons/videoPlayer/settings.png";
 import notesIcon from "/icons/videoPlayer/notes.png";
 
 import video from "/videos/coding.mp4";
-import video2 from "/videos/sample2.mp4";
+// import video from "/videos/sample2.mp4";
 import { useEffect } from "react";
 
 const VideoPlayer = (props) => {
@@ -28,6 +29,7 @@ const VideoPlayer = (props) => {
   const [settingsMenu, setSettingsMenu] = useState(false);
   const [settingsOption, setSettingsOption] = useState("auto");
   const [autoPlayState, setAutoPlayState] = useState(autoplay);
+  const [fullScreen, setFullScreen] = useState(false);
   const videoPlayer = useRef();
 
   useEffect(() => {
@@ -35,6 +37,7 @@ const VideoPlayer = (props) => {
       "#videoControlsContainer"
     );
     const videoContainer = document.querySelector("#videoContainer");
+    const currentTimeLine = document.querySelector("#currentTimeLine");
 
     window.addEventListener("play", () => {
       setVideostate(false);
@@ -68,11 +71,30 @@ const VideoPlayer = (props) => {
     videoContainer.addEventListener("mouseleave", () => {
       videoControlsContainer.classList.add(css["dnone"]);
     });
+    videoPlayer.current.addEventListener("fullscreenchange", () => {
+      if (document.fullscreenElement === null) {
+        setFullScreen(false);
+      }
+    });
+    videoPlayer.current.addEventListener("timeupdate", () => {
+      currentTimeLine.style.width =
+        ((videoPlayer.current.currentTime || 0) /
+          (videoPlayer.current.duration || 0)) *
+          100 +
+        "%";
+    });
   }, []);
 
   useEffect(() => {
     videoPlayer.current.volume = currVolume;
   }, [currVolume]);
+  useEffect(() => {
+    if (fullScreen) {
+      videoPlayer.current.requestFullscreen().catch((err) => {
+        console.log("Error full screen");
+      });
+    }
+  }, [fullScreen]);
 
   const playBtnHandler = () => {
     setVideostate(true);
@@ -187,7 +209,10 @@ const VideoPlayer = (props) => {
         onClick={() => {}}
         id="videoControlsContainer"
       >
-        <div className={css.timelineContainer}></div>
+        <div className={css.timelineContainer}>
+          <div className={css.currentLoadedTimeLine}></div>
+          <div className={css.currentTimeLine} id="currentTimeLine"></div>
+        </div>
         <div className={css.controls}>
           <div className={css.leftControls}>
             <button className={[css.playPauseBtn, css.btn].join(" ")}>
@@ -350,8 +375,13 @@ const VideoPlayer = (props) => {
             </div>
             <button className={[css.btn].join(" ")}>
               <img
-                className={[css.expandIcon, css.icon].join(" ")}
-                src={expandIcon}
+                onClick={() => setFullScreen((p) => !p)}
+                className={[
+                  fullScreen ? css.expandIconR : "",
+                  css.expandIcon,
+                  css.icon,
+                ].join(" ")}
+                src={fullScreen ? contractIcon : expandIcon}
                 alt="expan icon"
               />
             </button>
@@ -372,8 +402,8 @@ const VideoPlayer = (props) => {
         onClick={videoPlayerHandler}
         id="video"
       >
-        <source src={video2} type="video/webm" />
-        <source src={video2} type="video/mp4" />
+        <source src={video} type="video/webm" />
+        <source src={video} type="video/mp4" />
       </video>
     </div>
   );

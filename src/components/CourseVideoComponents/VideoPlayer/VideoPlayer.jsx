@@ -24,6 +24,8 @@ const VideoPlayer = (props) => {
   const [currVolume, setCurrVolume] = useState(0.3);
   const [captionsMenuBar, setCaptionsMenuBar] = useState(false);
   const [captionLang, setCaptionLang] = useState("off");
+  const [settingsMenu, setSettingsMenu] = useState(false);
+  const [settingsOption, setSettingsOption] = useState("auto");
 
   const videoPlayer = useRef();
 
@@ -35,8 +37,19 @@ const VideoPlayer = (props) => {
       setVideostate(true);
     });
     window.addEventListener("click", (e) => {
-      if (e.target.dataset.div !== "caption") {
+      if (
+        e.target.dataset.div !== "caption" &&
+        !e.target.id?.split("-")[0].includes("captionlang")
+      ) {
         setCaptionsMenuBar(false);
+      }
+      if (
+        e.target.dataset.div !== "settings" &&
+        !e.target.id?.split("-")[0].includes("settingsoption") &&
+        !e.target.id.includes("autoplay") &&
+        !e.target.dataset.switch
+      ) {
+        setSettingsMenu(false);
       }
     });
   }, []);
@@ -124,6 +137,33 @@ const VideoPlayer = (props) => {
     },
   ];
 
+  const resolutionOptions = [
+    {
+      key: "1080p",
+      value: "1080",
+    },
+    {
+      key: "720p",
+      value: "720",
+    },
+    {
+      key: "576p",
+      value: "576",
+    },
+    {
+      key: "432p",
+      value: "432",
+    },
+    {
+      key: "360p",
+      value: "360",
+    },
+    {
+      key: "Auto",
+      value: "auto",
+    },
+  ];
+
   return (
     <div className={[css.videoContainer].join(" ")}>
       <div className={css.videoControlsContainer} onClick={() => {}}>
@@ -204,7 +244,7 @@ const VideoPlayer = (props) => {
                 )}
               </button>
             </div>
-            <div className={css.captionsBox}>
+            <div id="captionsBox" className={css.captionsBox}>
               {captionsMenuBar ? (
                 <div className={css.captionsMenu}>
                   {captionsLangOptions?.map((item, id) => {
@@ -238,13 +278,49 @@ const VideoPlayer = (props) => {
                 />
               </button>
             </div>
-            <button className={[css.btn].join(" ")}>
-              <img
-                className={[css.settingsIcon, css.icon].join(" ")}
-                src={settingsIcon}
-                alt="settings icon"
-              />
-            </button>
+            <div id="settingsbox" className={css.settingsBox}>
+              {settingsMenu ? (
+                <div className={css.captionsMenu}>
+                  {resolutionOptions?.map((item, id) => {
+                    return (
+                      <div
+                        key={`settingsoption-${id}`}
+                        className={[
+                          css.settingOption,
+                          item.value === settingsOption
+                            ? css.activeLangSetting
+                            : "",
+                        ].join(" ")}
+                        id={`settingsoption-${id}`}
+                        onClick={() => setSettingsOption(item.value)}
+                      >
+                        {item.key}
+                      </div>
+                    );
+                  })}
+                  <hr />
+                  <div className={css.autoplayOption} id="autoplay">
+                    Autoplay
+                    <label className={css.switch} data-switch>
+                      <input type="checkbox" data-switch />
+                      <span
+                        data-switch
+                        className={[css.slider, css.round].join(" ")}
+                      ></span>
+                    </label>
+                  </div>
+                </div>
+              ) : null}
+              <button className={[css.btn].join(" ")}>
+                <img
+                  data-div="settings"
+                  className={[css.settingsIcon, css.icon].join(" ")}
+                  src={settingsIcon}
+                  alt="settings icon"
+                  onClick={() => setSettingsMenu((p) => !p)}
+                />
+              </button>
+            </div>
             <button className={[css.btn].join(" ")}>
               <img
                 className={[css.expandIcon, css.icon].join(" ")}

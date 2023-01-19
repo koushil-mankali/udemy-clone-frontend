@@ -22,7 +22,8 @@ import video from "/videos/coding.mp4";
 import { useEffect } from "react";
 
 const VideoPlayer = (props) => {
-  const { autoplay = false } = props.data;
+  const { playerWidthState, playerWidthSetter, data } = props;
+  const { autoplay = false } = data;
   const [videoState, setVideostate] = useState(false);
   const [volumeState, setVolumeState] = useState(true);
   const [currVolume, setCurrVolume] = useState(0.3);
@@ -30,6 +31,7 @@ const VideoPlayer = (props) => {
   const [captionLang, setCaptionLang] = useState("off");
   const [settingsMenu, setSettingsMenu] = useState(false);
   const [settingsOption, setSettingsOption] = useState("auto");
+  const [stretchPlayer, setStretchPlayer] = useState(false);
   const [autoPlayState, setAutoPlayState] = useState(autoplay);
   const [fullScreen, setFullScreen] = useState(false);
   const [videoDuration, setVideoDuration] = useState({
@@ -72,7 +74,7 @@ const VideoPlayer = (props) => {
 
   setTimeout(() => {
     videoControlsContainer?.classList.add(css["dnone"]);
-  }, [1000]);
+  }, [5000]);
   videoContainer?.addEventListener("mouseenter", () => {
     videoControlsContainer?.classList.remove(css["dnone"]);
     setArrowsToggle(true);
@@ -237,8 +239,20 @@ const VideoPlayer = (props) => {
     console.log("clicked", arrow);
   };
 
+  const strecthBtnHandler = () => {
+    setStretchPlayer((p) => !p);
+    playerWidthSetter((p) => !p);
+  };
+
   return (
-    <div className={[css.videoContainer].join(" ")} id="videoContainer">
+    <div
+      className={[css.videoContainer].join(" ")}
+      id="videoContainer"
+      style={{
+        maxWidth: playerWidthState ? "100%" : "1200px",
+        maxHeight: playerWidthState ? "100%" : "700px",
+      }}
+    >
       {arrowsToggle ? (
         <div
           className={css.leftArrow}
@@ -428,14 +442,14 @@ const VideoPlayer = (props) => {
                   css.expandIcon,
                   css.icon,
                 ].join(" ")}
-                src={fullScreen ? contractIcon : expandIcon}
+                src={expandIcon}
                 alt="expan icon"
               />
             </button>
-            <button className={[css.btn].join(" ")}>
+            <button className={[css.btn].join(" ")} onClick={strecthBtnHandler}>
               <img
                 className={[css.stretchIcon, css.icon].join(" ")}
-                src={stretchIcon}
+                src={stretchPlayer ? contractIcon : stretchIcon}
                 alt="stretch icon"
               />
             </button>

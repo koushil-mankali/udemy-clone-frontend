@@ -25,6 +25,8 @@ const VideoPlayer = (props) => {
   const { playerWidthState, playerWidthSetter, data } = props;
   const { autoplay = false } = data;
   const [videoState, setVideostate] = useState(false);
+  const [playbackOptionsBox, setPlaybackOptionsBox] = useState(false);
+  const [playbackSpeedOption, setPlaybackSpeedOption] = useState("1.0");
   const [volumeState, setVolumeState] = useState(true);
   const [currVolume, setCurrVolume] = useState(0.3);
   const [captionsMenuBar, setCaptionsMenuBar] = useState(false);
@@ -70,11 +72,17 @@ const VideoPlayer = (props) => {
     ) {
       setSettingsMenu(false);
     }
+    if (
+      e.target.dataset.div !== "playback" &&
+      !e.target.id?.split("-")[0].includes("playbackoption")
+    ) {
+      setPlaybackOptionsBox(false);
+    }
   });
 
-  setTimeout(() => {
-    videoControlsContainer?.classList.add(css["dnone"]);
-  }, [5000]);
+  // setTimeout(() => {
+  //   videoControlsContainer?.classList.add(css["dnone"]);
+  // }, [5000]);
   videoContainer?.addEventListener("mouseenter", () => {
     videoControlsContainer?.classList.remove(css["dnone"]);
     setArrowsToggle(true);
@@ -235,6 +243,37 @@ const VideoPlayer = (props) => {
     },
   ];
 
+  const playBackSpeedOptions = [
+    {
+      key: "3.0x",
+      value: "3.0",
+    },
+    {
+      key: "2.5x",
+      value: "2.5",
+    },
+    {
+      key: "2.0x",
+      value: "2.0",
+    },
+    {
+      key: "1.0x",
+      value: "1.0",
+    },
+    {
+      key: "0.5x",
+      value: "0.5",
+    },
+  ];
+
+  const playbackSpeedHandler = () => {
+    setPlaybackOptionsBox((p) => !p);
+  };
+
+  useEffect(() => {
+    videoPlayer.current.playbackRate = playbackSpeedOption || "1.0";
+  }, [playbackSpeedOption]);
+
   const playerArrowClickHandler = (arrow) => {
     console.log("clicked", arrow);
   };
@@ -304,6 +343,36 @@ const VideoPlayer = (props) => {
                 onClick={forwardPlaybackHanlder}
               />
             </button>
+            <div id="buttonBox" className={css.buttonBox}>
+              {playbackOptionsBox ? (
+                <div className={css.playbackMenu}>
+                  {playBackSpeedOptions?.map((item, id) => {
+                    return (
+                      <div
+                        key={`playbackoption-${id}`}
+                        className={[
+                          css.playbackOptionItem,
+                          item.value === playbackSpeedOption
+                            ? css.activePlaybackOption
+                            : "",
+                        ].join(" ")}
+                        id={`playbackoption-${id}`}
+                        onClick={() => setPlaybackSpeedOption(item.value)}
+                      >
+                        {item.key}
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : null}
+              <button
+                data-div="playback"
+                className={[css.plyBtn].join(" ")}
+                onClick={playbackSpeedHandler}
+              >
+                {playbackSpeedOption}x
+              </button>
+            </div>
             <div className={css.durationCount}>
               {`${videoDuration.current}/${videoDuration.total}`}
             </div>

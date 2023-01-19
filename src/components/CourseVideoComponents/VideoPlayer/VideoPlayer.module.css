@@ -103,6 +103,14 @@
   cursor: pointer;
 }
 
+.plyBtn {
+  padding: 2px 5px;
+  width: max-content;
+  color: var(--gray);
+  font-weight: 700;
+  cursor: pointer;
+}
+
 .durationCount {
   margin: 0.5rem;
   font-size: 1.1rem;
@@ -164,6 +172,10 @@
   position: relative;
 }
 
+.buttonBox {
+  position: relative;
+}
+
 .captionsMenu {
   height: 200px;
   overflow-y: scroll;
@@ -174,7 +186,18 @@
   background-color: var(--gray);
 }
 
+.playbackMenu {
+  height: 200px;
+  overflow-y: scroll;
+  position: absolute;
+  bottom: 3rem;
+  left: 0rem;
+  color: var(--white);
+  background-color: var(--gray);
+}
+
 .captionLangItem,
+.playbackOptionItem,
 .settingOption {
   min-width: 200px;
   font-size: 1rem;
@@ -191,6 +214,7 @@
 }
 
 .activeLangCaption::after,
+.activePlaybackOption::after,
 .activeLangSetting::after {
   margin: 0 1rem;
   border-radius: 50%;

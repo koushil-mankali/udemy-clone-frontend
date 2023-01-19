@@ -31,8 +31,8 @@ const VideoPlayer = (props) => {
   const [autoPlayState, setAutoPlayState] = useState(autoplay);
   const [fullScreen, setFullScreen] = useState(false);
   const [videoDuration, setVideoDuration] = useState({
-    current: 0,
-    total: 0,
+    current: "0:0:0",
+    total: "0:0:0",
   });
   const videoPlayer = useRef();
 
@@ -89,36 +89,30 @@ const VideoPlayer = (props) => {
     });
   }, []);
 
-  useEffect(() => {
-    console.log(videoPlayer.current.duration, "pp");
-    let hours = parseInt(videoPlayer.current.duration / (60 * 60), 10);
-    let minutes = parseInt(videoPlayer.current.duration / 60, 10);
-    let seconds = parseInt(videoPlayer.current.duration % 60);
+  // Setting video player video duration and timeupdate.
+  videoPlayer.current?.addEventListener("timeupdate", () => {
+    let totalHours = parseInt(
+      (videoPlayer.current.duration || 0) / (60 * 60),
+      10
+    );
+    let totalMinutes = parseInt((videoPlayer.current.duration || 0) / 60, 10);
+    let totalSeconds = parseInt((videoPlayer.current.duration || 0) % 60);
+    let hours = parseInt(videoPlayer.current.currentTime / (60 * 60), 10);
+    let minutes = parseInt(videoPlayer.current.currentTime / 60, 10);
+    let seconds = parseInt(videoPlayer.current.currentTime % 60);
 
     setVideoDuration((p) => {
       return {
-        current: p.current,
-        total: `${hours}:${minutes}:${seconds}`,
+        current: `${hours}:${minutes}:${seconds}`,
+        total: `${totalHours}:${totalMinutes}:${totalSeconds}`,
       };
     });
-
-    videoPlayer.current.addEventListener("timeupdate", () => {
-      let hours = parseInt(videoPlayer.current.currentTime / (60 * 60), 10);
-      let minutes = parseInt(videoPlayer.current.currentTime / 60, 10);
-      let seconds = parseInt(videoPlayer.current.currentTime % 60);
-
-      setVideoDuration((p) => {
-        return {
-          current: `${hours}:${minutes}:${seconds}`,
-          total: videoPlayer.current.duration,
-        };
-      });
-    });
-  }, []);
+  });
 
   useEffect(() => {
     videoPlayer.current.volume = currVolume;
   }, [currVolume]);
+
   useEffect(() => {
     if (fullScreen) {
       videoPlayer.current.requestFullscreen().catch((err) => {

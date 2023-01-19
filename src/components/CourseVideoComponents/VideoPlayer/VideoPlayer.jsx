@@ -14,6 +14,8 @@ import volumeIcon from "/icons/videoPlayer/volume.png";
 import stretchIcon from "/icons/videoPlayer/stretch.png";
 import settingsIcon from "/icons/videoPlayer/settings.png";
 import notesIcon from "/icons/videoPlayer/notes.png";
+import leftArrowIcon from "/icons/videoPlayer/left-arrow.png";
+import rightArrowIcon from "/icons/videoPlayer/right-arrow.png";
 
 import video from "/videos/coding.mp4";
 // import video from "/videos/sample2.mp4";
@@ -34,60 +36,64 @@ const VideoPlayer = (props) => {
     current: "0:0:0",
     total: "0:0:0",
   });
+  const [arrowsToggle, setArrowsToggle] = useState(false);
+
   const videoPlayer = useRef();
 
-  useEffect(() => {
-    const videoControlsContainer = document.querySelector(
-      "#videoControlsContainer"
-    );
-    const videoContainer = document.querySelector("#videoContainer");
-    const currentTimeLine = document.querySelector("#currentTimeLine");
+  // Setting video player timeline settings START
+  const videoControlsContainer = document.querySelector(
+    "#videoControlsContainer"
+  );
+  const videoContainer = document.querySelector("#videoContainer");
+  const currentTimeLine = document.querySelector("#currentTimeLine");
 
-    window.addEventListener("play", () => {
-      setVideostate(false);
-    });
-    window.addEventListener("pause", () => {
-      setVideostate(true);
-    });
-    window.addEventListener("click", (e) => {
-      if (
-        e.target.dataset.div !== "caption" &&
-        !e.target.id?.split("-")[0].includes("captionlang")
-      ) {
-        setCaptionsMenuBar(false);
-      }
-      if (
-        e.target.dataset.div !== "settings" &&
-        !e.target.id?.split("-")[0].includes("settingsoption") &&
-        !e.target.id.includes("autoplay") &&
-        !e.target.dataset.switch
-      ) {
-        setSettingsMenu(false);
-      }
-    });
+  window.addEventListener("play", () => {
+    setVideostate(false);
+  });
+  window.addEventListener("pause", () => {
+    setVideostate(true);
+  });
+  window.addEventListener("click", (e) => {
+    if (
+      e.target.dataset.div !== "caption" &&
+      !e.target.id?.split("-")[0].includes("captionlang")
+    ) {
+      setCaptionsMenuBar(false);
+    }
+    if (
+      e.target.dataset.div !== "settings" &&
+      !e.target.id?.split("-")[0].includes("settingsoption") &&
+      !e.target.id.includes("autoplay") &&
+      !e.target.dataset.switch
+    ) {
+      setSettingsMenu(false);
+    }
+  });
 
-    setTimeout(() => {
-      videoControlsContainer.classList.add(css["dnone"]);
-    }, [1000]);
-    videoContainer.addEventListener("mouseenter", () => {
-      videoControlsContainer.classList.remove(css["dnone"]);
-    });
-    videoContainer.addEventListener("mouseleave", () => {
-      videoControlsContainer.classList.add(css["dnone"]);
-    });
-    videoPlayer.current.addEventListener("fullscreenchange", () => {
-      if (document.fullscreenElement === null) {
-        setFullScreen(false);
-      }
-    });
-    videoPlayer.current.addEventListener("timeupdate", () => {
-      currentTimeLine.style.width =
-        ((videoPlayer.current.currentTime || 0) /
-          (videoPlayer.current.duration || 0)) *
-          100 +
-        "%";
-    });
-  }, []);
+  setTimeout(() => {
+    videoControlsContainer?.classList.add(css["dnone"]);
+  }, [1000]);
+  videoContainer?.addEventListener("mouseenter", () => {
+    videoControlsContainer?.classList.remove(css["dnone"]);
+    setArrowsToggle(true);
+  });
+  videoContainer?.addEventListener("mouseleave", () => {
+    videoControlsContainer?.classList.add(css["dnone"]);
+    setArrowsToggle(false);
+  });
+  videoPlayer.current?.addEventListener("fullscreenchange", () => {
+    if (document.fullscreenElement === null) {
+      setFullScreen(false);
+    }
+  });
+  videoPlayer.current?.addEventListener("timeupdate", () => {
+    currentTimeLine.style.width =
+      ((videoPlayer.current.currentTime || 0) /
+        (videoPlayer.current.duration || 0)) *
+        100 +
+      "%";
+  });
+  // Setting video player timeline settings END
 
   // Setting video player video duration and timeupdate.
   videoPlayer.current?.addEventListener("timeupdate", () => {
@@ -227,8 +233,21 @@ const VideoPlayer = (props) => {
     },
   ];
 
+  const playerArrowClickHandler = (arrow) => {
+    console.log("clicked", arrow);
+  };
+
   return (
     <div className={[css.videoContainer].join(" ")} id="videoContainer">
+      {arrowsToggle ? (
+        <div
+          className={css.leftArrow}
+          id="leftArrow"
+          onClickCapture={() => playerArrowClickHandler("left")}
+        >
+          <img src={leftArrowIcon} alt="left arrow" className={css.arrowIcon} />
+        </div>
+      ) : null}
       <div
         className={css.videoControlsContainer}
         onClick={() => {}}
@@ -433,6 +452,19 @@ const VideoPlayer = (props) => {
         <source src={video} type="video/webm" />
         <source src={video} type="video/mp4" />
       </video>
+      {arrowsToggle ? (
+        <div
+          className={css.rightArrow}
+          id="rightArrow"
+          onClickCapture={() => playerArrowClickHandler("right")}
+        >
+          <img
+            src={rightArrowIcon}
+            alt="right arrow"
+            className={css.arrowIcon}
+          />
+        </div>
+      ) : null}
     </div>
   );
 };

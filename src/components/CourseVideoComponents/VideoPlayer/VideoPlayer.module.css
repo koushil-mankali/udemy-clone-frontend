@@ -10,10 +10,36 @@
   position: relative;
 }
 
+.leftArrow,
+.rightArrow {
+  position: relative;
+  top: 45%;
+  width: 30px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--blackBg);
+  border: 1px solid var(--light-gray);
+  cursor: pointer;
+}
+
+.leftArrow {
+  left: 0;
+}
+
+.rightArrow {
+  right: 0;
+}
+
+.arrowIcon {
+  width: 15px;
+  height: 15px;
+}
+
 .video {
   width: 100%;
   height: 100%;
-  cursor: pointer;
 }
 
 .videoControlsContainer {

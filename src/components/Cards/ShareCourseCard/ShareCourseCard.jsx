@@ -37,7 +37,7 @@ const ShareCourseCard = (props) => {
             state={txt}
             btnTxt={btnTxt}
             btnClick={shareHandler}
-            btnCss={{ padding: "18px" }}
+            btnCss={{ padding: "20px" }}
           />
         </div>
         <div className={css.box3}>

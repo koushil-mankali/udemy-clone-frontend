@@ -1,7 +1,8 @@
-// import { useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import Button1 from "../../../utils/Buttons/Button1/Button1";
+import ShareCourseCard from "../../Cards/ShareCourseCard/ShareCourseCard";
 
 import logoIcon from "/images/logo-udemy.svg";
 import trophyIcon from "/icons/trophy.png";
@@ -13,8 +14,13 @@ import downArrowIcon from "/icons/down-arrow.svg";
 import css from "./CourseVideoNavbar.module.css";
 
 const CourseVideoNavbar = (props) => {
+  const [showShareCourseDialog, setShowShareCourseDialog] = useState(false);
   const { data = {} } = props;
   const { title = "" } = data;
+
+  const shareCourseDialogHandler = () => {
+    setShowShareCourseDialog((p) => !p);
+  };
 
   return (
     <div className={css.outerDiv}>
@@ -44,6 +50,7 @@ const CourseVideoNavbar = (props) => {
           color="var(--white)"
           img={shareIcon}
           imgDir="right"
+          onClick={shareCourseDialogHandler}
           bck="var(--gray)"
           hovBck="var(--blackish2)"
           extraCss={{ border: "1px solid var(--white)" }}
@@ -64,6 +71,15 @@ const CourseVideoNavbar = (props) => {
           txtBoxCss={{ filter: "invert(1)" }}
         />
       </div>
+      {showShareCourseDialog ? (
+        <ShareCourseCard
+          ttl="Share this course"
+          txt=""
+          btnTxt="Copy"
+          btnClick={shareCourseDialogHandler}
+          closeModal={shareCourseDialogHandler}
+        />
+      ) : null}
     </div>
   );
 };

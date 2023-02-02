@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import logo from "/images/logo-udemy-inverted.svg";
@@ -7,8 +7,12 @@ import globeIcon from "/icons/globe.png";
 import css from "./Footer.module.css";
 
 import Button1 from "../../../utils/Buttons/Button1/Button1";
+import LanguageChangeCard from "../../Cards/LanguageChangeCard/LanguageChangeCard";
 
 const Footer = () => {
+  const [showLanguageSettingsModal, setShowLanguageSettingsModal] =
+    useState(false);
+
   return (
     <div className={css.outerDiv}>
       <div className={css.innerDiv}>
@@ -76,6 +80,7 @@ const Footer = () => {
               txt="English"
               bck="#1c1d1f"
               color="#fff"
+              onClick={() => setShowLanguageSettingsModal(true)}
               hovBck="rgba(255,255,255,.08)"
               extraCss={{ border: "1px solid #fff" }}
               imageCss={{ filter: "invert(1)" }}
@@ -91,6 +96,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      {showLanguageSettingsModal ? (
+        <LanguageChangeCard setModal={setShowLanguageSettingsModal} />
+      ) : null}
     </div>
   );
 };

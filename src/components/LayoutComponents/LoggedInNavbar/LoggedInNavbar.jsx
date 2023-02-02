@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import css from "./LoggedInNavbar.module.css";
 
 import SearchBar from "../../../utils/SearchBar/SearchBar";
+import LanguageChangeCard from "../../Cards/LanguageChangeCard/LanguageChangeCard";
 
 import globeIcon from "/icons/globe.png";
 import userEmptyIcon from "/icons/user-empty.png";
@@ -12,6 +13,8 @@ import exitIcon from "/icons/exit.png";
 
 const LoggedInNavbar = () => {
   let [menuState, setMenuState] = useState(false);
+  let [showLanguageSettingsModal, setShowLanguageSettingsModal] =
+    useState(false);
 
   return (
     <div className={css.navbar}>
@@ -118,8 +121,10 @@ const LoggedInNavbar = () => {
               <hr className={css.hr} />
               <div className={css.prflDiv}>
                 <div className={css.menuItem2}>
-                  <span>Language</span>
-                  <span>
+                  <span onClick={() => setShowLanguageSettingsModal(true)}>
+                    Language
+                  </span>
+                  <span onClick={() => setShowLanguageSettingsModal(true)}>
                     <span>English</span>
                     <img src={globeIcon} className={css.icon} alt="glob icon" />
                   </span>
@@ -164,6 +169,9 @@ const LoggedInNavbar = () => {
           </div>
         </div>
       </div>
+      {showLanguageSettingsModal ? (
+        <LanguageChangeCard setModal={setShowLanguageSettingsModal} />
+      ) : null}
     </div>
   );
 };

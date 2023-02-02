@@ -61,7 +61,10 @@ const ReviewsTabComponent = () => {
 
   const filterHandler = (e) => {
     setFilter((p) => {
-      return { ...p, drpFilter: e.target?.value };
+      return {
+        ...p,
+        searchFilter: e.target.value,
+      };
     });
   };
 

@@ -3,17 +3,18 @@ import { Link } from "react-router-dom";
 
 import Button1 from "../../../utils/Buttons/Button1/Button1";
 import ShareCourseCard from "../../Cards/ShareCourseCard/ShareCourseCard";
+import CourseRatingsCard from "../../Cards/CourseRatingsCard/CourseRatingsCard";
 
 import logoIcon from "/images/logo-udemy.svg";
 import trophyIcon from "/icons/trophy.png";
 import starIcon from "/icons/star.png";
-import dotsIcon from "/icons/dots.png";
 import shareIcon from "/icons/share.png";
 import downArrowIcon from "/icons/down-arrow.svg";
 
 import css from "./CourseVideoNavbar.module.css";
 
 const CourseVideoNavbar = (props) => {
+  const [leaveRatingModal, setLeaveRatingModal] = useState(false);
   const [showShareCourseDialog, setShowShareCourseDialog] = useState(false);
   const { data = {} } = props;
   const { title = "" } = data;
@@ -34,7 +35,9 @@ const CourseVideoNavbar = (props) => {
       <div className={css.right}>
         <div className={css.item}>
           <img src={starIcon} alt="star" className={css.icon} />
-          <span className={css.txt}>Leave a rating</span>
+          <span className={css.txt} onClick={() => setLeaveRatingModal(true)}>
+            Leave a rating
+          </span>
         </div>
         <div className={css.item}>
           <img src={trophyIcon} alt="progress" className={css.icon} />
@@ -68,6 +71,12 @@ const CourseVideoNavbar = (props) => {
           btnTxt="Copy"
           btnClick={shareCourseDialogHandler}
           closeModal={shareCourseDialogHandler}
+        />
+      ) : null}
+      {leaveRatingModal ? (
+        <CourseRatingsCard
+          ttl="How would you rate this course?"
+          closeModal={() => setLeaveRatingModal(false)}
         />
       ) : null}
     </div>

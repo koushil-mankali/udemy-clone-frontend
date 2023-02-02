@@ -503,9 +503,11 @@ const VideoPlayer = (props) => {
                 />
               </button>
             </div>
-            <button className={[css.btn].join(" ")}>
+            <button
+              className={[css.btn].join(" ")}
+              onClick={() => setFullScreen((p) => !p)}
+            >
               <img
-                onClick={() => setFullScreen((p) => !p)}
                 className={[
                   fullScreen ? css.expandIconR : "",
                   css.expandIcon,

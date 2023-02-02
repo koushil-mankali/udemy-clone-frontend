@@ -53,7 +53,11 @@ const CourseViewPage = () => {
             desc="Made by Udemy, this generalized assessment is a great way to check in on your skills."
             btnTxt="Launch Assessment"
           />
-          <CourseContentComponent title="Course Content" data={courseData} />
+          <CourseContentComponent
+            title="Course Content"
+            data={courseData}
+            playerWidthSetter={setPlayerFullWidth}
+          />
         </div>
       </div>
     </div>

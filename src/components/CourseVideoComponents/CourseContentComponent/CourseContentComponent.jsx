@@ -11,7 +11,7 @@ import openFolderIcon from "/icons/open-folder.png";
 import css from "./CourseContentComponent.module.css";
 
 const CourseContentComponent = (props) => {
-  const { title = "", data = [] } = props;
+  const { title = "", data = [], playerWidthSetter = () => {} } = props;
   const [toggleBox, setToggleBox] = useState({});
   const [toggleDrpDwn, setToggleDrpDwn] = useState({});
 
@@ -21,7 +21,10 @@ const CourseContentComponent = (props) => {
         {title ? (
           <div className={css.titleBox}>
             <span className={css.ttl}>{title}</span>
-            <span className={css.imgBox}>
+            <span
+              className={css.imgBox}
+              onClick={() => playerWidthSetter((p) => !p)}
+            >
               <img src={closeIcon} alt="close icon" className={css.closeIcon} />
             </span>
           </div>

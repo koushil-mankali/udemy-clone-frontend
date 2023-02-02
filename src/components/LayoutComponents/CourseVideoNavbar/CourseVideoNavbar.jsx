@@ -60,16 +60,6 @@ const CourseVideoNavbar = (props) => {
             filter: "invert(1)",
           }}
         />
-        <Button1
-          img={dotsIcon}
-          color="var(--white)"
-          bck="var(--gray)"
-          hovBck="var(--blackish2)"
-          extraCss={{
-            border: "1px solid var(--white",
-          }}
-          txtBoxCss={{ filter: "invert(1)" }}
-        />
       </div>
       {showShareCourseDialog ? (
         <ShareCourseCard

@@ -15,7 +15,7 @@ import lock from "/icons/lock.png";
 
 import css from "./Login.module.css";
 
-const login = () => {
+const Login = () => {
   const [state, setState] = useState({
     email: "",
     password: "",
@@ -116,4 +116,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;

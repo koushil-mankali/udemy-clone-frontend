@@ -21,6 +21,22 @@
   align-items: flex-start;
 }
 
+.box3 {
+  width: 100%;
+  height: auto;
+  min-height: 200px;
+  margin: 2rem 0;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.txt {
+  font-size: 1rem;
+}
+
 @media screen and (max-width: 1020px) {
   .box1 {
     display: flex;

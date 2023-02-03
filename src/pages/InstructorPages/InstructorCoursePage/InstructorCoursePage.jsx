@@ -13,6 +13,7 @@ import chatIcon from "/icons/chat.png";
 import TextWithButtonCard from "../../../components/InstructorComponents/Cards/TextWithButtonCard/TextWithButtonCard";
 import ParaCard from "../../../components/InstructorComponents/Cards/ParaCard/ParaCard";
 import SmallNaviCard from "../../../components/InstructorComponents/Cards/SmallNaviCard/SmallNaviCard";
+import Button1 from "../../../utils/Buttons/Button1/Button1";
 
 const InstructorCoursePage = () => {
   return (
@@ -20,7 +21,7 @@ const InstructorCoursePage = () => {
       <TextWithButtonCard
         txt="Jump Into Course Creation"
         btnTxt="Create your Course"
-        btnLink="create"
+        btnLink="create/1"
       />
       <div className={css.plainTxt}>
         Based on your experience, we think these resources will be helpful.
@@ -84,6 +85,20 @@ const InstructorCoursePage = () => {
           ttl="Help and Support"
           desc="Browse our Help Center or contact our support team."
           link="#"
+        />
+      </div>
+      <div className={css.box3}>
+        <p className={css.txt}>Are You Ready to Begin?</p>
+        <Button1
+          txt="Create your Course"
+          link="create/1"
+          color="var(--white)"
+          bck="var(--purple)"
+          hovBck="var(--purple-dark)"
+          extraCss={{
+            border: "none",
+            padding: "0.5rem 2rem",
+          }}
         />
       </div>
     </>

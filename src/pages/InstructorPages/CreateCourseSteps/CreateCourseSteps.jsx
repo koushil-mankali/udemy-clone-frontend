@@ -1,4 +1,4 @@
-import React from "react";
+import css from "./CreateCourseSteps.module.css";
 
 const CreateCourseSteps = () => {
   return <div>CreateCourseSteps</div>;

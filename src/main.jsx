@@ -36,6 +36,8 @@ import AnnouncementsTabComponent from "./components/CourseVideoComponents/Course
 import SearchTabComponent from "./components/CourseVideoComponents/CourseViewTabComponents/SearchTabComponent/SearchTabComponent";
 import CourseContentTabComponent from "./components/CourseVideoComponents/CourseViewTabComponents/CourseContentTabComponent/CourseContentTabComponent";
 
+import InstructorCoursePage from "./pages/InstructorPages/InstructorCoursePage/InstructorCoursePage";
+
 let login = true;
 let routes;
 
@@ -88,7 +90,7 @@ if (login) {
       children: [
         {
           path: "courses",
-          element: <ResourcesComponent />,
+          element: <InstructorCoursePage />,
         },
         {
           path: "communication",

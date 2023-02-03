@@ -1,0 +1,13 @@
+.outerDiv {
+  width: 100%;
+  min-height: 150px;
+  max-height: 200px;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--gray);
+  border: 1px solid var(--gray86);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+}

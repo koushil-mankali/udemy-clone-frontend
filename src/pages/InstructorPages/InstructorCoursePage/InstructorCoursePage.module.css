@@ -1,0 +1,12 @@
+.plainTxt {
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.box1 {
+  margin: 2rem 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 2rem;
+}

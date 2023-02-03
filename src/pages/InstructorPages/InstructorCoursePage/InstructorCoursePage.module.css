@@ -10,3 +10,20 @@
   display: flex;
   gap: 2rem;
 }
+
+.box2 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 1020px) {
+  .box1 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

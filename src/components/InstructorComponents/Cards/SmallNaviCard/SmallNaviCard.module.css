@@ -1,0 +1,32 @@
+.outerDiv {
+  width: auto;
+  max-width: 200px;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--gray);
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+.ttl {
+  color: var(--purple-dark);
+  font-weight: 600;
+  text-underline-offset: 5px;
+  text-decoration: underline;
+}
+
+.desc {
+  text-align: center;
+  font-size: 0.9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

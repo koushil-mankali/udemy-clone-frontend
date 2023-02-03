@@ -4,9 +4,15 @@ import css from "./InstructorCoursePage.module.css";
 import showcase1 from "/images/showcase4.jpg";
 import showcase2 from "/images/showcase5.jpg";
 import showcase3 from "/images/showcase5.jpg";
+import tvIcon from "/icons/tv.png";
+import helpWebIcon from "/icons/help-web-button.png";
+import analyticsIcon from "/icons/analytics.png";
+import teachIcon from "/icons/teach.png";
+import chatIcon from "/icons/chat.png";
 
 import TextWithButtonCard from "../../../components/InstructorComponents/Cards/TextWithButtonCard/TextWithButtonCard";
 import ParaCard from "../../../components/InstructorComponents/Cards/ParaCard/ParaCard";
+import SmallNaviCard from "../../../components/InstructorComponents/Cards/SmallNaviCard/SmallNaviCard";
 
 const InstructorCoursePage = () => {
   return (
@@ -47,6 +53,38 @@ const InstructorCoursePage = () => {
       </div>
       <div className={css.plainTxt}>
         Have questions? Here are our most popular instructor resources.
+      </div>
+      <div className={css.box2}>
+        <SmallNaviCard
+          icon={tvIcon}
+          ttl="Test Video"
+          desc="Send us a sample video and get expert feedback."
+          link="#"
+        />
+        <SmallNaviCard
+          icon={chatIcon}
+          ttl="Instructor Community"
+          desc="Connect with experienced instructors. Ask questions, browse discussions, and more."
+          link="#"
+        />
+        <SmallNaviCard
+          icon={teachIcon}
+          ttl="Testing Center"
+          desc="Learn about best practices for teaching on Udemy."
+          link="#"
+        />
+        <SmallNaviCard
+          icon={analyticsIcon}
+          ttl="Marketplace Insights"
+          desc="Validate your course topic by exploring our marketplace supply and demand."
+          link="#"
+        />
+        <SmallNaviCard
+          icon={helpWebIcon}
+          ttl="Help and Support"
+          desc="Browse our Help Center or contact our support team."
+          link="#"
+        />
       </div>
     </>
   );

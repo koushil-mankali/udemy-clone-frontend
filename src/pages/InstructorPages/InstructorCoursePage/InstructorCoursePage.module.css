@@ -60,10 +60,3 @@
     flex-wrap: wrap;
   }
 }
-
-@media screen and (max-width: 460px) {
-  .topNav {
-    margin: auto;
-    max-width: 80%;
-  }
-}

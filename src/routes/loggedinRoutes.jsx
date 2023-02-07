@@ -86,10 +86,6 @@ const loggedinRoutes = [
         element: <InstructorCoursePage />,
       },
       {
-        path: "courses/create/:step",
-        element: <CreateCourseSteps />,
-      },
-      {
         path: "communication",
         element: <ResourcesComponent />,
       },
@@ -124,6 +120,10 @@ const loggedinRoutes = [
         element: <ResourcesComponent />,
       },
     ],
+  },
+  {
+    path: "/courses/create/:step",
+    element: <CreateCourseSteps />,
   },
   {
     path: "/user/my-courses",

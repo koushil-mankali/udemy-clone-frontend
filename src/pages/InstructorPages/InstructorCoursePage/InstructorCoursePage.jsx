@@ -21,7 +21,7 @@ const InstructorCoursePage = () => {
       <TextWithButtonCard
         txt="Jump Into Course Creation"
         btnTxt="Create your Course"
-        btnLink="create/1"
+        btnLink="/courses/create/1"
       />
       <div className={css.plainTxt}>
         Based on your experience, we think these resources will be helpful.
@@ -91,7 +91,7 @@ const InstructorCoursePage = () => {
         <p className={css.txt}>Are You Ready to Begin?</p>
         <Button1
           txt="Create your Course"
-          link="create/1"
+          link="/courses/create/1"
           color="var(--white)"
           bck="var(--purple)"
           hovBck="var(--purple-dark)"

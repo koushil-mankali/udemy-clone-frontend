@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import css from "./InstructorCoursePage.module.css";
 
 import showcase1 from "/images/showcase4.jpg";
@@ -14,15 +14,14 @@ import TextWithButtonCard from "../../../components/InstructorComponents/Cards/T
 import ParaCard from "../../../components/InstructorComponents/Cards/ParaCard/ParaCard";
 import SmallNaviCard from "../../../components/InstructorComponents/Cards/SmallNaviCard/SmallNaviCard";
 import Button1 from "../../../utils/Buttons/Button1/Button1";
+import SearchBar2 from "../../../utils/SearchBar2/SearchBar2";
 
 const InstructorCoursePage = () => {
-  return (
+  const [courses, setCourses] = useState([{}]);
+  const [searchBar, setSearchBar] = useState("");
+
+  let commonContent = (
     <>
-      <TextWithButtonCard
-        txt="Jump Into Course Creation"
-        btnTxt="Create your Course"
-        btnLink="/courses/create/1"
-      />
       <div className={css.plainTxt}>
         Based on your experience, we think these resources will be helpful.
       </div>
@@ -101,6 +100,41 @@ const InstructorCoursePage = () => {
           }}
         />
       </div>
+    </>
+  );
+  let topContent = (
+    <TextWithButtonCard
+      txt="Jump Into Course Creation"
+      btnTxt="Create your Course"
+      btnLink="/courses/create/1"
+    />
+  );
+
+  const setSearchBarHandler = (e) => {
+    setSearchBar(e.target.value || "");
+  };
+  const searchHandler = () => {};
+
+  if (courses?.length > 0) {
+    topContent = (
+      <>
+        <h2 className={css.ttl}>Courses</h2>
+        <div>
+          <SearchBar2
+            searchBar={searchBar}
+            setSearchBar={setSearchBarHandler}
+            searchHandler={searchHandler}
+            placeholder="Search your courses"
+          />
+        </div>
+      </>
+    );
+  }
+
+  return (
+    <>
+      {topContent}
+      {commonContent}
     </>
   );
 };

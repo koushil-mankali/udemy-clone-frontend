@@ -1,0 +1,29 @@
+.searchBar {
+  width: 250px;
+  height: 40px;
+  display: flex;
+  border: 1px solid var(--gray);
+}
+
+.inpt {
+  width: 83%;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.iconBox {
+  width: 17%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray);
+}
+
+.imgIcon {
+  width: 17px;
+  height: 17px;
+  filter: invert(1);
+}

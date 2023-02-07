@@ -50,6 +50,10 @@
   align-items: center;
 }
 
+.coursesBox {
+  margin: 1rem;
+}
+
 @media screen and (max-width: 1020px) {
   .box1 {
     display: flex;

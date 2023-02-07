@@ -1,0 +1,101 @@
+.outerDiv {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  border: 1px solid var(--gray86);
+  text-decoration: none;
+  color: var(--gray);
+}
+
+.img {
+  height: 100%;
+  max-height: 117px;
+  object-fit: cover;
+}
+
+.right {
+  padding: 1rem;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.right:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.right:hover .rLeftBox,
+.right:hover .rrightBox {
+  opacity: 0.1;
+}
+
+.hoveredBox {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.right:hover .hoveredBox {
+  width: 100%;
+  height: 100%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--purple-dark);
+}
+
+.rLeftBox {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.txt {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.lightTxt {
+  color: var(--light-gray);
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.progressBar {
+  width: 60%;
+}
+
+.rrightBox {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .rLeftBox {
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .rLeftBox,
+  .rrightBox {
+    width: 100%;
+  }
+
+  .left {
+    display: none;
+  }
+}

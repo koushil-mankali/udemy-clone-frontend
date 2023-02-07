@@ -10,12 +10,13 @@ import analyticsIcon from "/icons/analytics.png";
 import teachIcon from "/icons/teach.png";
 import chatIcon from "/icons/chat.png";
 
-import TextWithButtonCard from "../../../components/InstructorComponents/Cards/TextWithButtonCard/TextWithButtonCard";
+import InstructorCoursesDisplay from "../InstructorCoursesDisplay/InstructorCoursesDisplay";
 import ParaCard from "../../../components/InstructorComponents/Cards/ParaCard/ParaCard";
 import SmallNaviCard from "../../../components/InstructorComponents/Cards/SmallNaviCard/SmallNaviCard";
 import Button1 from "../../../utils/Buttons/Button1/Button1";
 import SearchBar2 from "../../../utils/SearchBar2/SearchBar2";
 import SelectDropdownUtil from "../../../utils/FormUtils/SelectDropdownUtil/SelectDropdownUtil";
+import VerticalCourseDraftCard from "../../../utils/VerticalCourseDraftCard/VerticalCourseDraftCard";
 
 const InstructorCoursePage = () => {
   const [courses, setCourses] = useState([{}]);
@@ -125,13 +126,7 @@ const InstructorCoursePage = () => {
       </div>
     </>
   );
-  let topContent = (
-    <TextWithButtonCard
-      txt="Jump Into Course Creation"
-      btnTxt="Create your Course"
-      btnLink="/courses/create/1"
-    />
-  );
+  let topContent = <InstructorCoursesDisplay />;
 
   const setSearchBarHandler = (e) => {
     setSearchBar(e.target.value || "");
@@ -182,6 +177,9 @@ const InstructorCoursePage = () => {
   return (
     <>
       {topContent}
+      <div className={css.coursesBox}>
+        <VerticalCourseDraftCard />
+      </div>
       {commonContent}
     </>
   );

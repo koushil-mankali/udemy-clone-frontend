@@ -8,9 +8,10 @@ const SearchBar2 = (props) => {
     setSearchBar = () => {},
     searchHandler = () => {},
     placeholder = "Search...",
+    extraCss = {},
   } = props;
   return (
-    <div className={css.searchBar}>
+    <div className={css.searchBar} style={extraCss}>
       <input
         type="text"
         name="searchbar"

@@ -16,6 +16,7 @@ const SelectDropdownUtil = (props) => {
     multipleOptions = false,
     options = "",
     selectBoxCss = {},
+    extraCss = {},
   } = props;
 
   const optionHandler = (option) => {
@@ -35,7 +36,7 @@ const SelectDropdownUtil = (props) => {
   });
 
   return (
-    <div className={css.outerDiv}>
+    <div className={css.outerDiv} style={extraCss}>
       <div className={css.selectBox} style={selectBoxCss}>
         {label ? <label className={css.label}>{label}</label> : null}
         <div

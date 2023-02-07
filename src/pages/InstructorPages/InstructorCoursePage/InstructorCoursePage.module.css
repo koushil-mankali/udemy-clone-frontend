@@ -37,9 +37,29 @@
   font-size: 1rem;
 }
 
+.topNav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 @media screen and (max-width: 1020px) {
   .box1 {
     display: flex;
     flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .topNav {
+    margin: auto;
+    max-width: 80%;
   }
 }

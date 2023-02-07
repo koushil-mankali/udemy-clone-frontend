@@ -15,10 +15,33 @@ import ParaCard from "../../../components/InstructorComponents/Cards/ParaCard/Pa
 import SmallNaviCard from "../../../components/InstructorComponents/Cards/SmallNaviCard/SmallNaviCard";
 import Button1 from "../../../utils/Buttons/Button1/Button1";
 import SearchBar2 from "../../../utils/SearchBar2/SearchBar2";
+import SelectDropdownUtil from "../../../utils/FormUtils/SelectDropdownUtil/SelectDropdownUtil";
 
 const InstructorCoursePage = () => {
   const [courses, setCourses] = useState([{}]);
   const [searchBar, setSearchBar] = useState("");
+  const [dropdownFilter, setDropdownFilter] = useState({
+    filter1: "",
+  });
+
+  const filterOptions = [
+    {
+      key: "Newest",
+      value: "newest",
+    },
+    {
+      key: "Oldest",
+      value: "oldest",
+    },
+    {
+      key: "A-Z",
+      value: "a-z",
+    },
+    {
+      key: "Z-A",
+      value: "z-a",
+    },
+  ];
 
   let commonContent = (
     <>
@@ -119,13 +142,38 @@ const InstructorCoursePage = () => {
     topContent = (
       <>
         <h2 className={css.ttl}>Courses</h2>
-        <div>
-          <SearchBar2
-            searchBar={searchBar}
-            setSearchBar={setSearchBarHandler}
-            searchHandler={searchHandler}
-            placeholder="Search your courses"
-          />
+        <div className={css.topNav}>
+          <div className={css.left}>
+            <SearchBar2
+              searchBar={searchBar}
+              setSearchBar={setSearchBarHandler}
+              searchHandler={searchHandler}
+              placeholder="Search your courses"
+            />
+            <SelectDropdownUtil
+              id="filter1"
+              filterType="filter1"
+              defaultValue={filterOptions[0]}
+              value={dropdownFilter.filter1}
+              setValue={setDropdownFilter}
+              multipleOptions={false}
+              options={filterOptions}
+              selectBoxCss={{ height: "auto" }}
+            />
+          </div>
+          <div className={css.right}>
+            <Button1
+              txt="New Course"
+              link="/courses/create/1"
+              color="var(--white)"
+              bck="var(--purple)"
+              hovBck="var(--purple-dark)"
+              extraCss={{
+                border: "none",
+                padding: "0.5rem 1rem",
+              }}
+            />
+          </div>
         </div>
       </>
     );

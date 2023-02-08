@@ -10,7 +10,7 @@ import analyticsIcon from "/icons/analytics.png";
 import teachIcon from "/icons/teach.png";
 import chatIcon from "/icons/chat.png";
 
-import InstructorCoursesDisplay from "../InstructorCoursesDisplay/InstructorCoursesDisplay";
+import InstructorCoursesDisplay from "../../../components/InstructorComponents/InstructorCoursesDisplay/InstructorCoursesDisplay";
 import ParaCard from "../../../components/InstructorComponents/Cards/ParaCard/ParaCard";
 import SmallNaviCard from "../../../components/InstructorComponents/Cards/SmallNaviCard/SmallNaviCard";
 import Button1 from "../../../utils/Buttons/Button1/Button1";

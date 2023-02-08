@@ -7,10 +7,11 @@ import css from "./CreateCourseSteps.module.css";
 
 const CreateCourseSteps = () => {
   const { step = 1 } = useParams();
+  const totalSteps = 4;
 
   return (
     <div className={css.outerDiv}>
-      <CreateCourseHeader />
+      <CreateCourseHeader step={step} totalSteps={totalSteps} />
       <CreateCourseFooter />
     </div>
   );

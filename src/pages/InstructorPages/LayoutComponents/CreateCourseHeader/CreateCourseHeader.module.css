@@ -47,3 +47,20 @@
   height: 100%;
   background-color: var(--indigo);
 }
+
+@media screen and (max-width: 426px) {
+  .header,
+  .vDivider {
+    height: 50px;
+  }
+
+  .logoImg {
+    width: 80px;
+    height: 80px;
+  }
+
+  .steps,
+  .exit {
+    font-size: 1rem;
+  }
+}

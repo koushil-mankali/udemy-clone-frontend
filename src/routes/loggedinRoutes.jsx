@@ -197,6 +197,10 @@ const loggedinRoutes = [
       },
     ],
   },
+  {
+    path: "/instructor/create-course",
+    element: <h1>Create Course Page</h1>,
+  },
 ];
 
 export default loggedinRoutes;

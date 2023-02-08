@@ -34,6 +34,7 @@ import CourseContentTabComponent from "../components/CourseVideoComponents/Cours
 
 import InstructorCoursePage from "../pages/InstructorPages/InstructorCoursePage/InstructorCoursePage";
 import CreateCourseSteps from "../pages/InstructorPages/CreateCourseSteps/CreateCourseSteps";
+import CreateCourse from "../pages/InstructorPages/CreateCourse/CreateCourse";
 
 const loggedinRoutes = [
   {
@@ -199,7 +200,7 @@ const loggedinRoutes = [
   },
   {
     path: "/instructor/create-course",
-    element: <h1>Create Course Page</h1>,
+    element: <CreateCourse />,
   },
 ];
 

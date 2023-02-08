@@ -11,7 +11,7 @@ const CreateCourseSteps = () => {
 
   return (
     <div className={css.outerDiv}>
-      <CreateCourseHeader step={step} totalSteps={totalSteps} />
+      <CreateCourseHeader currentStep={step} totalSteps={totalSteps} />
       <CreateCourseFooter />
     </div>
   );

@@ -3,6 +3,7 @@ import { useParams, useNavigate, useLocation } from "react-router-dom";
 
 import CreateCourseHeader from "../LayoutComponents/CreateCourseHeader/CreateCourseHeader";
 import CreateCourseFooter from "../LayoutComponents/CreateCourseFooter/CreateCourseFooter";
+import StepOneComp from "../../../components/InstructorComponents/StepComponents/StepOneComp/StepOneComp";
 
 import css from "./CreateCourseSteps.module.css";
 
@@ -27,6 +28,9 @@ const CreateCourseSteps = () => {
   return (
     <div className={css.outerDiv}>
       <CreateCourseHeader currentStep={currentStep} totalSteps={totalSteps} />
+      <div className={css.stepsContent}>
+        <StepOneComp />
+      </div>
       <CreateCourseFooter
         currentStep={currentStep}
         totalSteps={totalSteps}

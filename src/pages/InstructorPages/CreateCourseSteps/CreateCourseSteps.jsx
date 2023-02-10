@@ -14,6 +14,12 @@ const CreateCourseSteps = () => {
   const totalSteps = 4;
 
   const [currentStep, setCurrentStep] = useState(parseInt(step) || 1);
+  const [steps, setSteps] = useState({
+    step1: "",
+    step2: "",
+    step3: "",
+    step4: "",
+  });
 
   const changeStepHandler = (step) => {
     setCurrentStep(step);
@@ -29,7 +35,7 @@ const CreateCourseSteps = () => {
     <div className={css.outerDiv}>
       <CreateCourseHeader currentStep={currentStep} totalSteps={totalSteps} />
       <div className={css.stepsContent}>
-        <StepOneComp />
+        <StepOneComp steps={steps} setSteps={setSteps} />
       </div>
       <CreateCourseFooter
         currentStep={currentStep}

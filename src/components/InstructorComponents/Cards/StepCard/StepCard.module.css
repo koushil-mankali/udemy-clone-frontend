@@ -1,0 +1,21 @@
+.outerDiv {
+  width: 250px;
+  height: 300px;
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.ttl {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.desc {
+  font-size: 1rem;
+}

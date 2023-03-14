@@ -17,7 +17,7 @@ import notesIcon from "/icons/videoPlayer/notes.png";
 import leftArrowIcon from "/icons/videoPlayer/left-arrow.png";
 import rightArrowIcon from "/icons/videoPlayer/right-arrow.png";
 
-import video from "/videos/coding.mp4";
+import video from "../../../../public/videos/Coding.mp4";
 // import video from "/videos/sample2.mp4";
 import { useEffect } from "react";
 
